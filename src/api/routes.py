@@ -96,7 +96,7 @@ def get_tvs():
 
 @api.route('/tvs/<int:tv_id>', methods=['DELETE'])
 def delete_tvs(id_tv):
-    exist = Smartphones.query.filter_by(id_tv=tv_id).first()
+    exist = TVs.query.filter_by(id_tv=tv_id).first()
     if exist:
         db.session.delete(exist)
         db.session.commit()
