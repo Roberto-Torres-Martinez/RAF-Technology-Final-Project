@@ -17,6 +17,7 @@ class User(db.Model):
     birthday_date = db.Column(db.String(15), unique=True, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
     is_admin = db.Column(db.Boolean(), unique=False, nullable=False)
+    pedido = db.relationship('Pedido', backref= 'user')
 
     def __repr__(self):
         return f'<User {self.email, self.username}>'
@@ -33,6 +34,38 @@ class User(db.Model):
             "birthday_date": self.birthday_date,
             "is_active": self.is_active,
             "is_admin": self.is_admin,
+        }
+
+class Pedido(db.Model):
+
+    __tablename__ = 'pedido'
+
+    pedido_id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
+    direccion_de_envio = db.Column(db.String(150), unique=False, nullable=False)
+    smartphone_id = db.Column(db.Integer, db.ForeignKey('smartphones.smartphone_id'))
+    tv_id = db.Column(db.Integer, db.ForeignKey('tv.tv_id'))
+    laptop_id = db.Column(db.Integer, db.ForeignKey('laptops.laptop_id'))
+    smartphone_precio = db.Column(db.String(50), unique=False, nullable=False)
+    tv_precio = db.Column(db.String(50), unique=False, nullable=False)
+    laptop_precio = db.Column(db.String(50), unique=False, nullable=False)
+    precio_total = db.Column(db.String(50), unique=False, nullable=False)
+
+    def __repr__(self):
+        return f'<Pedido {self.pedido_id, self.user_id}>'
+
+    def serialize(self):
+        return {
+            "pedido_id": self.pedido_id,
+            "user_id": self.user_id,
+            "direccion_de_envio": self.direccion_de_envio,
+            "smartphone_id": self.smartphone_id,
+            "tv_id": self.tv_id,
+            "laptop_id": self.laptop_id,
+            "smartphone_precio": self.smartphone_precio,
+            "tv_precio": self.tv_precio,
+            "laptop_precio": self.laptop_precio,
+            "precio_total": self.precio_total,
         }
 
 
@@ -53,6 +86,7 @@ class Smartphones(db.Model):
     colores = db.Column(db.JSON, unique=False, nullable=False)
     descripcion = db.Column(db.String(300), unique=False, nullable=False)
     imagen = db.Column(db.JSON, unique=False,)
+    pedido = db.relationship('Pedido', backref= 'smartphones')
 
     def __repr__(self):
         return f'<Smartphones {self.modelo, self.precio}>'
@@ -91,6 +125,7 @@ class TVs(db.Model):
     conectividad = db.Column(db.String(150), unique=False, nullable=False)
     medidas = db.Column(db.String(50), unique=False, nullable=False)
     imagen = db.Column(db.JSON, unique=False, nullable=False)
+    pedido = db.relationship('Pedido', backref= 'tv')
 
     def __repr__(self):
         return f'<TVs {self.modelo, self.marca, self.precio}>'
@@ -132,6 +167,7 @@ class Laptops(db.Model):
     colores = db.Column(db.JSON, unique=False, nullable=False)
     descripcion = db.Column(db.String(300), unique=False, nullable=False)
     imagen = db.Column(db.JSON, unique=False, nullable=False)
+    pedido = db.relationship('Pedido', backref= 'laptops')
 
     def __repr__(self):
         return f'<Laptops {self.modelo, self.marca, self.precio}>'
