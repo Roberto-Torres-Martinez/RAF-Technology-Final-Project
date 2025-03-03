@@ -12,13 +12,17 @@ api = Blueprint('api', __name__)
 # Allow CORS requests to this API
 CORS(api)
 
+#ENDPOINTS PHONES
 
 @api.route('/phones', methods=['POST'])
 def post_phones():
+
     data = request.get_json()
     exist = Smartphones.query.filter_by(modelo=data['nombre']).first()
+
     if exist:
         return jsonify({"msg": "This phone already exist in your list"}), 400
+
     colores = data.get('colores', [])
     images = data.get('imagenes', {})
     new_phone = Smartphones(
@@ -44,3 +48,38 @@ def post_phones():
 def get_users():
     phones = Smartphones.query.all()
     return jsonify([smartphones.serialize() for smartphones in phones]), 200
+
+#ENDPOINTS TVS
+
+@api.route('/tvs', methods=['POST'])
+def post_tvs():
+
+    data = request.get_json()
+    exist = TVs.query.filter_by(modelo=data['modelo']).first()
+
+    if exist:
+        return jsonify({"msg": "This TV already exist in your list"}), 400
+
+    images = data.get('imagenes', [])
+    new_tv = TVs(
+        marca = data['marca'],
+        contenido_de_la_caja = data['contenido_de_la_caja'],
+        modelo = data['modelo'],
+        usos_recomendados = data['usos_recomendados'],
+        año_modelo = data['año_modelo'],
+        fabricante = data['fabricante'],
+        precio = data['precio'],
+        descripcion = data['descripcion'],
+        pantalla = data['pantalla'],
+        conectividad = data['conectividad'],
+        medidas = data['medidas'],
+        imagen = images
+    )
+    db.session.add(new_tv)
+    db.session.commit()
+    return jsonify({"msg": "TV added"}), 200
+
+@api.route('/tvs', methods=['GET'])
+def get_tvs():
+    tvs = TVs.query.all()
+    return jsonify([TVs.serialize() for TVs in tvs]), 200
