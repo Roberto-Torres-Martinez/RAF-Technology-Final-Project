@@ -20,6 +20,30 @@ def get_users():
     users = User.query.all()
     return jsonify([user.serialize() for user in users]), 200
 
+@api.route('/users', methods=['POST'])
+def post_tvs():
+
+    data = request.get_json()
+    exist = User.query.filter_by(user_id=data['user_id'], username=data['username']).first()
+
+    if exist:
+        return jsonify({"msg": "This User already exist in your list"}), 400
+
+    new_user = User(
+        user_id = data['user_id'],
+        name = data['name'],
+        lastname = data['lastname'],
+        email = data['email'],
+        password = data['password'],
+        username = data['username'],
+        birthday_date = data['birthday_date'],
+        is_active = data['is_active'],
+        is_admin = data['is_admin'],
+    )
+    db.session.add(new_user)
+    db.session.commit()
+    return jsonify({"msg": "User added"}), 200
+
 #ENDPOINTS PHONES
 
 @api.route('/phones', methods=['POST'])
@@ -142,7 +166,7 @@ def post_laptops():
     )
     db.session.add(new_laptop)
     db.session.commit()
-    return jsonify({"msg": "TV added"}), 200
+    return jsonify({"msg": "Laptop added"}), 200
     
 @api.route('/laptops', methods=['GET'])
 def get_laptops():
