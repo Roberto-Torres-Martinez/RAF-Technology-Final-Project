@@ -20,8 +20,9 @@ def get_users():
     users = User.query.all()
     return jsonify([user.serialize() for user in users]), 200
 
+
 @api.route('/users', methods=['POST'])
-def post_tvs():
+def post_users():
 
     data = request.get_json()
     exist = User.query.filter_by(user_id=data['user_id'], username=data['username']).first()
@@ -43,6 +44,16 @@ def post_tvs():
     db.session.add(new_user)
     db.session.commit()
     return jsonify({"msg": "User added"}), 200
+
+
+@api.route('/users/<int:user_id>', methods=['DELETE'])
+def delete_users(id_user):
+    exist = User.query.filter_by(id_user=user_id).first()
+    if exist:
+        db.session.delete(exist)
+        db.session.commit()
+        return jsonify({"msg": "User deleted from data base"}), 200
+    return jsonify({"msg": "No User id was found"}), 400
 
 #ENDPOINTS PHONES
 
