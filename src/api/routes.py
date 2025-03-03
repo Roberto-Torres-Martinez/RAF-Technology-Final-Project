@@ -12,6 +12,14 @@ api = Blueprint('api', __name__)
 # Allow CORS requests to this API
 CORS(api)
 
+
+#ENDPOINTS USERS
+
+@api.route('/users', methods=['GET'])
+def get_users():
+    users = User.query.all()
+    return jsonify([user.serialize() for user in users]), 200
+
 #ENDPOINTS PHONES
 
 @api.route('/phones', methods=['POST'])
@@ -45,7 +53,7 @@ def post_phones():
 
 
 @api.route('/phones', methods=['GET'])
-def get_users():
+def get_phones():
     phones = Smartphones.query.all()
     return jsonify([smartphones.serialize() for smartphones in phones]), 200
 
@@ -137,7 +145,7 @@ def post_laptops():
     return jsonify({"msg": "TV added"}), 200
     
 @api.route('/laptops', methods=['GET'])
-def get_laptop():
+def get_laptops():
     laptops = Laptops.query.all()
     return jsonify([Laptops.serialize() for Laptops in laptops]), 200
 
