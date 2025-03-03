@@ -94,6 +94,15 @@ def get_tvs():
     tvs = TVs.query.all()
     return jsonify([TVs.serialize() for TVs in tvs]), 200
 
+@api.route('/tvs/<int:tv_id>', methods=['DELETE'])
+def delete_tvs(id_tv):
+    exist = TVs.query.filter_by(id_tv=tv_id).first()
+    if exist:
+        db.session.delete(exist)
+        db.session.commit()
+        return jsonify({"msg": "TV deleted from data base"}), 200
+    return jsonify({"msg": "No TV id was found"}), 400
+
 #ENDPOINTS LAPTOPS
 
 @api.route('/laptops', methods=['POST'])
