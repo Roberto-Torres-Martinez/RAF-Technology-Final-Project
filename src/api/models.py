@@ -29,7 +29,6 @@ class User(db.Model):
             "lastname": self.lastname,
             "email": self.email,
             "password": self.password,
-            "confirm_password": self.confirm_password,
             "username": self.username,
             "birthday_date": self.birthday_date,
             "is_active": self.is_active,
