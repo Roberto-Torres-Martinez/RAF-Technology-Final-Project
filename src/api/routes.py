@@ -49,6 +49,16 @@ def get_users():
     phones = Smartphones.query.all()
     return jsonify([smartphones.serialize() for smartphones in phones]), 200
 
+
+@api.route('/phones/<int:smartphone_id>', methods=['DELETE'])
+def delete_phones(id_smartphone):
+    exist = Smartphones.query.filter_by(id_smartphone=smartphone_id).first()
+    if exist:
+        db.session.delete(exist)
+        db.session.commit()
+        return jsonify({"msg": "Smartphone deleted from data base"}), 200
+    return jsonify({"msg": "No smartphone id was found"}), 400
+
 #ENDPOINTS TVS
 
 @api.route('/tvs', methods=['POST'])
