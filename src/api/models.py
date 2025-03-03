@@ -17,7 +17,6 @@ class User(db.Model):
     birthday_date = db.Column(db.String(15), unique=True, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
     is_admin = db.Column(db.Boolean(), unique=False, nullable=False)
-    cart = db.relationship('Cart', backref= 'user')
 
     def __repr__(self):
         return f'<User {self.email, self.username}>'
@@ -57,7 +56,7 @@ class Smartphones(db.Model):
 
     def __repr__(self):
         return f'<Smartphones {self.modelo, self.precio}>'
-        
+
     def serialize(self):
         return {
             "smartphone_id": self.smartphone_id,
@@ -72,5 +71,43 @@ class Smartphones(db.Model):
             "conectividad" : self.conectividad,
             "colores" : self.colores,
             "descripcion" : self.descripcion,
+            "imagen" : self.imagen,
+        }
+
+class TVs(db.Model):
+
+    __tablename__ = 'tv'
+
+    tv_id = db.Column(db.Integer, primary_key=True)
+    marca = db.Column(db.String(150), unique=False, nullable=False)
+    contenido_de_la_caja = db.Column(db.String(150), unique=False, nullable=False)
+    modelo = db.Column(db.String(150), unique=False, nullable=False)
+    usos_recomendados = db.Column(db.String(150), unique=False, nullable=False)
+    año_modelo = db.Column(db.String(50), unique=False, nullable=False)
+    fabricante = db.Column(db.String(150), unique=False, nullable=False)
+    precio = db.Column(db.String(50), unique=False, nullable=False)
+    descripcion = db.Column(db.String(300), unique=False, nullable=False)
+    pantalla = db.Column(db.String(150), unique=False, nullable=False)
+    conectividad = db.Column(db.String(150), unique=False, nullable=False)
+    medidas = db.Column(db.String(50), unique=False, nullable=False)
+    imagen = db.Column(db.JSON, unique=False, nullable=False)
+
+    def __repr__(self):
+        return f'<TVs {self.modelo, self.marca, self.precio}>'
+
+    def serialize(self):
+        return {
+            "tv_id": self.tv_id,
+            "marca": self.marca,
+            "contenido_de_la_caja" : self.contenido_de_la_caja,
+            "modelo" : self.modelo,
+            "usos_recomendados" : self.usos_recomendados,
+            "año_modelo" : self.año_modelo,
+            "fabricante" : self.fabricante,
+            "precio" : self.precio,
+            "descripcion" : self.descripcion,
+            "pantalla" : self.pantalla,
+            "conectividad" : self.conectividad,
+            "medidas" : self.medidas,
             "imagen" : self.imagen,
         }
