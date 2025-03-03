@@ -111,3 +111,47 @@ class TVs(db.Model):
             "medidas" : self.medidas,
             "imagen" : self.imagen,
         }
+
+class Laptops(db.Model):
+
+    __tablename__ = 'laptops'
+
+    laptop_id = db.Column(db.Integer, primary_key=True)
+    marca = db.Column(db.String(150), unique=False, nullable=False)
+    modelo = db.Column(db.String(150), unique=False, nullable=False)
+    pantalla = db.Column(db.String(150), unique=False, nullable=False)
+    procesador = db.Column(db.String(150), unique=False, nullable=False)
+    modelo_cpu = db.Column(db.String(150), unique=False, nullable=False)
+    sistema_operativo = db.Column(db.String(150), unique=False, nullable=False)
+    memoria_ram = db.Column(db.String(150), unique=False, nullable=False)
+    almacenamiento = db.Column(db.String(300), unique=False, nullable=False)
+    camara = db.Column(db.String(150), unique=False, nullable=False)
+    bateria = db.Column(db.String(150), unique=False, nullable=False)
+    precio = db.Column(db.String(50), unique=False, nullable=False)
+    tecnologia = db.Column(db.String(150), unique=False, nullable=False)
+    colores = db.Column(db.JSON, unique=False, nullable=False)
+    descripcion = db.Column(db.String(300), unique=False, nullable=False)
+    imagen = db.Column(db.JSON, unique=False, nullable=False)
+
+    def __repr__(self):
+        return f'<Laptops {self.modelo, self.marca, self.precio}>'
+        
+    def serialize(self):
+        return {
+            "laptop_id": self.laptop_id,
+            "marca": self.marca,
+            "modelo" : self.modelo,
+            "pantalla" : self.pantalla,
+            "procesador" : self.procesador,
+            "modelo_cpu" : self.modelo_cpu,
+            "sistema_operativo" : self.sistema_operativo,
+            "memoria_ram" : self.memoria_ram,
+            "almacenamiento" : self.almacenamiento,
+            "camara" : self.camara,
+            "bateria" : self.bateria,
+            "precio" : self.precio,
+            "tecnologia" : self.tecnologia,
+            "colores" : self.colores,
+            "descripcion" : self.descripcion,
+            "imagen" : self.imagen,
+        }
