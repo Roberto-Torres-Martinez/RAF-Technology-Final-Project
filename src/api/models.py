@@ -17,7 +17,6 @@ class User(db.Model):
     birthday_date = db.Column(db.String(15), unique=True, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
     is_admin = db.Column(db.Boolean(), unique=False, nullable=False)
-    pedido = db.relationship('Pedido', backref= 'user')
 
     def __repr__(self):
         return f'<User {self.email, self.username}>'
@@ -49,6 +48,7 @@ class Pedido(db.Model):
     tv_precio = db.Column(db.String(50), unique=False, nullable=False)
     laptop_precio = db.Column(db.String(50), unique=False, nullable=False)
     precio_total = db.Column(db.String(50), unique=False, nullable=False)
+    pedido = db.relationship('User', backref= 'pedido')
 
     def __repr__(self):
         return f'<Pedido {self.pedido_id, self.user_id}>'
