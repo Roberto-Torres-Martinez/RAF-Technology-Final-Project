@@ -166,6 +166,8 @@ class Laptops(db.Model):
     colores = db.Column(db.JSON, unique=False, nullable=False)
     descripcion = db.Column(db.String(300), unique=False, nullable=False)
     imagen = db.Column(db.JSON, unique=False, nullable=False)
+    funcion_especial = db.Column(db.String(300), unique=False, nullable=False)
+    descripcion_tarjeta_grafica = db.Column(db.String(300), unique=False, nullable=False)
     pedido = db.relationship('Pedido', backref= 'laptops')
 
     def __repr__(self):

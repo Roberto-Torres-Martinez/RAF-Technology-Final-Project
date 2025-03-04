@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Smartphones
+from api.models import db, User, Smartphones, TVs, Laptops
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 import json
@@ -25,20 +25,19 @@ def get_users():
 def post_users():
 
     data = request.get_json()
-    exist = User.query.filter_by(user_id=data['user_id'], username=data['username']).first()
+    exist = User.query.filter_by(username=data['username']).first()
 
     if exist:
         return jsonify({"msg": "This User already exist in your list"}), 400
 
     new_user = User(
-        user_id = data['user_id'],
         name = data['name'],
         lastname = data['lastname'],
         email = data['email'],
         password = data['password'],
         username = data['username'],
         birthday_date = data['birthday_date'],
-        is_active = data['is_active'],
+        is_active = True,
         is_admin = data['is_admin'],
     )
     db.session.add(new_user)
@@ -46,9 +45,9 @@ def post_users():
     return jsonify({"msg": "User added"}), 200
 
 
-@api.route('/users/<int:user_id>', methods=['DELETE'])
+@api.route('/users/<int:id_user>', methods=['DELETE'])
 def delete_users(id_user):
-    exist = User.query.filter_by(id_user=user_id).first()
+    exist = User.query.filter_by(user_id=id_user).first()
     if exist:
         db.session.delete(exist)
         db.session.commit()
@@ -93,9 +92,9 @@ def get_phones():
     return jsonify([smartphones.serialize() for smartphones in phones]), 200
 
 
-@api.route('/phones/<int:smartphone_id>', methods=['DELETE'])
+@api.route('/phones/<int:id_smartphone>', methods=['DELETE'])
 def delete_phones(id_smartphone):
-    exist = Smartphones.query.filter_by(id_smartphone=smartphone_id).first()
+    exist = Smartphones.query.filter_by(smartphone_id=id_smartphone).first()
     if exist:
         db.session.delete(exist)
         db.session.commit()
@@ -114,6 +113,7 @@ def post_tvs():
         return jsonify({"msg": "This TV already exist in your list"}), 400
 
     images = data.get('imagenes', [])
+    
     new_tv = TVs(
         marca = data['marca'],
         contenido_de_la_caja = data['contenido_de_la_caja'],
@@ -122,7 +122,7 @@ def post_tvs():
         año_modelo = data['año_modelo'],
         fabricante = data['fabricante'],
         precio = data['precio'],
-        descripcion = data['descripcion'],
+        descripcion = data['descripcion_breve'],
         pantalla = data['pantalla'],
         conectividad = data['conectividad'],
         medidas = data['medidas'],
@@ -138,9 +138,9 @@ def get_tvs():
     return jsonify([TVs.serialize() for TVs in tvs]), 200
 
 
-@api.route('/tvs/<int:tv_id>', methods=['DELETE'])
+@api.route('/tvs/<int:id_tv>', methods=['DELETE'])
 def delete_tvs(id_tv):
-    exist = TVs.query.filter_by(id_tv=tv_id).first()
+    exist = TVs.query.filter_by(tv_id=id_tv).first()
     if exist:
         db.session.delete(exist)
         db.session.commit()
@@ -158,11 +158,12 @@ def post_laptops():
     if exist:
         return jsonify({"msg": "This laptop already exist in your list"}), 400
 
-    colores_str = json.dumps(data.get('colores', []))
-    images_str = json.dumps(data.get('imagenes', {}))
+    colores = data.get('colores', [])
+    images = data.get('imagenes', {})
+
     new_laptop = Laptops(
         marca = data['marca'],
-        modelo = data['modelo'],
+        modelo = data['nombre'],
         pantalla = data['pantalla'],
         procesador = data['procesador'],
         modelo_cpu = data['modelo_cpu'],
@@ -172,9 +173,14 @@ def post_laptops():
         camara = data['camara'],
         bateria = data['bateria'],
         precio = data['precio'],
-        colores = colores_str,
-        imagen = images_str
+        tecnologia = data['tecnologia'],
+        colores = colores,
+        descripcion = data['descripcion'],
+        funcion_especial = data['funcion_especial'],
+        descripcion_tarjeta_grafica = data['descripcion_tarjeta_grafica'],
+        imagen = images
     )
+
     db.session.add(new_laptop)
     db.session.commit()
     return jsonify({"msg": "Laptop added"}), 200
@@ -185,9 +191,9 @@ def get_laptops():
     return jsonify([Laptops.serialize() for Laptops in laptops]), 200
 
 
-@api.route('/laptops/<int:laptop_id>', methods=['DELETE'])
+@api.route('/laptops/<int:id_laptop>', methods=['DELETE'])
 def delete_laptops(id_laptop):
-    exist = Laptops.query.filter_by(id_laptop=laptop_id).first()
+    exist = Laptops.query.filter_by(laptop_id=id_laptop).first()
     if exist:
         db.session.delete(exist)
         db.session.commit()
