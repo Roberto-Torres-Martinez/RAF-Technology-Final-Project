@@ -2,6 +2,7 @@ import "../../styles/home.css";
 import React from "react";
 import {Welcome} from '../component/welcome'
 import {Onfire} from '../component/onfire'
+
 export const Home = () => {
 
 	return (
