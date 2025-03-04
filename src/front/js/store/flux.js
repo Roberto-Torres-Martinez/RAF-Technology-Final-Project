@@ -1,26 +1,14 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-			]
+			phones: [],
+			tvs: [],
+			laptops: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
-			},
-
-			getMessage: async () => {
-				try{
-					// fetching data from the backend
-					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const data = await resp.json()
-					setStore({ message: data.message })
-					// don't forget to return something, that is how the async resolves
-					return data;
-				}catch(error){
-					console.log("Error loading message from backend", error)
-				}
 			},
 			changeColor: (index, color) => {
 				//get the store
@@ -35,7 +23,45 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+
+			getPhones: async () => {
+				try {
+					const response = await fetch("https://super-duper-space-adventure-pjpjqx6q46qp27jgx-3001.app.github.dev/api/phones")
+
+					const data = await response.json()
+					
+					setStore({phones: data.phones})
+
+				} catch (error) {
+					console.error("Error getting phones from API:");
+				}
+			},
+			getTvs: async () => {
+				try {
+					const response = await fetch("https://super-duper-space-adventure-pjpjqx6q46qp27jgx-3001.app.github.dev/api/tvs")
+
+					const data = await response.json()				
+					
+					setStore({tvs: data.tvs})
+
+				} catch (error) {
+					console.error("Error getting TVs from API:");
+				}
+			},
+
+			getLaptops: async () => {
+				try {
+					const response = await fetch("https://super-duper-space-adventure-pjpjqx6q46qp27jgx-3001.app.github.dev/api/laptops")
+
+					const data = await response.json()
+					
+					setStore({laptops: data.laptops})
+
+				} catch (error) {
+					console.error("Error getting Laptops from API:");
+				}
+			},
 		}
 	};
 };
