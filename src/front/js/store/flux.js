@@ -41,7 +41,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 					const response = await fetch("https://super-duper-space-adventure-pjpjqx6q46qp27jgx-3001.app.github.dev/api/tvs")
 
-					const data = await response.json()				
+					const data = await response.json()			
 					
 					setStore({tvs: data.tvs})
 
