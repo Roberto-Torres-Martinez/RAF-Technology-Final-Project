@@ -154,7 +154,7 @@ def delete_tvs(id_tv):
 def post_laptops():
 
     data = request.get_json()
-    exist = Laptops.query.filter_by(modelo=data['modelo']).first()
+    exist = Laptops.query.filter_by(modelo=data['nombre']).first()
 
     if exist:
         return jsonify({"msg": "This laptop already exist in your list"}), 400
