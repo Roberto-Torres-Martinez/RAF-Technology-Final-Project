@@ -67,6 +67,7 @@ def post_phones():
 
     colores = data.get('colores', [])
     images = data.get('imagenes', {})
+
     new_phone = Smartphones(
         modelo = data['nombre'],
         pantalla = data['pantalla'],
