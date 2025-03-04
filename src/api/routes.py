@@ -92,6 +92,11 @@ def get_phones():
     phones = Smartphones.query.all()
     return jsonify([smartphones.serialize() for smartphones in phones]), 200
 
+@api.route('/phone/<int:id_phone>', methods=['GET'])
+def get_phones_individual(id_phone):
+    phone = Smartphones.query.get(id_phone) 
+    return jsonify(phone.serialize()), 200
+
 
 @api.route('/phones/<int:id_smartphone>', methods=['DELETE'])
 def delete_phones(id_smartphone):
@@ -137,6 +142,11 @@ def post_tvs():
 def get_tvs():
     tvs = TVs.query.all()
     return jsonify([TVs.serialize() for TVs in tvs]), 200
+
+@api.route('/tv/<int:id_tv>', methods=['GET'])
+def get_tv_individual(id_tv):
+    tv = TVs.query.get(id_tv)
+    return jsonify(tv.serialize())
 
 
 @api.route('/tvs/<int:id_tv>', methods=['DELETE'])
@@ -185,12 +195,17 @@ def post_laptops():
     db.session.add(new_laptop)
     db.session.commit()
     return jsonify({"msg": "Laptop added"}), 200
+
     
 @api.route('/laptops', methods=['GET'])
 def get_laptops():
     laptops = Laptops.query.all()
     return jsonify([Laptops.serialize() for Laptops in laptops]), 200
 
+@api.route('/laptop/<int:id_laptop>', methods=['GET'])
+def get_laptop_individual(id_laptop):
+    laptop = Laptops.query.get(id_laptop)
+    return jsonify(laptop.serialize())
 
 @api.route('/laptops/<int:id_laptop>', methods=['DELETE'])
 def delete_laptops(id_laptop):
