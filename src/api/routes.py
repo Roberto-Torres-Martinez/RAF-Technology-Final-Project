@@ -6,6 +6,7 @@ from api.models import db, User, Smartphones, TVs, Laptops
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 import json
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 
 api = Blueprint('api', __name__)
 
@@ -21,7 +22,7 @@ def get_users():
     return jsonify([user.serialize() for user in users]), 200
 
 
-@api.route('/users', methods=['POST'])
+@api.route('/user-sinup', methods=['POST'])
 def post_users():
 
     data = request.get_json()
@@ -29,6 +30,13 @@ def post_users():
 
     if exist:
         return jsonify({"msg": "This User already exist in your list"}), 400
+    
+    email = request.json.get('email')
+    password = request.json.get('password')
+    username = request.json.get('username')
+
+    if not email or  not password or not username:
+        return jsonify({"msg" :  "missing data"}), 400
 
     new_user = User(
         name = data['name'],
@@ -38,11 +46,23 @@ def post_users():
         username = data['username'],
         birthday_date = data['birthday_date'],
         is_active = True,
-        is_admin = data['is_admin'],
+        is_admin =False,
     )
+
     db.session.add(new_user)
     db.session.commit()
     return jsonify({"msg": "User added"}), 200
+
+@api.route('/login', methods=["POST"])
+def login_user():
+    data = request.get_json()
+    user = User.query.filter_by(username=data['username'], password=data['password']).first()
+    if user is None:
+        return jsonify({'msg': "password or username incorrect"}), 400
+
+    access_token = create_access_token(identity=str(user.id))
+
+    return jsonify({'token': access_token, 'user' : user.serialize()}), 200
 
 
 @api.route('/users/<int:id_user>', methods=['DELETE'])
