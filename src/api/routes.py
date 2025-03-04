@@ -60,9 +60,17 @@ def login_user():
     if user is None:
         return jsonify({'msg': "password or username incorrect"}), 400
 
-    access_token = create_access_token(identity=str(user.id))
+    access_token = create_access_token(identity=str(user.user_id))
 
     return jsonify({'token': access_token, 'user' : user.serialize()}), 200
+
+@api.route('/private', methods=['GET'])
+@jwt_required()
+def verify():
+    current_user_id = get_jwt_identity()
+    user = User.query.get(current_user_id)
+
+    return jsonify({'msg': 'area privida','id': user.user_id, 'username': user.username}), 200
 
 
 @api.route('/users/<int:id_user>', methods=['DELETE'])
