@@ -26,17 +26,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getPhones: async () => {
+				urlBackend = process.env.BACKEND_URL
+				console.log(urlBackend);
+				
 				try {
-					const response = await fetch("https://super-duper-space-adventure-pjpjqx6q46qp27jgx-3001.app.github.dev/api/phones")
-
+					const response = await fetch(urlBackend + 'phones')
 					const data = await response.json()
-					
 					setStore({phones: data.phones})
 
 				} catch (error) {
 					console.error("Error getting phones from API:");
 				}
 			},
+
 			getTvs: async () => {
 				try {
 					const response = await fetch("https://super-duper-space-adventure-pjpjqx6q46qp27jgx-3001.app.github.dev/api/tvs")
