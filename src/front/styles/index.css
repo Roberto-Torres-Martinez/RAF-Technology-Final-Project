@@ -24,6 +24,7 @@ ul {
     font-family: "Roboto", sans-serif;
 }
 
+
 .fire-container {
     display: grid;
     place-content: end;
@@ -32,4 +33,28 @@ ul {
 .overlay {
     background-color: black;
     opacity: 0.3;
+
+.button-submit {
+    background-color: #84C3AF;
+    width: 150px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.title-login {
+    font-size: 65px;
+}
+
+.title-signup {
+    font-size: 50px;
+    margin-top: 50px;
+    margin-bottom: 22px;
+}
+
+.form-signup {
+    margin-bottom: 50px;
+
 }

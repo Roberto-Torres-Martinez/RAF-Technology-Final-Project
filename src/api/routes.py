@@ -6,6 +6,9 @@ from api.models import db, User, Smartphones, TVs, Laptops
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 import json
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
+from api.productos.phones import phones
+
 
 api = Blueprint('api', __name__)
 
@@ -21,7 +24,7 @@ def get_users():
     return jsonify([user.serialize() for user in users]), 200
 
 
-@api.route('/users', methods=['POST'])
+@api.route('/user-sinup', methods=['POST'])
 def post_users():
 
     data = request.get_json()
@@ -29,6 +32,13 @@ def post_users():
 
     if exist:
         return jsonify({"msg": "This User already exist in your list"}), 400
+    
+    email = request.json.get('email')
+    password = request.json.get('password')
+    username = request.json.get('username')
+
+    if not email or  not password or not username:
+        return jsonify({"msg" :  "missing data"}), 400
 
     new_user = User(
         name = data['name'],
@@ -38,11 +48,31 @@ def post_users():
         username = data['username'],
         birthday_date = data['birthday_date'],
         is_active = True,
-        is_admin = data['is_admin'],
+        is_admin = False,
     )
+
     db.session.add(new_user)
     db.session.commit()
     return jsonify({"msg": "User added"}), 200
+
+@api.route('/login', methods=["POST"])
+def login_user():
+    data = request.get_json()
+    user = User.query.filter_by(username=data['username'], password=data['password']).first()
+    if user is None:
+        return jsonify({'msg': "password or username incorrect"}), 400
+
+    access_token = create_access_token(identity=str(user.user_id))
+
+    return jsonify({'token': access_token, 'user' : user.serialize()}), 200
+
+@api.route('/private', methods=['GET'])
+@jwt_required()
+def verify():
+    current_user_id = get_jwt_identity()
+    user = User.query.get(current_user_id)
+
+    return jsonify({'msg': 'area privida','id': user.user_id, 'username': user.username}), 200
 
 
 @api.route('/users/<int:id_user>', methods=['DELETE'])
@@ -60,7 +90,7 @@ def delete_users(id_user):
 def post_phones():
 
     data = request.get_json()
-    exist = Smartphones.query.filter_by(modelo=data['nombre']).first()
+    exist = Smartphones.query.filter_by(modelo=data['nombre']).first() 
 
     if exist:
         return jsonify({"msg": "This phone already exist in your list"}), 400
@@ -87,10 +117,39 @@ def post_phones():
     return jsonify({"msg": "Phone added"}), 200
 
 
+@api.route('/load-phone', methods=['GET'])
+def load_phone ():
+    for phone in phones:
+        new_phone = Smartphones(
+            modelo = phone['modelo'],
+            pantalla = phone['pantalla'],
+            procesador = phone['procesador'],
+            memoria_ram = phone['memoria_ram'],
+            almacenamiento = phone['almacenamiento'],
+            camara = phone['camara'],
+            bateria = phone['bateria'],
+            precio = phone['precio'],
+            conectividad = phone['conectividad'],
+            colores = phone['colores'],
+            descripcion = phone['descripcion'],
+            imagen = phone['imagen']
+        )
+        db.session.add(new_phone)
+    db.session.commit()
+    return jsonify({'msg': 'telefonos cargados'})    
+    
+
+
+
 @api.route('/phones', methods=['GET'])
 def get_phones():
     phones = Smartphones.query.all()
     return jsonify([smartphones.serialize() for smartphones in phones]), 200
+
+@api.route('/phone/<int:id_phone>', methods=['GET'])
+def get_phones_individual(id_phone):
+    phone = Smartphones.query.get(id_phone) 
+    return jsonify(phone.serialize()), 200
 
 
 @api.route('/phones/<int:id_smartphone>', methods=['DELETE'])
@@ -137,6 +196,11 @@ def post_tvs():
 def get_tvs():
     tvs = TVs.query.all()
     return jsonify([TVs.serialize() for TVs in tvs]), 200
+
+@api.route('/tv/<int:id_tv>', methods=['GET'])
+def get_tv_individual(id_tv):
+    tv = TVs.query.get(id_tv)
+    return jsonify(tv.serialize())
 
 
 @api.route('/tvs/<int:id_tv>', methods=['DELETE'])
@@ -185,12 +249,17 @@ def post_laptops():
     db.session.add(new_laptop)
     db.session.commit()
     return jsonify({"msg": "Laptop added"}), 200
+
     
 @api.route('/laptops', methods=['GET'])
 def get_laptops():
     laptops = Laptops.query.all()
     return jsonify([Laptops.serialize() for Laptops in laptops]), 200
 
+@api.route('/laptop/<int:id_laptop>', methods=['GET'])
+def get_laptop_individual(id_laptop):
+    laptop = Laptops.query.get(id_laptop)
+    return jsonify(laptop.serialize())
 
 @api.route('/laptops/<int:id_laptop>', methods=['DELETE'])
 def delete_laptops(id_laptop):
