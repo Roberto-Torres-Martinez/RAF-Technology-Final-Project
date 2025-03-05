@@ -191,4 +191,6 @@ class Laptops(db.Model):
             "colores" : self.colores,
             "descripcion" : self.descripcion,
             "imagen" : self.imagen,
+            "funcion_especial": self.funcion_especial,
+            "descripcion_tarjeta_grafica": self.descripcion_tarjeta_grafica
         }
