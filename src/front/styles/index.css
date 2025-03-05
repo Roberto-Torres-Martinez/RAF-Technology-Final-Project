@@ -23,3 +23,13 @@ ul {
 .texto {
     font-family: "Roboto", sans-serif;
 }
+
+.fire-container {
+    display: grid;
+    place-content: end;
+}
+
+.overlay {
+    background-color: black;
+    opacity: 0.3;
+}

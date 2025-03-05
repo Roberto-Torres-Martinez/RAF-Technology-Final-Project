@@ -3,8 +3,13 @@ import {OnFireItem} from "./onfireitem"
 
 export const Onfire = () => {
     return(<>
-    <h1 className="text-white">Esta vaina esta en fuego</h1>
+    <div className="row d-flex justify-content-center py-3 px-0 mx-0">
+        <div className="col-5">
     <OnFireItem/>
+    </div>
+    <div className="col-5">
     <OnFireItem/>
+    </div>
+    </div>
     </>)
 }
