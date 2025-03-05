@@ -7,6 +7,8 @@ from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 import json
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
+from api.productos.phones import phones
+
 
 api = Blueprint('api', __name__)
 
@@ -46,7 +48,7 @@ def post_users():
         username = data['username'],
         birthday_date = data['birthday_date'],
         is_active = True,
-        is_admin =False,
+        is_admin = False,
     )
 
     db.session.add(new_user)
@@ -88,7 +90,7 @@ def delete_users(id_user):
 def post_phones():
 
     data = request.get_json()
-    exist = Smartphones.query.filter_by(modelo=data['nombre']).first()
+    exist = Smartphones.query.filter_by(modelo=data['nombre']).first() 
 
     if exist:
         return jsonify({"msg": "This phone already exist in your list"}), 400
@@ -113,6 +115,30 @@ def post_phones():
     db.session.add(new_phone)
     db.session.commit()
     return jsonify({"msg": "Phone added"}), 200
+
+
+@api.route('/load-phone', methods=['GET'])
+def load_phone ():
+    for phone in phones:
+        new_phone = Smartphones(
+            modelo = phone['modelo'],
+            pantalla = phone['pantalla'],
+            procesador = phone['procesador'],
+            memoria_ram = phone['memoria_ram'],
+            almacenamiento = phone['almacenamiento'],
+            camara = phone['camara'],
+            bateria = phone['bateria'],
+            precio = phone['precio'],
+            conectividad = phone['conectividad'],
+            colores = phone['colores'],
+            descripcion = phone['descripcion'],
+            imagen = phone['imagen']
+        )
+        db.session.add(new_phone)
+    db.session.commit()
+    return jsonify({'msg': 'telefonos cargados'})    
+    
+
 
 
 @api.route('/phones', methods=['GET'])
