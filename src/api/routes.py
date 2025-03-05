@@ -26,7 +26,7 @@ def get_users():
     return jsonify([user.serialize() for user in users]), 201
 
 
-@api.route('/user-sinup', methods=['POST'])
+@api.route('/user-signup', methods=['POST'])
 def post_users():
 
     data = request.get_json()
