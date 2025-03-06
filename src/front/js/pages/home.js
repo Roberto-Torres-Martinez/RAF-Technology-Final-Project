@@ -9,7 +9,7 @@ import { Context } from "../store/appContext";
 import { LogIn } from "./logIn";
 import { SignUp } from "./signUp";
 import { VistaIndividualPhone } from "./vistaIndividualPhone";
-
+import { NovedadesMail } from "../component/novedadesMail";
 
 
 export const Home = () => {
@@ -17,12 +17,13 @@ export const Home = () => {
 	return (
 		<>
 
-		<div  className="page-content" style={{backgroundColor: "rgb(47, 65, 79)"}}>
+		<div  className="page-content pb-4" style={{backgroundColor: "rgb(47, 65, 79)"}}>
 		<Welcome/>
+		<div className="container">
 		<Onfire/>
 		<HomeCatalog/>
-		{/*<Onfire/>*/}
-	
+		<NovedadesMail/>
+		</div>
 		</div>
 		</>
 	);
