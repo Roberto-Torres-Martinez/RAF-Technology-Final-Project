@@ -33,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 					const response = await fetch(urlBackend + 'phones')
 					const data = await response.json()
-					setStore({phones: data.phones})
+					setStore({phones: data})
 
 				} catch (error) {
 					console.error("Error getting phones from API:");
@@ -41,22 +41,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getTvs: async () => {
-				const urlBackend = process.env.BACKEND_UR
+				const urlBackend = process.env.BACKEND_URL
 				try {
 					const response = await fetch(urlBackend + 'tvs')
-					const data = await response.json()			
-					setStore({tvs: data.tvs})
+					const data = await response.json()		
+					setStore({tvs: data})
 				} catch (error) {
 					console.error("Error getting TVs from API:");
 				}
 			},
 
 			getLaptops: async () => {
-				const urlBackend = process.env.BACKEND_UR
+				const urlBackend = process.env.BACKEND_URL
 				try {
 					const response = await fetch(urlBackend + 'laptops')
 					const data = await response.json()
-					setStore({laptops: data.laptops})
+					setStore({laptops: data})
 
 				} catch (error) {
 					console.error("Error getting Laptops from API:");
