@@ -1,6 +1,9 @@
 import React from "react"
 import { ProductColors } from "../component/product-colors"
 import { useState } from "react"
+import { ProductSection } from "../component/product-section"
+import { ProductCard } from "../component/product-card"
+import { RelatedProducts } from "../component/related-products"
 
 
 export const VistaIndividualPhone = () => {
@@ -30,12 +33,13 @@ export const VistaIndividualPhone = () => {
                     </div>
                 </div>
                 <div className="row col-md-4 d-flex justify-content-evenly ms-2">
-                    <h5 className="text-white text-colors">Colores Disponibles</h5>
+                    <h5 className="text-black text-colors">Colores Disponibles</h5>
                     <ProductColors image="https://images.samsung.com/es/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-ecosystem-galaxy-s25-mo.jpg?imbypass=true" />
                     <ProductColors image="https://img.pccomponentes.com/articles/1086/10866751/1707-samsung-galaxy-s25-ultra-smartphone-con-ia-almacenamiento-512gb-bateria-5000mah-titanio-negro-comprar.jpg" />
                     <ProductColors image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFaO3kc8c5nLkQ2FitXAbl0nGa4rS_dd8zuw&s" />
                 </div>
             </div>
+            <RelatedProducts />
         </div>
     )
 }
