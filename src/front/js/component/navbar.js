@@ -30,7 +30,7 @@ export const Navbar = () => {
 								</li> 
 								<li className="nav-item dropdown">
 									<a className="nav-link dropbtn" style={{color: "white"}} href="#"><i className="fa-solid fa-user"></i></a>
-									<div class="dropdown-content">
+									<div className="dropdown-content">
 										<Link to={'/login'}>
 											<a href="#">Login</a>
 										</Link>

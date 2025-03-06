@@ -1,3 +1,5 @@
+import { BackendURL } from "../component/backendURL";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -26,9 +28,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getPhones: async () => {
-				urlBackend = process.env.BACKEND_URL
-				console.log(urlBackend);
-				
+				const urlBackend = process.env.BACKEND_URL				
 				try {
 					const response = await fetch(urlBackend + 'phones')
 					const data = await response.json()
@@ -40,24 +40,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getTvs: async () => {
+				const urlBackend = process.env.BACKEND_UR
 				try {
-					const response = await fetch("https://super-duper-space-adventure-pjpjqx6q46qp27jgx-3001.app.github.dev/api/tvs")
-
+					const response = await fetch(urlBackend + 'tvs')
 					const data = await response.json()			
-					
 					setStore({tvs: data.tvs})
-
 				} catch (error) {
 					console.error("Error getting TVs from API:");
 				}
 			},
 
 			getLaptops: async () => {
+				const urlBackend = process.env.BACKEND_UR
 				try {
-					const response = await fetch("https://super-duper-space-adventure-pjpjqx6q46qp27jgx-3001.app.github.dev/api/laptops")
-
+					const response = await fetch(urlBackend + 'laptops')
 					const data = await response.json()
-					
 					setStore({laptops: data.laptops})
 
 				} catch (error) {
