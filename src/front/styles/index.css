@@ -247,11 +247,12 @@ display: block;
 
 .btn-add-cart {
     background: linear-gradient(135deg, #CC4638, #FF8552);
+    box-shadow: 2px 2px #fafafa;
+    border: 2px solid #fafafa;
     color: white;
     font-size: 18px;
     font-weight: bold;
     padding: 12px 20px;
-    border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -262,7 +263,6 @@ display: block;
     width: 100%;
     max-width: 250px;
     margin-top: 45px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-add-cart:hover {
@@ -275,9 +275,22 @@ display: block;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.fa-star {
-    color: #FFD700;
-    font-size: 18px;
-
+.img-small-vista-individual {
+    margin-top: 40px;
+    width: 50px;
+    height: 50px;
 }
 
+.img-small-vista-individual {
+    border-radius: 8%;
+  
+}
+
+.img-small-vista-individual:hover {
+    transform: scale(1.25);
+}
+
+.text-colors {
+    margin-left: 85px;
+    margin-top: 50px;
+}
