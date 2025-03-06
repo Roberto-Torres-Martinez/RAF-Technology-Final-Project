@@ -13,5 +13,15 @@ export const createUser = async (newUser) =>{
             'address': newUser.address,
             'birthday_date' : newUser.birthday_date      
         })
-    }) 
+    }); 
+};
+
+
+export const Login = async (userInfo) =>{
+    const response = fetch(urlBackend + 'login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({userInfo})
+    })
+
 }
