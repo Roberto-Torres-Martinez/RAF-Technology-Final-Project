@@ -29,6 +29,7 @@ class User(db.Model):
             "email": self.email,
             "password": self.password,
             "username": self.username,
+            "address": self.address,
             "birthday_date": self.birthday_date,
             "is_active": self.is_active,
             "is_admin": self.is_admin,
