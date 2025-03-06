@@ -6,6 +6,8 @@ import {Onfire} from '../component/onfire'
 import { HomeCatalog } from "../component/home-catalog";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
+import { NovedadesMail } from "../component/novedadesMail";
+
 
 export const Home = () => {
  const {actions} = useContext(Context)
