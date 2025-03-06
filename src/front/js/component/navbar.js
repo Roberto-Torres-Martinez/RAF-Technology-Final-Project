@@ -5,13 +5,8 @@ export const Navbar = () => {
 	const { store, actions } = useContext(Context)
 	return (
 		<>
-
-
 			<nav className="navbar navbar-expand-lg"  style={store.navbar_visibility? { display: "block"} : {display: "none"}}>
-				<div className="container">
-					<a className="navbar-brand" href="#">Navbar</a>
-			<nav className="navbar navbar-expand-lg" style={store.navbar_visibility ? { display: "block" } : { display: "none" }}>
-				<div className="container-fluid">
+				<div className="container">		
 					<Link to={'/'}>
 						<a className="navbar-brand" href="#">Navbar</a>
 					</Link>
@@ -70,3 +65,4 @@ export const Navbar = () => {
 		</>
 	);
 };
+
