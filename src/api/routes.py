@@ -48,6 +48,7 @@ def post_users():
         email = data['email'],
         password = data['password'],
         username = data['username'],
+        address = data['address'],
         birthday_date = data['birthday_date'],
         is_active = True,
         is_admin = False,
