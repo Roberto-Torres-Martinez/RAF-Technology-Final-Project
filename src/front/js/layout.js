@@ -12,6 +12,7 @@ import { LogIn } from "./pages/logIn";
 import { SignUp } from "./pages/signUp";
 import { Onfire } from "./component/onfire";
 import { Tendencias } from "./pages/tendencias";
+import { VistaIndividualPhone } from "./pages/vistaIndividualPhone";
 
 //create your first component
 const Layout = () => {
@@ -31,6 +32,7 @@ const Layout = () => {
                         <Route element={<LogIn />} path="/login" />
                         <Route element={<SignUp />} path="/signup" />
                         <Route element={<Tendencias />} path="/tendencias" />
+                        <Route element={<VistaIndividualPhone />} path="/smartphone-info" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />

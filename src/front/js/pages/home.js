@@ -6,8 +6,6 @@ import {Onfire} from '../component/onfire'
 import { HomeCatalog } from "../component/home-catalog";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
-import { VistaIndividualPhone } from "./vistaIndividualPhone";
-
 
 export const Home = () => {
  const {actions} = useContext(Context)
@@ -15,14 +13,10 @@ export const Home = () => {
 		<>
 
 		<div  className="page-content" style={{backgroundColor: "rgb(47, 65, 79)"}}>
-		{/*<Welcome/>*/}
-		{/*<Onfire/>*/}
-		{/*<HomeCatalog/>*/}
-		{/*<Onfire/>*/}
-		<VistaIndividualPhone>
-			
-		</VistaIndividualPhone>
-	
+		<Welcome/>
+		<Onfire/>
+		<HomeCatalog/>
+		<Onfire/>
 		</div>
 		</>
 	);
