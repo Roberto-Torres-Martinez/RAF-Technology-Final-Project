@@ -4,7 +4,7 @@ export const SignUp = () => {
 
     return (
         <>
-            <div className="container-fluid d-flex justify-content-center align-items-center vh-100">
+            <div className="container-fluid d-flex justify-content-center align-items-center vh-100" style={{backgroundColor: "rgb(47, 65, 79)"}}>
                 <div className="row md-col-12 form-signup">
                     <h1 className="text-white titulo text-center title-signup">Create Account</h1>
                     <form className="border border-light rounded-3">
