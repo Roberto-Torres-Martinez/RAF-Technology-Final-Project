@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 export const SignUp = () => {
     const [newUser, setNewUser] = useState();
-    const [password, setPassword] = useState(true)
-    const [userList, setUserList] = useState()
-    const [userExist, setUserExist] = useState(false)
+    const [password, setPassword] = useState(true);
+    const [userList, setUserList] = useState();
+    const [userExist, setUserExist] = useState(false);
 
     const handleChange = (e) =>{
         setNewUser({...newUser, [e.target.name]: e.target.value});
@@ -31,17 +31,16 @@ export const SignUp = () => {
 
             if(newUser.email || newUser.username){
                 if(userList.includes(newUser.email) || userList.includes(newUser.username)){
-                    setUserExist(true)
+                    setUserExist(true);
                 }else{
-                    setUserExist(false)
+                    setUserExist(false);
                 };
             };
-        };
-        
+        };   
     },[newUser]);
 
     useEffect(()=>{
-        getUsers(setUserList)
+        getUsers(setUserList);
     }, []);
 
     return (
