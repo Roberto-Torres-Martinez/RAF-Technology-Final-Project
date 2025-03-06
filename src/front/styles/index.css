@@ -5,6 +5,11 @@ ul {
     list-style-type: none
 }
 
+.navbar{
+    width: 100%;
+    margin: auto;
+}
+
 .welcome {
     min-height: 80vh;
     display: grid;
@@ -101,3 +106,30 @@ border-color: rgb(102, 252, 241)
     background: #ac231a;
     transform: translate(3px, 3px);
   }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+color: black;
+padding: 5px 0;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #77BCC7;}

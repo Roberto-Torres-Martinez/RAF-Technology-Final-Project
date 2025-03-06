@@ -5,8 +5,10 @@ export const Navbar = () => {
 	const {store, actions} = useContext(Context)
 	return (
 		<>
+
 			<nav className="navbar navbar-expand-lg"  style={store.navbar_visibility? { display: "block"} : {display: "none"}}>
 				<div className="container-fluid">
+
 					<a className="navbar-brand" href="#">Navbar</a>
 					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
@@ -29,8 +31,16 @@ export const Navbar = () => {
 								<li className="nav-item">
 									<a className="nav-link" style={{color: "white"}}  href="#">Contact</a>
 								</li> 
-								<li className="nav-item">
-									<a className="nav-link" style={{color: "white"}} href="#"><i className="fa-solid fa-user"></i></a>
+								<li className="nav-item dropdown">
+									<a className="nav-link dropbtn" style={{color: "white"}} href="#"><i className="fa-solid fa-user"></i></a>
+									<div className="dropdown-content">
+										<Link to={'/login'}>
+											<a href="#">Login</a>
+										</Link>
+										<Link to={'/signup'}>
+											<a href="#">Sign Up</a>
+										</Link>
+									</div>
 								</li>
 								<li className="nav-item">
 									<a className="nav-link" style={{color: "white"}}  href="#"><i className="fa-solid fa-cart-shopping"></i></a>
