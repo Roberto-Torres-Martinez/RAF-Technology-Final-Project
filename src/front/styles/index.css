@@ -67,12 +67,12 @@ ul {
 
 }
 
-
 .navbar {
     background-color: rgb(56, 148, 163);
+    font-size: 1.3em;
 }
 
-.card {
+.card, .dark-background {
     background-color: rgb(47, 65, 79);
    
    
@@ -139,6 +139,50 @@ display: block;
 .dropdown:hover .dropbtn {
     background-color: #77BCC7;
 }
+
+
+.border-techno {
+    border: 1.2em solid rgb(102, 252, 241);
+}
+
+.ribbon {
+    text-align: center;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    transform: rotate(-45deg);
+    margin-left: -2em;
+    margin-top: 2em;
+    width: 10em;
+    height: 1.5em;
+    font-size: 1.5em;
+}
+
+.border-card {
+    border: 1.2em solid rgb(102, 252, 241);
+    border-top: 0px;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+
+}
+
+.mail-news {
+    background-color: #77BCC7 !important
+}
+
+.mail-button {
+    color: white;
+}
+
+.card-header {
+    background-color: rgb(47, 65, 79);
+    color: white;
+}
+
+.photo-personal-zone {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%
 
 .name-product, .price-product {
     font-size: 19px;
@@ -233,5 +277,6 @@ display: block;
 .fa-star {
     color: #FFD700;
     font-size: 18px;
+
 }
 
