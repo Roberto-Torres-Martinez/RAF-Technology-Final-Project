@@ -22,8 +22,8 @@ export const Home = () => {
 		<Onfire/>
 		<HomeCatalog/>
 		<div className="page-content" style={{backgroundColor: "rgb(47, 65, 79)"}}>
-		<Welcome/>
 		{/*<Onfire/>*/}
+		</div>
 		</div>
 		</>
 	);

@@ -128,8 +128,14 @@ text-decoration: none;
 display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-.dropdown:hover .dropbtn {background-color: #77BCC7;}
+.dropdown:hover .dropbtn {
+    background-color: #77BCC7;
+}
