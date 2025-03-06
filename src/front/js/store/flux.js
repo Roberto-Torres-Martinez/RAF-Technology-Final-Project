@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			phones: [],
 			tvs: [],
 			laptops: [],
+			navbar_visibility: true
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -62,6 +63,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error("Error getting Laptops from API:");
 				}
 			},
+			setNavbarVisibility: () =>{
+				setStore({navbar_visibility: true})	
+			},
+			setNoneNavbarVisibility: ()=> {
+				setStore({navbar_visibility: false})
+			} 
 		}
 	};
 };
