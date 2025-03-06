@@ -6,10 +6,6 @@ import {Onfire} from '../component/onfire'
 import { HomeCatalog } from "../component/home-catalog";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
-import { LogIn } from "./logIn";
-import { SignUp } from "./signUp";
-import { VistaIndividualPhone } from "./vistaIndividualPhone";
-
 
 
 export const Home = () => {
