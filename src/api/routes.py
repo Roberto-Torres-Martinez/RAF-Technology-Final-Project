@@ -33,14 +33,14 @@ def post_users():
     exist = User.query.filter_by(username=data['username']).first()
 
     if exist:
-        return jsonify({"msg": "This User already exist in your list"}), 400
+        return jsonify({"msg": "Este usuario ya existe"}), 400
     
     email = request.json.get('email')
     password = request.json.get('password')
     username = request.json.get('username')
 
     if not email or  not password or not username:
-        return jsonify({"msg" :  "missing data"}), 400
+        return jsonify({"msg" :  "Faltan datos"}), 400
 
     new_user = User(
         name = data['name'],
