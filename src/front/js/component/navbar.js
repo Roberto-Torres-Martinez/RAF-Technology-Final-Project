@@ -28,8 +28,16 @@ export const Navbar = () => {
 								<li className="nav-item">
 									<a className="nav-link" style={{color: "white"}}  href="#">Contact</a>
 								</li> 
-								<li className="nav-item">
-									<a className="nav-link" style={{color: "white"}} href="#"><i className="fa-solid fa-user"></i></a>
+								<li className="nav-item dropdown">
+									<a className="nav-link dropbtn" style={{color: "white"}} href="#"><i className="fa-solid fa-user"></i></a>
+									<div class="dropdown-content">
+										<Link to={'/login'}>
+											<a href="#">Login</a>
+										</Link>
+										<Link to={'/signup'}>
+											<a href="#">Sign Up</a>
+										</Link>
+									</div>
 								</li>
 								<li className="nav-item">
 									<a className="nav-link" style={{color: "white"}}  href="#"><i className="fa-solid fa-cart-shopping"></i></a>
