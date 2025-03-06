@@ -17,13 +17,12 @@ export const Home = () => {
 	return (
 		<>
 
-		<div style={{backgroundColor: "rgb(47, 65, 79)"}}>
+		<div  className="page-content" style={{backgroundColor: "rgb(47, 65, 79)"}}>
 		<Welcome/>
 		<Onfire/>
 		<HomeCatalog/>
-		<div className="page-content" style={{backgroundColor: "rgb(47, 65, 79)"}}>
-		<Welcome/>
 		{/*<Onfire/>*/}
+	
 		</div>
 		</>
 	);
