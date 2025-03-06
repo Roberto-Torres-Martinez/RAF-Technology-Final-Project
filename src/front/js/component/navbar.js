@@ -6,6 +6,10 @@ export const Navbar = () => {
 	return (
 		<>
 
+
+			<nav className="navbar navbar-expand-lg"  style={store.navbar_visibility? { display: "block"} : {display: "none"}}>
+				<div className="container">
+					<a className="navbar-brand" href="#">Navbar</a>
 			<nav className="navbar navbar-expand-lg" style={store.navbar_visibility ? { display: "block" } : { display: "none" }}>
 				<div className="container-fluid">
 					<Link to={'/'}>
