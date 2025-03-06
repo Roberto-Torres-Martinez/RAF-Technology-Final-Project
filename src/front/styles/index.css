@@ -33,7 +33,9 @@ ul {
 .fire-container {
     display: grid;
     place-content: end;
+    box-shadow: -100px -100px 200px 20px #000000 inset
 }
+
 
 .overlay {
     background-color: black;
@@ -64,6 +66,46 @@ ul {
     margin-bottom: 50px;
 
 }
+
+
+.navbar {
+    background-color: rgb(56, 148, 163);
+}
+
+.card {
+    background-color: rgb(47, 65, 79);
+   
+   
+}
+
+.section {
+    border-radius: 2em;
+    padding-bottom: 5em;
+
+}
+
+.section, .product {
+border-color: rgb(102, 252, 241)
+}
+
+.product-section-button {
+        font-size: 1rem;
+        color: #fafafa;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 2px solid #fafafa;
+        background: rgb(215, 44, 32);
+        box-shadow: 3px 3px #fafafa;
+        cursor: pointer;
+        margin: 35px 0;
+}
+
+.product-section-button:active {
+    box-shadow: none;
+    background: #ac231a;
+    transform: translate(3px, 3px);
+  }
 
 .dropdown {
     position: relative;
