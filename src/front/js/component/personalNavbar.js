@@ -13,10 +13,10 @@ export const PersonalNavbar = () => {
         </div>
         <div className="text my-auto fs-3">
             <div className="mb-0 pb-0">
-            <p className="mb-0">Hola, <b>Usuario</b>!</p>
+            <p className="mb-0 message-personal">Hola, <b>Usuario</b>!</p>
             </div>
             <div className="mt-0">
-            <button type="button" className="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Editar información</button>
+            <button type="button" className="btn edit-button"><i class="fa-solid fa-pen-to-square"></i> Editar información</button>
             </div>
         </div>
         </div>
