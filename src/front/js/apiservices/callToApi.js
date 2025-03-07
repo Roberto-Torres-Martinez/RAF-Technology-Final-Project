@@ -28,17 +28,17 @@ export const getUsers = (userInfo) => {
     fetch(urlBackend + 'users')
     .then((res)=> res.json())
     .then((data) => data.forEach(user => {
-        infoUser.push(user.email, user.username)
-        userInfo(infoUser)
-    }))
-}
+        infoUser.push(user.email, user.username);
+        userInfo(infoUser);
+    }));
+};
 
 
-export const Login = async () =>{
+export const login = async () =>{
     const response = fetch(urlBackend + 'login', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({})
     })
 
-}
+};
