@@ -6,7 +6,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			phones: [],
 			tvs: [],
 			laptops: [],
-			navbar_visibility: true
+			navbar_visibility: true,
+			edit: false
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -67,7 +68,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			setNoneNavbarVisibility: ()=> {
 				setStore({navbar_visibility: false})
-			} 
+			},
+			setEdit: () =>{
+				if(getStore().edit == true){
+				setStore({edit: false})
+				}
+				else if(getStore().edit == false){
+					setStore({edit: true})
+					
+				}
+				console.log(getStore().edit)
+			},
+			
 		}
 	};
 };

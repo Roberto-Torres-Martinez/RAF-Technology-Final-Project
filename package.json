@@ -78,6 +78,7 @@
 		"react-dom": "^16.8.4",
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^6.3.0",
-		"styled-components": "^6.1.15"
+		"styled-components": "^6.1.15",
+		"sweetalert2": "^11.17.2"
 	}
 }

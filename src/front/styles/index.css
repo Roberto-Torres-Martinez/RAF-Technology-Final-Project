@@ -402,3 +402,12 @@ font-size: 1.3em;
     overflow-y: auto;
   }
 
+.edit-pen {
+    top: 0;
+    left: 9.5em;
+    margin-top: 2em;
+    background-color: rgb(241, 239, 246);
+    color: black;
+    
+}
+
