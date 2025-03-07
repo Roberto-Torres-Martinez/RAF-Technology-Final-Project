@@ -10,6 +10,7 @@ import { NovedadesMail } from "../component/novedadesMail";
 
 
 export const Home = () => {
+
 	return (
 		<>
 
