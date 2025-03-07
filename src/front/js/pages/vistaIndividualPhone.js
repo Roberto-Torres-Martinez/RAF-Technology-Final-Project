@@ -30,6 +30,18 @@ export const VistaIndividualPhone = () => {
                         <div className="accordion" id="accordionExample">
                             <div className="accordion-item">
                                 <h2 className="accordion-header">
+                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTop" aria-expanded="false" aria-controls="collapseTop">
+                                        <strong>Descripción</strong>
+                                    </button>
+                                </h2>
+                                <div id="collapseTop" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
+                                        <p>El buque insignia de Samsung con una cámara de 200 MP y un rendimiento excepcional.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="accordion-item">
+                                <h2 className="accordion-header">
                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                         <strong>Colores</strong>
                                     </button>
@@ -61,7 +73,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <strong>200 MP</strong>
+                                        <p>200 MP</p>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +85,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <strong>512 GB</strong>
+                                        <p>512 GB</p>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +97,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseFour" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <strong>12 GB</strong>
+                                        <p>12 GB</p>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +109,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseFive" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <strong>Dynamic AMOLED 2X de 6.8 pulgadas, 120 Hz</strong>
+                                        <p>Dynamic AMOLED 2X de 6.8 pulgadas, 120 Hz</p>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +121,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseSix" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <strong>5000 mAh, carga rápida de 65W</strong>
+                                        <p>5000 mAh, carga rápida de 65W</p>
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +133,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseSeven" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <strong>Snapdragon 8 Elite</strong>
+                                        <p>Snapdragon 8 Elite</p>
                                     </div>
                                 </div>
                             </div>
