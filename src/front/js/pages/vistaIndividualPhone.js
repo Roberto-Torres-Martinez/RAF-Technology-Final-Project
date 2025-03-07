@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { Context } from "../store/appContext";
 import { ProductColors } from "../component/product-colors";
 import { RelatedProducts } from "../component/related-products";
 
-export const VistaIndividualPhone = () => {
+export const VistaIndividualPhone = ({ producto }) => {
     const [imageColors, setImageColors] = useState("https://images.samsung.com/es/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-ecosystem-galaxy-s25-mo.jpg?imbypass=true");
 
     const handleImageColors = (imageUrl) => {
