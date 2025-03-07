@@ -27,7 +27,6 @@ def get_users():
 
 @api.route('/user-signup', methods=['POST'])
 def post_users():
-
     data = request.get_json()
     exist = User.query.filter_by(username=data['username']).first()
     if exist:
@@ -80,6 +79,27 @@ def delete_users(id_user):
         db.session.commit()
         return jsonify({"msg": "User deleted from data base"}), 201
     return jsonify({"msg": "No User id was found"}), 400
+
+@api.route('/update-user/<int:id_user>', methods=['PUT'])
+def update_users(id_user):
+    user = User.query.get(id_user)
+    data = request.get_json()
+
+   
+    user.name = data['name']
+    user.lastname = data['lastname']
+    user.email = data['email']
+    user.password = data['password']
+    user.username = data['username']
+    user.address = data['address']
+    user.birthday_date = data['birthday_date']
+
+    db.session.commit()
+    return jsonify({'msg': f'actualizado {user.name}'})
+
+
+
+#ENDPOINTS PHONES    
 
 @api.route('/load-phone', methods=['GET'])
 def load_phone ():
