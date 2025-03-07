@@ -195,7 +195,7 @@ display: block;
 }
 
 .card-body-individual {
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 .card-body-individual {
@@ -203,15 +203,17 @@ display: block;
 }
 
 .card-individual-image img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
     border-radius: 8%;
-    height: 105%;
-    width: 105%;
     transition: transform 0.3s ease-in-out;
 }
 
 .card-individual-image img:hover {
     transform: scale(1.05);
 }
+
 
 .score-container {
     display: flex;
@@ -259,7 +261,6 @@ display: block;
     justify-content: center;
     width: 100%;
     max-width: 250px;
-    margin-top: 45px;
 }
 
 .btn-add-cart:hover {
@@ -368,8 +369,6 @@ color:white;
     color:lightgray;
 }
 
-
-
 .div-personal-zone {
     padding-bottom: 15em;
 }
@@ -401,6 +400,15 @@ font-size: 1.3em;
 .app-content {
     overflow-y: auto;
   }
+
+.bg-footer {
+    background-color: rgb(56, 148, 163);
+}
+
+.label-vista-ampliada {
+    font-size: 25px;
+    margin-left: 15px;
+}
 
 .edit-pen {
     top: 0;
