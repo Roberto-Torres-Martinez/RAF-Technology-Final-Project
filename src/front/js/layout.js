@@ -44,11 +44,9 @@ const Layout = () => {
                             <Route element={<VistaIndividualPhone />} path="/smartphone-info" />
                             <Route element={<VistaIndividualTv />} path="/tv-info" />
                             <Route element={<VistaIndividualLaptop />} path="/laptop-info" />
-                            <Route element={<CatalogTv />} path="/tvs-catalog" />
                             <Route element={<CatalogPhones />} path="/phones-catalog" />
+                            <Route element={<CatalogTv />} path="/tvs-catalog" />
                             <Route element={<CatalogLaptops />} path="/laptops-catalog" />
-
-
 
                             <Route element={<h1>Not found!</h1>} />
                         </Routes>

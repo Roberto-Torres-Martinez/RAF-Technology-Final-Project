@@ -1,11 +1,15 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+body {
+    background-color: #2F414F;
+}
+
 ul {
     list-style-type: none
 }
 
-.navbar{
+.navbar {
     width: 100%;
     margin: auto;
 }
@@ -21,6 +25,7 @@ ul {
     font-weight: 700;
     font-style: normal
 }
+
 .sub-titulo {
     font-family: "Ubuntu", sans-serif;
 }
@@ -29,13 +34,11 @@ ul {
     font-family: "Roboto", sans-serif;
 }
 
-
 .fire-container {
     display: grid;
     place-content: end;
     box-shadow: -100px -100px 200px 20px #000000 inset
 }
-
 
 .overlay {
     background-color: black;
@@ -72,60 +75,59 @@ ul {
     font-size: 1.3em;
 }
 
-.card, .dark-background {
+.card,
+.dark-background {
     background-color: rgb(47, 65, 79);
-   
-   
 }
 
 .section {
     border-radius: 2em;
     padding-bottom: 5em;
-
 }
 
-.section, .product {
-border-color: rgb(102, 252, 241)
+.section,
+.product {
+    border-color: rgb(102, 252, 241)
 }
 
 .product-section-button {
-        font-size: 1rem;
-        color: #fafafa;
-        text-transform: uppercase;
-        padding: 10px 20px;
-        border-radius: 10px;
-        border: 2px solid #fafafa;
-        background: rgb(215, 44, 32);
-        box-shadow: 3px 3px #fafafa;
-        cursor: pointer;
-        margin: 35px 0;
+    font-size: 1rem;
+    color: #fafafa;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #fafafa;
+    background: rgb(215, 44, 32);
+    box-shadow: 3px 3px #fafafa;
+    cursor: pointer;
+    margin: 35px 0;
 }
 
 .product-section-button:active {
     box-shadow: none;
     background: #ac231a;
     transform: translate(3px, 3px);
-  }
+}
 
 .dropdown {
     position: relative;
     display: inline-block;
-  }
-  
+}
+
 .dropdown-content {
-display: none;
-position: absolute;
-background-color: #f1f1f1;
-min-width: 160px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .dropdown-content a {
-color: black;
-padding: 5px 0;
-text-decoration: none;
-display: block;
+    color: black;
+    padding: 5px 0;
+    text-decoration: none;
+    display: block;
 }
 
 .dropdown:hover .dropdown-content {
@@ -157,7 +159,6 @@ display: block;
     border-top: 0px;
     border-bottom-right-radius: 1em;
     border-bottom-left-radius: 1em;
-
 }
 
 .mail-news {
@@ -180,18 +181,9 @@ display: block;
     border-radius: 50%
 }
 
-
-
-.name-product, .price-product {
+.name-product,
+.price-product {
     font-size: 19px;
-}
-
-.product-points {
-    font-size: 19px;
-}
-
-.card-individual-image {
-    margin-top: 70px;
 }
 
 .card-body-individual {
@@ -205,6 +197,7 @@ display: block;
 .card-individual-image img {
     width: 500px;
     height: 500px;
+    margin-top: 70px;
     object-fit: cover;
     border-radius: 8%;
     transition: transform 0.3s ease-in-out;
@@ -213,7 +206,6 @@ display: block;
 .card-individual-image img:hover {
     transform: scale(1.05);
 }
-
 
 .score-container {
     display: flex;
@@ -231,11 +223,6 @@ display: block;
     border-radius: 5px;
     font-weight: bold;
     text-align: center;
-}
-
-.stars {
-    display: flex;
-    align-items: center;
 }
 
 .card-text-price {
@@ -281,28 +268,25 @@ display: block;
 
 .img-small-vista-individual {
     border-radius: 8%;
-  
 }
 
 .img-small-vista-individual:hover {
     transform: scale(1.25);
 }
 
-
 .birth-personal {
     min-width: 12em;
-
 }
+
 .labels-personal {
     min-width: 6em;
 }
 
 .personal-info {
     background-color: rgb(234, 248, 252);
-    color : rgb(47, 65, 79);
+    color: rgb(47, 65, 79);
     font-weight: 700;
     font-size: 1em;
-   
 }
 
 .personal-form {
@@ -325,8 +309,9 @@ display: block;
     padding-bottom: 1em;
 }
 
-.save-button, .cancel-button {
-    padding-top: 0.3em ;
+.save-button,
+.cancel-button {
+    padding-top: 0.3em;
     padding-bottom: 0.3em;
     padding-left: 1.5em;
     padding-right: 1.5em;
@@ -334,27 +319,24 @@ display: block;
 }
 
 .save-button {
-background-color: rgb(204, 70, 56);
-border:none;
-color:white;
+    background-color: rgb(204, 70, 56);
+    border: none;
+    color: white;
 }
 
 .save-button:hover {
     background-color: rgb(126, 43, 33);
-    color:white;
+    color: white;
 }
-
 
 .save-button:disabled {
     background-color: rgb(177, 100, 92);
     color: lightgray;
 }
 
-
-
 .cancel-button {
     background-color: rgb(131, 157, 173);
-    border:none;
+    border: none;
     color: white;
 }
 
@@ -363,10 +345,9 @@ color:white;
     color: white;
 }
 
-
 .cancel-button:disabled {
     background-color: rgb(129, 140, 147);
-    color:lightgray;
+    color: lightgray;
 }
 
 .div-personal-zone {
@@ -393,13 +374,13 @@ color:white;
     margin-bottom: 0.5em;
 }
 
-.message-personal{
-font-size: 1.3em;
-} 
+.message-personal {
+    font-size: 1.3em;
+}
 
 .app-content {
     overflow-y: auto;
-  }
+}
 
 .bg-footer {
     background-color: rgb(56, 148, 163);
@@ -416,6 +397,18 @@ font-size: 1.3em;
     margin-top: 2em;
     background-color: rgb(241, 239, 246);
     color: black;
-    
 }
 
+.carrusel-catalogo {
+    height: 450px;
+    background-color: #868686;
+}
+
+.content-small-card {
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.content-small-card:hover {
+    transform: scale(1.11);
+}
