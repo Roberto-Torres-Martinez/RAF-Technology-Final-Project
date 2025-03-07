@@ -4,6 +4,7 @@ import { useState } from "react"
 import { ProductSection } from "../component/product-section"
 import { ProductCard } from "../component/product-card"
 import { RelatedProducts } from "../component/related-products"
+import { NovedadesMail } from "../component/novedadesMail"
 
 
 export const VistaIndividualPhone = () => {
@@ -40,6 +41,7 @@ export const VistaIndividualPhone = () => {
                 </div>
             </div>
             <RelatedProducts />
+            <NovedadesMail />
         </div>
     )
 }
