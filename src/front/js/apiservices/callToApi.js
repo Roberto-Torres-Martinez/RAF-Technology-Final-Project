@@ -1,5 +1,6 @@
 const urlBackend = process.env.BACKEND_URL
 import Swal from "sweetalert2";
+
 export const createUser = async (newUser) =>{
     try {
         const response = await fetch(urlBackend + 'user-signup', {
