@@ -5,8 +5,7 @@ import { PersonalInfo } from '../component/personalInfo';
 export const PersonalZone = () => {
     return (
         <>
-        <div className="container-fluid dark-background text-white">
-        
+        <div className="container-fluid dark-background text-white ">
         <PersonalNavbar/>
         <PersonalInfo/>
         </div>

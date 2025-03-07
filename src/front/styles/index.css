@@ -183,6 +183,7 @@ display: block;
     width: 100%;
     object-fit: cover;
     border-radius: 50%
+}
 
 .name-product, .price-product {
     font-size: 19px;
@@ -280,3 +281,25 @@ display: block;
 
 }
 
+.birth-personal {
+    min-width: 10em;
+
+}
+.labels-personal {
+    min-width: 6em;
+}
+
+.personal-info {
+    background-color: rgb(234, 248, 252);
+    color : rgb(47, 65, 79);
+    font-weight: 700;
+    border-radius: 1%;
+}
+
+.personal-form {
+    padding-top: 2em;
+    margin-top: 1.5em;
+    margin-left: 2.5em;
+    margin-right: 25em;
+    padding-bottom: 5em;
+}

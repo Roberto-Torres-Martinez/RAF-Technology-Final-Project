@@ -10,7 +10,6 @@ import { VistaIndividualPhone } from "./vistaIndividualPhone";
 import { NovedadesMail } from "../component/novedadesMail";
 
 export const Home = () => {
- const {actions} = useContext(Context)
 	return (
 		<>
 
@@ -21,7 +20,7 @@ export const Home = () => {
 		<Onfire/>
 		<HomeCatalog/>
 		<NovedadesMail/>
-     <VistaIndividualPhone>
+     	{/* <VistaIndividualPhone/> */}
 		</div>
 		</div>
 		</>
