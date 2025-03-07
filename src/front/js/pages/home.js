@@ -7,8 +7,11 @@ import { HomeCatalog } from "../component/home-catalog";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 import { NovedadesMail } from "../component/novedadesMail";
+
 import { WelcomeModal } from "../component/welcome-modal";
 import Swal from 'sweetalert2';
+import { privateUser } from "../apiservices/callToApi";
+
 
 export const Home = () => {
 
@@ -26,6 +29,11 @@ export const Home = () => {
 			  });
 		}
 	})
+
+	useEffect(()=>{
+		privateUser();
+	},[])
+
 	return (
 		<>
 
