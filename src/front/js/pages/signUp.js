@@ -7,10 +7,7 @@ export const SignUp = () => {
     const [password, setPassword] = useState(true);
     const [userList, setUserList] = useState();
     const [userExist, setUserExist] = useState(false);
-    const navigate = useNavigate()
-
-    console.log(newUser);
-    
+    const navigate = useNavigate();    
 
     const handleChange = (e) =>{
         setNewUser({...newUser, [e.target.name]: e.target.value});
@@ -19,7 +16,7 @@ export const SignUp = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         createUser(newUser);
-        navigate('/login')
+        navigate('/login');
     };
 
     useEffect(()=>{

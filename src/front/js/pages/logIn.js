@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { login } from "../apiservices/callToApi";
+
 
 export const LogIn = () => {
+
+    const [userEmail, setUserEmail] = useState();
+    const [userPassword, setUserPassword] = useState();
+
+
+    const handleEmail = (e) => {
+        setUserEmail({...userEmail, [e.target.name]: e.target.value});
+    };
+
+    const handlePassword = (e) => {
+        setUserPassword({...userPassword, [e.target.name]: e.target.value});
+    };
+
+
+    useEffect(()=>{},[])
+
+    console.log(userEmail);
+    console.log(userPassword);
+    
+
 
     return (
         <>
@@ -9,19 +32,21 @@ export const LogIn = () => {
                     <h1 className="text-white titulo mt-3 text-center title-login">Log In</h1>
                     <form className="border border-light rounded-3 mb-5">
                         <div className="texto">
-                            <label for="exampleInputEmail1" className="form-label text-white mt-4">Email or Username</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Write your Email" />
+                            <label htmlFor="EmailOrUsername" className="form-label text-white mt-4">Email o Nombre de usuario</label>
+                            <input type="text" className="form-control" name={"EmailOrUsername"} onChange={e => handleEmail(e)} aria-describedby="emailHelp" placeholder="Email o Nombre de usuario" />
                         </div>
                         <div className="texto">
-                            <label for="exampleInputPassword1" className="form-label text-white mt-4">Password</label>
-                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Write your Password"/>
+                            <label htmlFor="password" className="form-label text-white mt-4">Comtraseña</label>
+                            <input type="password" className="form-control" name="password" onChange={e => handlePassword(e)} placeholder="example123"/>
                         </div>
                         <div className="mb-3 form-check">
                             <input type="checkbox" className="form-check-input mt-4" id="exampleCheck1" />
-                                <label className="form-check-label text-white mt-4 texto" for="exampleCheck1">Remember me</label>
-                                <p className="text-white mt-4 texto">You don't have an account? Sign up</p>
+                            <label className="form-check-label text-white mt-4 texto" htmlFor="exampleCheck1">Recuerdame</label>
+                            <div style={{marginTop: '20px'}}>
+                                <span className="text-white mt-4 texto">¿No tienes una cuenta?</span> <span><Link to={'/signup'}><span style={{color: 'rgb(102, 252, 241)'}}>Crear Usuario</span></Link></span>
+                            </div>
                         </div>
-                        <button type="submit" className="btn button-submit mt-5 mb-4 text-white texto">Continue</button>
+                        <button type="submit" className="btn button-submit mt-5 mb-4 text-white texto">Continuar</button>
                     </form>
                 </div>
             </div>
