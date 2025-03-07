@@ -128,10 +128,6 @@ text-decoration: none;
 display: block;
 }
 
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -139,7 +135,6 @@ display: block;
 .dropdown:hover .dropbtn {
     background-color: #77bcc7;
 }
-
 
 .border-techno {
     border: 1.2em solid rgb(102, 252, 241);
@@ -415,4 +410,12 @@ font-size: 1.3em;
     margin-left: 15px;
 }
 
+.edit-pen {
+    top: 0;
+    left: 9.5em;
+    margin-top: 2em;
+    background-color: rgb(241, 239, 246);
+    color: black;
+    
+}
 
