@@ -7,28 +7,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			tvs: [],
 			laptops: [],
 			navbar_visibility: true,
-			edit: false
+			edit: false,
+			infoUser: {}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
-			},
-
 			getPhones: async () => {
 				const urlBackend = process.env.BACKEND_URL				
 				try {
@@ -76,10 +59,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				else if(getStore().edit == false){
 					setStore({edit: true})
 					
-				}
-				console.log(getStore().edit)
+				};
 			},
-			
+			userIndividual: async () => {
+				const urlBackend = process.env.BACKEND_URL;
+				const idUser = sessionStorage.getItem('idUser')
+
+				const response = await fetch(`${urlBackend}user/${idUser}`);
+				const data = await response.json();
+				setStore({infoUser: data });
+			},
 		}
 	};
 };

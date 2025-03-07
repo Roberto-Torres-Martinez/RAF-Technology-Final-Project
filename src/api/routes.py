@@ -84,7 +84,6 @@ def delete_users(id_user):
 def update_users(id_user):
     user = User.query.get(id_user)
     data = request.get_json()
-
    
     user.name = data['name']
     user.lastname = data['lastname']
@@ -95,9 +94,13 @@ def update_users(id_user):
     user.birthday_date = data['birthday_date']
 
     db.session.commit()
-    return jsonify({'msg': f'actualizado {user.name}'})
+    return jsonify({'msg': f'actualizado {user.name}'}), 201
 
+@api.route('/user/<int:id_user>', methods=['GET'])
+def get_user_individual(id_user):
+    user = User.query.get(id_user)
 
+    return jsonify(user.serialize()), 201
 
 #ENDPOINTS PHONES    
 
