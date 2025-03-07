@@ -3,26 +3,29 @@ import Swal from "sweetalert2";
 
 const urlBackend = process.env.BACKEND_URL;
 
-export const createUser = async (newUser) =>{
+export const createUser = async (newUser, navigate) =>{
     try {
         const response = await fetch(urlBackend + 'user-signup', {
         method:'POST',
         headers:{'Content-Type': 'application/json'},
         body: JSON.stringify({
-            'name': newUser.name,
-            'lastname': newUser.lastname,
+            'name': null,
+            'lastname': null,
             'email' : newUser.email,  
             'password' : newUser.password,
             'username': newUser.username,
-            'address': newUser.address,
-            'birthday_date' : newUser.birthday_date      
+            'address': null,
+            'birthday_date' : null      
             })
-    });
-        const data = await response.json()
-        console.log(data);       
-        
+    });      
+        if(response.ok){
+            navigate('/login')
+        }else{
+            navigate('/signup')
+        };
+
     } catch (error) {
-            console.log(error);
+            console.log(error.status);
     } 
 };
 
@@ -45,7 +48,7 @@ export const login = async (user, responseApi, navigate) =>{
             'email': user.email,
             'password': user.password
         })
-    })
+    });
     const data = await response.json();
     responseApi(data);
     sessionStorage.setItem('idUser', data.user.user_id) 
@@ -78,8 +81,10 @@ export const privateUser = async () =>{
     if(response.ok){
         return true
     }else if(!response.ok){
+        sessionStorage.removeItem('token')
+        sessionStorage.removeItem('idUser')
         return false
-    }
+    };
 };
 
 export const updateUser = async (updateInfo) => {
@@ -100,6 +105,6 @@ export const updateUser = async (updateInfo) => {
     const data = await response.json()
     if(data.msg){
         window.location.reload();
-    }
+    };
 };
 
