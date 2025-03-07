@@ -17,7 +17,6 @@ api = Blueprint('api', __name__)
 # Allow CORS requests to this API
 CORS(api)
 
-
 #ENDPOINTS USERS
 
 @api.route('/users', methods=['GET'])
@@ -144,6 +143,8 @@ def delete_phones(id_smartphone):
         return jsonify({"msg": "Smartphone deleted from data base"}), 201
     return jsonify({"msg": "No smartphone id was found"}), 400
 
+#ENDPOINTS TVS
+
 @api.route('/load-tvs', methods=['GET'])
 def load_tvs():
     for tv in tvs:
@@ -183,6 +184,8 @@ def delete_tvs(id_tv):
         db.session.commit()
         return jsonify({"msg": "TV deleted from data base"}), 201
     return jsonify({"msg": "No TV id was found"}), 400
+
+#ENDPOINTS LAPTOPS
 
 @api.route('/load-laptops', methods=['GET'])
 def load_laptops():

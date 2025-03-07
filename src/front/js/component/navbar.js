@@ -5,7 +5,7 @@ import { privateUser } from "../apiservices/callToApi";
 
 
 export const Navbar = () => {
-	const { store, actions } = useContext(Context);
+	const { store } = useContext(Context);
 	const [isVerified, setIsVerified] = useState(null)
 
 
@@ -61,8 +61,8 @@ export const Navbar = () => {
 									<a className="nav-link dropbtn" style={{ color: "white" }} ><i className="fa-solid fa-user"></i></a>
 									{!isVerified ? 
 										<div className="dropdown-content">
-										<Link to={'/login'}><span>Login</span></Link>
-										<Link to={'/signup'}><span>Sign Up</span></Link></div>
+										<Link to={'/login'}><span>Iniciar Sesion</span></Link>
+										<Link to={'/signup'}><span>Crear Usuario</span></Link></div>
 										: 
 										<div className="dropdown-content">
 										<Link to={'/personalzone'}><span>Zona Personal</span></Link>
@@ -72,18 +72,6 @@ export const Navbar = () => {
 								<li className="nav-item">
 									<a className="nav-link" style={{ color: "white" }} ><i className="fa-solid fa-cart-shopping"></i></a>
 								</li>
-
-								{/* <li className="nav-item dropdown">
-									<a className="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Dropdown
-									</a>
-									<ul className="dropdown-menu">
-										<li><a className="dropdown-item" >Action</a></li>
-										<li><a className="dropdown-item" >Another action</a></li>
-										<li><hr className="dropdown-divider" /></li>
-										<li><a className="dropdown-item" >Something else here</a></li>
-									</ul>
-								</li> */}
 							</ul>
 						</div>
 					</div>
