@@ -25,7 +25,6 @@ def get_users():
     users = User.query.all()
     return jsonify([user.serialize() for user in users]), 201
 
-
 @api.route('/user-signup', methods=['POST'])
 def post_users():
 
@@ -113,7 +112,6 @@ def get_phones_individual(id_phone):
     phone = Smartphones.query.get(id_phone) 
     return jsonify(phone.serialize()), 201
 
-
 @api.route('/phones/<int:id_smartphone>', methods=['DELETE'])
 def delete_phones(id_smartphone):
     exist = Smartphones.query.filter_by(smartphone_id=id_smartphone).first()
@@ -154,7 +152,6 @@ def get_tv_individual(id_tv):
     tv = TVs.query.get(id_tv)
     return jsonify(tv.serialize())
 
-
 @api.route('/tvs/<int:id_tv>', methods=['DELETE'])
 def delete_tvs(id_tv):
     exist = TVs.query.filter_by(tv_id=id_tv).first()
@@ -189,8 +186,6 @@ def load_laptops():
         db.session.add(new_laptop)
     db.session.commit()
     return jsonify({'msg': 'laptops agregadas'}), 201
-    
-
     
 @api.route('/laptops', methods=['GET'])
 def get_laptops():
