@@ -10,7 +10,6 @@ import { NovedadesMail } from "../component/novedadesMail";
 
 
 export const Home = () => {
- const {actions} = useContext(Context)
 	return (
 		<>
 
@@ -18,7 +17,8 @@ export const Home = () => {
 		<Welcome/>
 		<Onfire/>
 		<HomeCatalog/>
-		<Onfire/>
+		<NovedadesMail/>
+     	{/* <VistaIndividualPhone/> */}
 		</div>
 		</>
 	);

@@ -290,7 +290,32 @@ display: block;
     transform: scale(1.25);
 }
 
+
+.birth-personal {
+    min-width: 10em;
+
+}
+.labels-personal {
+    min-width: 6em;
+}
+
+.personal-info {
+    background-color: rgb(234, 248, 252);
+    color : rgb(47, 65, 79);
+    font-weight: 700;
+    border-radius: 1%;
+}
+
+.personal-form {
+    padding-top: 2em;
+    margin-top: 1.5em;
+    margin-left: 2.5em;
+    margin-right: 25em;
+    padding-bottom: 5em;
+}
+
 .text-colors {
     margin-left: 85px;
     margin-top: 50px;
 }
+
