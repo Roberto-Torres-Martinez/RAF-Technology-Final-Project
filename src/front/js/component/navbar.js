@@ -28,7 +28,7 @@ export const Navbar = () => {
 			<nav className="navbar navbar-expand-lg"  style={store.navbar_visibility? { display: "block"} : {display: "none"}}>
 				<div className="container">		
 					<Link to={'/'}>
-						<a className="navbar-brand" href="#">Navbar</a>
+						<p className="navbar-brand" >Navbar</p>
 					</Link>
 					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
@@ -41,24 +41,24 @@ export const Navbar = () => {
 							<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 								<li className="nav-item">
 									<Link to="/phones-catalog">
-									<a className="nav-link" style={{ color: "white" }} aria-current="page" href="#">SMARTPHONES</a>
+									<p className="nav-link" style={{ color: "white" }} aria-current="page" >SMARTPHONES</p>
 									</Link>
 								</li>
 								<li className="nav-item">
 								<Link to="/tvs-catalog">
-									<a className="nav-link" style={{ color: "white" }} aria-current="page" href="#">TVS</a>
+									<p className="nav-link" style={{ color: "white" }} aria-current="page" >TVS</p>
 									</Link>
 								</li>
 								<li className="nav-item">
 								<Link to="/laptops-catalog">
-									<a className="nav-link" style={{ color: "white" }} aria-current="page" href="#">LAPTOPS</a>
+									<p className="nav-link" style={{ color: "white" }} aria-current="page" >LAPTOPS</p>
 									</Link>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" style={{ color: "white" }} href="#">Contact</a>
+									<p className="nav-link" style={{ color: "white" }} >Contact</p>
 								</li>
 								<li className="nav-item dropdown">
-									<a className="nav-link dropbtn" style={{ color: "white" }} href="#"><i className="fa-solid fa-user"></i></a>
+									<a className="nav-link dropbtn" style={{ color: "white" }} ><i className="fa-solid fa-user"></i></a>
 									{!isVerified ? 
 										<div className="dropdown-content">
 										<Link to={'/login'}><span>Login</span></Link>
@@ -70,18 +70,18 @@ export const Navbar = () => {
 									}
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" style={{ color: "white" }} href="#"><i className="fa-solid fa-cart-shopping"></i></a>
+									<a className="nav-link" style={{ color: "white" }} ><i className="fa-solid fa-cart-shopping"></i></a>
 								</li>
 
 								{/* <li className="nav-item dropdown">
-									<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<a className="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
 										Dropdown
 									</a>
 									<ul className="dropdown-menu">
-										<li><a className="dropdown-item" href="#">Action</a></li>
-										<li><a className="dropdown-item" href="#">Another action</a></li>
+										<li><a className="dropdown-item" >Action</a></li>
+										<li><a className="dropdown-item" >Another action</a></li>
 										<li><hr className="dropdown-divider" /></li>
-										<li><a className="dropdown-item" href="#">Something else here</a></li>
+										<li><a className="dropdown-item" >Something else here</a></li>
 									</ul>
 								</li> */}
 							</ul>

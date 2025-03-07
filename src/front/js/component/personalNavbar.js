@@ -13,7 +13,7 @@ export const PersonalNavbar = () => {
                 <div className="profile-circle ratio ratio-1x1">
                 <img className="photo-personal-zone"src="https://media.cnn.com/api/v1/images/stellar/prod/cnne-212344-monkey-selfie.jpeg?c=16x9&q=h_833,w_1480,c_fill"/>
                 </div>
-                <span class="edit-pen position-absolute  translate-middle rounded-circle p-2 "><i className="p-2 icon-pen fa-solid fa-pen"></i><span class="visually-hidden">unread messages</span></span>
+                <span className="edit-pen position-absolute  translate-middle rounded-circle p-2 "><i className="p-2 icon-pen fa-solid fa-pen"></i><span className="visually-hidden">unread messages</span></span>
             </div>
         </div>
         <div className="text my-auto fs-3">
@@ -23,7 +23,7 @@ export const PersonalNavbar = () => {
             <div className="mt-0">
             <button onClick={()=>
                 actions.setEdit()
-                }type="button" className="btn edit-button"><i class="fa-solid fa-pen-to-square"></i> Editar información</button>
+                }type="button" className="btn edit-button"><i className="fa-solid fa-pen-to-square"></i> Editar información</button>
             </div>
         </div>
         </div>
