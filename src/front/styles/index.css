@@ -322,8 +322,6 @@ display: block;
     margin-top: 50px;
 }
 
-
-
 .personal-button {
     display: flex;
     justify-content: end;
@@ -407,6 +405,5 @@ font-size: 1.3em;
 
 .app-content {
     overflow-y: auto;
-    padding: 50px;
   }
 
