@@ -61,12 +61,11 @@ def post_users():
 @api.route('/login', methods=["POST"])
 def login_user():
     data = request.get_json()
-    user = User.query.filter_by(username=data['username'], password=data['password']).first()
+    user = User.query.filter_by(email=data['email'], password=data['password']).first()
     if user is None:
-        return jsonify({'msg': "password or username incorrect"}), 400
+        return jsonify({'msg': "Contraseña o Email incorrecto"}), 400
 
     access_token = create_access_token(identity=str(user.user_id))
-
     return jsonify({'token': access_token, 'user' : user.serialize()}), 201
 
 @api.route('/private', methods=['GET'])

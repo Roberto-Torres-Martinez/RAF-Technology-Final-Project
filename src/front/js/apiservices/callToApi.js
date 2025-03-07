@@ -34,11 +34,33 @@ export const getUsers = (userInfo) => {
 };
 
 
-export const login = async () =>{
-    const response = fetch(urlBackend + 'login', {
+export const login = async (user, responseApi, navigate) =>{
+    const response = await fetch(urlBackend + 'login', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({})
+        body: JSON.stringify({
+            'email': user.email,
+            'password': user.password
+        })
     })
+    const data = await response.json();
+    responseApi(data);    
+    sessionStorage.setItem('token', data.token) 
+    if(data.token){
+        navigate('/')
+    };
+};
 
+
+export const privateUser = async () =>{
+    const token = sessionStorage.getItem('token');
+    const response = await fetch(urlBackend + 'private', {
+        headers:{
+            'Content-Type': 'application/json',
+            'Authorization' : `Bearer ${token}`
+        }
+    })
+    if(response.ok){
+        return true
+    }else {return false}
 };
