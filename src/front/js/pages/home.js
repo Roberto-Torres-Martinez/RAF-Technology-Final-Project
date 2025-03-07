@@ -15,9 +15,11 @@ export const Home = () => {
 
 		<div  className="page-content" style={{backgroundColor: "rgb(47, 65, 79)"}}>
 		<Welcome/>
+		<div className="container mx-auto py-4">
 		<Onfire/>
 		<HomeCatalog/>
 		<NovedadesMail/>
+		</div>
      	{/* <VistaIndividualPhone/> */}
 		</div>
 		</>
