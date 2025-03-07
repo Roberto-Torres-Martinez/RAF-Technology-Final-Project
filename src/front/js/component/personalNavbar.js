@@ -3,6 +3,7 @@ import { Context } from '../store/appContext';
 export const PersonalNavbar = () => {
 
     const {store, actions} = useContext(Context)
+    const infoUser = store.infoUser
   
     return (
         <>
@@ -17,7 +18,7 @@ export const PersonalNavbar = () => {
         </div>
         <div className="text my-auto fs-3">
             <div className="mb-0 pb-0">
-            <p className="mb-0 message-personal">Hola, <b>Usuario</b>!</p>
+            <p className="mb-0 message-personal">Hola, <b>{infoUser.username}</b>!</p>
             </div>
             <div className="mt-0">
             <button onClick={()=>

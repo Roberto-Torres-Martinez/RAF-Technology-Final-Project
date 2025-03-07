@@ -18,9 +18,10 @@ export const Navbar = () => {
 	},[]);
 
 	const logOut = () => {
-		sessionStorage.removeItem('token')
+		sessionStorage.removeItem('token');
+		sessionStorage.removeItem('idUser')
 		window.location.reload();
-	}
+	};
 
 	return (
 		<>
