@@ -1,8 +1,27 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { privateUser } from "../apiservices/callToApi";
+
+
 export const Navbar = () => {
-	const { store, actions } = useContext(Context)
+	const { store, actions } = useContext(Context);
+	const [isVerified, setIsVerified] = useState(null)
+
+
+	const checkout = async () =>{
+		const verified = await privateUser()
+		setIsVerified(verified)};
+
+	useEffect(()=>{
+		checkout();
+	},[]);
+
+	const logOut = () => {
+		sessionStorage.removeItem('token')
+		window.location.reload();
+	}
+
 	return (
 		<>
 			<nav className="navbar navbar-expand-lg"  style={store.navbar_visibility? { display: "block"} : {display: "none"}}>
@@ -33,14 +52,15 @@ export const Navbar = () => {
 								</li>
 								<li className="nav-item dropdown">
 									<a className="nav-link dropbtn" style={{ color: "white" }} href="#"><i className="fa-solid fa-user"></i></a>
-									<div className="dropdown-content">
-										<Link to={'/login'}>
-											<a href="#">Login</a>
-										</Link>
-										<Link to={'/signup'}>
-											<a href="#">Sign Up</a>
-										</Link>
-									</div>
+									{!isVerified ? 
+										<div className="dropdown-content">
+										<Link to={'/login'}><span>Login</span></Link>
+										<Link to={'/signup'}><span>Sign Up</span></Link></div>
+										: 
+										<div className="dropdown-content">
+										<Link to={'/personalzone'}><span>Zona Personal</span></Link>
+										<Link to={'/'}><span onClick={logOut}>Cerrar Sesion</span></Link></div>
+									}
 								</li>
 								<li className="nav-item">
 									<a className="nav-link" style={{ color: "white" }} href="#"><i className="fa-solid fa-cart-shopping"></i></a>
