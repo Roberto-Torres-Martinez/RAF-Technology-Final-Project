@@ -48,6 +48,7 @@ export const login = async (user, responseApi, navigate) =>{
     sessionStorage.setItem('token', data.token) 
     if(data.token){
         navigate('/')
+        window.location.reload();
     };
 };
 
@@ -64,3 +65,4 @@ export const privateUser = async () =>{
         return true
     }else {return false}
 };
+

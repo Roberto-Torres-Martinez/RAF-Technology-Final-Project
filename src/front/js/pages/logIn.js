@@ -30,7 +30,7 @@ export const LogIn = () => {
                             <input type="text" className="form-control" name={"email"} onChange={e => handleChange(e)} aria-describedby="emailHelp" placeholder="example@gmail.com" />
                         </div>
                         <div className="texto">
-                            <label htmlFor="password" className="form-label text-white mt-4">Comtraseña</label>
+                            <label htmlFor="password" className="form-label text-white mt-4">Contraseña</label>
                             <input type="password" className="form-control" name="password" onChange={e => handleChange(e)} placeholder="example123"/>
                         </div>
                         <div style={{marginTop: '20px'}}>
