@@ -7,8 +7,7 @@ export const Footer = () => (
 			<div className="col-3">
 				<h5><i className="fa-solid fa-user-astronaut "></i></h5>
 				<ul className="ps-0">
-					<li className="ms-5 my-3"><i className="fa-brands fa-instagram"></i></li>
-					
+					<li className="ms-5 my-3"><i className="fa-brands fa-instagram"></i></li>	
 				</ul>
 			</div>
 			<div className="col-3">

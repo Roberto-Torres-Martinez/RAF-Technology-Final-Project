@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { createUser } from "../apiservices/callToApi";
+import { createUser, getUsers } from "../apiservices/callToApi";
+import { Link } from "react-router-dom";
 
 export const SignUp = () => {
     const [newUser, setNewUser] = useState();
-    const [password, setPassword] = useState(true)
-
-    console.log(newUser);
-    
+    const [password, setPassword] = useState(true);
+    const [userList, setUserList] = useState();
+    const [userExist, setUserExist] = useState(false);
 
     const handleChange = (e) =>{
         setNewUser({...newUser, [e.target.name]: e.target.value});
@@ -25,60 +25,73 @@ export const SignUp = () => {
                     }else{
                         setPassword(true);
                     };
-                };  
+            }else{
+                setPassword(true);
+            };  
+
+            if(newUser.email || newUser.username){
+                if(userList.includes(newUser.email) || userList.includes(newUser.username)){
+                    setUserExist(true);
+                }else{
+                    setUserExist(false);
+                };
             };
+        };   
     },[newUser]);
 
-    const handleTerminos = (e) => {
-        console.log(e.checked);
-    }
-
+    useEffect(()=>{
+        getUsers(setUserList);
+    }, []);
 
     return (
         <>
             <div className="container-fluid d-flex justify-content-center align-items-center vh-100 " style={{backgroundColor: "rgb(47, 65, 79)"}}>
                 <div className="row md-col-12 form-signup">
-                    <h1 className="text-white titulo text-center title-signup">Create Account</h1>
+                    <h1 className="text-white titulo text-center title-signup">Crear Cuenta</h1>
                     <form className="border border-light rounded-3" onSubmit={e => handleSubmit(e)}>
                         <div className="texto">
-                            <label htmlFor="name" className="form-label text-white mt-2">Name</label>
-                            <input type="text" className="form-control" onChange={e => handleChange(e)} name="name" required placeholder="Write your name" />
+                            {userExist && <h5 style={{color: 'red'}}>El usuario ya existe</h5>} 
+                            <label htmlFor="name" className="form-label text-white mt-2">Nombre</label>
+                            <input type="text" className="form-control" onChange={e => handleChange(e)} name="name" required placeholder="Nombre" />
                         </div>
                         <div className="texto">
-                            <label htmlFor="lastname" className="form-label text-white mt-2">Last Name</label>
-                            <input type="text" className="form-control" onChange={e => handleChange(e)} name="lastname" required placeholder="Write your last name" />
+                            <label htmlFor="lastname" className="form-label text-white mt-2">Apellidos</label>
+                            <input type="text" className="form-control" onChange={e => handleChange(e)} name="lastname" required placeholder="Apellidos" />
                         </div>
                         <div className="texto">
-                            <label htmlFor="username" className="form-label text-white mt-2">Username</label>
-                            <input type="text" className="form-control" onChange={e => handleChange(e)} name="username" required placeholder="Write your username" />
+                            <label htmlFor="username" className="form-label text-white mt-2">Nombre de Usuario</label>
+                            <input type="text" className="form-control" onChange={e => handleChange(e)} name="username" required placeholder="Nombre de Usuario" />
                         </div>
                         <div className="texto">
-                            <label htmlFor="email" className="form-label text-white mt-2">Email</label>
-                            <input type="email" className="form-control" onChange={e => handleChange(e)} name="email" required aria-describedby="emailHelp" placeholder="Write your Email" />
+                            <label htmlFor="email" className="form-label text-white mt-2">Correo Electronico</label>
+                            <input type="email" className="form-control" onChange={e => handleChange(e)} name="email" required aria-describedby="emailHelp" placeholder="example@gmail.com" />
                         </div>
                         <div className="texto">
-                            <label htmlFor="password" className="form-label text-white mt-2">Password</label>
-                            <input type="password" className="form-control" onChange={e => handleChange(e)} name="password" required placeholder="Write your Password"/>
+                            <label htmlFor="password" className="form-label text-white mt-2">Contraseña</label>
+                            <input type="password" className="form-control" onChange={e => handleChange(e)} name="password" required placeholder="Example123"/>
                         </div>
                         <div className="texto">
-                            <label htmlFor="confirmPassword" className="form-label text-white mt-2">Confirm Password</label>
-                            <input type="password" className="form-control" onChange={e => handleChange(e)} name="confirmPassword" required placeholder="Confirm Password"/>
-                            {!password && <p style={{color: 'red'}}>Password no coincide</p> }
+                            <label htmlFor="confirmPassword" className="form-label text-white mt-2">Confirmar Contraseña</label>
+                            <input type="password" className="form-control" onChange={e => handleChange(e)} name="confirmPassword" required placeholder="Example123"/>
+                            {!password && <p style={{color: 'red'}}>Contraseña no coincide</p> }
                         </div>
                         <div className="texto">
-                            <label htmlFor="birthday_date" className="form-label text-white mt-2">Birthday Date</label>
-                            <input type="text" className="form-control" onChange={e => handleChange(e)} name="birthday_date" required placeholder="Write your Birthday Date" />
+                            <label htmlFor="birthday_date" className="form-label text-white mt-2">Fecha de Nacimiento</label>
+                            <input type="text" className="form-control" onChange={e => handleChange(e)} name="birthday_date" required placeholder="01/01/1990" />
                         </div>
                         <div className="texto">
-                            <label htmlFor="address" className="form-label text-white mt-2">Address</label>
-                            <input type="text" className="form-control" onChange={e => handleChange(e)} name="address" required placeholder="Write your Address" />
+                            <label htmlFor="address" className="form-label text-white mt-2">Direccion</label>
+                            <input type="text" className="form-control" onChange={e => handleChange(e)} name="address" required placeholder="Direccion" />
                         </div>
                         <div className="mb-3 form-check">
                             <input type="checkbox" className="form-check-input mt-3" onChange={e => handleTerminos(e)} name="terminos" required />
-                                <label className="form-check-label text-white mt-3 texto" htmlFor="terminos" >I accept the terms and conditions</label>
-                                <p className="text-white mt-4 texto">Are you already registered? Login</p>
+                                <label className="form-check-label text-white mt-3 texto" htmlFor="terminos" >Términos y condiciones</label>
                         </div>
-                        <button type="submit" className="btn button-submit mb-4 text-white texto">Continue</button>
+                        <div className="toLogin" style={{marginBottom: '40px'}}>
+                            <span className="text-white mt-4 texto">¿Ya estás registrado?</span>
+                            <span ><Link to={'/login'}><span style={{color: 'rgb(102, 252, 241)', paddingLeft: '5px'}}>Inicia sesion</span></Link></span>
+                        </div>
+                        <button type="submit" className="btn button-submit mb-4 text-white texto">Continuar</button>
                     </form>
                 </div>
             </div>

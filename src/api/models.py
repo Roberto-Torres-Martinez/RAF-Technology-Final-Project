@@ -14,9 +14,9 @@ class User(db.Model):
     password = db.Column(db.String(50), unique=False, nullable=False)
     address = db.Column(db.String(50), unique=False, nullable=False)
     username = db.Column(db.String(50), unique=True, nullable=False)
-    birthday_date = db.Column(db.String(15), unique=True, nullable=False)
-    is_active = db.Column(db.Boolean(), unique=False, nullable=False)
-    is_admin = db.Column(db.Boolean(), unique=False, nullable=False)
+    birthday_date = db.Column(db.String(15), nullable=False)
+    is_active = db.Column(db.Boolean(), nullable=False)
+    is_admin = db.Column(db.Boolean(), nullable=False)
 
     def __repr__(self):
         return f'<User {self.email, self.username}>'
