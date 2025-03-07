@@ -14,6 +14,9 @@ import { PersonalZone } from "./pages/personalZone";
 import { Onfire } from "./component/onfire";
 import { Tendencias } from "./pages/tendencias";
 import { VistaIndividualPhone } from "./pages/vistaIndividualPhone";
+import { CatalogTv } from "./pages/catalog-tvs";
+import { CatalogPhones } from "./pages/catalog-phones";
+import { CatalogLaptops } from "./pages/catalog-laptops";
 
 
 //create your first component
@@ -37,6 +40,12 @@ const Layout = () => {
                             <Route element={<PersonalZone />} path="/personalzone" />
                             <Route element={<Tendencias />} path="/tendencias" />
                             <Route element={<VistaIndividualPhone />} path="/smartphone-info" />
+                            <Route element={<CatalogTv />} path="/tvs-catalog" />
+                            <Route element={<CatalogPhones />} path="/phones-catalog" />
+                            <Route element={<CatalogLaptops />} path="/laptops-catalog" />
+
+
+
                             <Route element={<h1>Not found!</h1>} />
                         </Routes>
                     </div>
