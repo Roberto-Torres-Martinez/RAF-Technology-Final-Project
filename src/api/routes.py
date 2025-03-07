@@ -31,10 +31,8 @@ def post_users():
 
     data = request.get_json()
     exist = User.query.filter_by(username=data['username']).first()
-
     if exist:
         return jsonify({"msg": "Este usuario ya existe"}), 400
-    
     email = request.json.get('email')
     password = request.json.get('password')
     username = request.json.get('username')
@@ -53,10 +51,9 @@ def post_users():
         is_active = True,
         is_admin = False,
     )
-
     db.session.add(new_user)
     db.session.commit()
-    return jsonify({"msg": "User added"}), 201
+    return jsonify({"msg": "Usuario Agregado"}), 201
 
 @api.route('/login', methods=["POST"])
 def login_user():
@@ -76,7 +73,6 @@ def verify():
 
     return jsonify({'msg': 'area privida','id': user.user_id, 'username': user.username}), 201
 
-
 @api.route('/users/<int:id_user>', methods=['DELETE'])
 def delete_users(id_user):
     exist = User.query.filter_by(user_id=id_user).first()
@@ -85,39 +81,6 @@ def delete_users(id_user):
         db.session.commit()
         return jsonify({"msg": "User deleted from data base"}), 201
     return jsonify({"msg": "No User id was found"}), 400
-
-#ENDPOINTS PHONES
-
-# @api.route('/phones', methods=['POST'])
-# def post_phones():
-
-#     data = request.get_json()
-#     exist = Smartphones.query.filter_by(modelo=data['nombre']).first() 
-
-#     if exist:
-#         return jsonify({"msg": "This phone already exist in your list"}), 400
-
-#     colores = data.get('colores', [])
-#     images = data.get('imagenes', {})
-
-#     new_phone = Smartphones(
-#         modelo = data['nombre'],
-#         pantalla = data['pantalla'],
-#         procesador = data['procesador'],
-#         memoria_ram = data['memoria_ram'],
-#         almacenamiento = data['almacenamiento'],
-#         camara = data['camara'],
-#         bateria = data['bateria'],
-#         precio = data['precio'],
-#         conectividad = data['conectividad'],
-#         colores = colores,
-#         descripcion = data['descripcion'],
-#         imagen = images
-#     )
-#     db.session.add(new_phone)
-#     db.session.commit()
-#     return jsonify({"msg": "Phone added"}), 200
-
 
 @api.route('/load-phone', methods=['GET'])
 def load_phone ():
@@ -160,38 +123,6 @@ def delete_phones(id_smartphone):
         return jsonify({"msg": "Smartphone deleted from data base"}), 201
     return jsonify({"msg": "No smartphone id was found"}), 400
 
-#ENDPOINTS TVS
-
-# @api.route('/tvs', methods=['POST'])
-# def post_tvs():
-
-#     data = request.get_json()
-#     exist = TVs.query.filter_by(modelo=data['modelo']).first()
-
-#     if exist:
-#         return jsonify({"msg": "This TV already exist in your list"}), 400
-
-#     images = data.get('imagenes', [])
-    
-#     new_tv = TVs(
-#         marca = data['marca'],
-#         contenido_de_la_caja = data['contenido_de_la_caja'],
-#         modelo = data['modelo'],
-#         usos_recomendados = data['usos_recomendados'],
-#         año_modelo = data['año_modelo'],
-#         fabricante = data['fabricante'],
-#         precio = data['precio'],
-#         descripcion = data['descripcion_breve'],
-#         pantalla = data['pantalla'],
-#         conectividad = data['conectividad'],
-#         medidas = data['medidas'],
-#         imagen = images
-#     )
-#     db.session.add(new_tv)
-#     db.session.commit()
-#     return jsonify({"msg": "TV added"}), 200
-
-
 @api.route('/load-tvs', methods=['GET'])
 def load_tvs():
     for tv in tvs:
@@ -232,45 +163,6 @@ def delete_tvs(id_tv):
         db.session.commit()
         return jsonify({"msg": "TV deleted from data base"}), 201
     return jsonify({"msg": "No TV id was found"}), 400
-
-#ENDPOINTS LAPTOPS
-
-# @api.route('/laptops', methods=['POST'])
-# def post_laptops():
-
-#     data = request.get_json()
-#     exist = Laptops.query.filter_by(modelo=data['nombre']).first()
-
-#     if exist:
-#         return jsonify({"msg": "This laptop already exist in your list"}), 400
-
-#     colores = data.get('colores', [])
-#     images = data.get('imagenes', {})
-
-#     new_laptop = Laptops(
-#         marca = data['marca'],
-#         modelo = data['nombre'],
-#         pantalla = data['pantalla'],
-#         procesador = data['procesador'],
-#         modelo_cpu = data['modelo_cpu'],
-#         sistema_operativo = data['sistema_operativo'],
-#         memoria_ram = data['memoria_ram'],
-#         almacenamiento = data['almacenamiento'],
-#         camara = data['camara'],
-#         bateria = data['bateria'],
-#         precio = data['precio'],
-#         tecnologia = data['tecnologia'],
-#         colores = colores,
-#         descripcion = data['descripcion'],
-#         funcion_especial = data['funcion_especial'],
-#         descripcion_tarjeta_grafica = data['descripcion_tarjeta_grafica'],
-#         imagen = images
-#     )
-
-#     db.session.add(new_laptop)
-#     db.session.commit()
-#     return jsonify({"msg": "Laptop added"}), 200
-
 
 @api.route('/load-laptops', methods=['GET'])
 def load_laptops():
