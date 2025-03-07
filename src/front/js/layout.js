@@ -17,6 +17,8 @@ import { VistaIndividualPhone } from "./pages/vistaIndividualPhone";
 import { CatalogTv } from "./pages/catalog-tvs";
 import { CatalogPhones } from "./pages/catalog-phones";
 import { CatalogLaptops } from "./pages/catalog-laptops";
+import { VistaIndividualTv } from "./pages/vistaIndividualTV";
+import { VistaIndividualLaptop } from "./pages/vistaIndividualLaptop";
 
 
 //create your first component
@@ -40,6 +42,8 @@ const Layout = () => {
                             <Route element={<PersonalZone />} path="/personalzone" />
                             <Route element={<Tendencias />} path="/tendencias" />
                             <Route element={<VistaIndividualPhone />} path="/smartphone-info" />
+                            <Route element={<VistaIndividualTv />} path="/tv-info" />
+                            <Route element={<VistaIndividualLaptop />} path="/laptop-info" />
                             <Route element={<CatalogTv />} path="/tvs-catalog" />
                             <Route element={<CatalogPhones />} path="/phones-catalog" />
                             <Route element={<CatalogLaptops />} path="/laptops-catalog" />
