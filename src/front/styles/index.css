@@ -323,6 +323,7 @@ display: block;
 }
 
 
+
 .personal-button {
     display: flex;
     justify-content: end;
@@ -403,3 +404,9 @@ color:white;
 .message-personal{
 font-size: 1.3em;
 } 
+
+.app-content {
+    overflow-y: auto;
+    padding: 50px;
+  }
+
