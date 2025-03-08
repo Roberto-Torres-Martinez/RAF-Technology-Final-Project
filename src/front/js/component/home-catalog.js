@@ -26,14 +26,6 @@ export const HomeCatalog = () => {
         };
     };
 
-    let infoPhones = phones.map((phone) => {
-        return phone        
-    });    
-    
-    console.log(infoPhones);
-    
-    
-
     useEffect(() => {
         fetchProducts('phone', idPhone, setPhones);
         fetchProducts('tv', idTv, setTvs);
@@ -43,9 +35,9 @@ export const HomeCatalog = () => {
     return (
         <>
             <div className="container-fluid py-5">
-                <ProductSection productos="Moviles" />
-                <ProductSection productos="TVs"/>
-                <ProductSection productos="Laptops"/>
+                <ProductSection productos="Moviles" products={phones}/>
+                <ProductSection productos="TVs" products={tvs}/>
+                <ProductSection productos="Laptops" products={laptops}/>
             </div>
         </>
     );
