@@ -1,8 +1,13 @@
 import React from "react";
 import { ProductCard } from "./product-card";
 
+export const ProductSection = ({ productos}) => {
+    
 
-export const ProductSection = ({ productos }) => {
+
+
+
+
     return (
         <>
             <div className="container my-5">
@@ -10,10 +15,10 @@ export const ProductSection = ({ productos }) => {
                 <div className="section container mx-3 pt-5 px-5 pb-1 border-techno border-4 mt-4 mx-auto">
                     <div className="row justify-content-around">
                         <div className="col-md-3">
-                            <ProductCard />
+                            <ProductCard/>
                         </div>
                         <div className="col-md-3">
-                            <ProductCard />
+                            <ProductCard/>
                         </div>
                         <div className="col-md-3">
                             <ProductCard />

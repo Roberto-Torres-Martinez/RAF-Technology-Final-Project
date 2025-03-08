@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { ProductColors } from "../component/product-colors";
 import { RelatedProducts } from "../component/related-products";
 
-export const VistaIndividualPhone = ({ producto }) => {
+export const VistaIndividualPhone = () => {
     const [imageColors, setImageColors] = useState("https://images.samsung.com/es/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-ecosystem-galaxy-s25-mo.jpg?imbypass=true");
 
     const handleImageColors = (imageUrl) => {
@@ -16,12 +16,12 @@ export const VistaIndividualPhone = ({ producto }) => {
                 <div className="row col-md-4 card-individual-image">
                     <img className="" src={imageColors} alt="Product" />
                 </div>
-                <div className="col-md-8 text-black">
+                <div className="col-md-8 text-white">
                     <div className="card-body-individual">
                         <h5 className="card-title sub-titulo mb-3">Samsung Galaxy s25 Ultra</h5>
                         <p className="card-text-score"></p>
                         <p className="card-text-price sub-titulo">
-                            <small className="text-black">1.299,00 €</small>
+                            <small className="text-white">1.299,00 €</small>
                         </p>
                         <p className="card-text">
                             <button className="btn-add-cart">
