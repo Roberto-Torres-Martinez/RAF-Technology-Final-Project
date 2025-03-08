@@ -11,12 +11,9 @@ import { Footer } from "./component/footer";
 import { LogIn } from "./pages/logIn";
 import { SignUp } from "./pages/signUp";
 import { PersonalZone } from "./pages/personalZone";
-import { Onfire } from "./component/onfire";
 import { Tendencias } from "./pages/tendencias";
 import { VistaIndividualPhone } from "./pages/vistaIndividualPhone";
-import { CatalogTv } from "./pages/catalog-tvs";
-import { CatalogPhones } from "./pages/catalog-phones";
-import { CatalogLaptops } from "./pages/catalog-laptops";
+import { Catalog } from "./pages/catalog";
 import { VistaIndividualTv } from "./pages/vistaIndividualTV";
 import { VistaIndividualLaptop } from "./pages/vistaIndividualLaptop";
 
@@ -44,9 +41,9 @@ const Layout = () => {
                             <Route element={<VistaIndividualPhone />} path="/smartphone-info" />
                             <Route element={<VistaIndividualTv />} path="/tv-info" />
                             <Route element={<VistaIndividualLaptop />} path="/laptop-info" />
-                            <Route element={<CatalogPhones />} path="/phones-catalog" />
-                            <Route element={<CatalogTv />} path="/tvs-catalog" />
-                            <Route element={<CatalogLaptops />} path="/laptops-catalog" />
+                            <Route element={<Catalog productList="phones"/>} path="/phones-catalog" />
+                            <Route element={<Catalog productList="tvs" />} path="/tvs-catalog" />
+                            <Route element={<Catalog productList="laptops" />} path="/laptops-catalog" />
 
                             <Route element={<h1>Not found!</h1>} />
                         </Routes>
