@@ -412,3 +412,29 @@ ul {
 .content-small-card:hover {
     transform: scale(1.11);
 }
+
+.card-individual-tv-image img {
+    width: 800px;
+    height: 600px;
+    margin-top: 110px;
+    object-fit: cover;
+    border-radius: 8%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-individual-tv-image img:hover {
+    transform: scale(1.05);
+}
+
+.card-individual-laptop-image img {
+    width: 800px;
+    height: 600px;
+    margin-top: 110px;
+    object-fit: cover;
+    border-radius: 8%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-individual-laptop-image img:hover {
+    transform: scale(1.05);
+}
