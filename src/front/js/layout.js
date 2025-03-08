@@ -13,9 +13,7 @@ import { SignUp } from "./pages/signUp";
 import { PersonalZone } from "./pages/personalZone";
 import { Tendencias } from "./pages/tendencias";
 import { VistaIndividualPhone } from "./pages/vistaIndividualPhone";
-import { CatalogTv } from "./pages/catalog-tvs";
-import { Catalog } from "./pages/catalog-phones";
-import { CatalogLaptops } from "./pages/catalog-laptops";
+import { Catalog } from "./pages/catalog";
 import { VistaIndividualTv } from "./pages/vistaIndividualTV";
 import { VistaIndividualLaptop } from "./pages/vistaIndividualLaptop";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { WelcomeCatalog } from "../component/welcome-catalog-phones";
-import { CatalogCatalog} from "../component/catalog-catalog-phones";
+import { CatalogCatalog} from "../component/catalog-catalog";
 
 
 export const Catalog = ({productList}) => {
