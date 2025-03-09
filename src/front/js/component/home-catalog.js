@@ -4,13 +4,13 @@ import { ProductSection } from './product-section';
 const urlBackend = process.env.BACKEND_URL;
 
 export const HomeCatalog = () => {
-   const [phones, setPhones] = useState([]);
-   const [tvs, setTvs] = useState([]);
-   const [laptops, setLaptops] = useState([]);
+    const [phones, setPhones] = useState([]);
+    const [tvs, setTvs] = useState([]);
+    const [laptops, setLaptops] = useState([]);
 
-   const idPhone = [36,37,38];
-   const idTv = [16,17,18];
-   const idLaptop = [16,17,18];
+    const idPhone = [36,37,38];
+    const idTv = [16,17,18];
+    const idLaptop = [16,17,18];
 
     
     const fetchProducts = async (product, idProduct, setProduct) => {
@@ -35,9 +35,9 @@ export const HomeCatalog = () => {
     return (
         <>
             <div className="container-fluid py-5">
-                <ProductSection productos="Moviles" products={phones}/>
-                <ProductSection productos="TVs" products={tvs}/>
-                <ProductSection productos="Laptops" products={laptops}/>
+                <ProductSection Name="Moviles" products={phones}/>
+                <ProductSection Name="TVs" products={tvs}/>
+                <ProductSection Name="Laptops" products={laptops}/>
             </div>
         </>
     );
