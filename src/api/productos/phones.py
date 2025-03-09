@@ -12,16 +12,16 @@ phones = [
         "descripcion": "El buque insignia de Samsung con una cámara de 200 MP y un rendimiento excepcional.",
         "imagen": {
             "azul": [
-                "https://images.samsung.com/es/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-ecosystem-galaxy-s25-mo.jpg?imbypass=true",
-                "https://images.samsung.com/is/image/samsung/p6pim/es/2501/feature/es-feature--nbsp--544862749?$FB_TYPE_A_MO_JPG$"
+                "https://static.fnac-static.com/multimedia/Images/ES/NR/69/b7/92/9615209/1540-1.jpg",
+                "https://static.fnac-static.com/multimedia/Images/ES/NR/6e/b7/92/9615214/1520-4.jpg"
             ],
             "negro": [
-                "https://img.pccomponentes.com/articles/1086/10866751/1707-samsung-galaxy-s25-ultra-smartphone-con-ia-almacenamiento-512gb-bateria-5000mah-titanio-negro-comprar.jpg",
-                "https://images.samsung.com/is/image/samsung/p6pim/es/2501/feature/es-feature--nbsp--544862749?$FB_TYPE_A_MO_JPG$"
+                "https://static.fnac-static.com/multimedia/Images/ES/NR/6e/b7/92/9615214/1540-1.jpg",
+                "https://static.fnac-static.com/multimedia/Images/ES/NR/6e/b7/92/9615214/1520-4.jpg"
             ],
             "plata": [
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFaO3kc8c5nLkQ2FitXAbl0nGa4rS_dd8zuw&s",
-                "https://images.samsung.com/is/image/samsung/p6pim/es/2501/feature/es-feature--nbsp--544862749?$FB_TYPE_A_MO_JPG$"
+                "https://static.fnac-static.com/multimedia/Images/ES/NR/6c/b7/92/9615212/1540-1.jpg",
+                "https://static.fnac-static.com/multimedia/Images/ES/NR/6e/b7/92/9615214/1520-4.jpg"
             ]
         },
         "memoria_ram": "12 GB",
@@ -29,39 +29,32 @@ phones = [
         "pantalla": "Dynamic AMOLED 2X de 6.8 pulgadas, 120 Hz",
         "precio": "1299 €",
         "procesador": "Snapdragon 8 Elite",
-        "smartphone_id": 4
     },
     {
         "almacenamiento": " 256 GB",
         "bateria": "Hasta 26 horas de video",
         "camara": "48 MP",
         "colores": [
-            "Gris espacial",
             "Blanco",
-            "Dorado"
+            "negro"
         ],
         "conectividad": "5G, Wi-Fi 6E, Bluetooth 5.3",
         "descripcion": "El modelo más accesible de Apple con gran rendimiento y cámara mejorada.",
         "imagen": {
             "blanco": [
-                "https://static.k-tuin.com/media/catalog/product/cache/1/image/0dc2d03fe217f8c83829496872af24a0/i/p/iphone-16-color-blanco-128-gb.jpg",
-                "https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202502/19/00194612201312____5__1200x1200.jpg"
+                "https://static.fnac-static.com/multimedia/Images/ES/NR/68/31/95/9777512/1540-1.jpg",
+                "https://static.fnac-static.com/multimedia/Images/ES/NR/68/31/95/9777512/1541-4.jpg"
             ],
-            "dorado": [
-                "https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/article/Apple-iPhone-16-Pro-hero-geo-240909_inline.jpg.large.jpg",
-                "https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202502/19/00194612201312____5__1200x1200.jpg"
+            "negro": [
+                "https://static.fnac-static.com/multimedia/Images/ES/NR/67/31/95/9777511/1540-1.jpg",
+                "https://static.fnac-static.com/multimedia/Images/ES/NR/68/31/95/9777512/1541-4.jpg"
             ],
-            "gris_espacial": [
-                "https://m.media-amazon.com/images/I/61j5RD1d9KL._AC_UF1000,1000_QL80_.jpg",
-                "https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202502/19/00194612201312____5__1200x1200.jpg"
-            ]
         },
         "memoria_ram": " 8 GB",
         "modelo": "Apple iPhone 16e",
         "pantalla": "Super Retina XDR OLED de 6.1 pulgadas",
         "precio": "709 €",
         "procesador": "Chip A18 Bionic",
-        "smartphone_id": 5
     },
     {
         "almacenamiento": " 512 GB",
@@ -93,7 +86,6 @@ phones = [
         "pantalla": "OLED de 6.7 pulgadas",
         "precio": "999 €",
         "procesador": "Tensor G3",
-        "smartphone_id": 6
     },
     {
         "almacenamiento": "256 GB",
@@ -125,7 +117,6 @@ phones = [
         "pantalla": "OLED de 6.6 pulgadas",
         "precio": "1099 €",
         "procesador": "Kirin 9900",
-        "smartphone_id": 7
     },
     {
         "almacenamiento": "512 GB",
@@ -157,7 +148,6 @@ phones = [
         "pantalla": "AMOLED de 6.7 pulgadas",
         "precio": "899 €",
         "procesador": "Snapdragon 8 Gen 4",
-        "smartphone_id": 8
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -189,7 +179,6 @@ phones = [
         "pantalla": "6.7\" Fluid AMOLED, 120 Hz",
         "precio": "1099 €",
         "procesador": "Snapdragon 8 Gen 3",
-        "smartphone_id": 9
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -216,7 +205,6 @@ phones = [
         "pantalla": "6.5\" 4K OLED, 120 Hz",
         "precio": "1299 €",
         "procesador": "Snapdragon 8 Gen 2",
-        "smartphone_id": 10
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -248,7 +236,6 @@ phones = [
         "pantalla": "6.7\" AMOLED, 120 Hz",
         "precio": "1099 €",
         "procesador": "Snapdragon 8 Gen 3",
-        "smartphone_id": 11
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -275,7 +262,6 @@ phones = [
         "pantalla": "6.6\" OLED, 144 Hz",
         "precio": "799 €",
         "procesador": "Snapdragon 8 Gen 2",
-        "smartphone_id": 12
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -302,7 +288,6 @@ phones = [
         "pantalla": "6.7\" AMOLED, 120 Hz",
         "precio": "899 €",
         "procesador": "Snapdragon 8 Gen 1",
-        "smartphone_id": 13
     },
     {
         "almacenamiento": "128 GB, 256 GB",
@@ -334,7 +319,6 @@ phones = [
         "pantalla": "6.3\" AMOLED, 120 Hz",
         "precio": "799 €",
         "procesador": "Snapdragon 8 Gen 3",
-        "smartphone_id": 14
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -361,7 +345,6 @@ phones = [
         "pantalla": "6.78\" AMOLED, 120 Hz",
         "precio": "1099 €",
         "procesador": "Snapdragon 8 Gen 2",
-        "smartphone_id": 15
     },
     {
         "almacenamiento": "128 GB, 256 GB",
@@ -388,7 +371,6 @@ phones = [
         "pantalla": "6.7\" OLED, 120 Hz",
         "precio": "799 €",
         "procesador": "Snapdragon 8+ Gen 1",
-        "smartphone_id": 16
     },
     {
         "almacenamiento": "128 GB, 256 GB",
@@ -415,7 +397,6 @@ phones = [
         "pantalla": "6.62\" AMOLED, 120 Hz",
         "precio": "699 €",
         "procesador": "Snapdragon 8 Gen 1",
-        "smartphone_id": 17
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -447,6 +428,5 @@ phones = [
         "pantalla": "AMOLED de 6.73 pulgadas, 120 Hz",
         "precio": "1399 €",
         "procesador": "Snapdragon 8 Gen 2",
-        "smartphone_id": 18
     }
 ]
