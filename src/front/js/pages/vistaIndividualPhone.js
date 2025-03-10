@@ -2,33 +2,43 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { ProductColors } from "../component/product-colors";
 import { RelatedProducts } from "../component/related-products";
+import { useParams } from "react-router-dom";
 
 export const VistaIndividualPhone = () => {
     const [imageColors, setImageColors] = useState("https://images.samsung.com/es/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-ecosystem-galaxy-s25-mo.jpg?imbypass=true");
-    const {actions } = useContext(Context)
+
+    const { store, actions } = useContext(Context)
+
+    const params = useParams()
+
+    const phones = store.phones
+
 
     const handleImageColors = (imageUrl) => {
         setImageColors(imageUrl);
     };
 
-  
-        useEffect(()=>{
+    useEffect(() => {
+        actions.getPhones(params.smartphone_id)
+    }, []);
+
+    useEffect(() => {
         actions.setNegativeColors()
         actions.setNavbarVisibility()
-        },[])
+    }, [])
 
     return (
         <div className="container">
             <div className="row col-md-12">
-                <div className="row col-md-4 card-individual-image">
+                <div className="row col-md-5 card-individual-image">
                     <img className="" src={imageColors} alt="Product" />
                 </div>
-                <div className="col-md-8 text-white">
+                <div className="col-md-7 text-white">
                     <div className="card-body-individual">
-                        <h5 className="card-title sub-titulo mb-3">Samsung Galaxy s25 Ultra</h5>
+                        <h5 className="card-title sub-titulo mb-3">{phones?.modelo}</h5>
                         <p className="card-text-score"></p>
                         <p className="card-text-price sub-titulo">
-                            <small className="text-white">1.299,00 €</small>
+                            <small className="text-white">{phones?.precio}</small>
                         </p>
                         <p className="card-text">
                             <button className="btn-add-cart">
@@ -44,7 +54,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseTop" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>El buque insignia de Samsung con una cámara de 200 MP y un rendimiento excepcional.</p>
+                                        <p>{phones?.descripcion}</p>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +91,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>200 MP</p>
+                                        <p>{phones.camara}</p>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +103,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>512 GB</p>
+                                        <p>{phones?.almacenamiento}</p>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +115,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseFour" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>12 GB</p>
+                                        <p>{phones?.memoria_ram}</p>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +127,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseFive" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Dynamic AMOLED 2X de 6.8 pulgadas, 120 Hz</p>
+                                        <p>{phones?.pantalla}</p>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +139,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseSix" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>5000 mAh, carga rápida de 65W</p>
+                                        <p>{phones?.bateria}</p>
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +151,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseSeven" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Snapdragon 8 Elite</p>
+                                        <p>{phones?.procesador}</p>
                                     </div>
                                 </div>
                             </div>

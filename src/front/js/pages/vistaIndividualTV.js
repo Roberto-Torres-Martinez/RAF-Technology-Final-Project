@@ -1,21 +1,31 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { RelatedProducts } from "../component/related-products";
+import { useParams } from "react-router-dom";
 
 export const VistaIndividualTv = () => {
-    
-    const {actions } = useContext(Context)
-    
+
+    const { store, actions } = useContext(Context)
+
+    const params = useParams()
+
+    const tvs = store.tvs
+
+
     const handleImageColors = (imageUrl) => {
         setImageColors(imageUrl);
     };
 
+    useEffect(() => {
+        actions.getTvs(params.tv_id)
+    }, []);
 
-        
-    useEffect(()=>{
-    actions.setNegativeColors()
-    actions.setNavbarVisibility()
-    },[])
+
+
+    useEffect(() => {
+        actions.setNegativeColors()
+        actions.setNavbarVisibility()
+    }, [])
 
     return (
         <div className="container">
@@ -25,10 +35,10 @@ export const VistaIndividualTv = () => {
                 </div>
                 <div className="col-md-6 text-white">
                     <div className="card-body-individual">
-                        <h5 className="card-title sub-titulo mb-3">QN90C Neo QLED</h5>
+                        <h5 className="card-title sub-titulo mb-3">{tvs?.modelo}</h5>
                         <p className="card-text-score"></p>
                         <p className="card-text-price sub-titulo">
-                            <small className="text-white">1.499,00 €</small>
+                            <small className="text-white">{tvs?.precio}</small>
                         </p>
                         <p className="card-text">
                             <button className="btn-add-cart">
@@ -44,7 +54,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseTop" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Televisor 4K con tecnología Neo QLED para un contraste mejorado y colores más vivos.</p>
+                                        <p>{tvs?.descripcion}</p>
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +66,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Samsung</p>
+                                        <p>{tvs?.marca}</p>
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +78,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseFive" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>55 pulgadas</p>
+                                        <p>{tvs?.pantalla}</p>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +90,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>1230 x 710 x 28 mm</p>
+                                        <p>{tvs?.medidas}</p>
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +102,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseFour" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Visualización de contenido en 4K, juegos, cine en casa</p>
+                                        <p>{tvs?.usos_recomendados}</p>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +114,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseSix" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>2024</p>
+                                        <p>{tvs?.año_modelo}</p>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +126,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseSeven" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>HDMI 2.1, Wi-Fi, Bluetooth, USB</p>
+                                        <p>{tvs?.conectividad}</p>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +138,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseEight" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Televisor, mando a distancia, cable de alimentación, manual de usuario</p>
+                                        <p>{tvs?.contenido_de_la_caja}</p>
                                     </div>
                                 </div>
                             </div>
@@ -140,7 +150,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseNine" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Visualización de contenido en 4K, juegos, cine en casa</p>
+                                        <p>{tvs?.usos_recomendados}</p>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +162,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseTen" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Samsung Electronics</p>
+                                        <p>{tvs?.fabricante}</p>
                                     </div>
                                 </div>
                             </div>

@@ -19,6 +19,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const response = await fetch(urlBackend + 'phones')
 					const data = await response.json()
 					setStore({phones: data})
+					console.log(data);
+					
 
 				} catch (error) {
 					console.error("Error getting phones from API:");
