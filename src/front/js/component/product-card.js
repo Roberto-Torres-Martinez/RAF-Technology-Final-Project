@@ -15,7 +15,6 @@ export const ProductCard = ({ product, name }) => {
         };
     };
 
-
     let IndividualProduct = "";
     const validacionProduct = (producto) => {
         if (producto == "Laptops") {
@@ -28,6 +27,12 @@ export const ProductCard = ({ product, name }) => {
             IndividualProduct = "/tv-info"
         };
     };
+
+    const precio = parseInt(product.precio.replace('€', ""));
+    const totalPrecioEur = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+      }).format(precio)
 
     validacionLista(name);
     validacionProduct(name);
@@ -44,7 +49,7 @@ export const ProductCard = ({ product, name }) => {
                 <div className='card_description'>
                     <p>{product.descripcion}</p>
                 </div>
-                <h3>{product.precio}</h3>
+                <h3>{totalPrecioEur}</h3>
                 <Link to={IndividualProduct}>
                     <button className='btn_card_product'>comprar</button>
                 </Link>
