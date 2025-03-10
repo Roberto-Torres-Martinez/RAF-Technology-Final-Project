@@ -381,10 +381,6 @@ ul {
     overflow-y: auto;
 }
 
-.bg-footer {
-    background-color: rgb(56, 148, 163);
-}
-
 .label-vista-ampliada {
     font-size: 25px;
     margin-left: 15px;
@@ -526,12 +522,12 @@ ul {
 };
 
 
-.negative-background {
+.negative-background{
     background-color: rgb(234, 248, 252)
 }
 
 .positive-background {
-    background-color: rgb(56, 148, 163);
+    background-color: rgb(56, 148, 163)
 }
 
 .negative-navbar {
