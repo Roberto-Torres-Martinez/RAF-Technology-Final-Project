@@ -537,3 +537,31 @@ height: 20%;
     margin: auto;
    
 }
+
+.cart-delete-button {
+    background-color: rgb(227, 227, 227);
+    border: 0.01em solid black;
+    font-size: 0.8em;
+}
+
+.cart-delete-button:hover {
+background-color: rgb(221, 221, 221);
+border: 0.01em solid black;
+
+}
+
+
+.card-cart-product {
+    background-color: white;
+}
+
+.title-cart-product {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.description-card-product {
+    font-size: 0.5em;
+
+}
