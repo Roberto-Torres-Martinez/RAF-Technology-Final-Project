@@ -35,9 +35,9 @@ export const HomeCatalog = () => {
     return (
         <>
             <div className="container-fluid py-5">
-                <ProductSection Name="Moviles" products={phones}/>
-                <ProductSection Name="TVs" products={tvs}/>
-                <ProductSection Name="Laptops" products={laptops}/>
+                <ProductSection name="Moviles" products={phones}/>
+                <ProductSection name="TVs" products={tvs}/>
+                <ProductSection name="Laptops" products={laptops}/>
             </div>
         </>
     );
