@@ -1,6 +1,5 @@
 import Swal from "sweetalert2";
 
-
 const urlBackend = process.env.BACKEND_URL;
 
 export const createUser = async (newUser, navigate) =>{
