@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { privateUser } from "../apiservices/callToApi";
 
@@ -8,26 +8,32 @@ export const Navbar = () => {
 	const { store } = useContext(Context);
 	const [isVerified, setIsVerified] = useState(null);
 	const [search, setSearch] = useState("");
+	const navigate = useNavigate();
 
-	let products = [];
-	const phones = store.phones;
-	const tvs = store.tvs;
-	const laptops = store.laptops;
-
-	products = phones.concat(laptops, tvs);
-
-	console.log(products);
-	
-	
-
+	const searcher = (e) => {
+		setSearch(e.target.value)
+	};
 
 	const checkout = async () =>{
 		const verified = await privateUser()
 		setIsVerified(verified)};
 
+
+	const verifiedSearch = () => {
+		if(search){
+			navigate('/search-product')
+		}else{
+			navigate('/')
+		};
+	};
+
 	useEffect(()=>{
 		checkout();
 	},[]);
+
+	useEffect(()=>{
+		verifiedSearch();
+	},[search])
 
 	const logOut = () => {
 		sessionStorage.removeItem('token');
@@ -47,7 +53,7 @@ export const Navbar = () => {
 					</button>
 					<div className="d-flex">
 						<form className="d-flex" role="search">
-							<input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+							<input className="form-control me-2" onChange={(e)=>searcher(e)} type="search" placeholder="Search" aria-label="Search"></input>
 						</form>
 						<div className="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul className="navbar-nav me-auto mb-2 mb-lg-0">
