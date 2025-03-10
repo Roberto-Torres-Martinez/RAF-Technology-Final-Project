@@ -5,10 +5,17 @@ import { RelatedProducts } from "../component/related-products";
 
 export const VistaIndividualLaptop = () => {
     const [imageColors, setImageColors] = useState("https://iphoneros.com/wp-content/uploads/2023/11/M3_Pro11e-copy-scaled.jpg");
+    const {actions } = useContext(Context)
 
     const handleImageColors = (imageUrl) => {
         setImageColors(imageUrl);
     };
+
+	
+	useEffect(()=>{
+	actions.setNegativeColors()
+    actions.setNavbarVisibility()
+	},[])
 
     return (
         <div className="container">

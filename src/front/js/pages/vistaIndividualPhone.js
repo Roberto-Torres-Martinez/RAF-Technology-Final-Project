@@ -5,10 +5,17 @@ import { RelatedProducts } from "../component/related-products";
 
 export const VistaIndividualPhone = () => {
     const [imageColors, setImageColors] = useState("https://images.samsung.com/es/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-ecosystem-galaxy-s25-mo.jpg?imbypass=true");
+    const {actions } = useContext(Context)
 
     const handleImageColors = (imageUrl) => {
         setImageColors(imageUrl);
     };
+
+  
+        useEffect(()=>{
+        actions.setNegativeColors()
+        actions.setNavbarVisibility()
+        },[])
 
     return (
         <div className="container">

@@ -9,6 +9,7 @@ export const Navbar = () => {
 	const [isVerified, setIsVerified] = useState(null)
 
 
+
 	const checkout = async () =>{
 		const verified = await privateUser()
 		setIsVerified(verified)};
@@ -25,7 +26,7 @@ export const Navbar = () => {
 
 	return (
 		<>
-			<nav className="navbar navbar-expand-lg"  style={store.navbar_visibility? { display: "block"} : {display: "none"}}>
+			<nav className={`navbar navbar-expand-lg  ${store.negative_colors ? "negative-navbar" :"positive-navbar"}`} style={store.navbar_visibility? { display: "block"} : {display: "none"}}>
 				<div className="container">		
 					<Link to={'/'}>
 						<p className="navbar-brand" >Navbar</p>
@@ -70,7 +71,9 @@ export const Navbar = () => {
 									}
 								</li>
 								<li className="nav-item">
+									<Link to="/cart">
 									<a className="nav-link" style={{ color: "white" }} ><i className="fa-solid fa-cart-shopping"></i></a>
+									</Link>
 								</li>
 							</ul>
 						</div>

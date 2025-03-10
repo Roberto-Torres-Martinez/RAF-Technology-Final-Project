@@ -8,7 +8,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			laptops: [],
 			navbar_visibility: true,
 			edit: false,
-			infoUser: {}
+			infoUser: {},
+			negative_colors: false
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -69,6 +70,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const data = await response.json();
 				setStore({infoUser: data });
 			},
+
+			setPositiveColors: () =>{
+					setStore({negative_colors: false})
+		
+			},
+			setNegativeColors: () =>{
+				setStore({negative_colors: true})
+	
+		},
+
+			
 		}
 	};
 };
