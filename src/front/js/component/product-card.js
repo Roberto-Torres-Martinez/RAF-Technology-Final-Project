@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 export const ProductCard = ({ product, name }) => {
@@ -23,29 +24,16 @@ export const ProductCard = ({ product, name }) => {
 
                 <div className="card_home">
                     <div className='container_img'>
+                        <Link to={}
                         <img src={images[0]} />
                     </div>
-                    <h4>{product.modelo}</h4>
-                    <h5>{product.precio}</h5>
+                    <span>{product.modelo}</span>
                     <div className='card_description'>
                         <p>{product.descripcion}</p>
                     </div>
+                    <h3>{product.precio}</h3>
                 </div>
-
             </div>
-
-            {/* <div className="card border-0 w-100 mb-5 text-white" >
-                <header>
-                    <img src={images[0]} className="card-img-top object-fit-cover" alt="..." />
-                </header>
-                <div className="card-body border-card border-5 product">
-                    <h5 className="card-title mb-0">{product.modelo}</h5>
-                    <p className="fs-4 my-0 py-0"><b>{product.precio}</b></p>
-                </div>
-                <footer>
-                    <p className="card-text" style={{ fontSize: "0.8em" }}>{product.descripcion}</p>
-                </footer>
-            </div> */}
         </>
     )
 }
