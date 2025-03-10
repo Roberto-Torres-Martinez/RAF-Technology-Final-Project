@@ -2,20 +2,31 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { ProductColors } from "../component/product-colors";
 import { RelatedProducts } from "../component/related-products";
+import { useParams } from "react-router-dom";
 
 export const VistaIndividualLaptop = () => {
     const [imageColors, setImageColors] = useState("https://iphoneros.com/wp-content/uploads/2023/11/M3_Pro11e-copy-scaled.jpg");
-    const {actions } = useContext(Context)
+
+    const { store, actions } = useContext(Context)
+
+    const params = useParams()
+
+    const laptops = store.laptops
+
 
     const handleImageColors = (imageUrl) => {
         setImageColors(imageUrl);
     };
 
-	
-	useEffect(()=>{
-	actions.setNegativeColors()
-    actions.setNavbarVisibility()
-	},[])
+    useEffect(() => {
+        actions.getLaptops(params.laptop_id)
+    }, []);
+
+
+    useEffect(() => {
+        actions.setNegativeColors()
+        actions.setNavbarVisibility()
+    }, [])
 
     return (
         <div className="container">
@@ -25,10 +36,10 @@ export const VistaIndividualLaptop = () => {
                 </div>
                 <div className="col-md-6 text-white">
                     <div className="card-body-individual">
-                        <h5 className="card-title sub-titulo mb-3">MacBook Pro 16 (2023)</h5>
+                        <h5 className="card-title sub-titulo mb-3">{laptops?.modelo}</h5>
                         <p className="card-text-score"></p>
                         <p className="card-text-price sub-titulo">
-                            <small className="text-white">2.499,00 €</small>
+                            <small className="text-white">{laptops?.precio}</small>
                         </p>
                         <p className="card-text">
                             <button className="btn-add-cart">
@@ -44,7 +55,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseTop" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Potente MacBook Pro con chip M2 Pro y excelente autonomía.</p>
+                                        <p>{laptops?.descripcion}</p>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +88,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseTwelve" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Apple</p>
+                                        <p>{laptops?.marca}</p>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +100,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>1080p</p>
+                                        <p>{laptops?.camara}</p>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +112,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>512 GB, 1 TB, 2 TB</p>
+                                        <p>{laptops?.almacenamiento}</p>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +124,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseFour" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>16 GB, 32 GB</p>
+                                        <p>{laptops?.memoria_ram}</p>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +136,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseFive" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Retina de 16 pulgadas, 3024 x 1964</p>
+                                        <p>{laptops?.pantalla}</p>
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +148,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseSix" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>100 Wh, hasta 21 horas</p>
+                                        <p>{laptops?.bateria}</p>
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +160,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseSeven" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Apple M2 Pro</p>
+                                        <p>{laptops?.procesador}</p>
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +172,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseEight" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Tarjeta gráfica integrada Apple GPU con hasta 19 núcleos</p>
+                                        <p>{laptops?.descripcion_tarjeta_grafica}</p>
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +185,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseNine" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>macOS Ventura</p>
+                                        <p>{laptops?.sistema_operativo}</p>
                                     </div>
                                 </div>
                             </div>
@@ -187,7 +198,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseTen" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Apple M2 Pro</p>
+                                        <p>{laptops?.modelo_cpu}</p>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +211,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseEleven" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Wi-Fi 6, Bluetooth 5.3</p>
+                                        <p>{laptops?.tecnologia}</p>
                                     </div>
                                 </div>
                             </div>
@@ -212,7 +223,7 @@ export const VistaIndividualLaptop = () => {
                                 </h2>
                                 <div id="collapseThirteen" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>Chip de Apple M2 Pro para un rendimiento excepcional</p>
+                                        <p>{laptops?.funcion_especial}</p>
                                     </div>
                                 </div>
                             </div>
