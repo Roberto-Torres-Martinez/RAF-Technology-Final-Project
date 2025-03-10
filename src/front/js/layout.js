@@ -17,6 +17,7 @@ import { Catalog } from "./pages/catalog";
 import { VistaIndividualTv } from "./pages/vistaIndividualTV";
 import { VistaIndividualLaptop } from "./pages/vistaIndividualLaptop";
 import { Cart } from "./pages/cart";
+import { SearchProduct } from "./pages/SearchProduct";
 
 
 //create your first component
@@ -45,6 +46,7 @@ const Layout = () => {
                             <Route element={<Catalog productList="phones" />} path="/phones-catalog" />
                             <Route element={<Catalog productList="tvs" />} path="/tvs-catalog" />
                             <Route element={<Catalog productList="laptops" />} path="/laptops-catalog" />
+                            <Route element={<SearchProduct/>} path="/search-product" />
 
                             <Route element={<Cart />} path="/cart" />
 
