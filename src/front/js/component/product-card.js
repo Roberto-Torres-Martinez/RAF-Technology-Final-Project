@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 
 export const ProductCard = ({ product, name }) => {
@@ -24,7 +23,6 @@ export const ProductCard = ({ product, name }) => {
 
                 <div className="card_home">
                     <div className='container_img'>
-                        <Link to={}
                         <img src={images[0]} />
                     </div>
                     <span>{product.modelo}</span>
