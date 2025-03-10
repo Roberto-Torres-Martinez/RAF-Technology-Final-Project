@@ -8,7 +8,7 @@ const {store} = useContext(Context)
 
 return (	
 	<>
-		<div className={`container-fluid bg-footer ${store.negative_colors ? "negative-background": "positive-background"}`}>
+		<div className="container-fluid" style={store.negative_colors ? {backgroundColor: "rgb(234, 248, 252)"} : {backgroundColor: "rgb(56, 148, 163)"} }>
 			<div className={`container ${store.negative_colors ? "negative-background border-top border-black": "positive-background"}`} >
 				<div className="row pb-5 pt-3">
 					<div className="col-3">
