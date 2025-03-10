@@ -419,20 +419,6 @@ ul {
     height: 75%;
 }
 
-.catalog-section-catalog-phones {
-    margin-top: 5em;
-    margin-right: 10em;
-    margin-left: 10em;
-}
-
-.image-product-card {
-height: 80%;
-}
-
-.text-product-card {
-height: 20%;
-}
-
 .card-individual-tv-image img {
     width: 800px;
     height: 600px;
@@ -459,18 +445,22 @@ height: 20%;
     transform: scale(1.05);
 }
 
-.container_card_home{
+.container_card {
     width: 20em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
+    color: #2F414F;
 }
 
-.container_card_home .card_home{
+.container_card_catalog{
+    width: 30em;
+}
+
+.container_card .card_product {
     width: 20em;
     border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     margin: 20px;
     text-align: center;
@@ -482,15 +472,15 @@ height: 20%;
     /* background-color: black; */
 }
 
-.container_card_home .card_home:hover{
+.container_card .card_product:hover {
     transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-    background-color: white;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
     /* color: black;
     mix-blend-mode: normal; */
 }
 
-.container_card_home .card_home span{
+.container_card .card_product span {
     background-color: hsla(206, 25%, 25%, 0.8);
     color: white;
     padding: 0.1em 0.3em;
@@ -498,28 +488,42 @@ height: 20%;
     border-radius: 0.4em;
 }
 
-.container_card_home .card_home h3{
+.container_card .card_product h3 {
     padding: 1em 1em;
     text-align: end;
 }
 
-.container_img{
+.container_img {
     height: 15em;
     width: 15em;
-    margin: 0 auto;
+    margin: 1em auto;
     margin-bottom: 1em;
 }
-.container_card_home .card_home img{
+
+.container_card .card_product img {
     width: 100%;
     height: 100%;
     background-size: 50% 50%;
 }
 
-.container_card_home .card_description{
+.container_card .card_description {
     text-align: justify;
-     height: 3.5em;
+    height: 3.5em;
     margin: 1.5em 1em 1em;
 }
+
+.btn_card_product{
+    background-color: rgb(215, 44, 32);
+    width: 15em;
+    height: 3em;
+    outline: none;
+    border: none;
+    border-radius: 4em;
+    margin-bottom: 1em;
+    color: #fafafa;
+    font-weight: bold;
+    font-size: 1em;
+};
 
 
 .negative-background {
@@ -535,7 +539,7 @@ height: 20%;
     font-size: 1.3em;
     width: 100%;
     margin: auto;
-   
+
 }
 
 .cart-delete-button {
@@ -565,3 +569,4 @@ border: 0.01em solid black;
     font-size: 0.5em;
 
 }
+

@@ -29,7 +29,7 @@ export const Navbar = () => {
 			<nav className={`navbar navbar-expand-lg  ${store.negative_colors ? "negative-navbar" :"positive-navbar"}`} style={store.navbar_visibility? { display: "block"} : {display: "none"}}>
 				<div className="container">		
 					<Link to={'/'}>
-						<p className="navbar-brand" >Navbar</p>
+						<p className="navbar-brand" ><i className="fa-solid fa-user-astronaut fs-2 text-white "></i></p>
 					</Link>
 					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
@@ -42,21 +42,21 @@ export const Navbar = () => {
 							<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 								<li className="nav-item">
 									<Link to="/phones-catalog">
-									<p className="nav-link" style={{ color: "white" }} aria-current="page" >SMARTPHONES</p>
+									<p className="nav-link" style={{ color: "white" }} aria-current="page" >Móviles</p>
 									</Link>
 								</li>
 								<li className="nav-item">
 								<Link to="/tvs-catalog">
-									<p className="nav-link" style={{ color: "white" }} aria-current="page" >TVS</p>
+									<p className="nav-link" style={{ color: "white" }} aria-current="page" >Televisores</p>
 									</Link>
 								</li>
 								<li className="nav-item">
 								<Link to="/laptops-catalog">
-									<p className="nav-link" style={{ color: "white" }} aria-current="page" >LAPTOPS</p>
+									<p className="nav-link" style={{ color: "white" }} aria-current="page" >Pórtatiles</p>
 									</Link>
 								</li>
 								<li className="nav-item">
-									<p className="nav-link" style={{ color: "white" }} >Contact</p>
+									<p className="nav-link" style={{ color: "white" }} >Contacto</p>
 								</li>
 								<li className="nav-item dropdown">
 									<a className="nav-link dropbtn" style={{ color: "white" }} ><i className="fa-solid fa-user"></i></a>
