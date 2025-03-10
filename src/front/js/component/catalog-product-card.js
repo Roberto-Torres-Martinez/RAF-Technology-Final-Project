@@ -7,7 +7,7 @@ export const CatalogProductCard = ({ product, productName }) => {
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
         style: "currency",
         currency: "EUR",
-      }).format(precio)
+      }).format(precio);
     
     
     let tvOn = null;
