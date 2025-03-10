@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export const CatalogProductCard = ({ product, productName }) => {
-    
+
     const precio = parseInt(product.precio.replace('€', ""));
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
         style: "currency",
         currency: "EUR",
-      }).format(precio);
-    
-    
+    }).format(precio);
+
+
     let tvOn = null;
     let images = "";
 
@@ -21,7 +21,7 @@ export const CatalogProductCard = ({ product, productName }) => {
         }
         else {
             images = product.imagen
-            tvOn= true;
+            tvOn = true;
         }
     };
 
@@ -41,53 +41,35 @@ export const CatalogProductCard = ({ product, productName }) => {
     validacionLista(productName);
     validacionProduct(productName);
 
-
-
-
     return (
-        <>
-            <div className="container_card container_card_catalog">
-                <div className="card_product">
-                    <div className='container_img'>
-                        <Link to={IndividualProduct}>
-                            <img src={images[0]} />
-                        </Link>
-                    </div>
-                    <span>{product.modelo}</span>
-                    <ul className='card_description'>
-                        {!tvOn ?
-                            <>
-                                <li><b>Almacenamiento:  </b>{product.almacenamiento}</li>
-                                <li><b>Memoria Ram:  </b> {product.memoria_ram}</li>
-                                <li><b>Camara:  </b> {product.camara}</li>
-                            </>
-                            :
-                            <>
-                                <li><b>Marca:  </b> {product.marca}</li>
-                                <li><b>Pantalla:  </b> {product.pantalla}</li>
-                                <li><b>Año Lanzamiento:  </b> {product.año_modelo}</li>
-                            </>
-                        }
-                    </ul>
-                    <h3>{totalPrecioEur}</h3>
+        <div className="container_card container_card_catalog">
+            <div className="card_product">
+                <div className='container_img'>
                     <Link to={IndividualProduct}>
-                        <button className='btn_card_product'>comprar</button>
+                        <img src={images[0]} />
                     </Link>
                 </div>
+                <span>{product.modelo}</span>
+                <ul className='card_description'>
+                    {!tvOn ?
+                        <>
+                            <li><b>Almacenamiento:  </b>{product.almacenamiento}</li>
+                            <li><b>Memoria Ram:  </b> {product.memoria_ram}</li>
+                            <li><b>Camara:  </b> {product.camara}</li>
+                        </>
+                        :
+                        <>
+                            <li><b>Marca:  </b> {product.marca}</li>
+                            <li><b>Pantalla:  </b> {product.pantalla}</li>
+                            <li><b>Año Lanzamiento:  </b> {product.año_modelo}</li>
+                        </>
+                    }
+                </ul>
+                <h3>{totalPrecioEur}</h3>
+                <Link to={IndividualProduct}>
+                    <button className='btn_card_product'>comprar</button>
+                </Link>
             </div>
-
-
-
-            {/* <div className="card border-0 w-100 mb-5 text-white">
-                <div className="image-product-card ratio ratio-1x1">
-                <img src={images[0]} className="card-img-top object-fit-cover h-100" alt="..."/>
-                </div>
-                    <div className="text-product-card card-body border-card border-3 product">
-                        <h5 className="card-title mb-0" style={{fontSize: "1em"}}><a href="#">{product.modelo}</a></h5>
-                        <p className="fs-4 my-0 py-0"><b>{product.precio}</b></p>
-                        <p className="card-text" style={{fontSize: "0.6em"}}>{descripcion}</p>
-                    </div>
-            </div> */}
-        </>
+        </div>
     )
 }
