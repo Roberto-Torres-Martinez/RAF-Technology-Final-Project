@@ -6,8 +6,19 @@ import { privateUser } from "../apiservices/callToApi";
 
 export const Navbar = () => {
 	const { store } = useContext(Context);
-	const [isVerified, setIsVerified] = useState(null)
+	const [isVerified, setIsVerified] = useState(null);
+	const [search, setSearch] = useState("");
 
+	let products = [];
+	const phones = store.phones;
+	const tvs = store.tvs;
+	const laptops = store.laptops;
+
+	products = phones.concat(laptops, tvs);
+
+	console.log(products);
+	
+	
 
 
 	const checkout = async () =>{
