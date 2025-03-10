@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import { ProductCard } from "./product-card";
 import { Link } from "react-router-dom";
 
-export const ProductSection = ({ name, products}) => {
+export const ProductSection = ({ name, products }) => {
 
     let catalogProduct = "";
     const validacionProduct = (producto) => {
         if (producto == "Laptops") {
-            catalogProduct = "/laptops-catalog"};
+            catalogProduct = "/laptops-catalog"
+        };
         if (producto == "Moviles") {
-            catalogProduct = "/phones-catalog"};
+            catalogProduct = "/phones-catalog"
+        };
         if (producto == "TVs") {
-            catalogProduct = "/tvs-catalog"};
+            catalogProduct = "/tvs-catalog"
+        };
     };
 
     validacionProduct(name);
@@ -23,12 +26,13 @@ export const ProductSection = ({ name, products}) => {
                 <h1 className="ms-5 mb-2 text-white">{name}</h1>
                 <div className="section container mx-3 pt-5 px-5 pb-1 border-techno border-4 mt-4 mx-auto">
                     <div className="row justify-content-around">
-                            {products.map((product, index) =>{
-                                return(
-                                    <div className="col-md-3">    
-                                        <ProductCard key={index} name={name} product={product}/>
-                                    </div>    
-                            )})}; 
+                        {products.map((product, index) => {
+                            return (
+                                <div className="col-md-3">
+                                    <ProductCard key={index} name={name} product={product} />
+                                </div>
+                            )
+                        })};
                     </div>
                     <div className="w-100">
                         <div className="d-flex justify-content-end">
@@ -37,7 +41,6 @@ export const ProductSection = ({ name, products}) => {
                             </Link>
                         </div>
                     </div>
-
                 </div>
             </div>
         </>
