@@ -1,9 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
+import { useContext } from "react";
+import { Context } from "../store/appContext";
 
-export const Footer = () => (
+export const Footer = () => {
+
+const {store} = useContext(Context)
+
+return (	
 	<>
-		<div className="container-fluid bg-footer">
-			<div className="container" style={{ backgroundColor: "rgb(56, 148, 163)" }}>
+		<div className={`container-fluid bg-footer ${store.negative_colors ? "negative-background": "positive-background"}`}>
+			<div className={`container ${store.negative_colors ? "negative-background border-top border-black": "positive-background"}`} >
 				<div className="row pb-5 pt-3">
 					<div className="col-3">
 						<h5><i className="fa-solid fa-user-astronaut "></i></h5>
@@ -37,4 +43,4 @@ export const Footer = () => (
 			</div>
 		</div>
 	</>
-);
+)};

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { createUser, getUsers } from "../apiservices/callToApi";
 import { Link, useNavigate } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const SignUp = () => {
     const [newUser, setNewUser] = useState();
@@ -8,7 +9,8 @@ export const SignUp = () => {
     const [userList, setUserList] = useState();
     const [userExist, setUserExist] = useState(false);
     const navigate = useNavigate();    
-
+    const {actions } = useContext(Context)
+    
     const handleChange = (e) =>{
         setNewUser({...newUser, [e.target.name]: e.target.value});
     };
@@ -48,14 +50,22 @@ export const SignUp = () => {
 
     useEffect(()=>{
         getUsers(setUserList);
+        actions.setPositiveColors()
+        actions.setNoneNavbarVisibility()
     }, []);
 
+        
     return (
         <>
 
             <div className="container-fluid d-flex justify-content-center align-items-center " style={{backgroundColor: "rgb(47, 65, 79)"}}>
 
                 <div className="row md-col-12 form-signup">
+                <div className="d-flex justify-content-center mt-5">
+                    <Link to="/">
+                        <i className="fa-solid fa-user-astronaut fs-2 text-white "></i>
+                    </Link>
+                        </div>
                     <h1 className="text-white titulo text-center title-signup">Crear Cuenta</h1>
                     <form className="border border-light rounded-3" onSubmit={e => handleSubmit(e)}>
                         {userExist && <p style={{color: 'red'}}>Ya existe una cuenta asociado a este email o usuario </p>} 

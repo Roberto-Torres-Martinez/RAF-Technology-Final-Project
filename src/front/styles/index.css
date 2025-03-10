@@ -9,7 +9,7 @@ ul {
     list-style-type: none
 }
 
-.navbar {
+.positive-navbar {
     width: 100%;
     margin: auto;
 }
@@ -70,7 +70,7 @@ ul {
 
 }
 
-.navbar {
+.positive-navbar {
     background-color: rgb(56, 148, 163);
     font-size: 1.3em;
 }
@@ -517,6 +517,23 @@ height: 20%;
 
 .container_card_home .card_description{
     text-align: justify;
-    height: 3.5em;
+     height: 3.5em;
     margin: 1.5em 1em 1em;
+}
+
+
+.negative-background {
+    background-color: rgb(234, 248, 252)
+}
+
+.positive-background {
+    background-color: rgb(56, 148, 163);
+}
+
+.negative-navbar {
+    background-color: rgb(47, 65, 79);
+    font-size: 1.3em;
+    width: 100%;
+    margin: auto;
+   
 }
