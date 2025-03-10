@@ -14,11 +14,12 @@ export const CatalogProductCard = ({product, productName}) => {
     else{
         images = product.imagen
         descripcion = `${product.marca}, ${product.pantalla}`
-
     }
  }
 
  validacionLista(productName)
+
+ 
 
 
 

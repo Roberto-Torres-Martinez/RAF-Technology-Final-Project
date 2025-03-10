@@ -17,6 +17,9 @@ export const CatalogCatalog = ({productList}) => {
         titulo = "de Portatiles"
     }
 
+
+   
+
     return (
         <>
             <div className="container-fluid text-white">
