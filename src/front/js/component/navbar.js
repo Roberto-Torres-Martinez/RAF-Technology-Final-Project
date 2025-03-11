@@ -19,21 +19,21 @@ export const Navbar = () => {
 		setIsVerified(verified)};
 
 
-	const verifiedSearch = () => {
-		if(search){
-			navigate('/search-product')
-		}else{
-			navigate('/')
-		};
-	};
+	// const verifiedSearch = () => {
+	// 	if(search){
+	// 		navigate('/search-product')
+	// 	}else{
+	// 		navigate('/')
+	// 	};
+	// };
 
 	useEffect(()=>{
 		checkout();
 	},[]);
 
-	useEffect(()=>{
-		verifiedSearch();
-	},[search])
+	// useEffect(()=>{
+	// 	verifiedSearch();
+	// },[search])
 
 	const logOut = () => {
 		sessionStorage.removeItem('token');

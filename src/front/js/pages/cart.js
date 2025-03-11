@@ -18,11 +18,11 @@ export const Cart = () => {
     return (
         <>
             <div className="container-fluid negative-background" style={{backgroundColor : "rgb(234, 248, 252)"}}>
-                <div className="row justify-content-around">
-                    <div className="col-8">
+                <div className="row justify-content-around mx-3">
+                    <div className="col-lg-7 col-sm-12">
                         <ProductList />
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-4 col-sm-12">
                         <OrderResume />
                     </div>
                 </div>

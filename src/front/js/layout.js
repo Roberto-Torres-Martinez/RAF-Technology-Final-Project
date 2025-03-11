@@ -47,7 +47,6 @@ const Layout = () => {
                             <Route element={<Catalog productList="tvs" />} path="/tvs-catalog" />
                             <Route element={<Catalog productList="laptops" />} path="/laptops-catalog" />
                             <Route element={<SearchProduct/>} path="/search-product" />
-
                             <Route element={<Cart />} path="/cart" />
 
                             <Route element={<h1>Not found!</h1>} />
