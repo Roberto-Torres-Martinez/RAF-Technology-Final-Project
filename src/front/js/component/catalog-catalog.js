@@ -14,7 +14,7 @@ export const CatalogCatalog = ({ productList }) => {
         titulo = "de TVs"
     }
     else if (productList == "laptops") {
-        titulo = "de Pórtatiles"
+        titulo = "de Portátiles"
     }
 
 

@@ -30,7 +30,7 @@ export const VistaIndividualPhone = () => {
             const response = await fetch(urlBackend + "phone/" + smartphone_id);
 
             const data = await response.json();
-            console.log(data);
+
             setPhone(data);
         } catch (error) {
             console.error("Error getting ID phones from API");
@@ -54,13 +54,13 @@ export const VistaIndividualPhone = () => {
                 </div>
                 <div className="col-md-7 text-white">
                     <div className="card-body-individual">
-                        <h5 className="card-title sub-titulo mb-3">{phone?.modelo}</h5>
+                        <h5 className="card-title sub-titulo mb-3 titulo">{phone?.modelo}</h5>
                         <p className="card-text-score"></p>
                         <p className="card-text-price sub-titulo">
-                            <small className="text-white">{totalPrecioEur}</small>
+                            <small className="text-white titulo">{totalPrecioEur}</small>
                         </p>
                         <p className="card-text">
-                            <button className="btn-add-cart">
+                            <button className="btn-add-cart texto">
                                 <i className="fa-solid fa-cart-plus"></i> Añadir al carrito
                             </button>
                         </p>
@@ -68,19 +68,19 @@ export const VistaIndividualPhone = () => {
                             <div className="accordion-item">
                                 <h2 className="accordion-header">
                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTop" aria-expanded="false" aria-controls="collapseTop">
-                                        <strong>Descripción</strong>
+                                        <strong className="texto">Descripción</strong>
                                     </button>
                                 </h2>
                                 <div id="collapseTop" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phone?.descripcion}</p>
+                                        <p className="texto">{phone?.descripcion}</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="accordion-item">
                                 <h2 className="accordion-header">
                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        <strong>Colores</strong>
+                                        <strong className="texto">Colores</strong>
                                     </button>
                                 </h2>
                                 <div id="collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -105,72 +105,72 @@ export const VistaIndividualPhone = () => {
                             <div className="accordion-item">
                                 <h2 className="accordion-header">
                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <strong>Cámara</strong>
+                                        <strong className="texto">Cámara</strong>
                                     </button>
                                 </h2>
                                 <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phone?.camara}</p>
+                                        <p className="texto">{phone?.camara}</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="accordion-item">
                                 <h2 className="accordion-header">
                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <strong>Almacenamiento</strong>
+                                        <strong className="texto">Almacenamiento</strong>
                                     </button>
                                 </h2>
                                 <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phone?.almacenamiento}</p>
+                                        <p className="texto">{phone?.almacenamiento}</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="accordion-item">
                                 <h2 className="accordion-header">
                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        <strong>Memoria RAM</strong>
+                                        <strong className="texto">Memoria RAM</strong>
                                     </button>
                                 </h2>
                                 <div id="collapseFour" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phone?.memoria_ram}</p>
+                                        <p className="texto">{phone?.memoria_ram}</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="accordion-item">
                                 <h2 className="accordion-header">
                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        <strong>Pantalla</strong>
+                                        <strong className="texto">Pantalla</strong>
                                     </button>
                                 </h2>
                                 <div id="collapseFive" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phone?.pantalla}</p>
+                                        <p className="texto">{phone?.pantalla}</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="accordion-item">
                                 <h2 className="accordion-header">
                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        <strong>Batería</strong>
+                                        <strong className="texto">Batería</strong>
                                     </button>
                                 </h2>
                                 <div id="collapseSix" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phone?.bateria}</p>
+                                        <p className="texto">{phone?.bateria}</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="accordion-item">
                                 <h2 className="accordion-header">
                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                        <strong>Procesador</strong>
+                                        <strong className="texto">Procesador</strong>
                                     </button>
                                 </h2>
                                 <div id="collapseSeven" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phone?.procesador}</p>
+                                        <p className="texto">{phone?.procesador}</p>
                                     </div>
                                 </div>
                             </div>
@@ -178,6 +178,7 @@ export const VistaIndividualPhone = () => {
                     </div>
                 </div>
             </div>
+            <h1 className="text-center text-white texto related-products">Productos relacionados (Smartphones)</h1>
             <RelatedProducts />
         </div>
     );

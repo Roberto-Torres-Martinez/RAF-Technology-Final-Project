@@ -5,13 +5,38 @@ import { useParams } from "react-router-dom";
 
 export const VistaIndividualTv = () => {
 
+    const [tv, setTv] = useState([]);
+
     const { store, actions } = useContext(Context)
 
-    const tvs = store.tvs
+    const { tv_id } = useParams();
+
+    const precio = parseInt(tv.precio);
+    const totalPrecioEur = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+    }).format(precio);
 
     const handleImageColors = (imageUrl) => {
         setImageColors(imageUrl);
     };
+
+    const getTvById = async () => {
+        const urlBackend = process.env.BACKEND_URL
+        try {
+            const response = await fetch(urlBackend + "tv/" + tv_id);
+
+            const data = await response.json();
+
+            setTv(data);
+        } catch (error) {
+            console.error("Error getting ID TVs from API");
+        }
+    };
+
+    useEffect(() => {
+        getTvById()
+    }, []);
 
     useEffect(() => {
         actions.setNegativeColors()
@@ -26,10 +51,10 @@ export const VistaIndividualTv = () => {
                 </div>
                 <div className="col-md-6 text-white mb-5">
                     <div className="card-body-individual">
-                        <h5 className="card-title sub-titulo mb-3">{tvs?.modelo}</h5>
+                        <h5 className="card-title sub-titulo mb-3">{tv?.modelo}</h5>
                         <p className="card-text-score"></p>
                         <p className="card-text-price sub-titulo">
-                            <small className="text-white">{tvs?.precio}</small>
+                            <small className="text-white">{totalPrecioEur}</small>
                         </p>
                         <p className="card-text">
                             <button className="btn-add-cart">
@@ -45,7 +70,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseTop" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{tvs?.descripcion}</p>
+                                        <p>{tv?.descripcion}</p>
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +82,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{tvs?.marca}</p>
+                                        <p>{tv?.marca}</p>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +94,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseFive" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{tvs?.pantalla}</p>
+                                        <p>{tv?.pantalla}</p>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +106,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{tvs?.medidas}</p>
+                                        <p>{tv?.medidas}</p>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +118,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseFour" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{tvs?.usos_recomendados}</p>
+                                        <p>{tv?.usos_recomendados}</p>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +130,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseSix" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{tvs?.año_modelo}</p>
+                                        <p>{tv?.año_modelo}</p>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +142,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseSeven" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{tvs?.conectividad}</p>
+                                        <p>{tv?.conectividad}</p>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +154,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseEight" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{tvs?.contenido_de_la_caja}</p>
+                                        <p>{tv?.contenido_de_la_caja}</p>
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +166,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseNine" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{tvs?.usos_recomendados}</p>
+                                        <p>{tv?.usos_recomendados}</p>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +178,7 @@ export const VistaIndividualTv = () => {
                                 </h2>
                                 <div id="collapseTen" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{tvs?.fabricante}</p>
+                                        <p>{tv?.fabricante}</p>
                                     </div>
                                 </div>
                             </div>
@@ -161,6 +186,7 @@ export const VistaIndividualTv = () => {
                     </div>
                 </div>
             </div>
+            <h1 className="text-center text-white texto related-products">Productos relacionados (TVs)</h1>
             <RelatedProducts />
         </div>
     );
