@@ -3,11 +3,13 @@ import React from "react";
 export const OrderResume = () => {
     return (
         <>
-            <div className="container-fluid my-5">
+            <div className="container-fluid order-resume">
                 <div>
+                    <div className="container-fluid">
                     <h4>Resumen del pedido</h4>
-                    <div className="bg-white p-2 rounded">
-                        <table class="table">
+                    <div className="bg-white p-2 rounded mt-5">
+                        <div className="order-resume-table-container">
+                        <table class="table order-resume-table">
                             <thead>
                                 <tr>
                                     <th scope="col">Producto</th>
@@ -34,13 +36,17 @@ export const OrderResume = () => {
                                 </tr>
                             </tbody>
                         </table>
-                        <div className="p-2">
-                            <h4>Subtotal(3 productos) :</h4><br />
-                            <h1 className="d-flex justify-content-end pe-3">300 €</h1>
                         </div>
-                        <div className="d-flex justify-content-center ">
-                            <button className="btn btn-danger rounded-5">Continuar con mi pedido</button>
+                        <div className="p-2 sub-total-text">
+                            <h4>Subtotal(3 productos) :</h4><br />
+                            <span>
+                            <p className="d-flex justify-content-end pe-3 sub-total-resume">300 €</p>
+                            </span>
+                        </div>
+                        <div className="d-flex justify-content-center mt-0 ">
+                            <button className="btn btn-danger rounded-5 resume-button">Continuar con mi pedido</button>
                             </div>
+                    </div>
                     </div>
                 </div>
             </div>

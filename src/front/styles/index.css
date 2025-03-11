@@ -566,3 +566,29 @@ border: 0.01em solid black;
 
 }
 
+.order-resume {
+    margin-top: 5em!important;
+}
+
+.order-resume-table {
+    line-height: 2.5;
+}
+
+.order-resume-table-container {
+    padding: 1em;
+}
+
+.sub-total-resume {
+    font-size: 3.5em;
+    font-weight: 500;
+    
+}
+
+.resume-button {
+    margin-bottom: 2em;
+    padding: 0.5em 2em;
+}
+
+.sub-total-text {
+    margin-bottom: 0;
+}
