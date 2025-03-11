@@ -9,19 +9,11 @@ export const VistaIndividualLaptop = () => {
 
     const { store, actions } = useContext(Context)
 
-    const params = useParams()
-
     const laptops = store.laptops
-
 
     const handleImageColors = (imageUrl) => {
         setImageColors(imageUrl);
     };
-
-    useEffect(() => {
-        actions.getLaptops(params.laptop_id)
-    }, []);
-
 
     useEffect(() => {
         actions.setNegativeColors()
@@ -32,9 +24,9 @@ export const VistaIndividualLaptop = () => {
         <div className="container">
             <div className="row col-md-12">
                 <div className="row col-md-6 card-individual-laptop-image">
-                    <img className="" src={imageColors} alt="Product" />
+                    <img className="mb-5" src={imageColors} alt="Product" />
                 </div>
-                <div className="col-md-6 text-white">
+                <div className="col-md-6 text-white mb-5">
                     <div className="card-body-individual">
                         <h5 className="card-title sub-titulo mb-3">{laptops?.modelo}</h5>
                         <p className="card-text-score"></p>

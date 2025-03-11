@@ -3,23 +3,38 @@ import { Context } from "../store/appContext";
 import { ProductColors } from "../component/product-colors";
 import { RelatedProducts } from "../component/related-products";
 import { useParams } from "react-router-dom";
+import { BackendURL } from "../component/backendURL";
 
 export const VistaIndividualPhone = () => {
     const [imageColors, setImageColors] = useState("https://images.samsung.com/es/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-ecosystem-galaxy-s25-mo.jpg?imbypass=true");
 
+    const [phone, setPhone] = useState(null);
+
     const { store, actions } = useContext(Context)
 
-    const params = useParams()
-
-    const phones = store.phones
-
+    const { smartphone_id } = useParams();
 
     const handleImageColors = (imageUrl) => {
         setImageColors(imageUrl);
     };
 
+
+    const getPhoneById = async () => {
+        const urlBackend = process.env.BACKEND_URL
+        try {
+            const response = await fetch(urlBackend + smartphone_id);
+            console.log(urlBackend + smartphone_id);
+
+            const data = await response.json();
+            console.log(data);
+            setPhone(data);
+        } catch (error) {
+            console.error("Error getting ID phones from API");
+        }
+    };
+
     useEffect(() => {
-        actions.getPhones(params.smartphone_id)
+        getPhoneById()
     }, []);
 
     useEffect(() => {
@@ -31,14 +46,14 @@ export const VistaIndividualPhone = () => {
         <div className="container">
             <div className="row col-md-12">
                 <div className="row col-md-5 card-individual-image">
-                    <img className="" src={imageColors} alt="Product" />
+                    <img className="mb-5" src={imageColors} alt="Product" />
                 </div>
                 <div className="col-md-7 text-white">
                     <div className="card-body-individual">
-                        <h5 className="card-title sub-titulo mb-3">{phones?.modelo}</h5>
+                        <h5 className="card-title sub-titulo mb-3">{phone?.modelo}</h5>
                         <p className="card-text-score"></p>
                         <p className="card-text-price sub-titulo">
-                            <small className="text-white">{phones?.precio}</small>
+                            <small className="text-white">{phone?.precio}</small>
                         </p>
                         <p className="card-text">
                             <button className="btn-add-cart">
@@ -54,7 +69,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseTop" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phones?.descripcion}</p>
+                                        <p>{phone?.descripcion}</p>
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +106,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phones.camara}</p>
+                                        <p>{phone?.camara}</p>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +118,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phones?.almacenamiento}</p>
+                                        <p>{phone?.almacenamiento}</p>
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +130,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseFour" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phones?.memoria_ram}</p>
+                                        <p>{phone?.memoria_ram}</p>
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +142,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseFive" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phones?.pantalla}</p>
+                                        <p>{phone?.pantalla}</p>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +154,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseSix" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phones?.bateria}</p>
+                                        <p>{phone?.bateria}</p>
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +166,7 @@ export const VistaIndividualPhone = () => {
                                 </h2>
                                 <div id="collapseSeven" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
-                                        <p>{phones?.procesador}</p>
+                                        <p>{phone?.procesador}</p>
                                     </div>
                                 </div>
                             </div>

@@ -7,20 +7,11 @@ export const VistaIndividualTv = () => {
 
     const { store, actions } = useContext(Context)
 
-    const params = useParams()
-
     const tvs = store.tvs
-
 
     const handleImageColors = (imageUrl) => {
         setImageColors(imageUrl);
     };
-
-    useEffect(() => {
-        actions.getTvs(params.tv_id)
-    }, []);
-
-
 
     useEffect(() => {
         actions.setNegativeColors()
@@ -31,9 +22,9 @@ export const VistaIndividualTv = () => {
         <div className="container">
             <div className="row col-md-12">
                 <div className="row col-md-6 card-individual-tv-image">
-                    <img className="" src="https://www.bhphotovideo.com/images/images2500x2500/samsung_qn65qn90cafxza_neo_qled_qn90c_65_1742740.jpg" alt="Product" />
+                    <img className="mb-5" src="https://www.bhphotovideo.com/images/images2500x2500/samsung_qn65qn90cafxza_neo_qled_qn90c_65_1742740.jpg" alt="Product" />
                 </div>
-                <div className="col-md-6 text-white">
+                <div className="col-md-6 text-white mb-5">
                     <div className="card-body-individual">
                         <h5 className="card-title sub-titulo mb-3">{tvs?.modelo}</h5>
                         <p className="card-text-score"></p>
