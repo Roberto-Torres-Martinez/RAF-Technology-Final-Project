@@ -40,9 +40,9 @@ const Layout = () => {
                             <Route element={<SignUp />} path="/signup" />
                             <Route element={<PersonalZone />} path="/personalzone" />
                             <Route element={<Tendencias />} path="/tendencias" />
-                            <Route element={<VistaIndividualPhone />} path="/smartphone-info" />
-                            <Route element={<VistaIndividualTv />} path="/tv-info" />
-                            <Route element={<VistaIndividualLaptop />} path="/laptop-info" />
+                            <Route element={<VistaIndividualPhone />} path="/smartphone-info/:smartphone_id" />
+                            <Route element={<VistaIndividualTv />} path="/tv-info/:tv_id" />
+                            <Route element={<VistaIndividualLaptop />} path="/laptop-info/:laptop_id" />
                             <Route element={<Catalog productList="phones" />} path="/phones-catalog" />
                             <Route element={<Catalog productList="tvs" />} path="/tvs-catalog" />
                             <Route element={<Catalog productList="laptops" />} path="/laptops-catalog" />

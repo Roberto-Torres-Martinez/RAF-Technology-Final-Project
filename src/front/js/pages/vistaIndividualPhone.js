@@ -8,22 +8,26 @@ import { BackendURL } from "../component/backendURL";
 export const VistaIndividualPhone = () => {
     const [imageColors, setImageColors] = useState("https://images.samsung.com/es/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-ecosystem-galaxy-s25-mo.jpg?imbypass=true");
 
-    const [phone, setPhone] = useState(null);
+    const [phone, setPhone] = useState([]);
 
     const { store, actions } = useContext(Context)
 
     const { smartphone_id } = useParams();
 
+    const precio = parseInt(phone.precio);
+    const totalPrecioEur = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+    }).format(precio);
+
     const handleImageColors = (imageUrl) => {
         setImageColors(imageUrl);
     };
 
-
     const getPhoneById = async () => {
         const urlBackend = process.env.BACKEND_URL
         try {
-            const response = await fetch(urlBackend + smartphone_id);
-            console.log(urlBackend + smartphone_id);
+            const response = await fetch(urlBackend + "phone/" + smartphone_id);
 
             const data = await response.json();
             console.log(data);
@@ -53,7 +57,7 @@ export const VistaIndividualPhone = () => {
                         <h5 className="card-title sub-titulo mb-3">{phone?.modelo}</h5>
                         <p className="card-text-score"></p>
                         <p className="card-text-price sub-titulo">
-                            <small className="text-white">{phone?.precio}</small>
+                            <small className="text-white">{totalPrecioEur}</small>
                         </p>
                         <p className="card-text">
                             <button className="btn-add-cart">
