@@ -15,6 +15,7 @@ export const SearchProduct = () => {
     return (
         <>
             <h1> soy la busqueda</h1>
+            
         </>
     )
 }
