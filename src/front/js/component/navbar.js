@@ -19,21 +19,21 @@ export const Navbar = () => {
 		setIsVerified(verified)};
 
 
-	const verifiedSearch = () => {
-		if(search){
-			navigate('/search-product')
-		}else{
-			navigate('/')
-		};
-	};
+	// const verifiedSearch = () => {
+	// 	if(search){
+	// 		navigate('/search-product')
+	// 	}else{
+	// 		navigate('/')
+	// 	};
+	// };
 
 	useEffect(()=>{
 		checkout();
 	},[]);
 
-	useEffect(()=>{
-		verifiedSearch();
-	},[search])
+	// useEffect(()=>{
+	// 	verifiedSearch();
+	// },[search])
 
 	const logOut = () => {
 		sessionStorage.removeItem('token');
@@ -55,6 +55,14 @@ export const Navbar = () => {
 						<form className="d-flex" role="search">
 							<input className="form-control me-2" onChange={(e)=>searcher(e)} type="search" placeholder="Search" aria-label="Search"></input>
 						</form>
+						{search && 
+							<>
+								<ul className="dropdown-content">
+									<li>soy la busqueda</li>
+								</ul>
+							</>
+
+						}
 						<div className="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 								<li className="nav-item">

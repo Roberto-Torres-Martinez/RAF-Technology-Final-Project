@@ -11,9 +11,10 @@ export const SearchProduct = () => {
 	const laptops = store.laptops;
 
 	products = phones.concat(laptops, tvs);
+
     return (
         <>
-            <h1> soy yo</h1>
+            <h1> soy la busqueda</h1>
         </>
     )
 }
