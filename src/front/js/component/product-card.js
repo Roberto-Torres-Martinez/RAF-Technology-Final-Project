@@ -18,13 +18,13 @@ export const ProductCard = ({ product, name }) => {
     let IndividualProduct = "";
     const validacionProduct = (producto) => {
         if (producto == "Laptops") {
-            IndividualProduct = "/laptop-info"
+            IndividualProduct = `/laptop-info/${product.laptop_id}`
         };
         if (producto == "Moviles") {
-            IndividualProduct = "/smartphone-info"
+            IndividualProduct = `/smartphone-info/${product.smartphone_id}`
         };
         if (producto == "TVs") {
-            IndividualProduct = "/tv-info"
+            IndividualProduct = `/tv-info/${product.laptop_id}`
         };
     };
 
