@@ -598,3 +598,8 @@ border: 0.01em solid black;
 .sub-total-text {
     margin-bottom: 0;
 }
+
+.related-products {
+    margin-top: 50px;
+    margin-bottom: 110px;
+}

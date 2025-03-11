@@ -4,7 +4,6 @@ import { ProductCardSmall } from "./productCardSmall";
 export const RelatedProducts = () => {
     return (
         <div className="container my-5">
-            <h1 className="text-white text-center mt-5 mb-5">Productos relacionados (Smartphones)</h1>
             <div className="section container mx-3 pt-5 px-5 pb-1 border-techno border-4 mt-4 mx-auto">
                 <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-inner">
