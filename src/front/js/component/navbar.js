@@ -10,13 +10,24 @@ export const Navbar = () => {
 	const [search, setSearch] = useState("");
 	const navigate = useNavigate();
 
+	let products = [];
+	const phones = store.phones;
+	const tvs = store.tvs;
+	const laptops = store.laptops;
+
+	products = phones.concat(laptops, tvs);
+
+	console.log(products);
+	
+
 	const searcher = (e) => {
 		setSearch(e.target.value)
 	};
 
-	const checkout = async () =>{
+	const checkout = async () => {
 		const verified = await privateUser()
-		setIsVerified(verified)};
+		setIsVerified(verified)
+	};
 
 
 	// const verifiedSearch = () => {
@@ -27,9 +38,9 @@ export const Navbar = () => {
 	// 	};
 	// };
 
-	useEffect(()=>{
+	useEffect(() => {
 		checkout();
-	},[]);
+	}, []);
 
 	// useEffect(()=>{
 	// 	verifiedSearch();
@@ -43,41 +54,44 @@ export const Navbar = () => {
 
 	return (
 		<>
-			<nav className={`navbar navbar-expand-lg  ${store.negative_colors ? "negative-navbar" :"positive-navbar"}`} style={store.navbar_visibility? { display: "block"} : {display: "none"}}>
-				<div className="container">		
+			<nav className={`navbar navbar-expand-lg  ${store.negative_colors ? "negative-navbar" : "positive-navbar"}`} style={store.navbar_visibility ? { display: "block" } : { display: "none" }}>
+				<div className="container">
 					<Link to={'/'}>
 						<p className="navbar-brand" ><i className="fa-solid fa-user-astronaut fs-2 text-white "></i></p>
 					</Link>
 					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
 					</button>
-					<div className="d-flex">
-						<form className="d-flex" role="search">
-							<input className="form-control me-2" onChange={(e)=>searcher(e)} type="search" placeholder="Search" aria-label="Search"></input>
+					<div className="d-flex align-items-center">
+						<form className="dropdown-search" role="search">
+							<input className="form-control me-2 input-search" onChange={(e) => searcher(e)} type="search" placeholder="Buscar" aria-label="Search"></input>
+							{search.length != 0 &&
+								<div className="dropdown-content-search" style={{display: 'block'}}>
+									{
+										products.map((product, index)=>{
+											return(
+												<p key={index}>{product.modelo}</p>
+											)
+										})
+									}
+								</div>
+							}
 						</form>
-						{search && 
-							<>
-								<ul className="dropdown-content">
-									<li>soy la busqueda</li>
-								</ul>
-							</>
-
-						}
-						<div className="collapse navbar-collapse" id="navbarSupportedContent">
+						<div className="collapse navbar-collapse d-flex align-items-center" id="navbarSupportedContent">
 							<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 								<li className="nav-item">
 									<Link to="/phones-catalog">
-									<p className="nav-link" style={{ color: "white" }} aria-current="page" >Móviles</p>
+										<p className="nav-link" style={{ color: "white" }} aria-current="page" >Móviles</p>
 									</Link>
 								</li>
 								<li className="nav-item">
-								<Link to="/tvs-catalog">
-									<p className="nav-link" style={{ color: "white" }} aria-current="page" >Televisores</p>
+									<Link to="/tvs-catalog">
+										<p className="nav-link" style={{ color: "white" }} aria-current="page" >Televisores</p>
 									</Link>
 								</li>
 								<li className="nav-item">
-								<Link to="/laptops-catalog">
-									<p className="nav-link" style={{ color: "white" }} aria-current="page" >Pórtatiles</p>
+									<Link to="/laptops-catalog">
+										<p className="nav-link" style={{ color: "white" }} aria-current="page" >Pórtatiles</p>
 									</Link>
 								</li>
 								<li className="nav-item">
@@ -85,19 +99,19 @@ export const Navbar = () => {
 								</li>
 								<li className="nav-item dropdown">
 									<a className="nav-link dropbtn" style={{ color: "white" }} ><i className="fa-solid fa-user"></i></a>
-									{!isVerified ? 
+									{!isVerified ?
 										<div className="dropdown-content">
-										<Link to={'/login'}><span>Iniciar Sesion</span></Link>
-										<Link to={'/signup'}><span>Crear Usuario</span></Link></div>
-										: 
+											<Link to={'/login'}><span>Iniciar Sesion</span></Link>
+											<Link to={'/signup'}><span>Crear Usuario</span></Link></div>
+										:
 										<div className="dropdown-content">
-										<Link to={'/personalzone'}><span>Zona Personal</span></Link>
-										<Link to={'/'}><span onClick={logOut}>Cerrar Sesion</span></Link></div>
+											<Link to={'/personalzone'}><span>Zona Personal</span></Link>
+											<Link to={'/'}><span onClick={logOut}>Cerrar Sesion</span></Link></div>
 									}
 								</li>
 								<li className="nav-item">
 									<Link to="/cart">
-									<a className="nav-link" style={{ color: "white" }} ><i className="fa-solid fa-cart-shopping"></i></a>
+										<a className="nav-link" style={{ color: "white" }} ><i className="fa-solid fa-cart-shopping"></i></a>
 									</Link>
 								</li>
 							</ul>
