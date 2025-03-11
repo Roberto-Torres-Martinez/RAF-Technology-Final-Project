@@ -14,8 +14,7 @@ export const SearchProduct = () => {
 
     return (
         <>
-            <h1> soy la busqueda</h1>
-            
+            <h1> soy la busqueda haciendo rebase</h1>
         </>
     )
 }
