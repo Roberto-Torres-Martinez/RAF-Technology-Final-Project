@@ -56,12 +56,12 @@ export const VistaIndividualPhone = () => {
                     <div className="card-body-individual">
                         <h5 className="card-title sub-titulo mb-3 titulo">{phone?.modelo}</h5>
                         <p className="card-text-score"></p>
-                        <p className="card-text-price sub-titulo">
-                            <small className="text-white titulo">{totalPrecioEur}</small>
+                        <p className="card-text-price titulo">
+                            <small className="text-white">{totalPrecioEur}</small>
                         </p>
                         <p className="card-text">
                             <button className="btn-add-cart texto">
-                                <i className="fa-solid fa-cart-plus"></i> Añadir al carrito
+                                <i className="fa-solid fa-cart-plus mb-1"></i> Añadir al carrito
                             </button>
                         </p>
                         <div className="accordion" id="accordionExample">
