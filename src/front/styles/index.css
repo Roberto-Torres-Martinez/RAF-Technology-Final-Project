@@ -108,12 +108,12 @@ ul {
     transform: translate(3px, 3px);
 }
 
-.dropdown {
+.dropdown, .dropdown-search {
     position: relative;
     display: inline-block;
 }
 
-.dropdown-content {
+.dropdown-content, .dropdown-content-search{
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -122,14 +122,20 @@ ul {
     z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content-search{
+    overflow-y: auto;
+    height: 15em;
+    width: 20em;
+}
+
+.dropdown-content a, .dropdown-content-search a  {
     color: black;
     padding: 5px 0;
     text-decoration: none;
     display: block;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content{
     display: block;
 }
 
