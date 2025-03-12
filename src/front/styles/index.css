@@ -5,6 +5,7 @@ body {
     background-color: #2F414F;
 }
 
+
 ul {
     list-style-type: none
 }
@@ -618,4 +619,19 @@ border: 0.01em solid black;
 .cart-product-list-title {
     font-size: 1.5em;
     font-weight: 500;
+}
+
+
+.carrousel-button {
+    text-decoration-line: none;
+}
+
+
+.carousel-image {
+   height: 90vh;
+}
+
+
+.slide {
+    animation: scroll  40s linear infinite;
 }

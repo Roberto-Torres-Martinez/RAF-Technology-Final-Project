@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../../../docs/assets/novedad-iphone.jpg"
 
 export const Welcome = () => {
     return (<>
@@ -14,26 +15,31 @@ export const Welcome = () => {
                             <p className=" texto d-flex justify-content-center px-5 fs-3">Tecnologia  en demanda, en la puerta de tu casa, tu mejor version tecnologica te espera.</p>
                         </div>
                         <div className="d-flex justify-content-center w-100 pb-0 pt-0 mt-0 mb-5">
-                            <div className="rounded border border-info-subtle border-4">
-                                <p className="texto m-2 fs-3 text-white">Avanzar</p>
+                            <div className=" rounded border border-info-subtle border-4">
+                                <a href="#inicio" className="carrousel-button texto m-2 fs-3 text-white">Avanzar</a>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <Link to={'/tendencias'}>
-                    <div className="carousel-item">
-                        <h1 className="text-center text-white titulo">Productos en Tendencia</h1>
-                        <img src="https://static.wikia.nocookie.net/dragonuniverse/images/5/5b/Gogeta_Blue.png/revision/latest/scale-to-width-down/985?cb=20190417025204" className="d-block w-100" alt="..." />
-                    </div>
-                </Link>
-                    <div className="carousel-item">
-                        <h1 className="text-center text-white titulo">Novedades</h1>
-                        <img src="https://static.wikia.nocookie.net/dragonball/images/d/db/Ssg-vegeta-dragon-ball-super-broly-1146238-1280x0.jpeg/revision/latest/scale-to-width-down/985?cb=20181202154441" className="d-block w-100" alt="..." />
-                    </div>
+                <div className="slide">
                 <div className="carousel-item">
-                    <h1 className="text-center text-white titulo">Productos en Ofertas</h1>
-                    <img src="https://static.wikia.nocookie.net/dragonball/images/d/db/Ssg-vegeta-dragon-ball-super-broly-1146238-1280x0.jpeg/revision/latest/scale-to-width-down/985?cb=20181202154441" className="d-block w-100" alt="..." />
+                    <div className="carousel-image">
+
+                        <img src="https://i.ibb.co/twzbS1dT/Tendencia-Pixelbook.jpg" className="d-block mx-auto object-fit-scale" alt="..." />
+                    </div>
+                </div>
+
+                <div className="carousel-item">
+                    <div className="carousel-image">
+                        <img src="https://i.ibb.co/nHxxJn6/Novedad-iphone.jpg" className="d-block mx-auto object-fit-scale" alt="..." />
+                    </div>
+                </div>
+                <div className="carousel-item">
+                    <div className="carousel-image">
+                        <img src="https://i.ibb.co/5h2BB0Cy/Oferta-samsung.jpg" className="d-block mx-auto object-fit-scale" />
+                    </div>
+                    </div>
                 </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
