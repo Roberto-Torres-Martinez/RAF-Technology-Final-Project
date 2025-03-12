@@ -8,6 +8,7 @@ export const Navbar = () => {
 	const { store } = useContext(Context);
 	const [isVerified, setIsVerified] = useState(null);
 	const [search, setSearch] = useState("");
+
 	const navigate = useNavigate();
 
 	let products = [];
@@ -15,8 +16,6 @@ export const Navbar = () => {
 	const tvs = store.tvs;
 	const laptops = store.laptops;
 	products = phones.concat(laptops, tvs);
-
-	console.log(products);
 	
 	const searcher = (e) => {
 		setSearch(e.target.value);
@@ -27,6 +26,19 @@ export const Navbar = () => {
 			modelo.toLowerCase().includes(search.toLowerCase()) || 
 			marca.toLowerCase().includes(search.toLowerCase()));
 
+	const validacionProduct = (product) => {
+		let route = "";
+		if(product.laptop_id){
+			route = `/laptop-info/${product.laptop_id}` 
+		}else if(product.smartphone_id){
+			route = `/smartphone-info/${product.smartphone_id}`
+		}else if(product.tv_id){
+			route = `/tv-info/${product.tv_id}`
+		};
+		navigate(route)
+		setSearch("");
+	};	
+
 	const checkout = async () => {
 		const verified = await privateUser();
 		setIsVerified(verified);
@@ -35,6 +47,7 @@ export const Navbar = () => {
 	useEffect(() => {
 		checkout();
 	}, []);
+
 
 	const logOut = () => {
 		sessionStorage.removeItem('token');
@@ -54,13 +67,13 @@ export const Navbar = () => {
 					</button>
 					<div className="d-flex align-items-center">
 						<form className="dropdown-search" role="search">
-							<input className="form-control me-2 input-search" onChange={(e) => searcher(e)} type="search" placeholder="Buscar" aria-label="Search"></input>
+							<input className="form-control me-2 input-search" value={search} onChange={(e) => searcher(e)} type="search" placeholder="Buscar" aria-label="Search"></input>
 							{search.length != 0 &&
 								<div className="dropdown-content-search" style={{display: 'block'}}>
 									{
-										results.map((product, index)=>{
+										results.map((product, index)=>{											
 											return(
-												<p key={index}>{product.marca} {product.modelo}</p>
+												<p key={index} onClick={()=>validacionProduct(product)}>{product.marca} {product.modelo}</p>
 											)
 										})
 									}

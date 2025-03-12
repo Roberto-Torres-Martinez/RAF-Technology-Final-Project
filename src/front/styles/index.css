@@ -126,6 +126,7 @@ ul {
     overflow-y: auto;
     max-height: 15em;
     width: 20em;
+    cursor: pointer;
 }
 
 .dropdown-content a, .dropdown-content-search a  {
