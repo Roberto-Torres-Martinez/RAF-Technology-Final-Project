@@ -1,7 +1,13 @@
 import React from "react";
 import { ProductCardSmall } from "./productCardSmall";
+import { useContext } from "react";
+import { Context } from "../store/appContext";
+import { useEffect } from "react";
 
-export const RelatedProducts = () => {
+export const RelatedProducts = ({}) => {
+
+    const { store, actions } = useContext(Context);
+
     return (
         <div className="container my-5">
             <div className="section container mx-3 pt-5 px-5 pb-1 border-techno border-4 mt-4 mx-auto">
@@ -9,59 +15,11 @@ export const RelatedProducts = () => {
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <div className="d-flex justify-content-center mb-5">
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className="d-flex justify-content-center mb-5">
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className="d-flex justify-content-center mb-5">
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
-                                <div className="col-md-2 p-2">
-                                    <ProductCardSmall />
-                                </div>
+                                {store.phones.map((phone, index) => (
+                                    <div className="col-md-2 p-2" key={phone.id}>
+                                        <ProductCardSmall product={phone} />
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

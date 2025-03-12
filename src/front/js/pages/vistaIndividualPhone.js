@@ -5,7 +5,7 @@ import { RelatedProducts } from "../component/related-products";
 import { useParams } from "react-router-dom";
 import { BackendURL } from "../component/backendURL";
 
-export const VistaIndividualPhone = () => {
+export const VistaIndividualPhone = ({product}) => {
     const [imageColors, setImageColors] = useState("https://images.samsung.com/es/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-ecosystem-galaxy-s25-mo.jpg?imbypass=true");
 
     const [phone, setPhone] = useState([]);
