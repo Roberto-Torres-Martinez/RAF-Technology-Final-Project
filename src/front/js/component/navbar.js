@@ -14,41 +14,31 @@ export const Navbar = () => {
 	const phones = store.phones;
 	const tvs = store.tvs;
 	const laptops = store.laptops;
-
 	products = phones.concat(laptops, tvs);
 
 	console.log(products);
 	
-
 	const searcher = (e) => {
-		setSearch(e.target.value)
+		setSearch(e.target.value);
 	};
+
+	let results = search.length > 0 && 
+		products.filter(({ modelo = "", marca = "" }) => 
+			modelo.toLowerCase().includes(search.toLowerCase()) || 
+			marca.toLowerCase().includes(search.toLowerCase()));
 
 	const checkout = async () => {
-		const verified = await privateUser()
-		setIsVerified(verified)
+		const verified = await privateUser();
+		setIsVerified(verified);
 	};
-
-
-	// const verifiedSearch = () => {
-	// 	if(search){
-	// 		navigate('/search-product')
-	// 	}else{
-	// 		navigate('/')
-	// 	};
-	// };
 
 	useEffect(() => {
 		checkout();
 	}, []);
 
-	// useEffect(()=>{
-	// 	verifiedSearch();
-	// },[search])
-
 	const logOut = () => {
 		sessionStorage.removeItem('token');
-		sessionStorage.removeItem('idUser')
+		sessionStorage.removeItem('idUser');
 		window.location.reload();
 	};
 
@@ -68,9 +58,9 @@ export const Navbar = () => {
 							{search.length != 0 &&
 								<div className="dropdown-content-search" style={{display: 'block'}}>
 									{
-										products.map((product, index)=>{
+										results.map((product, index)=>{
 											return(
-												<p key={index}>{product.modelo}</p>
+												<p key={index}>{product.marca} {product.modelo}</p>
 											)
 										})
 									}
