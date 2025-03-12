@@ -108,12 +108,14 @@ ul {
     transform: translate(3px, 3px);
 }
 
-.dropdown, .dropdown-search {
+.dropdown,
+.dropdown-search {
     position: relative;
     display: inline-block;
 }
 
-.dropdown-content, .dropdown-content-search{
+.dropdown-content,
+.dropdown-content-search {
     display: none;
     position: absolute;
     min-width: 160px;
@@ -165,6 +167,9 @@ hr{
     display: block;
     color: white;
 }
+
+.dropdown:hover .dropdown-content {
+    display: block;
 
 .nav-link{
     padding-top: 1em;
@@ -453,9 +458,9 @@ hr{
 }
 
 .card-individual-tv-image img {
-    width: 800px;
-    height: 600px;
-    margin-top: 110px;
+    width: 510px;
+    height: 500px;
+    margin-top: 130px;
     object-fit: cover;
     border-radius: 8%;
     transition: transform 0.3s ease-in-out;
@@ -487,7 +492,7 @@ hr{
     color: #2F414F;
 }
 
-.container_card_catalog{
+.container_card_catalog {
     width: 30em;
 }
 
@@ -545,7 +550,7 @@ hr{
     margin: 1.5em 1em 1em;
 }
 
-.btn_card_product{
+.btn_card_product {
     background-color: rgb(215, 44, 32);
     width: 15em;
     height: 3em;
@@ -556,10 +561,9 @@ hr{
     color: #fafafa;
     font-weight: bold;
     font-size: 1em;
-};
+}
 
-
-.negative-background{
+.negative-background {
     background-color: rgb(234, 248, 252)
 }
 
@@ -572,7 +576,6 @@ hr{
     font-size: 1.3em;
     width: 100%;
     margin: auto;
-
 }
 
 .cart-delete-button {
@@ -582,30 +585,37 @@ hr{
 }
 
 .cart-delete-button:hover {
-background-color: rgb(221, 221, 221);
-border: 0.01em solid black;
-
+    background-color: rgb(221, 221, 221);
+    border: 0.01em solid black;
 }
-
 
 .card-cart-product {
     background-color: white;
 }
 
-.title-cart-product {
-    font-size: 1.3em;
-    font-weight: 500;
-    margin-bottom: 0;
+.title-color {
+    margin-bottom: 10px;
+}
+
+.img-small-vista-individual {
+    margin-top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 8%;
+}
+
+.img-small-vista-individual:hover {
+    transform: scale(1.25);
+    transition: transform 0.5s ease;
 }
 
 .description-cart-product {
     font-size: 0.8em;
 
-
 }
 
 .order-resume {
-    margin-top: 5em!important;
+    margin-top: 5em !important;
 }
 
 .order-resume-table {
@@ -619,8 +629,7 @@ border: 0.01em solid black;
 .sub-total-resume {
     font-size: 3.5em;
     font-weight: 500;
-    top:0;
-    
+    top: 0;
 }
 
 .resume-button {
@@ -644,7 +653,6 @@ border: 0.01em solid black;
 .sub-total-container {
     line-height: 1em
 }
-
 
 .cart-product-list-title {
     font-size: 1.5em;
