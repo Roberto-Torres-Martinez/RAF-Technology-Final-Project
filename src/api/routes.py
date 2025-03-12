@@ -10,12 +10,26 @@ from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identi
 from api.productos.phones import phones
 from api.productos.tv import tvs
 from api.productos.laptops import laptops
+import cloudinary
+import cloudinary.uploader
+
 
 
 api = Blueprint('api', __name__)
 
 # Allow CORS requests to this API
 CORS(api)
+
+#ENDPOINT IMAGEN CLOUDINARY
+@api.route('/upload-image', methods=['POST'])
+def upload():
+    file_to_upload = request.files['img']
+    if file_to_upload:
+        upload = cloudinary.uploader.upload(file_to_upload)
+        print(upload['url'])
+        return jsonify(upload['secure_url']), 201
+    return jsonify({'error': 'no se cargo la imagen'}), 400
+    
 
 #ENDPOINTS USERS
 

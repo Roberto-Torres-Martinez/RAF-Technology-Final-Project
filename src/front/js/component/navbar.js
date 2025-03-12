@@ -8,6 +8,7 @@ export const Navbar = () => {
 	const { store } = useContext(Context);
 	const [isVerified, setIsVerified] = useState(null);
 	const [search, setSearch] = useState("");
+
 	const navigate = useNavigate();
 
 	let products = [];
@@ -15,8 +16,6 @@ export const Navbar = () => {
 	const tvs = store.tvs;
 	const laptops = store.laptops;
 	products = phones.concat(laptops, tvs);
-
-	console.log(products);
 	
 	const searcher = (e) => {
 		setSearch(e.target.value);
@@ -27,6 +26,19 @@ export const Navbar = () => {
 			modelo.toLowerCase().includes(search.toLowerCase()) || 
 			marca.toLowerCase().includes(search.toLowerCase()));
 
+	const validacionProduct = (product) => {
+		let route = "";
+		if(product.laptop_id){
+			route = `/laptop-info/${product.laptop_id}` 
+		}else if(product.smartphone_id){
+			route = `/smartphone-info/${product.smartphone_id}`
+		}else if(product.tv_id){
+			route = `/tv-info/${product.tv_id}`
+		};
+		navigate(route)
+		setSearch("");
+	};	
+
 	const checkout = async () => {
 		const verified = await privateUser();
 		setIsVerified(verified);
@@ -35,6 +47,7 @@ export const Navbar = () => {
 	useEffect(() => {
 		checkout();
 	}, []);
+
 
 	const logOut = () => {
 		sessionStorage.removeItem('token');
@@ -54,13 +67,13 @@ export const Navbar = () => {
 					</button>
 					<div className="d-flex align-items-center">
 						<form className="dropdown-search" role="search">
-							<input className="form-control me-2 input-search" onChange={(e) => searcher(e)} type="search" placeholder="Buscar" aria-label="Search"></input>
+							<input className={`p-1 me-2 ${search.length != 0 ? 'input-search-focus' : 'input-search'}`} value={search} onChange={(e) => searcher(e)} type="search" placeholder="Buscar" aria-label="Search"></input>
 							{search.length != 0 &&
 								<div className="dropdown-content-search" style={{display: 'block'}}>
 									{
-										results.map((product, index)=>{
+										results.map((product, index)=>{											
 											return(
-												<p key={index}>{product.marca} {product.modelo}</p>
+												<p key={index} onClick={()=>validacionProduct(product)}>{product.marca} {product.modelo}</p>
 											)
 										})
 									}
@@ -68,10 +81,10 @@ export const Navbar = () => {
 							}
 						</form>
 						<div className="collapse navbar-collapse d-flex align-items-center" id="navbarSupportedContent">
-							<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+							<ul className="navbar-nav me-auto mb-lg-0">
 								<li className="nav-item">
 									<Link to="/phones-catalog">
-										<p className="nav-link" style={{ color: "white" }} aria-current="page" >Móviles</p>
+										<p className="nav-link " style={{ color: "white" }} aria-current="page" >Móviles</p>
 									</Link>
 								</li>
 								<li className="nav-item">
@@ -79,8 +92,8 @@ export const Navbar = () => {
 										<p className="nav-link" style={{ color: "white" }} aria-current="page" >Televisores</p>
 									</Link>
 								</li>
-								<li className="nav-item">
-									<Link to="/laptops-catalog">
+								<li className="nav-item" >
+									<Link to="/laptops-catalog" >
 										<p className="nav-link" style={{ color: "white" }} aria-current="page" >Pórtatiles</p>
 									</Link>
 								</li>
@@ -91,12 +104,21 @@ export const Navbar = () => {
 									<a className="nav-link dropbtn" style={{ color: "white" }} ><i className="fa-solid fa-user"></i></a>
 									{!isVerified ?
 										<div className="dropdown-content">
+											<br/>
 											<Link to={'/login'}><span>Iniciar Sesion</span></Link>
-											<Link to={'/signup'}><span>Crear Usuario</span></Link></div>
+											<hr/>
+											<Link to={'/signup'}><span>Crear Usuario</span></Link>
+											<br/>
+											</div>
+											
 										:
 										<div className="dropdown-content">
+											<br/>
 											<Link to={'/personalzone'}><span>Zona Personal</span></Link>
-											<Link to={'/'}><span onClick={logOut}>Cerrar Sesion</span></Link></div>
+											<hr/>
+											<Link to={'/'}><span onClick={logOut}>Cerrar Sesion</span></Link>
+											<br/>
+											</div>
 									}
 								</li>
 								<li className="nav-item">
