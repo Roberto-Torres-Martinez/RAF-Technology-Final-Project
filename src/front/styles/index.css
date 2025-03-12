@@ -567,8 +567,9 @@ border: 0.01em solid black;
     margin-bottom: 0;
 }
 
-.description-card-product {
-    font-size: 0.5em;
+.description-cart-product {
+    font-size: 0.8em;
+
 
 }
 
@@ -587,6 +588,7 @@ border: 0.01em solid black;
 .sub-total-resume {
     font-size: 3.5em;
     font-weight: 500;
+    top:0;
     
 }
 
@@ -602,4 +604,18 @@ border: 0.01em solid black;
 .related-products {
     margin-top: 50px;
     margin-bottom: 110px;
+}
+
+.cart {
+    padding-bottom: 50vh;
+}
+
+.sub-total-container {
+    line-height: 1em
+}
+
+
+.cart-product-list-title {
+    font-size: 1.5em;
+    font-weight: 500;
 }

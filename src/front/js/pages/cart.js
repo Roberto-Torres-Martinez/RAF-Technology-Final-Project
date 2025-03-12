@@ -17,7 +17,7 @@ export const Cart = () => {
 
     return (
         <>
-            <div className="container-fluid negative-background" style={{backgroundColor : "rgb(234, 248, 252)"}}>
+            <div className="container-fluid negative-background cart" style={{backgroundColor : "rgb(234, 248, 252)"}}>
                 <div className="row justify-content-around mx-3">
                     <div className="col-lg-7 col-sm-12">
                         <ProductList />
