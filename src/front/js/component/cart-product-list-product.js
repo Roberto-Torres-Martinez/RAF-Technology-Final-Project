@@ -15,7 +15,7 @@ return(
             </div>
             <div className="col-lg-7 col-sm-10">
                 <div>
-                <span><p className="title-cart-product">Sukuna</p></span>
+                <span className="cart-product-list-title"><p className="mb-0">Sukuna</p></span>
                 <span><p className="description-cart-product">Su pasada apariencia lo describe como un demonio de cuatro brazos y dos rostros.</p></span>
                 </div>
             </div>
