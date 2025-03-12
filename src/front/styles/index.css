@@ -509,7 +509,7 @@ ul {
 }
 
 .container_card .card_description {
-    text-align: justify;
+    text-align: start;
     height: 3.5em;
     margin: 1.5em 1em 1em;
 }
