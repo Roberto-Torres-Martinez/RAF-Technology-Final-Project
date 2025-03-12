@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { RelatedProducts } from "../component/related-products";
 import { useParams } from "react-router-dom";
 
-export const VistaIndividualTv = () => {
+export const VistaIndividualTv = ({product, productName}) => {
 
     const [tv, setTv] = useState([]);
 

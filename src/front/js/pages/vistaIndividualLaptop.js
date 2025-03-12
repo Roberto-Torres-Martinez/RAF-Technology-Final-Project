@@ -4,7 +4,7 @@ import { ProductColors } from "../component/product-colors";
 import { RelatedProducts } from "../component/related-products";
 import { useParams } from "react-router-dom";
 
-export const VistaIndividualLaptop = () => {
+export const VistaIndividualLaptop = ({ product, productName }) => {
     const [imageColors, setImageColors] = useState("https://iphoneros.com/wp-content/uploads/2023/11/M3_Pro11e-copy-scaled.jpg");
 
     const [laptop, setLaptop] = useState([]);
