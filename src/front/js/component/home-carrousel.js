@@ -23,7 +23,7 @@ export const Welcome = () => {
                 </div>
 
                 <div className="carousel-item" data-bs-interval="4000">
-                    <Link to="/laptop-info/90">
+                    <Link to="/laptop-info/15">
                         <div className="carousel-image">
 
                             <img src="https://i.ibb.co/twzbS1dT/Tendencia-Pixelbook.jpg" className="d-block mx-auto object-fit-scale" alt="..." />
@@ -32,14 +32,14 @@ export const Welcome = () => {
                 </div>
 
                 <div className="carousel-item" data-bs-interval="4000">
-                    <Link to="/smartphone-info/92">
+                    <Link to="/smartphone-info/2">
                         <div className="carousel-image">
                             <img src="https://i.ibb.co/nHxxJn6/Novedad-iphone.jpg" className="d-block mx-auto object-fit-scale" alt="..." />
                         </div>
                     </Link>
                 </div>
                 <div className="carousel-item">
-                    <Link to="/smartphone-info/91">
+                    <Link to="/smartphone-info/1">
                         <div className="carousel-image">
                             <img src="https://i.ibb.co/5h2BB0Cy/Oferta-samsung.jpg" className="d-block mx-auto object-fit-scale" />
                         </div>

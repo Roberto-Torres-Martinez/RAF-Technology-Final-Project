@@ -19,7 +19,7 @@ export const Home = () => {
 		<div  className="page-content" style={{backgroundColor: "rgb(47, 65, 79)"}}>
 			<Welcome/>
 			<div className="container mx-auto py-4">	
-				<Onfire type1="phones" id1="91" type2="tvs" id2="76"/>
+				<Onfire type1="tvs" id1="8" type2="laptops" id2="2"/>
 				<HomeCatalog/>
 				<NovedadesMail/>
 			</div>
