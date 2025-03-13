@@ -627,11 +627,3 @@ border: 0.01em solid black;
 }
 
 
-.carousel-image {
-   height: 90vh;
-}
-
-
-.slide {
-    animation: scroll  40s linear infinite;
-}

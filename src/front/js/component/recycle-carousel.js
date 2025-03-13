@@ -1,12 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
-
 export const Welcome = () => {
     return (<>
-        <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-inner">
-                <div className="carousel-item active " data-bs-interval="10000" >
+        <div id="carouselExample" className="carousel slide">
+            <div className="carousel-inner slider-track">
+                <div className="carousel-item active slide-image">
                     <div className="d-block w-100" >
                         <div className="welcome text-white mb-0 pb-0">
                             <p className="titulo d-flex justify-content-center display-1" style={{ color: "rgb(102, 252, 241)" }}>Bienvenidos</p>
@@ -21,24 +17,24 @@ export const Welcome = () => {
 
                     </div>
                 </div>
-            
-                    <div className="carousel-item" data-bs-interval="2000">
+                <div className="slide-image">
+                    <div className="carousel-item">
                         <div className="carousel-image">
 
                             <img src="https://i.ibb.co/twzbS1dT/Tendencia-Pixelbook.jpg" className="d-block mx-auto object-fit-scale" alt="..." />
                         </div>
                     </div>
 
-                    <div className="carousel-item" data-bs-interval="2000">
+                    <div className="carousel-item">
                         <div className="carousel-image">
                             <img src="https://i.ibb.co/nHxxJn6/Novedad-iphone.jpg" className="d-block mx-auto object-fit-scale" alt="..." />
                         </div>
                     </div>
-                    <div className="carousel-item" data-bs-interval="2000">
+                    <div className="carousel-item">
                         <div className="carousel-image">
                             <img src="https://i.ibb.co/5h2BB0Cy/Oferta-samsung.jpg" className="d-block mx-auto object-fit-scale" />
                         </div>
-                   
+                    </div>
                 </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
