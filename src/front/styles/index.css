@@ -5,6 +5,7 @@ body {
     background-color: #2F414F;
 }
 
+
 ul {
     list-style-type: none
 }
@@ -644,6 +645,13 @@ hr{
     font-weight: 500;
 }
 
+
+
+.carrousel-button {
+    text-decoration-line: none;
+}
+
+
 .upload-image {
     width: 10em;
     position: relative;
@@ -677,3 +685,4 @@ hr{
   input[type=file]::-webkit-file-upload-button{
       cursor: pointer;
   }
+

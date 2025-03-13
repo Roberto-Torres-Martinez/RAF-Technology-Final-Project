@@ -46,7 +46,7 @@ export const PersonalInfo = ({imageUrl}) => {
                             <form>
                                 <div className="mb-3 d-flex">
                                     <div className="labels-personal d-flex align-items-center">
-                                        <label htmlFor="name" className="form-label me-2  my-auto">Nombre:</label>
+                                        <label htmlFor="name" className="form-label me-2 my-auto">Nombre:</label>
                                     </div>
                                     <input type="text" className="input-personal form-control" name="name" onChange={e=>handleChange(e)} aria-describedby="emailHelp" value={updateInfo.name ?? ""} disabled={!store.edit}/>
                                 </div>
