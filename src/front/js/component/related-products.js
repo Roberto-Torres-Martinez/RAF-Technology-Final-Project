@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 export const RelatedProducts = ({ productType }) => {
     const { store } = useContext(Context);
 
-    const products = productType === "phones" ? store.phones : productType === "tvs" ? store.tvs : store.laptops;
+    const products = store[productType]
 
     const relatedCarruselProducts = [];
     for (let i = 0; i < products.length; i += 5) {
@@ -34,7 +34,6 @@ export const RelatedProducts = ({ productType }) => {
                             <span className="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
                             <span className="visually-hidden">Previous</span>
                         </button>
-
                         <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
                             <span className="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
                             <span className="visually-hidden">Next</span>

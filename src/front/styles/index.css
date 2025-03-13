@@ -458,9 +458,15 @@ hr{
 }
 
 .card-individual-laptop-image img {
-    width: 800px;
+    /* width: 800px;
     height: 600px;
     margin-top: 110px;
+    object-fit: cover;
+    border-radius: 8%;
+    transition: transform 0.3s ease-in-out; */
+    width: 510px;
+    height: 500px;
+    margin-top: 200px;
     object-fit: cover;
     border-radius: 8%;
     transition: transform 0.3s ease-in-out;
