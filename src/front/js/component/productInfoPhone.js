@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { ProductColors } from "../component/product-colors";
 import { useParams } from "react-router-dom";
 
-export const ProductInfoPhone = ({ }) => {
+export const ProductInfoPhone = ({}) => {
     const [imageColors, setImageColors] = useState("https://images.samsung.com/es/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-ecosystem-galaxy-s25-mo.jpg?imbypass=true");
 
     const [phone, setPhone] = useState([]);
@@ -65,7 +65,7 @@ export const ProductInfoPhone = ({ }) => {
                     </div>
                     <div className="col-md-6 text-black">
                         <div className="card-body-individual">
-                            <h5 className="card-title sub-titulo mb-3 titulo">{phone?.modelo}</h5>
+                            <h5 className="card-title titulo mb-3 titulo">{phone?.modelo}</h5>
                             <p className="card-text-score"></p>
                             <p className="card-text-price titulo">
                                 <small className="text-black">{totalPrecioEur}</small>
@@ -98,15 +98,15 @@ export const ProductInfoPhone = ({ }) => {
                                         <div className="accordion-body">
                                             <div className="row ms-2">
                                                 <div className="col-md-4 d-flex flex-column align-items-center">
-                                                    <h6 className="title-color ms-4">Azul</h6>
+                                                    <h6 className="title-color ms-4 texto">Azul</h6>
                                                     <ProductColors image="https://static.fnac-static.com/multimedia/Images/ES/NR/69/b7/92/9615209/1540-1.jpg" />
                                                 </div>
                                                 <div className="col-md-4 d-flex flex-column align-items-center">
-                                                    <h6 className="title-color ms-4">Negro</h6>
+                                                    <h6 className="title-color ms-4 texto">Negro</h6>
                                                     <ProductColors image="https://static.fnac-static.com/multimedia/Images/ES/NR/6e/b7/92/9615214/1540-1.jpg" />
                                                 </div>
                                                 <div className="col-md-4 d-flex flex-column align-items-center">
-                                                    <h6 className="title-color ms-4">Plata</h6>
+                                                    <h6 className="title-color ms-4 texto">Plata</h6>
                                                     <ProductColors image="https://static.fnac-static.com/multimedia/Images/ES/NR/6c/b7/92/9615212/1540-1.jpg" />
                                                 </div>
                                             </div>
