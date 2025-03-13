@@ -6,7 +6,7 @@ export const Welcome = () => {
     return (<>
         <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
-                <div className="carousel-item active " data-bs-interval="10000" >
+                <div className="carousel-item active " data-bs-interval="4000" >
                     <div className="d-block w-100" >
                         <div className="welcome text-white mb-0 pb-0">
                             <p className="titulo d-flex justify-content-center display-1" style={{ color: "rgb(102, 252, 241)" }}>Bienvenidos</p>
@@ -21,24 +21,29 @@ export const Welcome = () => {
 
                     </div>
                 </div>
-            
-                    <div className="carousel-item" data-bs-interval="2000">
+
+                <div className="carousel-item" data-bs-interval="4000">
+                    <Link to="/laptop-info/90">
                         <div className="carousel-image">
 
                             <img src="https://i.ibb.co/twzbS1dT/Tendencia-Pixelbook.jpg" className="d-block mx-auto object-fit-scale" alt="..." />
                         </div>
-                    </div>
+                    </Link>
+                </div>
 
-                    <div className="carousel-item" data-bs-interval="2000">
+                <div className="carousel-item" data-bs-interval="4000">
+                    <Link to="/smartphone-info/92">
                         <div className="carousel-image">
                             <img src="https://i.ibb.co/nHxxJn6/Novedad-iphone.jpg" className="d-block mx-auto object-fit-scale" alt="..." />
                         </div>
-                    </div>
-                    <div className="carousel-item" data-bs-interval="2000">
+                    </Link>
+                </div>
+                <div className="carousel-item">
+                    <Link to="/smartphone-info/91">
                         <div className="carousel-image">
                             <img src="https://i.ibb.co/5h2BB0Cy/Oferta-samsung.jpg" className="d-block mx-auto object-fit-scale" />
                         </div>
-                   
+                    </Link>
                 </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

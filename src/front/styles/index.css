@@ -171,6 +171,7 @@ hr{
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
 
 .nav-link{
     padding-top: 1em;
