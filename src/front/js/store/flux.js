@@ -65,7 +65,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			userIndividual: async () => {
 				const urlBackend = process.env.BACKEND_URL;
 				const idUser = sessionStorage.getItem('idUser')
-
+				
 				const response = await fetch(`${urlBackend}user/${idUser}`);
 				const data = await response.json();
 				setStore({infoUser: data });

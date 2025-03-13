@@ -14,7 +14,8 @@ export const createUser = async (newUser, navigate) =>{
             'password' : newUser.password,
             'username': newUser.username,
             'address': null,
-            'birthday_date' : null      
+            'birthday_date' : null,
+            'image': null
             })
     });      
         if(response.ok){
@@ -28,16 +29,11 @@ export const createUser = async (newUser, navigate) =>{
     } 
 };
 
-export const getUsers = (userInfo) => {
-    let infoUser = []
-    fetch(urlBackend + 'users')
-    .then((res)=> res.json())
-    .then((data) => data.forEach(user => {
-        infoUser.push(user.email, user.username);
-        userInfo(infoUser);
-    }));
+export const getUsers = async () => {
+    const respose = await fetch(urlBackend + 'users');
+    const data = await respose.json();
+    return data;
 };
-
 
 export const login = async (user, responseApi, navigate) =>{
     const response = await fetch(urlBackend + 'login', {
@@ -86,8 +82,9 @@ export const privateUser = async () =>{
     };
 };
 
-export const updateUser = async (updateInfo) => {
+export const updateUser = async (updateInfo, imageUrl) => {
     const idUser = sessionStorage.getItem('idUser')
+    console.log(imageUrl);
     const response = await fetch(`${urlBackend}update-user/${idUser}`,{
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
@@ -98,6 +95,7 @@ export const updateUser = async (updateInfo) => {
             "lastname": updateInfo.lastname,
             "name": updateInfo.name,
             "password": updateInfo.password,
+            "image": imageUrl || updateInfo,
             "username": updateInfo.username
         }) 
     });
@@ -105,5 +103,20 @@ export const updateUser = async (updateInfo) => {
     if(data.msg){
         window.location.reload();
     };
+};
+
+export const sendImage = async (file) => {
+    try {
+        const form = new FormData();
+        form.append("img", file);
+        const response = await fetch(urlBackend + 'upload-image', {
+            method: 'POST',
+            body : form
+        })
+        const data = await response.json();       
+        return data; 
+    } catch (error) {
+        console.log(error);
+    }
 };
 

@@ -109,39 +109,75 @@ ul {
     transform: translate(3px, 3px);
 }
 
-.dropdown, .dropdown-search {
+.dropdown,
+.dropdown-search {
     position: relative;
     display: inline-block;
 }
 
-.dropdown-content, .dropdown-content-search{
+.dropdown-content,
+.dropdown-content-search {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    background-color: rgb(119, 188, 199);
+    color: white;
+    padding: 0 0.8em;
+    border-radius: 1em;
 }
 
 .dropdown-content-search{
-    overflow-y: auto;
     max-height: 15em;
-    width: 20em;
+    max-width: 13.5penem;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border-radius: 0 0 0.8em 0.8em;
+    overflow-y: hidden;
+    font-size: 0.9em;
+}
+
+.input-search, .input-search:focus{
+    border: 0;
+    border-radius: 0.5em;
+    outline: 0;
+}
+
+.input-search-focus, .input-search-focus:focus{
+    border: 0;
+    outline: 0;
+    border-radius:0.5em 0.5em 0 0;
+}
+
+
+
+a{
+    text-decoration: none;
+}
+
+hr{
+    border: 2px solid white;
+    border-radius: 3px;
+    color: rgb(219, 215, 215);
 }
 
 .dropdown-content a, .dropdown-content-search a  {
-    color: black;
     padding: 5px 0;
-    text-decoration: none;
     display: block;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+
+.nav-link{
+    padding-top: 1em;
 }
 
 .dropdown:hover .dropdown-content{
     display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #77bcc7;
 }
 
 .border-techno {
@@ -178,13 +214,6 @@ ul {
 .card-header {
     background-color: rgb(47, 65, 79);
     color: white;
-}
-
-.photo-personal-zone {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 50%
 }
 
 .name-product,
@@ -393,14 +422,6 @@ ul {
     margin-left: 15px;
 }
 
-.edit-pen {
-    top: 0;
-    left: 9.5em;
-    margin-top: 2em;
-    background-color: rgb(241, 239, 246);
-    color: black;
-}
-
 .carrusel-catalogo {
     height: 450px;
     background-color: #868686;
@@ -423,9 +444,9 @@ ul {
 }
 
 .card-individual-tv-image img {
-    width: 800px;
-    height: 600px;
-    margin-top: 110px;
+    width: 510px;
+    height: 500px;
+    margin-top: 130px;
     object-fit: cover;
     border-radius: 8%;
     transition: transform 0.3s ease-in-out;
@@ -457,7 +478,7 @@ ul {
     color: #2F414F;
 }
 
-.container_card_catalog{
+.container_card_catalog {
     width: 30em;
 }
 
@@ -515,7 +536,7 @@ ul {
     margin: 1.5em 1em 1em;
 }
 
-.btn_card_product{
+.btn_card_product {
     background-color: rgb(215, 44, 32);
     width: 15em;
     height: 3em;
@@ -526,10 +547,9 @@ ul {
     color: #fafafa;
     font-weight: bold;
     font-size: 1em;
-};
+}
 
-
-.negative-background{
+.negative-background {
     background-color: rgb(234, 248, 252)
 }
 
@@ -542,7 +562,6 @@ ul {
     font-size: 1.3em;
     width: 100%;
     margin: auto;
-
 }
 
 .cart-delete-button {
@@ -552,30 +571,37 @@ ul {
 }
 
 .cart-delete-button:hover {
-background-color: rgb(221, 221, 221);
-border: 0.01em solid black;
-
+    background-color: rgb(221, 221, 221);
+    border: 0.01em solid black;
 }
-
 
 .card-cart-product {
     background-color: white;
 }
 
-.title-cart-product {
-    font-size: 1.3em;
-    font-weight: 500;
-    margin-bottom: 0;
+.title-color {
+    margin-bottom: 10px;
+}
+
+.img-small-vista-individual {
+    margin-top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 8%;
+}
+
+.img-small-vista-individual:hover {
+    transform: scale(1.25);
+    transition: transform 0.5s ease;
 }
 
 .description-cart-product {
     font-size: 0.8em;
 
-
 }
 
 .order-resume {
-    margin-top: 5em!important;
+    margin-top: 5em !important;
 }
 
 .order-resume-table {
@@ -589,8 +615,7 @@ border: 0.01em solid black;
 .sub-total-resume {
     font-size: 3.5em;
     font-weight: 500;
-    top:0;
-    
+    top: 0;
 }
 
 .resume-button {
@@ -615,15 +640,49 @@ border: 0.01em solid black;
     line-height: 1em
 }
 
-
 .cart-product-list-title {
     font-size: 1.5em;
     font-weight: 500;
 }
 
 
+
 .carrousel-button {
     text-decoration-line: none;
 }
 
+
+.upload-image {
+    width: 10em;
+    position: relative;
+    margin: auto;
+  }
+  
+  .upload-image  img{
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .upload-image  .round{
+    position: absolute;
+    right: 0;
+    top: 1em;
+    background-color: rgb(241, 239, 246);
+    color: black;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .upload-image  .round input[type = "file"]{
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+  }
+  
+  input[type=file]::-webkit-file-upload-button{
+      cursor: pointer;
+  }
 

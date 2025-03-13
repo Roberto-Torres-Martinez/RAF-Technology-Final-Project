@@ -1,25 +1,37 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../store/appContext';
-import { updateUser } from "../apiservices/callToApi";
+import { sendImage, updateUser } from "../apiservices/callToApi";
 
 
-export const PersonalInfo = () => {
+export const PersonalInfo = ({imageUrl}) => {
     const {store, actions} = useContext(Context);
     const [updateInfo, setUpdateInfo] = useState({});
     
+    const infoUser = store.infoUser
+
     const handleChange = (e) => {
         setUpdateInfo({...updateInfo, [e.target.name]: e.target.value});
     };
-    
+
     const handleSubmit = () => {
-        updateUser(updateInfo);
+        let imageUpdate = '';
+        if (imageUrl) {
+            imageUpdate = imageUrl
+        }else{
+            imageUpdate = infoUser.image
+        }
+        updateUser(updateInfo, imageUpdate);
     };    
-    
+        
     useEffect(()=>{
         actions.userIndividual(setUpdateInfo);
     },[]);
     
-    const infoUser = store.infoUser
+    
+    
+    console.log(imageUrl, infoUser);
+    
+
     useEffect(()=>{
         setUpdateInfo(infoUser);
     },[infoUser]);
