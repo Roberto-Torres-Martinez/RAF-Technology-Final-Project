@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Context } from '../store/appContext';
 import {sendImage, updateUser} from '../apiservices/callToApi'
 
-export const PersonalNavbar = ({setImageUrl}) => {
+export const PersonalNavbar = ({setImageUrl, infoUsers}) => {
     const { store, actions } = useContext(Context);
     const infoUser = store.infoUser;
     const [file, setFile] = useState("");
@@ -13,8 +13,10 @@ export const PersonalNavbar = ({setImageUrl}) => {
     };
 
     const handleClickImage = async () => {
+        let dataUser = infoUsers || infoUser;
         const data = await sendImage(file);
         setImageUrl(data);
+        updateUser(dataUser, data);
         setFile('');
     };    
 
@@ -42,7 +44,8 @@ export const PersonalNavbar = ({setImageUrl}) => {
                         } type="button" className="btn edit-button"><i className="fa-solid fa-pen-to-square"></i> Editar información</button>
                     </div>
                     {file &&
-                        <button className='btn edit-button' onClick={handleClickImage}>subir foto</button>
+                        
+                        <button className='btn edit-button' onClick={handleClickImage}>Confirmar foto <i class="fa-solid fa-circle-check"></i></button>
                     } 
                 </div>
             </div>
