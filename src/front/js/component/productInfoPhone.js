@@ -26,15 +26,31 @@ export const ProductInfoPhone = ({}) => {
             const response = await fetch(urlBackend + "phone/" + smartphone_id);
 
             const data = await response.json();
-
+            
             setPhone(data);
         } catch (error) {
             console.error("Error getting ID phones from API");
         }
     };
 
+    let image
+
+    const imageValidation = () => {
+
+        const color = (phone.colores?.[0].toLowerCase())?.replace(/ /g, "_")
+
+        image = phone.imagen?.[color]
+    }
+
+
+    imageValidation()
+
+    console.log(image);
+    
     useEffect(() => {
+
         getPhoneById()
+
     }, []);
 
     return (
@@ -45,12 +61,12 @@ export const ProductInfoPhone = ({}) => {
                         <div className="carousel-inner">
                             <div className="carousel-item active">
                                 <div className="d-flex justify-content-center mb-5">
-                                    <img className="col-md-12" src="https://static.fnac-static.com/multimedia/Images/ES/NR/6e/b7/92/9615214/1540-1.jpg" alt="Slide 1" />
+                                    <img className="col-md-12" src={image?.[0]} alt="Slide 1" />
                                 </div>
                             </div>
                             <div className="carousel-item">
                                 <div className="d-flex justify-content-center mb-5">
-                                    <img className="col-md-12" src="https://static.fnac-static.com/multimedia/Images/ES/NR/6e/b7/92/9615214/1520-4.jpg" alt="Slide 2" />
+                                    <img className="col-md-12" src={image?.[1]} alt="Slide 2" />
                                 </div>
                             </div>
                         </div>
@@ -99,15 +115,15 @@ export const ProductInfoPhone = ({}) => {
                                             <div className="row ms-2">
                                                 <div className="col-md-4 d-flex flex-column align-items-center">
                                                     <h6 className="title-color ms-4 texto">Azul</h6>
-                                                    <ProductColors image="https://static.fnac-static.com/multimedia/Images/ES/NR/69/b7/92/9615209/1540-1.jpg" />
+                                                    <ProductColors src={image?.[0]} />
                                                 </div>
                                                 <div className="col-md-4 d-flex flex-column align-items-center">
                                                     <h6 className="title-color ms-4 texto">Negro</h6>
-                                                    <ProductColors image="https://static.fnac-static.com/multimedia/Images/ES/NR/6e/b7/92/9615214/1540-1.jpg" />
+                                                    <ProductColors src={image?.[1]} />
                                                 </div>
                                                 <div className="col-md-4 d-flex flex-column align-items-center">
                                                     <h6 className="title-color ms-4 texto">Plata</h6>
-                                                    <ProductColors image="https://static.fnac-static.com/multimedia/Images/ES/NR/6c/b7/92/9615212/1540-1.jpg" />
+                                                    <ProductColors src={image?.[1]} />
                                                 </div>
                                             </div>
                                         </div>
