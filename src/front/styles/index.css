@@ -655,6 +655,7 @@ hr{
 
 .upload-image {
     width: 10em;
+    height: 10em;
     position: relative;
     margin: auto;
   }
@@ -663,12 +664,13 @@ hr{
     border-radius: 50%;
     height: 100%;
     width: 100%;
+    object-fit: cover;
   }
   
   .upload-image  .round{
     position: absolute;
     right: 0;
-    top: 1em;
+    top: 0.7em;
     background-color: rgb(241, 239, 246);
     color: black;
     width: 2em;

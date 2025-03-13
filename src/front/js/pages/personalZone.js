@@ -20,7 +20,7 @@ export const PersonalZone = () => {
     
     useEffect(() => {
         checkout();
-    });
+    });    
 
     useEffect(() => {
         actions.setPositiveColors()
@@ -29,8 +29,8 @@ export const PersonalZone = () => {
 
     return (
         <div className="container-fluid dark-background text-white ">
-            <PersonalNavbar setImageUrl={setImageUrl}/>
-            <PersonalInfo imageUrl={imageUrl} />
+            <PersonalNavbar setImageUrl={setImageUrl} infoUsers={infoUsers}/>
+            <PersonalInfo imageUrl={imageUrl} setInfoUsers={setInfoUsers}/>
         </div>
     )
 }
