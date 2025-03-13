@@ -15,6 +15,7 @@ class User(db.Model):
     address = db.Column(db.String(50), unique=False, nullable=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     birthday_date = db.Column(db.String(15), nullable=True)
+    user_image = db.Column(db.String(200), nullable=True)
     is_active = db.Column(db.Boolean(), nullable=False)
     is_admin = db.Column(db.Boolean(), nullable=False)
 
@@ -31,6 +32,7 @@ class User(db.Model):
             "username": self.username,
             "address": self.address,
             "birthday_date": self.birthday_date,
+            "image": self.user_image,
             "is_active": self.is_active,
             "is_admin": self.is_admin,
         }

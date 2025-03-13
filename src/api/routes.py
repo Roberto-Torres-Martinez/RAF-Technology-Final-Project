@@ -59,6 +59,7 @@ def post_users():
         username = data['username'],
         address = data['address'],
         birthday_date = data['birthday_date'],
+        user_image = data['image'],
         is_active = True,
         is_admin = False,
     )

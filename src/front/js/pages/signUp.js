@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 export const SignUp = () => {
     const [newUser, setNewUser] = useState();
     const [password, setPassword] = useState(true);
-    const [userList, setUserList] = useState();
+    const [userList, setUserList] = useState([]);
     const [userExist, setUserExist] = useState(false);
     const navigate = useNavigate();    
     const {actions } = useContext(Context)
@@ -39,17 +39,26 @@ export const SignUp = () => {
             };  
 
             if(newUser.email || newUser.username){
-                if(userList.includes(newUser.email) || userList.includes(newUser.username)){
-                    setUserExist(true);
-                }else{
-                    setUserExist(false);
-                };
+                if (userList) {
+                    if(userList.includes(newUser.email) || userList.includes(newUser.username)){
+                        setUserExist(true);
+                    }else{
+                        setUserExist(false);
+                    };
+                }
             };
         };   
     },[newUser]);
 
+    const usersApi = async () => {
+        const users = await getUsers();
+        users.forEach(user => {
+            setUserList(prevList => [...prevList, user.username, user.email ])
+        });
+    };    
+
     useEffect(()=>{
-        getUsers(setUserList);
+        usersApi();
         actions.setPositiveColors()
         actions.setNoneNavbarVisibility()
     }, []);
