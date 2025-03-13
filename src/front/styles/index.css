@@ -215,13 +215,6 @@ hr{
     color: white;
 }
 
-.photo-personal-zone {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 50%
-}
-
 .name-product,
 .price-product {
     font-size: 19px;
@@ -426,14 +419,6 @@ hr{
 .label-vista-ampliada {
     font-size: 25px;
     margin-left: 15px;
-}
-
-.edit-pen {
-    top: 0;
-    left: 9.5em;
-    margin-top: 2em;
-    background-color: rgb(241, 239, 246);
-    color: black;
 }
 
 .carrusel-catalogo {
@@ -658,3 +643,37 @@ hr{
     font-size: 1.5em;
     font-weight: 500;
 }
+
+.upload-image {
+    width: 10em;
+    position: relative;
+    margin: auto;
+  }
+  
+  .upload-image  img{
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .upload-image  .round{
+    position: absolute;
+    right: 0;
+    top: 1em;
+    background-color: rgb(241, 239, 246);
+    color: black;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .upload-image  .round input[type = "file"]{
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+  }
+  
+  input[type=file]::-webkit-file-upload-button{
+      cursor: pointer;
+  }

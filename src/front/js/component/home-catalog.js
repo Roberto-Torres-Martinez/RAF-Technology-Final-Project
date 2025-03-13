@@ -8,9 +8,9 @@ export const HomeCatalog = () => {
     const [tvs, setTvs] = useState([]);
     const [laptops, setLaptops] = useState([]);
 
-    const idPhone = [36, 37, 38];
-    const idTv = [16, 17, 18];
-    const idLaptop = [16, 17, 18];
+    const idPhone = [2, 5, 3];
+    const idTv = [1, 3, 6];
+    const idLaptop = [6, 7, 1];
 
 
     const fetchProducts = async (product, idProduct, setProduct) => {
