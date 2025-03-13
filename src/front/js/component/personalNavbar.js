@@ -16,7 +16,6 @@ export const PersonalNavbar = ({setImageUrl}) => {
         const data = await sendImage(file);
         setImageUrl(data);
         setFile('');
-        updateUser();
     };    
 
     return (
@@ -25,7 +24,7 @@ export const PersonalNavbar = ({setImageUrl}) => {
                 <div className="profile-photo pe-3">
                     <div className="position-relative" style={{ width: "10em", height: "10em" }}>
                         <div className="upload-image ">
-                            <img className="photo-personal-zone" src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png' />
+                            <img className="photo-personal-zone" src={infoUser.image ? infoUser.image : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'} />
                             <div className='round'>
                                 <input type='file' accept='image/*' onChange={changeUploadImage}/>
                                 <i className="p-2 icon-pen fa-solid fa-pen"></i>                       

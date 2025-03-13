@@ -3,23 +3,33 @@ import { Context } from '../store/appContext';
 import { sendImage, updateUser } from "../apiservices/callToApi";
 
 
-export const PersonalInfo = ({setInfoUsers}) => {
+export const PersonalInfo = ({imageUrl}) => {
     const {store, actions} = useContext(Context);
     const [updateInfo, setUpdateInfo] = useState({});
     
+    const infoUser = store.infoUser
+
     const handleChange = (e) => {
-        setInfoUsers({...updateInfo, [e.target.name]: e.target.value});
+        setUpdateInfo({...updateInfo, [e.target.name]: e.target.value});
     };
 
     const handleSubmit = () => {
-        updateUser(updateInfo);
+        let imageUpdate = '';
+        if (imageUrl) {
+            imageUpdate = imageUrl
+        }else{
+            imageUpdate = infoUser.image
+        }
+        updateUser(updateInfo, imageUpdate);
     };    
         
     useEffect(()=>{
-        actions.userIndividual();
+        actions.userIndividual(setUpdateInfo);
     },[]);
     
-    const infoUser = store.infoUser
+    
+    
+    console.log(imageUrl, infoUser);
     
 
     useEffect(()=>{

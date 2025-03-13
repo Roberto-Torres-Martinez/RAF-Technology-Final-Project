@@ -105,6 +105,7 @@ def update_users(id_user):
     user.password = data['password']
     user.username = data['username']
     user.address = data['address']
+    user.user_image = data['image']
     user.birthday_date = data['birthday_date']
 
     db.session.commit()

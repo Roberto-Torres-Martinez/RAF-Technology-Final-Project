@@ -22,8 +22,6 @@ export const PersonalZone = () => {
         checkout();
     });
 
-    console.log(imageUrl, infoUsers);
-    
     useEffect(() => {
         actions.setPositiveColors()
         actions.setNavbarVisibility()
@@ -32,7 +30,7 @@ export const PersonalZone = () => {
     return (
         <div className="container-fluid dark-background text-white ">
             <PersonalNavbar setImageUrl={setImageUrl}/>
-            <PersonalInfo setInfoUsers={setInfoUsers} />
+            <PersonalInfo imageUrl={imageUrl} />
         </div>
     )
 }
