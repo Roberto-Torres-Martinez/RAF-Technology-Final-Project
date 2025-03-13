@@ -5,11 +5,14 @@ import { privateUser } from "../apiservices/callToApi";
 
 
 export const Navbar = () => {
-	const { store } = useContext(Context);
+	const { store, actions } = useContext(Context);
 	const [isVerified, setIsVerified] = useState(null);
 	const [search, setSearch] = useState("");
 
 	const navigate = useNavigate();
+	const infoUser = store.infoUser
+
+	console.log(infoUser);
 
 	let products = [];
 	const phones = store.phones;
@@ -46,6 +49,9 @@ export const Navbar = () => {
 
 	useEffect(() => {
 		checkout();
+		if(isVerified){
+			actions.userIndividual();
+		};
 	}, []);
 
 
@@ -113,12 +119,15 @@ export const Navbar = () => {
 											
 										:
 										<div className="dropdown-content">
-											<br/>
+											<div className="container-photo">
+												<img className="photo-navbar-user" src={infoUser.image}/>
+												<p>Hola, {infoUser.username}</p>
+											</div>
 											<Link to={'/personalzone'}><span>Zona Personal</span></Link>
 											<hr/>
 											<Link to={'/'}><span onClick={logOut}>Cerrar Sesion</span></Link>
 											<br/>
-											</div>
+										</div>
 									}
 								</li>
 								<li className="nav-item">
