@@ -12,13 +12,28 @@ from api.productos.tv import tvs
 from api.productos.laptops import laptops
 import cloudinary
 import cloudinary.uploader
+import stripe
 
 
 
 api = Blueprint('api', __name__)
+stripe.api_key = "sk_test_51QxWTcF1M5ixil84JujDUVjcNbDMjk8CpG3Akk0Bq1rlK7Ur5mVJkxZGUOJN78FO40hzxIiHJFMbfD4FKVhMrXJq00Q45N3TjR"
 
 # Allow CORS requests to this API
 CORS(api)
+
+#ENDPOINT PASARELA DE PAGO STRIPE
+@api.route('/payment', methods=['POST'])
+def create_payment():
+    try:
+        data = request.json
+        intent = stripe.PaymentIntent.create(
+            amount=data['amount'],
+            currency= data['currency'],
+            automatic_payment_methods = {'enabled': True})
+        return jsonify({'client_secret': intent['client_secret']}), 200
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 400
 
 #ENDPOINT IMAGEN CLOUDINARY
 @api.route('/upload-image', methods=['POST'])
