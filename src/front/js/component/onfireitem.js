@@ -4,19 +4,6 @@ export const OnFireItem = ({item, itemName}) => {
 
 
 
-  // const validacionLista = (producto) => {
-  //     if (producto == "laptops" || producto == "phones") {
-  //         const color = (producto.colores[0].toLowerCase()).replace(/ /g, "_");
-  //         images = item.imagen[color];
-        
-  //     }
-  //     else {
-  //         images = item.imagen
-         
-  //     }
-  // };
-
-  // validacionLista(itemName)
 
   let image = ""
 

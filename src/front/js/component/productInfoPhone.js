@@ -3,12 +3,12 @@ import { Context } from "../store/appContext";
 import { ProductColors } from "../component/product-colors";
 import { useParams } from "react-router-dom";
 
-export const ProductInfoPhone = ({}) => {
+export const ProductInfoPhone = ({ }) => {
     const [imageColors, setImageColors] = useState("https://images.samsung.com/es/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-ecosystem-galaxy-s25-mo.jpg?imbypass=true");
 
     const [phone, setPhone] = useState([]);
-
     const { smartphone_id } = useParams();
+    let image
 
     const precio = parseInt(phone.precio);
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
@@ -26,27 +26,33 @@ export const ProductInfoPhone = ({}) => {
             const response = await fetch(urlBackend + "phone/" + smartphone_id);
 
             const data = await response.json();
-            
+
             setPhone(data);
         } catch (error) {
             console.error("Error getting ID phones from API");
         }
     };
 
-    let image
 
-    const imageValidation = () => {
 
-        const color = (phone.colores?.[0].toLowerCase())?.replace(/ /g, "_")
+    const imageValidation = (number) => {
+
+        const color = (phone.colores?.[number].toLowerCase())?.replace(/ /g, "_")
 
         image = phone.imagen?.[color]
     }
 
 
-    imageValidation()
 
-    console.log(image);
-    
+    imageValidation(0)
+
+
+    useEffect(()=>{
+        
+
+    }, [image])
+
+
     useEffect(() => {
 
         getPhoneById()
@@ -113,18 +119,26 @@ export const ProductInfoPhone = ({}) => {
                                     <div id="collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                         <div className="accordion-body">
                                             <div className="row ms-2">
-                                                <div className="col-md-4 d-flex flex-column align-items-center">
-                                                    <h6 className="title-color ms-4 texto">Azul</h6>
-                                                    <ProductColors src={image?.[0]} />
-                                                </div>
-                                                <div className="col-md-4 d-flex flex-column align-items-center">
-                                                    <h6 className="title-color ms-4 texto">Negro</h6>
-                                                    <ProductColors src={image?.[1]} />
-                                                </div>
-                                                <div className="col-md-4 d-flex flex-column align-items-center">
-                                                    <h6 className="title-color ms-4 texto">Plata</h6>
-                                                    <ProductColors src={image?.[1]} />
-                                                </div>
+                                                {phone.colores?.map((color, index) => {
+
+                                                    let litImage = ""
+                                                    const getProductPhoto = () => {
+                                                        const color = (phone.colores?.[index].toLowerCase())?.replace(/ /g, "_")
+
+                                                        litImage = phone.imagen?.[color]
+                                                    }
+                                                    
+                                                    getProductPhoto()
+                                                    
+                                                    return (
+                                                        <div  onClick={()=>imageValidation(index)} className="col-md-4 d-flex flex-column align-items-center">
+                                                            <h6 className="title-color ms-4 texto">{color}</h6>
+                                                            <ProductColors src={litImage[0]} />
+                                                        </div>
+
+                                                    )
+
+                                                })}
                                             </div>
                                         </div>
                                     </div>
