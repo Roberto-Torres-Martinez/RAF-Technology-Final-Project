@@ -6,7 +6,7 @@ export const ProductInfoTv = ({ product, productName }) => {
 
     const [tv, setTv] = useState([]);
 
-    const { tv_id } = useParams();
+    const { tv_id } = useParams();    
 
     const precio = parseInt(tv.precio);
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {

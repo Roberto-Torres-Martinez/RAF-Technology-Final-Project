@@ -21,8 +21,8 @@ export const RelatedProducts = ({ productType }) => {
                             {relatedCarruselProducts.map((products, index) => (
                                 <div className={`carousel-item ${index === 0 ? "active" : ""}`} key={index}>
                                     <div className="d-flex justify-content-center">
-                                        {products.map((product) => (
-                                            <div className="col-md-2 p-2" key={product.id}>
+                                        {products.map((product, index) => (
+                                            <div className="col-md-2 p-2" key={index}>
                                                 <ProductCardSmall product={product} />
                                             </div>
                                         ))}

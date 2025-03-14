@@ -24,7 +24,7 @@ export const ProductCard = ({ product, name }) => {
             IndividualProduct = `/smartphone-info/${product.smartphone_id}`
         };
         if (producto == "TVs") {
-            IndividualProduct = `/tv-info/${product.laptop_id}`
+            IndividualProduct = `/tv-info/${product.tv_id}`
         };
     };
 

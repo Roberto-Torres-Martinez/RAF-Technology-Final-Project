@@ -12,8 +12,6 @@ export const Navbar = () => {
 	const navigate = useNavigate();
 	const infoUser = store.infoUser
 
-	console.log(infoUser);
-
 	let products = [];
 	const phones = store.phones;
 	const tvs = store.tvs;
@@ -49,10 +47,13 @@ export const Navbar = () => {
 
 	useEffect(() => {
 		checkout();
+	}, []);
+
+	useEffect(()=>{
 		if(isVerified){
 			actions.userIndividual();
 		};
-	}, []);
+	},[isVerified])
 
 
 	const logOut = () => {
@@ -132,7 +133,7 @@ export const Navbar = () => {
 								</li>
 								<li className="nav-item">
 									<Link to="/cart">
-										<a className="nav-link" style={{ color: "white" }} ><i className="fa-solid fa-cart-shopping"></i></a>
+										<p className="nav-link" style={{ color: "white" }} ><i className="fa-solid fa-cart-shopping"></i></p>
 									</Link>
 								</li>
 							</ul>
