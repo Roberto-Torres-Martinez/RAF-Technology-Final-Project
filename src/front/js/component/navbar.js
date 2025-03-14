@@ -38,7 +38,7 @@ export const Navbar = () => {
 		};
 		navigate(route)
 		setSearch("");
-	};	
+	};
 
 	const checkout = async () => {
 		const verified = await privateUser();
@@ -117,7 +117,6 @@ export const Navbar = () => {
 											<Link to={'/signup'}><span>Crear Usuario</span></Link>
 											<br/>
 											</div>
-											
 										:
 										<div className="dropdown-content">
 											<div className="container-photo">
