@@ -120,3 +120,18 @@ export const sendImage = async (file) => {
     }
 };
 
+export const getCart = async (user_id) => {
+    try {
+        const response = await fetch(urlBackend + 'cart/' + user_id)
+
+        const data = await response.json()
+
+        console.log(data);
+
+        return data;
+    } catch (error) {
+        
+        
+    }
+}
+
