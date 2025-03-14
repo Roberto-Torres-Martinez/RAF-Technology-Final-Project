@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Smartphones, TVs, Laptops
+from api.models import db, User, Smartphones, TVs, Laptops, Pedido
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 import json
@@ -116,6 +116,23 @@ def get_user_individual(id_user):
     user = User.query.get(id_user)
 
     return jsonify(user.serialize()), 201
+
+
+#ENDPOINTS CARRITO
+
+@api.route('cart/<int:user_id>', methods=['GET'])
+def get_cart(user_id):
+    user = User.query.get(user_id)
+    cart = Pedido.query.filter_by(user_id=user_id)
+
+    data_cart = [cart.serialize() for cart in cart]
+    return jsonify(data_cart), 200
+
+@api.route('/cart/<int:user_id>', methods=['POST'])
+def add_product(user_id):
+
+    user = User.query.get(user_id)
+    cart = Pedido.query.filter_by(user_id=user_id)
 
 #ENDPOINTS PHONES    
 
@@ -247,3 +264,5 @@ def delete_laptops(id_laptop):
         db.session.commit()
         return jsonify({"msg": "Laptop deleted from data base"}), 200
     return jsonify({"msg": "No Laptop id was found"}), 400
+
+    
