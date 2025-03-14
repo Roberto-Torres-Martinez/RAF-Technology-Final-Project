@@ -28,8 +28,8 @@ export const ProductSection = ({ name, products }) => {
                     <div className="row justify-content-around">
                         {products.map((product, index) => {
                             return (
-                                <div className="col-md-3">
-                                    <ProductCard key={index} name={name} product={product} />
+                                <div className="col-md-3" key={index}>
+                                    <ProductCard name={name} product={product} />
                                 </div>
                             )
                         })};
