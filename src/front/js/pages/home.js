@@ -8,12 +8,12 @@ import { Context } from "../store/appContext";
 
 export const Home = () => {
 
-	const {actions } = useContext(Context)
+	const {actions } = useContext(Context);
 	
 	useEffect(()=>{
-	actions.setPositiveColors()
-	actions.setNavbarVisibility()
-	},[])
+	actions.setPositiveColors();
+	actions.setNavbarVisibility();
+	},[]);
 
 	return (
 		<div  className="page-content" style={{backgroundColor: "rgb(47, 65, 79)"}}>
@@ -21,7 +21,7 @@ export const Home = () => {
 			<div className="container mx-auto py-4">	
 				<Onfire type1="tvs" id1="8" type2="laptops" id2="2"/>
 				<HomeCatalog/>
-				<NovedadesMail/>
+				{/* <NovedadesMail/> */}
 			</div>
 		</div>
 	);
