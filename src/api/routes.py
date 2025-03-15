@@ -135,19 +135,37 @@ def get_user_individual(id_user):
 
 #ENDPOINTS CARRITO
 
+#ENDPOINT GET INFORMACION CARRITO
+
 @api.route('cart/<int:user_id>', methods=['GET'])
 def get_cart(user_id):
+
     user = User.query.get(user_id)
     cart = Pedido.query.filter_by(user_id=user_id)
 
     data_cart = [cart.serialize() for cart in cart]
     return jsonify(data_cart), 200
 
-@api.route('/cart/<int:user_id>', methods=['POST'])
-def add_product(user_id):
+#ENDPOINT GET CARRITO PRODUCTOS
 
-    user = User.query.get(user_id)
-    cart = Pedido.query.filter_by(user_id=user_id)
+# @api.route('cart/<int:user_id>/)
+
+#ENDPOINT POST CREAR CARRITO
+
+@api.route('/cart/<int:user_id>', methods=['POST'])
+def add_cart(user_id):
+
+    exist = Pedido.query.filter_by(user_id=user_id).first()
+
+    if exist:
+        return jsonify({msg: "Tu carrito está vacío"}), 400
+    new_cart_added = Pedido(user_id=user_id)
+    db.session.add(new_cart_added)
+    db.session.commit()
+    return jsonify({msg: "Carrito creado"}), 200
+
+    # user = User.query.get(user_id)
+    # cart = Pedido.query.filter_by(user_id=user_id)
 
 #ENDPOINTS PHONES    
 
