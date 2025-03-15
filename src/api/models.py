@@ -53,8 +53,10 @@ class Pedido(db.Model):
     precio_total = db.Column(db.String(50), unique=False, nullable=True)
     user = db.relationship('User', backref= 'pedido')
     cart_smartphones = db.relationship('CartSmartphones', backref= 'pedido')
-    cart_tvs = db.relationship('CartTvs', backref= 'pedido')
+
     cart_laptops = db.relationship('CartLaptops', backref= 'pedido')
+    cart_tvs = db.relationship('CartTvs', backref= 'pedido')
+ 
 
     def __repr__(self):
         return f'<Pedido {self.pedido_id, self.user_id}>'
@@ -67,6 +69,7 @@ class Pedido(db.Model):
             "cart_smartphones": [smartphone.serialize() for smartphone in self.cart_smartphones],
             "cart_tvs": [tvs.serialize() for tvs in self.cart_tvs],
             "cart_laptops": [laptop.serialize() for laptop in self.cart_laptops],
+
         }
 
 class CartSmartphones(db.Model):
@@ -82,8 +85,8 @@ class CartSmartphones(db.Model):
         return {
             "cart_smartphone_id": self.cart_smartphone_id,
             "smartphone_id": self.smartphone_id,
-            "smartphone_precio": self.smartphone.serialize()['precio'],
-            "smartphone_modelo": self.smartphone.serialize()['modelo'],
+            "precio": self.smartphone.serialize()['precio'],
+            "modelo": self.smartphone.serialize()['modelo'],
         }
 
 class CartTvs(db.Model):
@@ -99,8 +102,9 @@ class CartTvs(db.Model):
         return {
             "cart_tv_id": self.cart_tv_id,
             "tv_id": self.tv_id,
-            "tv_precio": self.tvs.serialize()['precio'],
-            "tv_modelo": self.tvs.serialize()['modelo'],
+            "precio": self.tvs.serialize()['precio'],
+            "modelo": self.tvs.serialize()['modelo'],
+
         }
 
 
@@ -117,8 +121,9 @@ class CartLaptops(db.Model):
         return {
             "cart_laptop_id": self.cart_laptop_id,
             "smartphone_id": self.laptop_id,
-            "laptop_precio": self.laptop.serialize()['precio'],
-            "laptop_modelo": self.laptop.serialize()['modelo'],
+            "precio": self.laptop.serialize()['precio'],
+            "modelo": self.laptop.serialize()['modelo'],
+
         }
 
 class Smartphones(db.Model):

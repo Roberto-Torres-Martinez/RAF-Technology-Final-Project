@@ -9,16 +9,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			navbar_visibility: true,
 			edit: false,
 			infoUser: {},
-			negative_colors: false
+			negative_colors: false,
+			cart: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			getPhones: async () => {
-				const urlBackend = process.env.BACKEND_URL				
+				const urlBackend = process.env.BACKEND_URL
 				try {
 					const response = await fetch(urlBackend + 'phones')
 					const data = await response.json()
-					setStore({phones: data})					
+					setStore({ phones: data })
 
 				} catch (error) {
 					console.error("Error getting phones from API:");
@@ -29,8 +30,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const urlBackend = process.env.BACKEND_URL
 				try {
 					const response = await fetch(urlBackend + 'tvs')
-					const data = await response.json()		
-					setStore({tvs: data})
+					const data = await response.json()
+					setStore({ tvs: data })
 				} catch (error) {
 					console.error("Error getting TVs from API:");
 				}
@@ -41,46 +42,92 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 					const response = await fetch(urlBackend + 'laptops')
 					const data = await response.json()
-					setStore({laptops: data})
+					setStore({ laptops: data })
 
 				} catch (error) {
 					console.error("Error getting Laptops from API:");
 				}
 			},
-			setNavbarVisibility: () =>{
-				setStore({navbar_visibility: true})	
+			setNavbarVisibility: () => {
+				setStore({ navbar_visibility: true })
 			},
-			setNoneNavbarVisibility: ()=> {
-				setStore({navbar_visibility: false})
+			setNoneNavbarVisibility: () => {
+				setStore({ navbar_visibility: false })
 			},
-			setEdit: () =>{
-				if(getStore().edit == true){
-				setStore({edit: false})
+			setEdit: () => {
+				if (getStore().edit == true) {
+					setStore({ edit: false })
 				}
-				else if(getStore().edit == false){
-					setStore({edit: true})
-					
+				else if (getStore().edit == false) {
+					setStore({ edit: true })
+
 				};
 			},
 			userIndividual: async () => {
 				const urlBackend = process.env.BACKEND_URL;
 				const idUser = sessionStorage.getItem('idUser')
-				
+
 				const response = await fetch(`${urlBackend}user/${idUser}`);
 				const data = await response.json();
-				setStore({infoUser: data });
+				setStore({ infoUser: data });
 			},
 
-			setPositiveColors: () =>{
-					setStore({negative_colors: false})
-		
-			},
-			setNegativeColors: () =>{
-				setStore({negative_colors: true})
-	
-		},
+			setPositiveColors: () => {
+				setStore({ negative_colors: false })
 
-			
+			},
+			setNegativeColors: () => {
+				setStore({ negative_colors: true })
+
+			},
+
+			getCart: async (user_id) => {
+
+				try {
+					const urlBackend = process.env.BACKEND_URL;
+
+					const response = await fetch(urlBackend + 'cart/' + user_id)
+					
+					const data = await response.json()
+					const cart = data[0]
+					const smartphones = cart["cart_smartphones"]
+					const laptops = cart["cart_laptops"]
+					const tvs = cart["cart_tvs"]
+					const full_cart = []
+					
+
+
+					full_cart.push(smartphones, laptops, tvs)
+					console.log(smartphones, laptops, tvs)
+					console.log(full_cart)
+
+					const models = []
+					full_cart.forEach((cart_list) => {
+						cart_list.forEach((item) => {
+							models.push(item.modelo)
+						})
+					})
+
+					const prices = []
+					full_cart.forEach((cart_list) => {
+						cart_list.forEach((item) => {
+							prices.push(item.precio)
+						})
+					})
+
+					const done_cart = []
+					done_cart.push(models, prices)
+
+					setStore({ cart: done_cart })
+					
+				} catch (error) {
+
+
+				}
+			}
+
+
+
 		}
 	};
 };

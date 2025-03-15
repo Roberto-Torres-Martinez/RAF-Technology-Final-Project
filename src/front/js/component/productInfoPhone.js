@@ -5,20 +5,20 @@ import { useParams } from "react-router-dom";
 
 export const ProductInfoPhone = ({ }) => {
     const [imageColors, setImageColors] = useState("https://images.samsung.com/es/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-ecosystem-galaxy-s25-mo.jpg?imbypass=true");
-
+    const [activeColor, setActiveColor] = useState(0)
     const [phone, setPhone] = useState([]);
     const { smartphone_id } = useParams();
     let image
-
     const precio = parseInt(phone.precio);
+    
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
         style: "currency",
         currency: "EUR",
     }).format(precio);
 
-    const handleImageColors = (imageUrl) => {
-        setImageColors(imageUrl);
-    };
+    // const handleImageColors = (imageUrl) => {
+    //     setImageColors(imageUrl);
+    // };
 
     const getPhoneById = async () => {
         const urlBackend = process.env.BACKEND_URL
@@ -44,13 +44,10 @@ export const ProductInfoPhone = ({ }) => {
 
 
 
-    imageValidation(0)
+    imageValidation(activeColor)
 
 
-    useEffect(()=>{
-        
-
-    }, [image])
+   
 
 
     useEffect(() => {
