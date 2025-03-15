@@ -1,6 +1,10 @@
+import React from "react";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { Context } from "../store/appContext";
 
 const urlBackend = process.env.BACKEND_URL;
+
 
 export const createUser = async (newUser, navigate) =>{
     try {
@@ -120,18 +124,47 @@ export const sendImage = async (file) => {
     }
 };
 
-export const getCart = async (user_id) => {
-    try {
-        const response = await fetch(urlBackend + 'cart/' + user_id)
+// export const getCart = async (user_id) => {
 
-        const data = await response.json()
+//     try {
+//         const response = await fetch(urlBackend + 'cart/' + user_id)
 
-        console.log(data);
+//         const data = await response.json()
+//         const cart = data[0]
+//         const smartphones = cart["cart_smartphones"]
+//         const laptops = cart["cart_laptops"]
+//         const tvs = cart["cart_tvs"]
+//         const full_cart = []
+//         console.log(data);
 
-        return data;
-    } catch (error) {
+        
+//         full_cart.push(smartphones, laptops, tvs)
+//         console.log(smartphones, laptops, tvs)
+//         console.log(full_cart)
+
+//         const models = []
+//         full_cart.forEach((cart_list)=>{
+//             cart_list.forEach((item)=>{
+//                 models.push(item.modelo)
+//             })
+//         })
+
+//         const prices = []
+//         full_cart.forEach((cart_list)=>{
+//             cart_list.forEach((item)=>{
+//                 prices.push(item.precio)
+//             })
+//         })
+
+//         const done_cart = []
+//         done_cart.push(models,prices)
+
+//         console.log(done_cart)
+
+//         return data;
+//     } catch (error) {
         
         
-    }
-}
+//     }
+// }
 
