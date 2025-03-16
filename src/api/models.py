@@ -120,7 +120,7 @@ class CartLaptops(db.Model):
     def serialize(self):
         return {
             "cart_laptop_id": self.cart_laptop_id,
-            "smartphone_id": self.laptop_id,
+            "laptop_id": self.laptop_id,
             "precio": self.laptop.serialize()['precio'],
             "modelo": self.laptop.serialize()['modelo'],
 
