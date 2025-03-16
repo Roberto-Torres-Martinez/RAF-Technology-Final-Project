@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Smartphones, TVs, Laptops, Pedido
+from api.models import db, User, Smartphones, TVs, Laptops, Pedido, CartSmartphones, CartTvs, CartLaptops
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 import json
@@ -135,6 +135,20 @@ def get_user_individual(id_user):
 
 #ENDPOINTS CARRITO
 
+#ENDPOINT POST CREAR CARRITO
+
+@api.route('/cart/<int:user_id>', methods=['POST'])
+def add_cart(user_id):
+
+    exist = Pedido.query.filter_by(user_id=user_id).first()
+
+    if exist:
+        return jsonify({msg: "Tu carrito ya existe"}), 400
+    new_cart_added = Pedido(user_id=user_id)
+    db.session.add(new_cart_added)
+    db.session.commit()
+    return jsonify({msg: "Carrito creado"}), 200
+
 #ENDPOINT GET INFORMACION CARRITO
 
 @api.route('cart/<int:user_id>', methods=['GET'])
@@ -146,26 +160,82 @@ def get_cart(user_id):
     data_cart = [cart.serialize() for cart in cart]
     return jsonify(data_cart), 200
 
-#ENDPOINT GET CARRITO PRODUCTOS
+#ENDPOINT DELETE INFORMACION CARRITO
 
-# @api.route('cart/<int:user_id>/)
-
-#ENDPOINT POST CREAR CARRITO
-
-@api.route('/cart/<int:user_id>', methods=['POST'])
-def add_cart(user_id):
-
+@api.route('/cart/<int:user_id>', methods=['DELETE'])
+def delete_cart(user_id):
     exist = Pedido.query.filter_by(user_id=user_id).first()
 
     if exist:
-        return jsonify({msg: "Tu carrito está vacío"}), 400
-    new_cart_added = Pedido(user_id=user_id)
-    db.session.add(new_cart_added)
-    db.session.commit()
-    return jsonify({msg: "Carrito creado"}), 200
+        db.session.delete(exist)
+        db.session.commit()
+        return jsonify({"msg": "Carrito eliminado"}), 200
+    return jsonify({"msg": "Carrito no encontrado"})
 
-    # user = User.query.get(user_id)
-    # cart = Pedido.query.filter_by(user_id=user_id)
+#ENDPOINT AGREGAR PRODUCTOS AL CARRITO
+
+@api.route('/cart/<int:user_id>/product/<string:product_type>/<int:product_id>', methods=['POST'])
+def add_product_to_cart(user_id, product_type, product_id):
+
+    cart = Pedido.query.filter_by(user_id=user_id).first()
+
+    if product_type == 'smartphone':
+        product = Smartphones.query.get(product_id)
+
+        if product:
+            add_product = CartSmartphones(cart_id=cart.pedido_id, smartphone_id=product_id)
+
+        else:
+            return jsonify({"msg": "Smartphone no encontrado"}), 400
+
+    elif product_type == 'tv':
+        product = TVs.query.get(product_id)
+
+        if product:
+            add_product = CartTvs(cart_id=cart.pedido_id, tv_id=product_id)
+
+        else:
+            return jsonify({"msg": "TV no encontrado"}), 400
+
+    elif product_type == 'laptop':
+        product = Laptops.query.get(product_id)
+
+        if product:
+            add_product = CartLaptops(cart_id=cart.pedido_id, laptop_id=product_id)
+
+        else:
+            return jsonify({"msg": "Laptop no encontrado"}), 400
+
+    db.session.add(add_product)
+    db.session.commit()
+
+    return jsonify({"msg": "Producto agregado al carrito"}), 200
+
+#ENDPOINT ELIMINAR PRODUCTOS DEL CARRITO
+
+@api.route('/cart/<int:user_id>/product/<string:product_type>/<int:product_id>', methods=['DELETE'])
+def remove_product_from_cart(user_id, product_type, product_id):
+
+    cart = Pedido.query.filter_by(user_id=user_id).first()
+
+    if product_type == 'smartphone':
+        product = CartSmartphones.query.filter_by(cart_id=cart.pedido_id, smartphone_id=product_id).first()
+
+    elif product_type == 'tv':
+        product = CartTvs.query.filter_by(cart_id=cart.pedido_id, tv_id=product_id).first()
+
+    elif product_type == 'laptop':
+        product = CartLaptops.query.filter_by(cart_id=cart.pedido_id, laptop_id=product_id).first()
+
+    if product:
+        db.session.delete(product)
+        db.session.commit()
+        return jsonify({"msg": "Producto eliminado del carrito"}), 200
+
+    return jsonify({"msg": "Producto no encontrado en el carrito"}), 400
+
+
+
 
 #ENDPOINTS PHONES    
 
