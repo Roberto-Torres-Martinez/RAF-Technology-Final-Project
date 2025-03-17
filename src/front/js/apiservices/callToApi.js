@@ -124,6 +124,35 @@ export const sendImage = async (file) => {
     }
 };
 
+export const createCart = async (userId) => {
+    try {
+        const response = await fetch(urlBackend + "cart/" + userId, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            Swal.fire({
+                title: "Carrito creado",
+                text: "Tu carrito ha sido creado con éxito",
+                icon: "success",
+            });
+        } else {
+            Swal.fire({
+                title: "Error",
+                text:  "Error al crear el carrito",
+                icon: "error",
+            });
+        }
+
+        return data;
+    } catch (error) {
+        console.error("Error al crear el carrito");
+    }
+};
+
 // export const getCart = async (user_id) => {
 
 //     try {

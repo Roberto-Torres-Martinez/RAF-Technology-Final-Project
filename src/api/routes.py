@@ -219,13 +219,13 @@ def remove_product_from_cart(user_id, product_type, product_id):
     cart = Pedido.query.filter_by(user_id=user_id).first()
 
     if product_type == 'smartphone':
-        product = CartSmartphones.query.filter_by(cart_id=cart.pedido_id, smartphone_id=product_id).first()
+        product = CartSmartphones.query.filter_by(cart_id=cart.pedido_id, cart_smartphone_id=product_id).first()
 
     elif product_type == 'tv':
-        product = CartTvs.query.filter_by(cart_id=cart.pedido_id, tv_id=product_id).first()
+        product = CartTvs.query.filter_by(cart_id=cart.pedido_id, cart_tv_id=product_id).first()
 
     elif product_type == 'laptop':
-        product = CartLaptops.query.filter_by(cart_id=cart.pedido_id, laptop_id=product_id).first()
+        product = CartLaptops.query.filter_by(cart_id=cart.pedido_id, cart_laptop_id=product_id).first()
 
     if product:
         db.session.delete(product)
@@ -233,9 +233,6 @@ def remove_product_from_cart(user_id, product_type, product_id):
         return jsonify({"msg": "Producto eliminado del carrito"}), 200
 
     return jsonify({"msg": "Producto no encontrado en el carrito"}), 400
-
-
-
 
 #ENDPOINTS PHONES    
 
