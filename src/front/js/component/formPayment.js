@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import {  useStripe, useElements } from "@stripe/react-stripe-js";
 import { PaymentElement } from "@stripe/react-stripe-js";
 
 
 
-export const FormPayment = () => {
+export const FormPayment = ({clientSecret}) => {
     const stripe = useStripe();
     const elements = useElements();
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState(null);
-
-
-   
       
 
     const handleSubmit = async (event) => {
@@ -44,8 +41,10 @@ export const FormPayment = () => {
 
     return (
         <>
-            <form className="w-50 bg-light mx-auto" onSubmit={handleSubmit}>
-                <PaymentElement/>
+            <form className="bg-light mx-auto w-50" onSubmit={handleSubmit}>
+                <div className="container">
+                    <PaymentElement/>
+                </div>
                 <button type="submit" disabled={!stripe || loading}>
                     <span>
                         {loading ? 'Procesando' : 'Pagar'}
