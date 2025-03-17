@@ -17,8 +17,8 @@ import { Catalog } from "./pages/catalog";
 import { VistaIndividualTv } from "./pages/vistaIndividualTV";
 import { VistaIndividualLaptop } from "./pages/vistaIndividualLaptop";
 import { Cart } from "./pages/cart";
-import { SearchProduct } from "./pages/SearchProduct";
 import { PasarelaPago } from "./pages/PasarelaPago";
+import { MessagePayment } from "./pages/ConfirmPay";
 
 
 //create your first component
@@ -47,7 +47,7 @@ const Layout = () => {
                             <Route element={<Catalog productList="phones" />} path="/phones-catalog" />
                             <Route element={<Catalog productList="tvs" />} path="/tvs-catalog" />
                             <Route element={<Catalog productList="laptops" />} path="/laptops-catalog" />
-                            <Route element={<SearchProduct/>} path="/search-product" />
+                            <Route element={<MessagePayment/>} path="/message-payment" />
                             <Route element={<Cart />} path="/cart" />
                             <Route element={<PasarelaPago/>} path="/pasarela-pago"/>
                             <Route element={<h1>Not found!</h1>} />

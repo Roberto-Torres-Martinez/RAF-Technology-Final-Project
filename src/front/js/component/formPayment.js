@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
 import { PaymentElement } from "@stripe/react-stripe-js";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -9,6 +10,14 @@ export const FormPayment = () => {
     const elements = useElements();
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState(null);
+    const navigate = useNavigate();
+
+    useEffect(()=>{
+        if(message === "Pago confirmado!!!"){
+            navigate('/message-payment', { state: { message: message } });
+        }
+    },[message])
+    
 
 
     const handleSubmit = async (event) => {
@@ -39,10 +48,12 @@ export const FormPayment = () => {
         }
     };
 
+
+
     return (
         <>
-            <form className="container-form-payment" style={{ width: '25rem' }} onSubmit={handleSubmit}>
-                <div style={{ height: '30rem' }}>
+            <form className="container-form-payment" style={{ width: '30rem' }} onSubmit={handleSubmit}>
+                <div style={{ minHeight: '35rem' }}>
                     <PaymentElement />
                 </div>
                 <div className="container-button-payment">
@@ -52,6 +63,7 @@ export const FormPayment = () => {
                         </span>
                     </button>
                 </div>
+                <p className="d-block justify-content-center">{message}</p>
             </form>
         </>
 

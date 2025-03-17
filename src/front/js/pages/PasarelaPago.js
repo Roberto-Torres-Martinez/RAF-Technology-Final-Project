@@ -33,17 +33,42 @@ export const PasarelaPago = () => {
     }, []);
 
     const appearance = {
-        theme: 'stripe',
-      
+        theme: 'flat',
         variables: {
-          colorPrimary: '#0570de',
-          colorBackground: '#ffffff',
-          colorText: '#30313d',
-          colorDanger: '#df1b41',
-          fontFamily: 'Ideal Sans, system-ui, sans-serif',
-          spacingUnit: '2px',
-          borderRadius: '4px',
-          // See all possible variables below
+          fontFamily: ' "Gill Sans", sans-serif',
+          fontLineHeight: '1.5',
+          borderRadius: '10px',
+          colorBackground: '#F6F8FA',
+          accessibleColorOnColorPrimary: '#262626'
+        },
+        rules: {
+          '.Block': {
+            backgroundColor: 'var(--colorBackground)',
+            boxShadow: 'none',
+            padding: '20px'
+          },
+          '.Input': {
+            padding: '15px'
+          },
+          '.Input:disabled, .Input--invalid:disabled': {
+            color: 'lightgray'
+          },
+          '.Tab': {
+            padding: '10px 12px 8px 12px',
+            border: 'none'
+          },
+          '.Tab:hover': {
+            border: 'none',
+            boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.03), 0px 3px 7px rgba(18, 42, 66, 0.04)'
+          },
+          '.Tab--selected, .Tab--selected:focus, .Tab--selected:hover': {
+            border: 'none',
+            backgroundColor: '#fff',
+            boxShadow: '0 0 0 1.5px var(--colorPrimaryText), 0px 1px 1px rgba(0, 0, 0, 0.03), 0px 3px 7px rgba(18, 42, 66, 0.04)'
+          },
+          '.Label': {
+            fontWeight: '500'
+          }
         }
       };
 
@@ -56,7 +81,7 @@ export const PasarelaPago = () => {
                     </div>
                 </Elements>
             ) : (
-                <p>Cargando pago...</p>
+                <p style={{color: 'white', fontSize:'5rem'}}>Cargando pago......</p>
             )}
         </>
     );
