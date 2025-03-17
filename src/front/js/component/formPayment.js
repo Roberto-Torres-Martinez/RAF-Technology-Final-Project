@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import {  useStripe, useElements } from "@stripe/react-stripe-js";
+import { useStripe, useElements } from "@stripe/react-stripe-js";
 import { PaymentElement } from "@stripe/react-stripe-js";
 
 
 
-export const FormPayment = ({clientSecret}) => {
+export const FormPayment = () => {
     const stripe = useStripe();
     const elements = useElements();
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState(null);
-      
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -19,15 +19,15 @@ export const FormPayment = ({clientSecret}) => {
         setLoading(true);
 
         const { error, paymentIntent } = await stripe.confirmPayment({
-            elements, 
-            confirmParams:{
+            elements,
+            confirmParams: {
                 return_url: 'https://super-duper-space-adventure-pjpjqx6q46qp27jgx-3000.app.github.dev/cart'
-                },
-                redirect: "if_required"
             },
+            redirect: "if_required"
+        },
         );
 
-         setLoading(false);
+        setLoading(false);
 
         if (error) {
             setMessage(error.message)
@@ -41,17 +41,18 @@ export const FormPayment = ({clientSecret}) => {
 
     return (
         <>
-            <form className="bg-light mx-auto w-50" onSubmit={handleSubmit}>
-                <div className="container">
-                    <PaymentElement/>
+            <form className="container-form-payment" style={{ width: '25rem' }} onSubmit={handleSubmit}>
+                <div style={{ height: '30rem' }}>
+                    <PaymentElement />
                 </div>
-                <button type="submit" disabled={!stripe || loading}>
-                    <span>
-                        {loading ? 'Procesando' : 'Pagar'}
-                    </span>
-                </button>
+                <div className="container-button-payment">
+                    <button type="submit" disabled={!stripe || loading}>
+                        <span>
+                            {loading ? 'Procesando' : 'Pagar'}
+                        </span>
+                    </button>
+                </div>
             </form>
-
         </>
 
     )

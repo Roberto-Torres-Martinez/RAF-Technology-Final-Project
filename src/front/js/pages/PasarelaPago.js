@@ -33,25 +33,17 @@ export const PasarelaPago = () => {
     }, []);
 
     const appearance = {
-        theme: 'night',
+        theme: 'stripe',
+      
         variables: {
-          fontFamily: 'Sohne, system-ui, sans-serif',
-          fontWeightNormal: '500',
-          borderRadius: '8px',
-          colorBackground: '#0A2540',
-          colorPrimary: '#EFC078',
-          accessibleColorOnColorPrimary: '#1A1B25',
-          colorText: 'white',
-          colorTextSecondary: 'white',
-          colorTextPlaceholder: '#ABB2BF',
-          tabIconColor: 'white',
-          logoColor: 'dark'
-        },
-        rules: {
-          '.Input': {
-            backgroundColor: '#212D63',
-            border: '1px solid var(--colorPrimary)'
-          }
+          colorPrimary: '#0570de',
+          colorBackground: '#ffffff',
+          colorText: '#30313d',
+          colorDanger: '#df1b41',
+          fontFamily: 'Ideal Sans, system-ui, sans-serif',
+          spacingUnit: '2px',
+          borderRadius: '4px',
+          // See all possible variables below
         }
       };
 
@@ -59,7 +51,9 @@ export const PasarelaPago = () => {
         <>
             {stripePromise && clientSecret ? (
                 <Elements stripe={stripePromise} options={{ clientSecret, appearance }}>
-                    <FormPayment clientSecret={clientSecret}/>
+                    <div className="pasarela-payment">
+                        <FormPayment/>
+                    </div>
                 </Elements>
             ) : (
                 <p>Cargando pago...</p>
