@@ -53,7 +53,6 @@ class Pedido(db.Model):
     precio_total = db.Column(db.String(50), unique=False, nullable=True)
     user = db.relationship('User', backref= 'pedido')
     cart_smartphones = db.relationship('CartSmartphones', backref= 'pedido')
-
     cart_laptops = db.relationship('CartLaptops', backref= 'pedido')
     cart_tvs = db.relationship('CartTvs', backref= 'pedido')
  
@@ -80,11 +79,13 @@ class CartSmartphones(db.Model):
     cart_id = db.Column(db.Integer, db.ForeignKey('pedido.pedido_id'))
     smartphone_id = db.Column(db.Integer, db.ForeignKey('smartphones.smartphone_id'))
     smartphone = db.relationship('Smartphones', backref= 'cart_smartphones')
+    quantity = db.Column(db.Integer, nullable=False, default=1)
 
     def serialize(self):
         return {
             "cart_smartphone_id": self.cart_smartphone_id,
             "smartphone_id": self.smartphone_id,
+            "quantity": self.quantity,
             "precio": self.smartphone.serialize()['precio'],
             "modelo": self.smartphone.serialize()['modelo'],
             "descripcion": self.smartphone.serialize()['descripcion']
@@ -98,11 +99,13 @@ class CartTvs(db.Model):
     cart_id = db.Column(db.Integer, db.ForeignKey('pedido.pedido_id'))
     tv_id = db.Column(db.Integer, db.ForeignKey('tv.tv_id'))
     tvs = db.relationship('TVs', backref= 'cart_tvs')
+    quantity = db.Column(db.Integer, nullable=False, default=1)
 
     def serialize(self):
         return {
             "cart_tv_id": self.cart_tv_id,
             "tv_id": self.tv_id,
+            "quantity": self.quantity,
             "precio": self.tvs.serialize()['precio'],
             "modelo": self.tvs.serialize()['modelo'],
             "descripcion": self.tvs.serialize()['descripcion']
@@ -118,11 +121,13 @@ class CartLaptops(db.Model):
     cart_id = db.Column(db.Integer, db.ForeignKey('pedido.pedido_id'))
     laptop_id = db.Column(db.Integer, db.ForeignKey('laptops.laptop_id'))
     laptop = db.relationship('Laptops', backref= 'cart_laptops')
+    quantity = db.Column(db.Integer, nullable=False, default=1)
 
     def serialize(self):
         return {
             "cart_laptop_id": self.cart_laptop_id,
             "laptop_id": self.laptop_id,
+            "quantity": self.quantity,
             "precio": self.laptop.serialize()['precio'],
             "modelo": self.laptop.serialize()['modelo'],
             "descripcion": self.laptop.serialize()['descripcion']

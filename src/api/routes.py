@@ -179,32 +179,41 @@ def add_product_to_cart(user_id, product_type, product_id):
 
     cart = Pedido.query.filter_by(user_id=user_id).first()
 
-    if product_type == 'smartphone':
-        product = Smartphones.query.get(product_id)
+    existing_smartphone = CartSmartphones.query.filter_by(cart_id=cart.pedido_id, smartphone_id=product_id).first()
 
-        if product:
+    existing_tv = CartTvs.query.filter_by(cart_id=cart.pedido_id, tv_id=product_id).first()
+
+    existing_laptop = CartLaptops.query.filter_by(cart_id=cart.pedido_id, laptop_id=product_id).first()
+
+    if product_type == 'smartphone':
+
+        if existing_smartphone:
+            existing_smartphone.quantity+=1
+            db.session.commit()
+            return jsonify({"msg": "Producto agregado al carrito"}), 200
+
+        else:
             add_product = CartSmartphones(cart_id=cart.pedido_id, smartphone_id=product_id)
 
-        else:
-            return jsonify({"msg": "Smartphone no encontrado"}), 400
-
     elif product_type == 'tv':
-        product = TVs.query.get(product_id)
 
-        if product:
+        if existing_tv:
+            existing_tv.quantity+=1
+            db.session.commit()
+            return jsonify({"msg": "Producto agregado al carrito"}), 200
+
+        else:
             add_product = CartTvs(cart_id=cart.pedido_id, tv_id=product_id)
 
-        else:
-            return jsonify({"msg": "TV no encontrado"}), 400
-
     elif product_type == 'laptop':
-        product = Laptops.query.get(product_id)
 
-        if product:
-            add_product = CartLaptops(cart_id=cart.pedido_id, laptop_id=product_id)
+        if existing_laptop:
+            existing_laptop.quantity+=1
+            db.session.commit()
+            return jsonify({"msg": "Producto agregado al carrito"}), 200
 
         else:
-            return jsonify({"msg": "Laptop no encontrado"}), 400
+            add_product = CartLaptops(cart_id=cart.pedido_id, laptop_id=product_id)
 
     db.session.add(add_product)
     db.session.commit()
