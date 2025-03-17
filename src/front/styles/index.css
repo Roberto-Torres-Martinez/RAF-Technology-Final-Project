@@ -725,6 +725,13 @@ hr{
     border-radius: 1rem;
   }
 
+  .container-form-payment p{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: red;
+  }
+
   .container-button-payment{
     display: flex;
     justify-content: center;
@@ -732,7 +739,7 @@ hr{
 
   .container-button-payment button{
     background-color: rgb(215, 44, 32);
-    width: 15em;
+    width: 10em;
     height: 3em;
     outline: none;
     border: none;
@@ -744,5 +751,13 @@ hr{
   }
 
   .StripeElement{
-    margin: auto;
+   width: 90%;
+   padding-top: 2rem;
+   margin: 0 auto;
+  }
+
+  .container-message{
+    min-height: 40rem;
+    background-color: #fafafa;
+    margin: 0 auto;
   }
