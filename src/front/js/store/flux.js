@@ -101,22 +101,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(smartphones, laptops, tvs)
 					console.log(full_cart)
 
-					const models = []
-					full_cart.forEach((cart_list) => {
-						cart_list.forEach((item) => {
-							models.push(item.modelo)
-						})
-					})
-
-					const prices = []
-					full_cart.forEach((cart_list) => {
-						cart_list.forEach((item) => {
-							prices.push(item.precio)
-						})
-					})
-
 					const done_cart = []
-					done_cart.push(models, prices)
+					full_cart.forEach((cart_list) => {
+						cart_list.forEach((item) => {
+							done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: "3"})
+						})
+					})
+
+					console.log(done_cart)
+
 
 					setStore({ cart: done_cart })
 					
