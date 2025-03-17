@@ -234,6 +234,36 @@ def remove_product_from_cart(user_id, product_type, product_id):
 
     return jsonify({"msg": "Producto no encontrado en el carrito"}), 400
 
+#ENDPOINT MODIFICAR PRODUCTOS DEL CARRITO
+
+@api.route('/cart/<int:user_id>/product/<string:product_type>/<int:product_id>', methods=['PUT'])
+def modify_products_from_cart(user_id, product_type, product_id):
+
+    cart = Pedido.query.filter_by(user_id=user_id).first()
+
+    if product_type == 'smartphone':
+        product = CartSmartphones.query.filter_by(cart_id=cart.pedido_id, cart_smartphone_id=product_id).first()
+
+    elif product_type == 'tv':
+        product = CartTvs.query.filter_by(cart_id=cart.pedido_id, cart_tv_id=product_id).first()
+
+    elif product_type == 'laptop':
+        product = CartLaptops.query.filter_by(cart_id=cart.pedido_id, cart_laptop_id=product_id).first()
+
+    else:
+        return jsonify({"msg": "Producto no encontrado"}), 400
+
+    if product:
+        new_quantity = request.json.get('quantity')
+        if new_quantity > 0:
+            product.quantity = new_quantity
+            db.session.commit()
+            return jsonify({"msg": "Producto actualizado"}), 200
+        else:
+            return jsonify({"msg": "Cantidad inválida"}), 400
+
+    return jsonify({"msg": "Producto no encontrado"})
+
 #ENDPOINTS PHONES    
 
 @api.route('/load-phone', methods=['GET'])
