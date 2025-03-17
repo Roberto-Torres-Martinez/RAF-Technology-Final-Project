@@ -143,11 +143,11 @@ def add_cart(user_id):
     exist = Pedido.query.filter_by(user_id=user_id).first()
 
     if exist:
-        return jsonify({msg: "Tu carrito ya existe"}), 400
+        return jsonify({"msg": "Tu carrito ya existe"}), 400
     new_cart_added = Pedido(user_id=user_id)
     db.session.add(new_cart_added)
     db.session.commit()
-    return jsonify({msg: "Carrito creado"}), 200
+    return jsonify({"msg": "Carrito creado"}), 200
 
 #ENDPOINT GET INFORMACION CARRITO
 
@@ -180,38 +180,29 @@ def add_product_to_cart(user_id, product_type, product_id):
     cart = Pedido.query.filter_by(user_id=user_id).first()
 
     existing_smartphone = CartSmartphones.query.filter_by(cart_id=cart.pedido_id, smartphone_id=product_id).first()
-
     existing_tv = CartTvs.query.filter_by(cart_id=cart.pedido_id, tv_id=product_id).first()
-
     existing_laptop = CartLaptops.query.filter_by(cart_id=cart.pedido_id, laptop_id=product_id).first()
 
     if product_type == 'smartphone':
-
         if existing_smartphone:
             existing_smartphone.quantity+=1
             db.session.commit()
             return jsonify({"msg": "Producto agregado al carrito"}), 200
-
         else:
             add_product = CartSmartphones(cart_id=cart.pedido_id, smartphone_id=product_id)
 
     elif product_type == 'tv':
-
         if existing_tv:
             existing_tv.quantity+=1
             db.session.commit()
             return jsonify({"msg": "Producto agregado al carrito"}), 200
-
         else:
             add_product = CartTvs(cart_id=cart.pedido_id, tv_id=product_id)
-
     elif product_type == 'laptop':
-
         if existing_laptop:
             existing_laptop.quantity+=1
             db.session.commit()
             return jsonify({"msg": "Producto agregado al carrito"}), 200
-
         else:
             add_product = CartLaptops(cart_id=cart.pedido_id, laptop_id=product_id)
 
