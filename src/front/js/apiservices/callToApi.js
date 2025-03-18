@@ -99,7 +99,7 @@ export const updateUser = async (updateInfo, imageUrl) => {
             "lastname": updateInfo.lastname,
             "name": updateInfo.name,
             "password": updateInfo.password,
-            "image": imageUrl || updateInfo,
+            "image": imageUrl || null,
             "username": updateInfo.username
         }) 
     });

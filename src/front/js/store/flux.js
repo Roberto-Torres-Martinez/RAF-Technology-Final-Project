@@ -70,6 +70,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch(`${urlBackend}user/${idUser}`);
 				const data = await response.json();
 				setStore({ infoUser: data });
+				console.log(getStore().infoUser);
 			},
 
 			setPositiveColors: () => {
@@ -82,7 +83,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getCart: async (user_id) => {
-
+				
 				try {
 					const urlBackend = process.env.BACKEND_URL;
 
