@@ -1,18 +1,30 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const MessagePayment = () => {
-
-    const location = useLocation();
-
     return (
-        <div className="container-message container">
-            <h1>{location.state?.message}</h1>
-            <p>Gracias pot tu compra</p>
-            <div className="container-img-payment">
-                <img src="https://png.pngtree.com/png-clipart/20240619/original/pngtree-payment-confirmation-icon-vector-logo-png-image_15370585.png"/>
-            </div>
-        </div>
+        <main className="container-message container">
+            <h1>Gracias por tu compra!!!!</h1>
+            <section className="container-img-payment">
+                <img src="https://agenciapromarketing.com/wp-content/uploads/2020/03/BANNER-PAGO-EXITOSO-1.png"/>
+            </section>
+            <section className="container-button-confirm">
+                <Link to={"/"}>
+                    <button>Página principal</button>
+                </Link>
+                <Link to={"/phones-catalog"}>
+                    <button>Ver Móviles</button>
+                </Link>
+                <Link to={"/laptops-catalog"}>
+                    <button>Ver Laptops</button>
+                </Link>
+                <Link to={"/tvs-catalog"}>
+                    <button>Ver Televisores</button>
+                </Link>
+                <Link to={"/cart"}>
+                    <button>Carrito de compras</button>
+                </Link>
+            </section>
+        </main>
     )
-
 }
