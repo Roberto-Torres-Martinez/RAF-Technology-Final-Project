@@ -213,19 +213,19 @@ def add_product_to_cart(user_id, product_type, product_id):
 
 #ENDPOINT ELIMINAR PRODUCTOS DEL CARRITO
 
-@api.route('/cart/<int:user_id>/product/<string:product_type>/<int:product_id>', methods=['DELETE'])
-def remove_product_from_cart(user_id, product_type, product_id):
+@api.route('/cart/<int:user_id>/product/<string:product_type>/<int:cart_product_id>', methods=['DELETE'])
+def remove_product_from_cart(user_id, product_type, cart_product_id):
 
     cart = Pedido.query.filter_by(user_id=user_id).first()
 
     if product_type == 'smartphone':
-        product = CartSmartphones.query.filter_by(cart_id=cart.pedido_id, cart_smartphone_id=product_id).first()
+        product = CartSmartphones.query.filter_by(cart_id=cart.pedido_id, cart_smartphone_id=cart_product_id).first()
 
     elif product_type == 'tv':
-        product = CartTvs.query.filter_by(cart_id=cart.pedido_id, cart_tv_id=product_id).first()
+        product = CartTvs.query.filter_by(cart_id=cart.pedido_id, cart_tv_id=cart_product_id).first()
 
     elif product_type == 'laptop':
-        product = CartLaptops.query.filter_by(cart_id=cart.pedido_id, cart_laptop_id=product_id).first()
+        product = CartLaptops.query.filter_by(cart_id=cart.pedido_id, cart_laptop_id=cart_product_id).first()
 
     if product:
         db.session.delete(product)

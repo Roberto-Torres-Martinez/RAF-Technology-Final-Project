@@ -5,12 +5,16 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export const FormPayment = () => {
+export const FormPayment = ({amount}) => {
     const stripe = useStripe();
     const elements = useElements();
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState(null);
     const navigate = useNavigate();
+    const finalAmount = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+    }).format(amount)
 
     useEffect(()=>{
         if(message === "Pago confirmado!!!"){
@@ -56,6 +60,7 @@ export const FormPayment = () => {
                 <div style={{ minHeight: '35rem' }}>
                     <PaymentElement />
                 </div>
+                <p>Total a pagar: &nbsp; <b>{finalAmount}</b></p>
                 <div className="container-button-payment">
                     <button type="submit" disabled={!stripe || loading}>
                         <span>

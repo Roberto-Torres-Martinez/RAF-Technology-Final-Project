@@ -95,7 +95,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const tvs = cart["cart_tvs"]
 					const full_cart = []
 					
-
+					console.log(data)
 
 					full_cart.push(smartphones, laptops, tvs)
 					console.log(smartphones, laptops, tvs)
@@ -104,7 +104,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const done_cart = []
 					full_cart.forEach((cart_list) => {
 						cart_list.forEach((item) => {
-							done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: "3"})
+							done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity})
 						})
 					})
 

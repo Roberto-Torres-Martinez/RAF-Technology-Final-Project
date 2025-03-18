@@ -2,20 +2,26 @@ import React, { useState, useEffect } from "react";
 import { FormPayment } from "../component/formPayment";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import { useLocation } from "react-router-dom";
 
 
 const urlBackend = process.env.BACKEND_URL;
 const stripePromise = loadStripe('pk_test_51QxWTcF1M5ixil84DV7yx8UcwpGMJXggd0XSjMwT493HuieKbKIf3nWo94YaWDYrl4A781CqNpXw5vww4Q3p3IBv00oAd5cnVd')
 
 export const PasarelaPago = () => {
-    const [clientSecret, setClientSecret] = useState(null);
 
+    const location = useLocation()
+    const paymentAmount = location.state.paymentAmount
+    console.log(paymentAmount)
+
+    const [clientSecret, setClientSecret] = useState(null);
+    
     const paymentIntent = async () => {
         const response = await fetch(urlBackend + 'payment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                'amount': 1000,
+                'amount': Number(paymentAmount * 100),
                 'currency': 'eur'
             })
         })
@@ -77,7 +83,8 @@ export const PasarelaPago = () => {
             {stripePromise && clientSecret ? (
                 <Elements stripe={stripePromise} options={{ clientSecret, appearance }}>
                     <div className="pasarela-payment">
-                        <FormPayment/>
+                        <FormPayment amount={paymentAmount}/>
+                       
                     </div>
                 </Elements>
             ) : (

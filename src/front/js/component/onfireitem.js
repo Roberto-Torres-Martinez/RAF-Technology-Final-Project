@@ -20,7 +20,7 @@ export const OnFireItem = ({item, itemName}) => {
   
   validacionLista()
   
-  console.log(image)
+ 
 
 
     return(<>

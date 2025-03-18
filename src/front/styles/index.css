@@ -729,8 +729,15 @@ hr{
     text-align: center;
     display: flex;
     justify-content: center;
+  }
+  .container-form-payment p:first-child{
+    color: black;
+  }
+  .container-form-payment p:last-child{
     color: red;
   }
+
+
 
   .container-button-payment{
     display: flex;
