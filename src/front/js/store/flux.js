@@ -104,7 +104,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const done_cart = []
 					full_cart.forEach((cart_list) => {
 						cart_list.forEach((item) => {
-							done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: "hola"})
+							done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity})
 						})
 					})
 
