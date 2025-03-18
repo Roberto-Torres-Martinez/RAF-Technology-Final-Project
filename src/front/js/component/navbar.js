@@ -38,7 +38,13 @@ export const Navbar = () => {
 		};
 		navigate(route)
 		setSearch("");
+		console.log(route);
+		
 	};
+
+	useEffect(()=>{
+		console.log(results);
+	},[results])
 
 	const checkout = async () => {
 		const verified = await privateUser();
@@ -59,7 +65,7 @@ export const Navbar = () => {
 	const logOut = () => {
 		sessionStorage.removeItem('token');
 		sessionStorage.removeItem('idUser');
-		window.location.reload();
+		checkout();
 	};
 
 	return (

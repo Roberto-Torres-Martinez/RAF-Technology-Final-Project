@@ -25,9 +25,9 @@ export const PersonalInfo = ({imageUrl, setInfoUsers}) => {
     },[updateInfo])
     
         
-    useEffect(()=>{
-        actions.userIndividual(setUpdateInfo);
-    },[]);    
+    // useEffect(()=>{
+    //     actions.userIndividual(setUpdateInfo);
+    // },[]);    
 
     useEffect(()=>{
         setUpdateInfo(infoUser);
