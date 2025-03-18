@@ -89,8 +89,8 @@ class CartSmartphones(db.Model):
             "precio": self.smartphone.serialize()['precio'],
             "modelo": self.smartphone.serialize()['modelo'],
             "descripcion": self.smartphone.serialize()['descripcion'],
-            "colores": self.laptop.serialize()['colores'],
-            "imagen": self.laptopt.serialize()['imagen']
+            "colores": self.smartphone.serialize()['colores'],
+            "imagen": self.smartphone.serialize()['imagen']
         }
 
 class CartTvs(db.Model):
@@ -111,7 +111,7 @@ class CartTvs(db.Model):
             "precio": self.tvs.serialize()['precio'],
             "modelo": self.tvs.serialize()['modelo'],
             "descripcion": self.tvs.serialize()['descripcion'],
-            "imagen": self.laptopt.serialize()['imagen']
+            "imagen": self.tvs.serialize()['imagen']
 
         }
 
@@ -135,7 +135,7 @@ class CartLaptops(db.Model):
             "modelo": self.laptop.serialize()['modelo'],
             "descripcion": self.laptop.serialize()['descripcion'],
             "colores": self.laptop.serialize()['colores'],
-            "imagen": self.laptopt.serialize()['imagen']
+            "imagen": self.laptop.serialize()['imagen']
 
         }
 
