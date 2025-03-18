@@ -16,14 +16,6 @@ export const FormPayment = ({amount}) => {
         currency: "EUR",
     }).format(amount)
 
-    useEffect(()=>{
-        if(message === "Pago confirmado!!!"){
-            navigate('/message-payment', { state: { message: message } });
-        }
-    },[message])
-    
-
-
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -46,6 +38,7 @@ export const FormPayment = ({amount}) => {
             setMessage(error.message)
         } else if (paymentIntent.status === 'succeeded') {
             setMessage("Pago confirmado!!!");
+            navigate('/message-payment');
         }
         else {
             setMessage("Estado Inesperado")
