@@ -7,10 +7,32 @@ export const HomeCatalog = () => {
     const [phones, setPhones] = useState([]);
     const [tvs, setTvs] = useState([]);
     const [laptops, setLaptops] = useState([]);
+    const [random, setRandom] = useState(null);
 
-    const idPhone = [2, 5, 3];
-    const idTv = [1, 3, 6];
-    const idLaptop = [6, 7, 1];
+    
+    useEffect(()=>{
+        const interval = setInterval(()=>
+        setRandom(Math.floor(Math.random() * 15 ) + 1), 6000)
+
+        return ()=> clearInterval(interval);
+    },[])
+
+    const idPhone = [
+        Math.max(1, random - 1),
+        Math.max(2, random - 2),
+        Math.max(3, random - 3),
+    ];
+
+    const idTv = [
+        Math.max(1, random - 1),
+        Math.max(2, random - 2),
+        Math.max(3, random - 3),
+    ];
+    const idLaptop = [
+        Math.max(1, random - 1),
+        Math.max(2, random - 2),
+        Math.max(3, random - 3),
+    ];
 
 
     const fetchProducts = async (product, idProduct, setProduct) => {
@@ -30,7 +52,7 @@ export const HomeCatalog = () => {
         fetchProducts('phone', idPhone, setPhones);
         fetchProducts('tv', idTv, setTvs);
         fetchProducts('laptop', idLaptop, setLaptops);
-    }, []);
+    }, [random]);
 
     return (
         <>
