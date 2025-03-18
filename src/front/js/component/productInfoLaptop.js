@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { ProductColors } from "../component/product-colors";
-import { RelatedProducts } from "../component/related-products";
 import { useParams } from "react-router-dom";
+import { postProduct } from "../apiservices/callToApi";
 
 export const ProductInfoLaptop = ({ }) => {
 
@@ -41,7 +41,9 @@ export const ProductInfoLaptop = ({ }) => {
     imageValidation(activeColor)
 
     useEffect(() => {
+
         getLaptopById()
+
     }, []);
 
     return (
@@ -77,7 +79,7 @@ export const ProductInfoLaptop = ({ }) => {
                             <small className="text-black">{totalPrecioEur}</small>
                         </p>
                         <p className="card-text">
-                            <button className="btn-add-cart texto">
+                            <button className="btn-add-cart texto" onClick={()=>postProduct(laptop.laptop_id,1,"laptop")}>
                                 <i className="fa-solid fa-cart-plus mb-1"></i> Añadir al carrito
                             </button>
                         </p>
