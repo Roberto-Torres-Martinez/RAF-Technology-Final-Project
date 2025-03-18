@@ -45,7 +45,9 @@ export const ProductCard = ({ product, name }) => {
                         <img src={images[0]} />
                     </Link>
                 </div>
-                <span>{product.modelo}</span>
+                <div className='card-title-home'>
+                    <span>{product.modelo}</span>
+                </div>
                 <div className='card_description'>
                     <p>{product.descripcion}</p>
                 </div>
