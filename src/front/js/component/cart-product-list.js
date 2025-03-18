@@ -17,7 +17,7 @@ export const ProductList = () => {
                                 <>
                                 
                         <div className="p-2">
-                            <ListProduct name={item.modelo} description={item.descripcion} quantity={item.cantidad}/>
+                            <ListProduct name={item.modelo} description={item.descripcion} quantity={item.cantidad} image={item.image}/>
                         </div>
                                 </>
                             )

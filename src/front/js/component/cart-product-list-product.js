@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export const ListProduct = ({name, description, quantity}) => {
+export const ListProduct = ({name, description, quantity, image}) => {
 return(
     <>
     <div className="container">
@@ -9,7 +9,7 @@ return(
             <div className="col-md-2 col-sm-1 px-0">
                 <div>
                 <div className="ratio ratio-1x1">
-                <img src="https://i.scdn.co/image/ab67616d0000b273234e388847733590e0289551"/>
+                <img src={image}/>
                 </div>
                 </div>
             </div>
