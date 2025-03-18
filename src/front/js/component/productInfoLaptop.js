@@ -5,21 +5,18 @@ import { RelatedProducts } from "../component/related-products";
 import { useParams } from "react-router-dom";
 
 export const ProductInfoLaptop = ({ }) => {
-    const [imageColors, setImageColors] = useState("https://iphoneros.com/wp-content/uploads/2023/11/M3_Pro11e-copy-scaled.jpg");
 
+    const [activeColor, setActiveColor] = useState(0)
     const [laptop, setLaptop] = useState([]);
-
     const { laptop_id } = useParams();
 
+    let image
     const precio = parseInt(laptop.precio);
+
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
         style: "currency",
         currency: "EUR",
     }).format(precio);
-
-    const handleImageColors = (imageUrl) => {
-        setImageColors(imageUrl);
-    };
 
     const getLaptopById = async () => {
         const urlBackend = process.env.BACKEND_URL
@@ -34,6 +31,15 @@ export const ProductInfoLaptop = ({ }) => {
         }
     };
 
+    const imageValidation = (number) => {
+
+        const color = (laptop.colores?.[number].toLowerCase())?.replace(/ /g, "_")
+
+        image = laptop.imagen?.[color]
+    }
+
+    imageValidation(activeColor)
+
     useEffect(() => {
         getLaptopById()
     }, []);
@@ -45,12 +51,12 @@ export const ProductInfoLaptop = ({ }) => {
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <div className="d-flex justify-content-center mb-5">
-                                <img className="col-md-12" src="https://iphoneros.com/wp-content/uploads/2023/11/M3_Pro11e-copy-scaled.jpg" alt="Slide 1" />
+                                <img className="col-md-12" src={image?.[0]} alt="Slide 1" />
                             </div>
                         </div>
                         <div className="carousel-item">
                             <div className="d-flex justify-content-center mb-5">
-                                <img className="col-md-12" src="https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202301/18/00115215420561____3__1200x1200.jpg" alt="Slide 2" />
+                                <img className="col-md-12" src={image?.[1]} alt="Slide 2" />
                             </div>
                         </div>
                     </div>
@@ -97,14 +103,26 @@ export const ProductInfoLaptop = ({ }) => {
                                 <div id="collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
                                         <div className="row ms-2">
-                                            <div className="col-md-4 d-flex flex-column align-items-center">
-                                                <h6 className="title-color texto ms-3">Gris Espacial</h6>
-                                                <ProductColors image="https://iphoneros.com/wp-content/uploads/2023/11/M3_Pro11e-copy-scaled.jpg" />
-                                            </div>
-                                            <div className="col-md-4 d-flex flex-column align-items-center">
-                                                <h6 className="title-color texto ms-3">Plata</h6>
-                                                <ProductColors image="https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202301/18/00115215420561____3__1200x1200.jpg" />
-                                            </div>
+                                            {laptop.colores?.map((color, index) => {
+
+                                                let litImage = ""
+                                                const getProductPhoto = () => {
+                                                    const color = (laptop.colores?.[index].toLowerCase())?.replace(/ /g, "_")
+
+                                                    litImage = laptop.imagen?.[color]
+                                                }
+
+                                                getProductPhoto()
+
+                                                return (
+                                                    <div onClick={() => imageValidation(index)} className="col-md-4 d-flex flex-column align-items-center">
+                                                        <h6 className="title-color ms-4 texto">{color}</h6>
+                                                        <ProductColors src={litImage[0]} />
+                                                    </div>
+
+                                                )
+
+                                            })}
                                         </div>
                                     </div>
                                 </div>

@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 
-export const ProductInfoTv = ({ product, productName }) => {
+export const ProductInfoTv = ({}) => {
 
     const [tv, setTv] = useState([]);
 
