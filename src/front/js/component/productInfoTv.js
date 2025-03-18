@@ -14,10 +14,6 @@ export const ProductInfoTv = ({ product, productName }) => {
         currency: "EUR",
     }).format(precio);
 
-    const handleImageColors = (imageUrl) => {
-        setImageColors(imageUrl);
-    };
-
     const getTvById = async () => {
         const urlBackend = process.env.BACKEND_URL
         try {
