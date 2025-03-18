@@ -124,76 +124,18 @@ export const sendImage = async (file) => {
     }
 };
 
-export const createCart = async (userId) => {
+export const postProduct = async (product_id, user_id, product_type) => {
     try {
-        const response = await fetch(urlBackend + "cart/" + userId, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            Swal.fire({
-                title: "Carrito creado",
-                text: "Tu carrito ha sido creado con éxito",
-                icon: "success",
-            });
-        } else {
-            Swal.fire({
-                title: "Error",
-                text:  "Error al crear el carrito",
-                icon: "error",
-            });
+        const response = await fetch(urlBackend + 'cart/' + user_id + "/product/" + product_type + "/" + product_id, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'}
+        })
+        if(response.ok){
+            return{"msg": "Producto agregado al carrito"}
         }
-
-        return data;
     } catch (error) {
-        console.error("Error al crear el carrito");
+        console.error("Error")
+        
     }
-};
-
-// export const getCart = async (user_id) => {
-
-//     try {
-//         const response = await fetch(urlBackend + 'cart/' + user_id)
-
-//         const data = await response.json()
-//         const cart = data[0]
-//         const smartphones = cart["cart_smartphones"]
-//         const laptops = cart["cart_laptops"]
-//         const tvs = cart["cart_tvs"]
-//         const full_cart = []
-//         console.log(data);
-
-        
-//         full_cart.push(smartphones, laptops, tvs)
-//         console.log(smartphones, laptops, tvs)
-//         console.log(full_cart)
-
-//         const models = []
-//         full_cart.forEach((cart_list)=>{
-//             cart_list.forEach((item)=>{
-//                 models.push(item.modelo)
-//             })
-//         })
-
-//         const prices = []
-//         full_cart.forEach((cart_list)=>{
-//             cart_list.forEach((item)=>{
-//                 prices.push(item.precio)
-//             })
-//         })
-
-//         const done_cart = []
-//         done_cart.push(models,prices)
-
-//         console.log(done_cart)
-
-//         return data;
-//     } catch (error) {
-        
-        
-//     }
-// }
+}
 

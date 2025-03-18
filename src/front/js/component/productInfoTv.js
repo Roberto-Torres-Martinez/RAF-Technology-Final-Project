@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
+import { postProduct } from "../apiservices/callToApi";
 
 export const ProductInfoTv = ({}) => {
 
@@ -28,7 +29,9 @@ export const ProductInfoTv = ({}) => {
     };
 
     useEffect(() => {
+
         getTvById()
+
     }, []);
 
     return (
@@ -64,7 +67,7 @@ export const ProductInfoTv = ({}) => {
                             <small className="text-black">{totalPrecioEur}</small>
                         </p>
                         <p className="card-text">
-                            <button className="btn-add-cart texto">
+                            <button className="btn-add-cart texto" onClick={()=>postProduct(tv.tv_id,1,"tv")}>
                                 <i className="fa-solid fa-cart-plus mb-1"></i> Añadir al carrito
                             </button>
                         </p>
