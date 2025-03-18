@@ -1,12 +1,19 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
+import { Link, useNavigate } from "react-router-dom";
 
 export const OrderResume = () => {
+
+    const navigate = useNavigate()
 
     const { store } = useContext(Context)
     let subtotal = 0;
     let totalPrecioEur = ""
     let cantidad = 0
+
+    const paymentView = () => {
+    navigate("/pasarela-pago", {state: {paymentAmount: subtotal}})
+    }
 
     return (
         <>
@@ -61,7 +68,9 @@ export const OrderResume = () => {
                                 </div>
                             </div>
                             <div className="d-flex justify-content-center mt-0 pt-5">
-                                <button className="btn btn-danger rounded-5 resume-button">Continuar con mi pedido</button>
+                            
+                                      <button onClick={paymentView} className="btn btn-danger rounded-5 resume-button">Continuar con mi pedido</button>
+                               
                             </div>
                         </div>
                     </div>
