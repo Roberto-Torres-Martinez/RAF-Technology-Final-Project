@@ -90,7 +90,8 @@ class CartSmartphones(db.Model):
             "modelo": self.smartphone.serialize()['modelo'],
             "descripcion": self.smartphone.serialize()['descripcion'],
             "colores": self.smartphone.serialize()['colores'],
-            "imagen": self.smartphone.serialize()['imagen']
+            "imagen": self.smartphone.serialize()['imagen'],
+            "tipo": self.smartphone.serialize()['tipo']
         }
 
 class CartTvs(db.Model):
@@ -111,7 +112,8 @@ class CartTvs(db.Model):
             "precio": self.tvs.serialize()['precio'],
             "modelo": self.tvs.serialize()['modelo'],
             "descripcion": self.tvs.serialize()['descripcion'],
-            "imagen": self.tvs.serialize()['imagen']
+            "imagen": self.tvs.serialize()['imagen'],
+            "tipo": self.tvs.serialize()['tipo'],
 
         }
 
@@ -135,7 +137,8 @@ class CartLaptops(db.Model):
             "modelo": self.laptop.serialize()['modelo'],
             "descripcion": self.laptop.serialize()['descripcion'],
             "colores": self.laptop.serialize()['colores'],
-            "imagen": self.laptop.serialize()['imagen']
+            "imagen": self.laptop.serialize()['imagen'],
+            "tipo": self.laptop.serialize()['tipo'],
 
         }
 
@@ -155,7 +158,8 @@ class Smartphones(db.Model):
     conectividad = db.Column(db.String(150), unique=False, nullable=False)
     colores = db.Column(db.JSON, unique=False, nullable=False)
     descripcion = db.Column(db.String(300), unique=False, nullable=False)
-    imagen = db.Column(db.JSON, unique=False,)
+    imagen = db.Column(db.JSON, unique=False)
+    tipo = db.Column(db.String(150), unique=False, nullable= False)
     pedido = db.relationship('Pedido', backref= 'smartphones')
 
     def __repr__(self):
@@ -176,6 +180,8 @@ class Smartphones(db.Model):
             "colores" : self.colores,
             "descripcion" : self.descripcion,
             "imagen" : self.imagen,
+            "tipo" : self.tipo,
+
         }
 
 class TVs(db.Model):
@@ -195,6 +201,7 @@ class TVs(db.Model):
     conectividad = db.Column(db.String(150), unique=False, nullable=False)
     medidas = db.Column(db.String(50), unique=False, nullable=False)
     imagen = db.Column(db.JSON, unique=False, nullable=False)
+    tipo = db.Column(db.String(150), unique=False, nullable= False)
     pedido = db.relationship('Pedido', backref= 'tv')
 
     def __repr__(self):
@@ -215,6 +222,8 @@ class TVs(db.Model):
             "conectividad" : self.conectividad,
             "medidas" : self.medidas,
             "imagen" : self.imagen,
+            "tipo" : self.tipo,
+
         }
 
 class Laptops(db.Model):
@@ -239,6 +248,7 @@ class Laptops(db.Model):
     imagen = db.Column(db.JSON, unique=False, nullable=False)
     funcion_especial = db.Column(db.String(300), unique=False, nullable=False)
     descripcion_tarjeta_grafica = db.Column(db.String(300), unique=False, nullable=False)
+    tipo = db.Column(db.String(150), unique=False, nullable= False)
     pedido = db.relationship('Pedido', backref= 'laptops')
 
     def __repr__(self):
@@ -263,5 +273,7 @@ class Laptops(db.Model):
             "descripcion" : self.descripcion,
             "imagen" : self.imagen,
             "funcion_especial": self.funcion_especial,
-            "descripcion_tarjeta_grafica": self.descripcion_tarjeta_grafica
+            "descripcion_tarjeta_grafica": self.descripcion_tarjeta_grafica,
+            "tipo": self.tipo,
+
         }

@@ -29,6 +29,7 @@ phones = [
         "pantalla": "Dynamic AMOLED 2X de 6.8 pulgadas, 120 Hz",
         "precio": "1299 €",
         "procesador": "Snapdragon 8 Elite",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": " 256 GB",
@@ -55,6 +56,7 @@ phones = [
         "pantalla": "Super Retina XDR OLED de 6.1 pulgadas",
         "precio": "709 €",
         "procesador": "Chip A18 Bionic",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": " 512 GB",
@@ -86,6 +88,7 @@ phones = [
         "pantalla": "OLED de 6.7 pulgadas",
         "precio": "999 €",
         "procesador": "Tensor G3",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": "256 GB",
@@ -117,6 +120,7 @@ phones = [
         "pantalla": "OLED de 6.6 pulgadas",
         "precio": "1099 €",
         "procesador": "Kirin 9900",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": "512 GB",
@@ -148,6 +152,7 @@ phones = [
         "pantalla": "AMOLED de 6.7 pulgadas",
         "precio": "899 €",
         "procesador": "Snapdragon 8 Gen 4",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -179,6 +184,7 @@ phones = [
         "pantalla": "6.7\" Fluid AMOLED, 120 Hz",
         "precio": "1099 €",
         "procesador": "Snapdragon 8 Gen 3",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -205,6 +211,7 @@ phones = [
         "pantalla": "6.5\" 4K OLED, 120 Hz",
         "precio": "1299 €",
         "procesador": "Snapdragon 8 Gen 2",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -236,6 +243,7 @@ phones = [
         "pantalla": "6.7\" AMOLED, 120 Hz",
         "precio": "1099 €",
         "procesador": "Snapdragon 8 Gen 3",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -262,6 +270,7 @@ phones = [
         "pantalla": "6.6\" OLED, 144 Hz",
         "precio": "799 €",
         "procesador": "Snapdragon 8 Gen 2",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -288,6 +297,7 @@ phones = [
         "pantalla": "6.7\" AMOLED, 120 Hz",
         "precio": "899 €",
         "procesador": "Snapdragon 8 Gen 1",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": "128 GB, 256 GB",
@@ -319,6 +329,7 @@ phones = [
         "pantalla": "6.3\" AMOLED, 120 Hz",
         "precio": "799 €",
         "procesador": "Snapdragon 8 Gen 3",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -345,6 +356,7 @@ phones = [
         "pantalla": "6.78\" AMOLED, 120 Hz",
         "precio": "1099 €",
         "procesador": "Snapdragon 8 Gen 2",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": "128 GB, 256 GB",
@@ -371,6 +383,7 @@ phones = [
         "pantalla": "6.7\" OLED, 120 Hz",
         "precio": "799 €",
         "procesador": "Snapdragon 8+ Gen 1",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": "128 GB, 256 GB",
@@ -397,6 +410,7 @@ phones = [
         "pantalla": "6.62\" AMOLED, 120 Hz",
         "precio": "699 €",
         "procesador": "Snapdragon 8 Gen 1",
+        "tipo": "smartphone"
     },
     {
         "almacenamiento": "256 GB, 512 GB",
@@ -428,5 +442,6 @@ phones = [
         "pantalla": "AMOLED de 6.73 pulgadas, 120 Hz",
         "precio": "1399 €",
         "procesador": "Snapdragon 8 Gen 2",
+        "tipo": "smartphone"
     }
 ]
