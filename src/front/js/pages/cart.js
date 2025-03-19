@@ -14,6 +14,7 @@ export const Cart = () => {
     useEffect(() => {
         actions.setNegativeColors()
         actions.setNavbarVisibility()
+        actions.getCar(1)
     }, [])
 
     return (
