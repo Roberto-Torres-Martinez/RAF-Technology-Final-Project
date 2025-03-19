@@ -39,13 +39,7 @@ export const Navbar = () => {
 		navigate("/", { replace: true });
 		setTimeout(() => navigate(route), 0);
 		setSearch("");
-		console.log(route);
-		
 	};
-
-	useEffect(()=>{
-		console.log(results);
-	},[results])
 
 	const checkout = async () => {
 		const verified = await privateUser();
