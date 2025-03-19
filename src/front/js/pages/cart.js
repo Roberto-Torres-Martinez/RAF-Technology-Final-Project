@@ -8,8 +8,7 @@ export const Cart = () => {
 
 
     const { actions } = useContext(Context)
-    const [userId, setUserId] = useState(2)
-
+    const [userId, setUserId] = useState(sessionStorage.getItem("idUser"))
     useEffect(() => {
         actions.setNegativeColors()
         actions.setNavbarVisibility()
