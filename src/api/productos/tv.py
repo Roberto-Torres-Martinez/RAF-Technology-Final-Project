@@ -14,7 +14,6 @@ tvs = [
         "modelo": "QN90C Neo QLED",
         "pantalla": "55 pulgadas",
         "precio": "1499 €",
-        "tv_id": 1,
         "usos_recomendados": "Visualización de contenido en 4K, juegos, cine en casa",
         "tipo": "tv"
     },
@@ -33,7 +32,6 @@ tvs = [
         "modelo": "OLED C3",
         "pantalla": "65 pulgadas",
         "precio": "1799 €",
-        "tv_id": 2,
         "usos_recomendados": "Cine en casa, visualización de contenido HDR, gaming",
         "tipo": "tv"
     },
@@ -52,7 +50,6 @@ tvs = [
         "modelo": "Bravia XR A90J",
         "pantalla": "55 pulgadas",
         "precio": "2499 €",
-        "tv_id": 3,
         "usos_recomendados": "Cine en casa, visualización de contenido HDR, gaming",
         "tipo": "tv"
     },
@@ -63,15 +60,14 @@ tvs = [
         "descripcion": "QLED con alto brillo y contraste, ideal para ver en ambientes iluminados.",
         "fabricante": "Samsung Electronics",
         "imagen": [
-            "https://www.elgiganten.se/resource/blob/5375942/a87786251514ae690b37e5d1ab181242/samsung-tv-samsung-qled-q80c-picture-collage-1024x768-data.png",
-            "https://image-us.samsung.com/SamsungUS/home/television-home-theater/tvs/qled-4k-tvs/qn55q80cafxza/03142023/Q80C_85_75_65_55.jpg?%24product-details-blur-jpg%24="
+            "https://cdn.idealo.com/folder/Product/202451/3/202451345/s11_produktbild_gross/samsung-tq75q80catxxc.jpg",
+            "https://cdn.idealo.com/folder/Product/202451/3/202451345/s11_produktbild_max_1/samsung-tq75q80catxxc.jpg"
         ],
         "marca": "Samsung",
         "medidas": "1230 x 720 x 30 mm",
         "modelo": "Q80C QLED",
         "pantalla": "55 pulgadas",
         "precio": "1499 €",
-        "tv_id": 4,
         "usos_recomendados": "Visualización de contenido 4K, deportes, cine en casa",
         "tipo": "tv"
     },
@@ -90,7 +86,6 @@ tvs = [
         "modelo": "6 Series",
         "pantalla": "55 pulgadas",
         "precio": "799 €",
-        "tv_id": 5,
         "usos_recomendados": "Cine en casa, contenido en 4K, entretenimiento",
         "tipo": "tv"
     },
@@ -101,15 +96,14 @@ tvs = [
         "descripcion": "QLED con gran calidad de imagen, colores brillantes y negros profundos.",
         "fabricante": "Vizio Inc.",
         "imagen": [
-            "https://www.vizio.com/content/dam/vizio/us/en/images/product/2021/tv/p-series/p65q9-j01/gallery/2022_P65Q9-J01_Front_Editors-Choice-Reviewed.jpg/_jcr_content/renditions/cq5dam.web.640.480.png",
-            "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6346/6346168_sd.jpg"
+            "https://m.media-amazon.com/images/I/71ELl5K0blL._AC_SL1000_.jpg",
+            "https://m.media-amazon.com/images/I/71tT3DU-BsL._AC_SL1000_.jpg"
         ],
         "marca": "Vizio",
         "medidas": "1450 x 830 x 35 mm",
         "modelo": "P-Series Quantum",
         "pantalla": "65 pulgadas",
         "precio": "1299 €",
-        "tv_id": 6,
         "usos_recomendados": "Cine en casa, contenido 4K, juegos",
         "tipo": "tv"
     },
@@ -120,15 +114,14 @@ tvs = [
         "descripcion": "OLED con Ambilight para una experiencia de inmersión total y colores brillantes.",
         "fabricante": "Philips",
         "imagen": [
-            "https://i.blogs.es/77154a/philips-9000-series-4k-tv-/650_1200.jpg",
-            "https://m.media-amazon.com/images/I/51ml8BufphL.jpg"
+            "https://www.kamera-express.be/_ipx/b_%23ffffff00,f_webp,fit_contain,s_484x484/https://www.kamera-express.nl/media/9dd5b1e0-2207-44a5-a50f-e7ecbadce877/philips-the-one-43pus8507-ambilight-google-.jpg",
+            "https://www.kamera-express.be/_ipx/b_%23ffffff00,f_webp,fit_contain,s_484x484/https://www.kamera-express.nl/media/36542099-9256-445a-8c8f-a696cf1c732b/philips-8507-foto4.jpg"
         ],
         "marca": "Philips",
         "medidas": "1450 x 850 x 30 mm",
         "modelo": "Ambilight 9300",
         "pantalla": "65 pulgadas",
         "precio": "1699 €",
-        "tv_id": 7,
         "usos_recomendados": "Cine en casa, visualización de contenido HDR, entretenimiento",
         "tipo": "tv"
     },
@@ -139,15 +132,14 @@ tvs = [
         "descripcion": "Excelente rendimiento en brillo y contraste con tecnología ULED.",
         "fabricante": "Hisense",
         "imagen": [
-            "https://m.media-amazon.com/images/I/616lx9j1KoL._AC_UF1000,1000_QL80_.jpg",
-            "https://i.rtings.com/assets/products/vN1YiH6t/hisense-u8-u8h/design-medium.jpg?format=auto"
+            "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/2f3813fb-c093-44f3-b294-787aa28a7dc5.jpg;maxHeight=2000;maxWidth=2000;format=webp",
+            "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/fc694997-2f59-475c-b080-4808a38dace9.jpg;maxHeight=2000;maxWidth=2000;format=webp"
         ],
         "marca": "Hisense",
         "medidas": "1230 x 710 x 30 mm",
         "modelo": "U8H",
         "pantalla": "55 pulgadas",
         "precio": "999 €",
-        "tv_id": 8,
         "usos_recomendados": "Cine en casa, contenido HDR, juegos",
         "tipo": "tv"
     },
@@ -166,7 +158,6 @@ tvs = [
         "modelo": "The Frame",
         "pantalla": "55 pulgadas",
         "precio": "1499 €",
-        "tv_id": 9,
         "usos_recomendados": "Visualización de contenido 4K, decoración, arte",
         "tipo": "tv"
     },
@@ -177,15 +168,14 @@ tvs = [
         "descripcion": "Tecnología NanoCell para colores más reales y vibrantes.",
         "fabricante": "LG Electronics",
         "imagen": [
-            "https://www.lg.com/content/dam/channel/wcms/pe/images/televisores/86nano90spa_awf_espr_pe_c/gallery/M-01.jpg",
-            "https://i.rtings.com/assets/products/k32FOALz/lg-nano90-2021/design-medium.jpg?format=auto"
+            "https://www.lg.com/cac/images/televisores/md07527300/gallery/L-01.jpg",
+            "https://www.lg.com/cac/images/televisores/md07527300/gallery/L-03.jpg"
         ],
         "marca": "LG",
         "medidas": "1450 x 835 x 25 mm",
         "modelo": "NanoCell NANO90",
         "pantalla": "65 pulgadas",
         "precio": "1199 €",
-        "tv_id": 10,
         "usos_recomendados": "Visualización de contenido 4K, cine en casa, entretenimiento",
         "tipo": "tv"
     },
@@ -196,15 +186,14 @@ tvs = [
         "descripcion": "Gran calidad de imagen con el procesador XR y un excelente sonido.",
         "fabricante": "Sony Corporation",
         "imagen": [
-            "https://i.blogs.es/178486/x90j-1-copia/650_1200.webp",
-            "https://cdn.avpasion.com/ctv/imgs/tvs/2021/4548736125124-1.jpg?width=600"
+            "https://www.sony.es/image/f6a735c74de46f284950974417018597?fmt=png-alpha&wid=676&hei=400",
+            "https://www.sony.es/image/e3d53bc64c1444da00b56829279d9094?fmt=png-alpha&wid=676&hei=400"
         ],
         "marca": "Sony",
         "medidas": "1225 x 715 x 30 mm",
         "modelo": "X90J",
         "pantalla": "55 pulgadas",
         "precio": "1099 €",
-        "tv_id": 11,
         "usos_recomendados": "Cine en casa, contenido 4K, entretenimiento",
         "tipo": "tv"
     },
@@ -215,15 +204,14 @@ tvs = [
         "descripcion": "Una opción asequible con buenas características y calidad de imagen 4K.",
         "fabricante": "TCL Electronics",
         "imagen": [
-            "https://cdn-files.kimovil.com/tv_front/0006/51/thumb_550296_tv_front_big.png",
-            "https://www.cnet.com/a/img/resize/73929505132a0f465a45082ddfc45b8d933186c5/hub/2021/05/31/56ad4fda-8004-4f74-a555-5ff5e96350fd/tcl-55s435-3-of-6.jpg?auto=webp&width=768"
+            "https://www.tcl.com/usca/content/dam/tcl/products/home-theater/S434_NFL-Front.png",
+            "https://www.tcl.com/usca/content/dam/tcl/product/home-theater/4-series/carousel/50s434/50S434-ATV-Side2.png"
         ],
         "marca": "TCL",
         "medidas": "1100 x 640 x 30 mm",
         "modelo": "4 Series",
         "pantalla": "50 pulgadas",
         "precio": "499 €",
-        "tv_id": 12,
         "usos_recomendados": "Visualización de contenido 4K, entretenimiento",
         "tipo": "tv"
     },
@@ -242,7 +230,6 @@ tvs = [
         "modelo": "TX-65JZ1000B",
         "pantalla": "65 pulgadas",
         "precio": "2399 €",
-        "tv_id": 13,
         "usos_recomendados": "Cine en casa, visualización de contenido HDR",
         "tipo": "tv"
     },
@@ -261,7 +248,6 @@ tvs = [
         "modelo": "AQUOS 4K",
         "pantalla": "58 pulgadas",
         "precio": "899 €",
-        "tv_id": 14,
         "usos_recomendados": "Cine en casa, visualización de contenido 4K",
         "tipo": "tv"
     },
@@ -280,7 +266,6 @@ tvs = [
         "modelo": "U7G",
         "pantalla": "65 pulgadas",
         "precio": "749 €",
-        "tv_id": 15,
         "usos_recomendados": "Visualización de contenido 4K, entretenimiento",
         "tipo": "tv"
     }
