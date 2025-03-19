@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { deleteProduct } from "../apiservices/callToApi";
 
 export const ListProduct = ({name, description, quantity, image, tipo, user_id, product_id}) => {
+
+const [cantidad, setCantidad] = useState(1)
+
+const aumentarCantidad = () =>{
+    setCantidad(prevCantidad => prevCantidad + 1)
+}
+
+const decrementarCantidad = ()=>{
+    if(cantidad > 1){
+        setCantidad(prevCantidad => prevCantidad - 1)
+    }
+}
+
 return(
     <>
     <div className="container">
@@ -21,8 +34,9 @@ return(
             </div>
             <div className="col-lg-2 col-sm-12">
                 <div className="d-flex justify-content-around">
-                <p>Cantidad:</p>
-                <p><b>x{quantity}</b></p>
+                <button  onClick={decrementarCantidad}>-</button>
+                <p><b>{cantidad}</b></p>
+                <button  onClick={aumentarCantidad} >+</button>
                 </div>
                 <div className="d-flex justify-content-end align-items-center h-75">
                 <button onClick={()=>deleteProduct(user_id, tipo, product_id)}className="btn cart-delete-button rounded">Eliminar</button>

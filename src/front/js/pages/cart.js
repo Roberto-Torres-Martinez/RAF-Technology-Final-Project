@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../store/appContext';
 import { ProductList } from '../component/cart-product-list';
 import { OrderResume } from '../component/cart-order-resume';
@@ -7,12 +7,13 @@ import { OrderResume } from '../component/cart-order-resume';
 export const Cart = () => {
 
 
-    const { store, actions } = useContext(Context)
+    const { actions } = useContext(Context)
+    const [userId, setUserId] = useState(2)
 
     useEffect(() => {
         actions.setNegativeColors()
         actions.setNavbarVisibility()
-        actions.getCart(1)
+        actions.getCart(userId)
       
     }, [])
     
@@ -24,7 +25,7 @@ export const Cart = () => {
             <div className="container-fluid negative-background cart" style={{ backgroundColor: "rgb(234, 248, 252)" }}>
                 <div className="row justify-content-around mx-3">
                     <div className="col-lg-7 col-sm-12">
-                        <ProductList />
+                        <ProductList user_id={userId}/>
                     </div>
                     <div className="col-lg-4 col-sm-12">
                         <OrderResume />

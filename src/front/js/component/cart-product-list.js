@@ -2,9 +2,9 @@ import React,{useContext} from 'react';
 import { ListProduct } from './cart-product-list-product';
 import { Context } from '../store/appContext';
 
-export const ProductList = () => {
+export const ProductList = ({user_id}) => {
     const {store} = useContext(Context)
-    const user_id = "1"
+    
 
     return (
         <>
