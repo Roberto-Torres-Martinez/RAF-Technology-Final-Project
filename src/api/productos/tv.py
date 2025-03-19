@@ -168,8 +168,8 @@ tvs = [
         "descripcion": "Tecnología NanoCell para colores más reales y vibrantes.",
         "fabricante": "LG Electronics",
         "imagen": [
-            "https://www.lg.com/cac/images/televisores/md07527300/gallery/L-01.jpg",
-            "https://www.lg.com/cac/images/televisores/md07527300/gallery/L-03.jpg"
+            "https://img.pccomponentes.com/articles/1024/10241245/152-lg-50nano826qb-50-led-nanocell-ultrahd-4k-hdr10-pro.jpg",
+            "https://img.pccomponentes.com/articles/1024/10241245/4823-lg-50nano826qb-50-led-nanocell-ultrahd-4k-hdr10-pro-especificaciones.jpg"
         ],
         "marca": "LG",
         "medidas": "1450 x 835 x 25 mm",
@@ -186,8 +186,8 @@ tvs = [
         "descripcion": "Gran calidad de imagen con el procesador XR y un excelente sonido.",
         "fabricante": "Sony Corporation",
         "imagen": [
-            "https://www.sony.es/image/f6a735c74de46f284950974417018597?fmt=png-alpha&wid=676&hei=400",
-            "https://www.sony.es/image/e3d53bc64c1444da00b56829279d9094?fmt=png-alpha&wid=676&hei=400"
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_91251489?x=536&y=402&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=536&ey=402&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=536&cdy=402",
+            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_88351334?x=536&y=402&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=536&ey=402&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=536&cdy=402"
         ],
         "marca": "Sony",
         "medidas": "1225 x 715 x 30 mm",
@@ -204,8 +204,8 @@ tvs = [
         "descripcion": "Una opción asequible con buenas características y calidad de imagen 4K.",
         "fabricante": "TCL Electronics",
         "imagen": [
-            "https://www.tcl.com/usca/content/dam/tcl/products/home-theater/S434_NFL-Front.png",
-            "https://www.tcl.com/usca/content/dam/tcl/product/home-theater/4-series/carousel/50s434/50S434-ATV-Side2.png"
+            "https://m.media-amazon.com/images/I/812deNcFfVL._AC_SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/81DwSazR7gL._AC_SL1500_.jpg"
         ],
         "marca": "TCL",
         "medidas": "1100 x 640 x 30 mm",
