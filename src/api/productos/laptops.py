@@ -1,6 +1,6 @@
 laptops = [
     {
-        "almacenamiento": "512 GB, 1 TB, 2 TB",
+        "almacenamiento": "2 TB",
         "bateria": "100 Wh, hasta 21 horas",
         "camara": "1080p",
         "colores": [
@@ -19,7 +19,7 @@ laptops = [
             ]
         },
         "marca": "Apple",
-        "memoria_ram": "16 GB, 32 GB",
+        "memoria_ram": "32 GB",
         "modelo": "MacBook Pro 16 (2023)",
         "modelo_cpu": "Apple M2 Pro",
         "pantalla": "Retina de 16 pulgadas, 3024 x 1964",
@@ -32,7 +32,7 @@ laptops = [
         "tipo": "laptop"
     },
     {
-        "almacenamiento": "512 GB, 1 TB",
+        "almacenamiento": "512 GB",
         "bateria": "86 Wh, hasta 14 horas",
         "camara": "720p",
         "colores": [
@@ -51,7 +51,7 @@ laptops = [
             ]
         },
         "marca": "Dell",
-        "memoria_ram": "16 GB, 32 GB",
+        "memoria_ram": "32 GB",
         "modelo": "XPS 15 (2023)",
         "modelo_cpu": "Intel Core i7-13700H",
         "pantalla": "OLED de 15.6 pulgadas, 3840 x 2400",
@@ -64,7 +64,7 @@ laptops = [
         "tipo": "laptop"
     },
     {
-        "almacenamiento": "512 GB, 1 TB",
+        "almacenamiento": "1 TB",
         "bateria": "66 Wh, hasta 12 horas",
         "camara": "1080p",
         "colores": [
@@ -83,7 +83,7 @@ laptops = [
             ]
         },
         "marca": "HP",
-        "memoria_ram": "16 GB, 32 GB",
+        "memoria_ram": "16 GB",
         "modelo": "Spectre x360 14 (2023)",
         "modelo_cpu": "Intel Core i7-1265U",
         "pantalla": "OLED de 13.5 pulgadas, 3000 x 2000",
@@ -96,7 +96,7 @@ laptops = [
         "tipo": "laptop"
     },
     {
-        "almacenamiento": "512 GB, 1 TB",
+        "almacenamiento": "1 TB",
         "bateria": "57 Wh, hasta 15 horas",
         "camara": "720p",
         "colores": [
@@ -110,7 +110,7 @@ laptops = [
             ]
         },
         "marca": "Lenovo",
-        "memoria_ram": "16 GB, 32 GB",
+        "memoria_ram": "32 GB",
         "modelo": "ThinkPad X1 Carbon Gen 11",
         "modelo_cpu": "Intel Core i7-1365U",
         "pantalla": "IPS de 14 pulgadas, 1920 x 1200",
@@ -123,7 +123,7 @@ laptops = [
         "tipo": "laptop"
     },
     {
-        "almacenamiento": "512 GB, 1 TB",
+        "almacenamiento": "1 TB",
         "bateria": "76 Wh, hasta 12 horas",
         "camara": "720p",
         "colores": [
@@ -142,7 +142,7 @@ laptops = [
             ]
         },
         "marca": "Asus",
-        "memoria_ram": "16 GB, 32 GB",
+        "memoria_ram": "16 GB",
         "modelo": "ROG Zephyrus G14 (2023)",
         "modelo_cpu": "AMD Ryzen 9 7940HS",
         "pantalla": "IPS de 14 pulgadas, 2560 x 1600, 120 Hz",
@@ -155,7 +155,7 @@ laptops = [
         "tipo": "laptop"
     },
     {
-        "almacenamiento": "512 GB, 1 TB",
+        "almacenamiento": "1 TB",
         "bateria": "56 Wh, hasta 10 horas",
         "camara": "720p",
         "colores": [
@@ -174,7 +174,7 @@ laptops = [
             ]
         },
         "marca": "Microsoft",
-        "memoria_ram": "16 GB, 32 GB",
+        "memoria_ram": "16 GB",
         "modelo": "Surface Laptop 5",
         "modelo_cpu": "Intel Core i7-1265U",
         "pantalla": "PixelSense de 13.5 pulgadas, 2256 x 1504",
@@ -187,7 +187,7 @@ laptops = [
         "tipo": "laptop"
     },
     {
-        "almacenamiento": "512 GB, 1 TB",
+        "almacenamiento": "512 GB",
         "bateria": "58 Wh, hasta 8 horas",
         "camara": "720p",
         "colores": [
@@ -201,7 +201,7 @@ laptops = [
             ]
         },
         "marca": "Acer",
-        "memoria_ram": "16 GB, 32 GB",
+        "memoria_ram": "32 GB",
         "modelo": "Predator Helios 300",
         "modelo_cpu": "Intel Core i7-13700H",
         "pantalla": "IPS de 15.6 pulgadas, 1920 x 1080, 144 Hz",
@@ -250,8 +250,8 @@ laptops = [
         "descripcion": "Portátil gaming de gran tamaño con una frecuencia de actualización extremadamente alta.",
         "imagen": {
             "negro": [
-                "https://m.media-amazon.com/images/I/81Za+iVk9rL._AC_SL1500_.jpg",
-                "https://m.media-amazon.com/images/I/81xrkwUsSKL._AC_SL1500_.jpg"
+                "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D1920/https://d2e6ccujb3mkqf.cloudfront.net/402c9e17-2184-4d8b-8420-ce5e07d4c61d-1_83814f1d-045b-4af5-9cb5-5388a81bf7ca.jpg",
+                "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D1920/https://d2e6ccujb3mkqf.cloudfront.net/402c9e17-2184-4d8b-8420-ce5e07d4c61d-2_799ec614-9357-4999-b2fa-ca2c6e8b9025.jpg"
             ]
         },
         "marca": "MSI",
@@ -277,8 +277,8 @@ laptops = [
         "descripcion": "Pantalla OLED y gran rendimiento para creadores de contenido.",
         "imagen": {
             "negro": [
-                "https://m.media-amazon.com/images/I/61XLwlkBfzL._AC_UF894,1000_QL80_.jpg",
-                "https://i.blogs.es/5c931d/gigabyte-aero-15-oled-2021-xataka-review-portada/1366_2000.jpeg"
+                "https://img.pccomponentes.com/articles/24/246129/1.jpg",
+                "https://img.pccomponentes.com/articles/24/246129/2.jpg"
             ]
         },
         "marca": "Gigabyte",
@@ -341,7 +341,7 @@ laptops = [
             ]
         },
         "marca": "Huawei",
-        "memoria_ram": "16 GB, 32 GB",
+        "memoria_ram": "32 GB",
         "modelo": "MateBook X Pro (2023)",
         "modelo_cpu": "Intel Core i7-13700H",
         "pantalla": "IPS de 14.2 pulgadas, 3120 x 2080",
@@ -354,7 +354,7 @@ laptops = [
         "tipo": "laptop"
     },
     {
-        "almacenamiento": "512 GB, 1 TB",
+        "almacenamiento": "1 TB",
         "bateria": "87 Wh, hasta 9 horas",
         "camara": "720p",
         "colores": [
@@ -367,9 +367,8 @@ laptops = [
                 "https://thumb.pccomponentes.com/w-530-530/articles/1067/10670513/5996-asus-rog-zephyrus-m16-2023-gu604vy-nm001w-intel-core-i9-13900h-32gb-2tb-ssd-rtx-4090-16-caracteristicas.jpg"
             ]
         },
-        "laptop_id": 13,
         "marca": "Alienware",
-        "memoria_ram": "16 GB, 32 GB",
+        "memoria_ram": "32 GB",
         "modelo": "M16 (2023)",
         "modelo_cpu": "Intel Core i9-13900HX",
         "pantalla": "IPS de 16 pulgadas, 2560 x 1600, 165 Hz",
@@ -382,7 +381,7 @@ laptops = [
         "tipo": "laptop"
     },
     {
-        "almacenamiento": "512 GB, 1 TB",
+        "almacenamiento": "512 GB",
         "bateria": "56 Wh, hasta 12 horas",
         "camara": "1080p",
         "colores": [
@@ -395,9 +394,8 @@ laptops = [
                 "https://m.media-amazon.com/images/I/71SttbWEaSL._AC_UF894,1000_QL80_.jpg"
             ]
         },
-        "laptop_id": 14,
         "marca": "Microsoft",
-        "memoria_ram": "16 GB, 32 GB",
+        "memoria_ram": "32 GB",
         "modelo": "Surface Book 4",
         "modelo_cpu": "Intel Core i7-1185G7",
         "pantalla": "PixelSense de 13.5 pulgadas, 3000 x 2000",
@@ -410,7 +408,7 @@ laptops = [
         "tipo": "laptop"
     },
     {
-        "almacenamiento": "128 GB, 256 GB",
+        "almacenamiento": "256 GB",
         "bateria": "47 Wh, hasta 12 horas",
         "camara": "1080p",
         "colores": [
@@ -428,9 +426,8 @@ laptops = [
                 "https://chromeunboxed.com/wp-content/uploads/2020/11/Not-Pink-Pixelbook-Go-Goodbye-Feature-scaled.jpg"
             ]
         },
-        "laptop_id": 15,
         "marca": "Google",
-        "memoria_ram": "8 GB, 16 GB",
+        "memoria_ram": "8 GB",
         "modelo": "Pixelbook Go",
         "modelo_cpu": "Intel Core i5-8200Y",
         "pantalla": "Full HD de 13.3 pulgadas, 1920 x 1080",
