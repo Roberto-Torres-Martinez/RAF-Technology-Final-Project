@@ -4,6 +4,8 @@ import { Context } from '../store/appContext';
 
 export const ProductList = () => {
     const {store} = useContext(Context)
+    const user_id = "1"
+
     return (
         <>
         
@@ -17,7 +19,7 @@ export const ProductList = () => {
                                 <>
                                 
                         <div className="p-2">
-                            <ListProduct name={item.modelo} description={item.descripcion} quantity={item.cantidad} image={item.image}/>
+                            <ListProduct name={item.modelo} description={item.descripcion} quantity={item.cantidad} image={item.image} tipo={item.tipo} user_id={user_id} product_id={item.product_id} />
                         </div>
                                 </>
                             )

@@ -1,7 +1,7 @@
 import React from "react";
+import { deleteProduct } from "../apiservices/callToApi";
 
-
-export const ListProduct = ({name, description, quantity, image}) => {
+export const ListProduct = ({name, description, quantity, image, tipo, user_id, product_id}) => {
 return(
     <>
     <div className="container">
@@ -25,7 +25,7 @@ return(
                 <p><b>x{quantity}</b></p>
                 </div>
                 <div className="d-flex justify-content-end align-items-center h-75">
-                <button className="btn cart-delete-button rounded">Eliminar</button>
+                <button onClick={()=>deleteProduct(user_id, tipo, product_id)}className="btn cart-delete-button rounded">Eliminar</button>
                 </div>
             </div>
         </div>
