@@ -75,7 +75,7 @@ class CartSmartphones(db.Model):
 
     __tablename__ = 'cart_smartphones'
 
-    cart_smartphone_id = db.Column(db.Integer, primary_key=True)
+    cart_product_id = db.Column(db.Integer, primary_key=True)
     cart_id = db.Column(db.Integer, db.ForeignKey('pedido.pedido_id'))
     smartphone_id = db.Column(db.Integer, db.ForeignKey('smartphones.smartphone_id'))
     smartphone = db.relationship('Smartphones', backref= 'cart_smartphones')
@@ -83,7 +83,7 @@ class CartSmartphones(db.Model):
 
     def serialize(self):
         return {
-            "cart_smartphone_id": self.cart_smartphone_id,
+            "cart_product_id": self.cart_product_id,
             "smartphone_id": self.smartphone_id,
             "quantity": self.quantity,
             "precio": self.smartphone.serialize()['precio'],
@@ -106,7 +106,7 @@ class CartTvs(db.Model):
 
     def serialize(self):
         return {
-            "cart_tv_id": self.cart_tv_id,
+            "cart_product_id": self.cart_product_id,
             "tv_id": self.tv_id,
             "quantity": self.quantity,
             "precio": self.tvs.serialize()['precio'],
@@ -122,7 +122,7 @@ class CartLaptops(db.Model):
 
     __tablename__ = 'cart_laptops'
 
-    cart_laptop_id = db.Column(db.Integer, primary_key=True)
+    cart_product_id = db.Column(db.Integer, primary_key=True)
     cart_id = db.Column(db.Integer, db.ForeignKey('pedido.pedido_id'))
     laptop_id = db.Column(db.Integer, db.ForeignKey('laptops.laptop_id'))
     laptop = db.relationship('Laptops', backref= 'cart_laptops')
@@ -130,7 +130,7 @@ class CartLaptops(db.Model):
 
     def serialize(self):
         return {
-            "cart_laptop_id": self.cart_laptop_id,
+            "cart_product_id": self.cart_product_id,
             "laptop_id": self.laptop_id,
             "quantity": self.quantity,
             "precio": self.laptop.serialize()['precio'],

@@ -103,12 +103,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 						cart_list.forEach((item) => {
 							if(item.tipo =="laptop" || item.tipo == "smartphone"){
 							color = (item.colores[0].toLowerCase()).replace(/ /g, "_")
-							done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: item.imagen[color][0]})
+							done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: item.imagen[color][0], tipo : item.tipo, product_id: item.cart_product_id})
 
 						}
 							else {
-								done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: item.imagen[0]})}
-								item.imagen
+								done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: item.imagen[0], tipo: item.tipo, product_id: item.cart_product_id})}
+								
 							})
 					})
 
