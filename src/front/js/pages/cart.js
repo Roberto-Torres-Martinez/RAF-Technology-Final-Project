@@ -4,19 +4,18 @@ import { ProductList } from '../component/cart-product-list';
 import { OrderResume } from '../component/cart-order-resume';
 
 
-
 export const Cart = () => {
 
 
     const { store, actions } = useContext(Context)
 
-
     useEffect(() => {
         actions.setNegativeColors()
         actions.setNavbarVisibility()
-        actions.getCar(1)
-    }, [])
-
+        actions.getCart(1)
+      
+    }, [store.cart])
+    
     return (
         <>
             <div className="container-fluid negative-background cart" style={{ backgroundColor: "rgb(234, 248, 252)" }}>

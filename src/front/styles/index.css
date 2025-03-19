@@ -516,6 +516,10 @@ hr{
     mix-blend-mode: normal; */
 }
 
+.card-title-home{
+    height: 3.5em;
+}
+
 .container_card .card_product span {
     background-color: hsla(206, 25%, 25%, 0.8);
     color: white;

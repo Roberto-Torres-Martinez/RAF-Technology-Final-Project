@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ProductSection } from './product-section';
+import { array } from 'prop-types';
 
 const urlBackend = process.env.BACKEND_URL;
 
@@ -7,10 +8,26 @@ export const HomeCatalog = () => {
     const [phones, setPhones] = useState([]);
     const [tvs, setTvs] = useState([]);
     const [laptops, setLaptops] = useState([]);
+    const [random, setRandom] = useState(null);
 
-    const idPhone = [2, 5, 3];
-    const idTv = [1, 3, 6];
-    const idLaptop = [6, 7, 1];
+    
+    useEffect(()=>{
+        const interval = setInterval(()=>
+        setRandom(Math.floor(Math.random() * 15 ) + 1), 10000)
+
+        return ()=> clearInterval(interval);
+    },[])
+
+    const idProduct = [
+        Math.max(1, random),
+        Math.max(2, random - 1),
+        Math.max(3, random - 2),
+    ];
+
+    let uniqueArray = [...new Set(idProduct)]
+    if(uniqueArray.length < 3){
+        uniqueArray.push(random +2)
+    }
 
 
     const fetchProducts = async (product, idProduct, setProduct) => {
@@ -27,10 +44,10 @@ export const HomeCatalog = () => {
     };
 
     useEffect(() => {
-        fetchProducts('phone', idPhone, setPhones);
-        fetchProducts('tv', idTv, setTvs);
-        fetchProducts('laptop', idLaptop, setLaptops);
-    }, []);
+        fetchProducts('phone', uniqueArray, setPhones);
+        fetchProducts('tv', uniqueArray, setTvs);
+        fetchProducts('laptop', uniqueArray, setLaptops);
+    }, [random]);
 
     return (
         <>
