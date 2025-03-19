@@ -13,21 +13,18 @@ export const PersonalInfo = ({imageUrl, setInfoUsers}) => {
         setUpdateInfo({...updateInfo, [e.target.name]: e.target.value});
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         let imageUpdate = imageUrl || updateInfo.image;
-        updateUser(updateInfo, imageUpdate);
+        await updateUser(updateInfo, imageUpdate);
+        actions.userIndividual();
+        store.edit = false
     };
      
     useEffect(()=>{
         if(updateInfo){
             setInfoUsers(updateInfo);
         };
-    },[updateInfo])
-    
-        
-    // useEffect(()=>{
-    //     actions.userIndividual(setUpdateInfo);
-    // },[]);    
+    },[updateInfo])  
 
     useEffect(()=>{
         setUpdateInfo(infoUser);

@@ -104,9 +104,6 @@ export const updateUser = async (updateInfo, imageUrl) => {
         }) 
     });
     const data = await response.json()
-    if(data.msg){
-        window.location.reload();
-    };
 };
 
 export const sendImage = async (file) => {
