@@ -16,7 +16,7 @@ export const Navbar = () => {
 	const phones = store.phones;
 	const tvs = store.tvs;
 	const laptops = store.laptops;
-	products = phones.concat(laptops, tvs);
+	products = [...phones, ...tvs, ...laptops];
 	
 	const searcher = (e) => {
 		setSearch(e.target.value);
@@ -36,7 +36,8 @@ export const Navbar = () => {
 		}else if(product.tv_id){
 			route = `/tv-info/${product.tv_id}`
 		};
-		navigate(route)
+		navigate("/", { replace: true });
+		setTimeout(() => navigate(route), 0);
 		setSearch("");
 		console.log(route);
 		
