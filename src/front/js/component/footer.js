@@ -37,6 +37,7 @@ return (
 						<ul className="ps-0">
 							<li className="mt-3 mb-2"><i className="fa-brands fa-cc-visa"></i></li>
 							<li className="mt-1 mb-3"><i className="fa-brands fa-cc-mastercard"></i></li>
+							<li className="mt-1 mb-3"><i class="fa-brands fa-cc-paypal"></i></li>
 						</ul>
 					</div>
 				</div>
