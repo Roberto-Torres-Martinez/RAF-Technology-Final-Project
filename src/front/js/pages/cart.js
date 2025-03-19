@@ -13,6 +13,7 @@ export const Cart = () => {
         actions.setNegativeColors()
         actions.setNavbarVisibility()
         actions.getCart(1)
+      
     }, [store.cart])
     
     return (
