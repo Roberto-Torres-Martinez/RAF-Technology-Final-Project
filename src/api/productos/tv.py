@@ -15,7 +15,8 @@ tvs = [
         "pantalla": "55 pulgadas",
         "precio": "1499 €",
         "tv_id": 1,
-        "usos_recomendados": "Visualización de contenido en 4K, juegos, cine en casa"
+        "usos_recomendados": "Visualización de contenido en 4K, juegos, cine en casa",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2024",
@@ -33,7 +34,8 @@ tvs = [
         "pantalla": "65 pulgadas",
         "precio": "1799 €",
         "tv_id": 2,
-        "usos_recomendados": "Cine en casa, visualización de contenido HDR, gaming"
+        "usos_recomendados": "Cine en casa, visualización de contenido HDR, gaming",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2023",
@@ -51,7 +53,8 @@ tvs = [
         "pantalla": "55 pulgadas",
         "precio": "2499 €",
         "tv_id": 3,
-        "usos_recomendados": "Cine en casa, visualización de contenido HDR, gaming"
+        "usos_recomendados": "Cine en casa, visualización de contenido HDR, gaming",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2024",
@@ -69,7 +72,8 @@ tvs = [
         "pantalla": "55 pulgadas",
         "precio": "1499 €",
         "tv_id": 4,
-        "usos_recomendados": "Visualización de contenido 4K, deportes, cine en casa"
+        "usos_recomendados": "Visualización de contenido 4K, deportes, cine en casa",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2023",
@@ -87,7 +91,8 @@ tvs = [
         "pantalla": "55 pulgadas",
         "precio": "799 €",
         "tv_id": 5,
-        "usos_recomendados": "Cine en casa, contenido en 4K, entretenimiento"
+        "usos_recomendados": "Cine en casa, contenido en 4K, entretenimiento",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2023",
@@ -105,7 +110,8 @@ tvs = [
         "pantalla": "65 pulgadas",
         "precio": "1299 €",
         "tv_id": 6,
-        "usos_recomendados": "Cine en casa, contenido 4K, juegos"
+        "usos_recomendados": "Cine en casa, contenido 4K, juegos",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2024",
@@ -123,7 +129,8 @@ tvs = [
         "pantalla": "65 pulgadas",
         "precio": "1699 €",
         "tv_id": 7,
-        "usos_recomendados": "Cine en casa, visualización de contenido HDR, entretenimiento"
+        "usos_recomendados": "Cine en casa, visualización de contenido HDR, entretenimiento",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2023",
@@ -141,7 +148,8 @@ tvs = [
         "pantalla": "55 pulgadas",
         "precio": "999 €",
         "tv_id": 8,
-        "usos_recomendados": "Cine en casa, contenido HDR, juegos"
+        "usos_recomendados": "Cine en casa, contenido HDR, juegos",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2024",
@@ -159,7 +167,8 @@ tvs = [
         "pantalla": "55 pulgadas",
         "precio": "1499 €",
         "tv_id": 9,
-        "usos_recomendados": "Visualización de contenido 4K, decoración, arte"
+        "usos_recomendados": "Visualización de contenido 4K, decoración, arte",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2024",
@@ -177,7 +186,8 @@ tvs = [
         "pantalla": "65 pulgadas",
         "precio": "1199 €",
         "tv_id": 10,
-        "usos_recomendados": "Visualización de contenido 4K, cine en casa, entretenimiento"
+        "usos_recomendados": "Visualización de contenido 4K, cine en casa, entretenimiento",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2023",
@@ -195,7 +205,8 @@ tvs = [
         "pantalla": "55 pulgadas",
         "precio": "1099 €",
         "tv_id": 11,
-        "usos_recomendados": "Cine en casa, contenido 4K, entretenimiento"
+        "usos_recomendados": "Cine en casa, contenido 4K, entretenimiento",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2023",
@@ -213,7 +224,8 @@ tvs = [
         "pantalla": "50 pulgadas",
         "precio": "499 €",
         "tv_id": 12,
-        "usos_recomendados": "Visualización de contenido 4K, entretenimiento"
+        "usos_recomendados": "Visualización de contenido 4K, entretenimiento",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2023",
@@ -231,7 +243,8 @@ tvs = [
         "pantalla": "65 pulgadas",
         "precio": "2399 €",
         "tv_id": 13,
-        "usos_recomendados": "Cine en casa, visualización de contenido HDR"
+        "usos_recomendados": "Cine en casa, visualización de contenido HDR",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2023",
@@ -249,7 +262,8 @@ tvs = [
         "pantalla": "58 pulgadas",
         "precio": "899 €",
         "tv_id": 14,
-        "usos_recomendados": "Cine en casa, visualización de contenido 4K"
+        "usos_recomendados": "Cine en casa, visualización de contenido 4K",
+        "tipo": "tv"
     },
     {
         "año_modelo": "2023",
@@ -267,6 +281,7 @@ tvs = [
         "pantalla": "65 pulgadas",
         "precio": "749 €",
         "tv_id": 15,
-        "usos_recomendados": "Visualización de contenido 4K, entretenimiento"
+        "usos_recomendados": "Visualización de contenido 4K, entretenimiento",
+        "tipo": "tv"
     }
 ]

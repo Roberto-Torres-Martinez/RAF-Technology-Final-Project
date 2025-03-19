@@ -137,7 +137,7 @@ export const Navbar = () => {
 									}
 								</li>
 								<li className="nav-item">
-									<Link to="/cart">
+									<Link to="/cart" onClick={window.location.reload}>
 										<p className="nav-link" style={{ color: "white" }} ><i className="fa-solid fa-cart-shopping"></i></p>
 									</Link>
 								</li>

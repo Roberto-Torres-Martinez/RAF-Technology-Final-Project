@@ -95,14 +95,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const laptops = cart["cart_laptops"]
 					const tvs = cart["cart_tvs"]
 					const full_cart = []
-
+					let color = ""
 					full_cart.push(smartphones, laptops, tvs)
 
 					const done_cart = []
 					full_cart.forEach((cart_list) => {
 						cart_list.forEach((item) => {
-							done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity})
-						})
+							if(item.tipo =="laptop" || item.tipo == "smartphone"){
+							color = (item.colores[0].toLowerCase()).replace(/ /g, "_")
+							done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: item.imagen[color][0]})
+
+						}
+							else {
+								done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: item.imagen[0]})}
+								item.imagen
+							})
 					})
 
 					setStore({ cart: done_cart })
