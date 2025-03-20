@@ -1,14 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import { postProduct } from "../apiservices/callToApi";
 
 export const ProductInfoTv = () => {
 
     const [tv, setTv] = useState([]);
-    const [userId, setUserId] = useState(sessionStorage.getItem("idUser"))
-
-    const { tv_id } = useParams();
+    const { tv_id } = useParams();    
 
     const precio = parseInt(tv.precio);
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
@@ -20,9 +17,7 @@ export const ProductInfoTv = () => {
         const urlBackend = process.env.BACKEND_URL
         try {
             const response = await fetch(urlBackend + "tv/" + tv_id);
-
             const data = await response.json();
-
             setTv(data);
         } catch (error) {
             console.error("Error getting ID TVs from API");
@@ -33,9 +28,7 @@ export const ProductInfoTv = () => {
     const imagenTv2 = tv?.imagen?.[1]
 
     useEffect(() => {
-
-        getTvById()
-
+        getTvById();
     }, []);
 
     return (

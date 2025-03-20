@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { RelatedProducts } from "../component/related-products";
 import { ProductInfoLaptop } from "../component/productInfoLaptop";
 
-export const VistaIndividualLaptop = ({ product, productName }) => {
+export const VistaIndividualLaptop = () => {
 
     const { actions } = useContext(Context)
 
