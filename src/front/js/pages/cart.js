@@ -19,11 +19,6 @@ export const Cart = () => {
     }, [])
 
 
-    
-    
-
- 
-
     return (
         <>
             <div className="container-fluid negative-background cart" style={{ backgroundColor: "rgb(234, 248, 252)" }}>
