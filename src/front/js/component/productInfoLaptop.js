@@ -9,9 +9,10 @@ export const ProductInfoLaptop = ({ }) => {
     const [activeColor, setActiveColor] = useState(0)
     const [laptop, setLaptop] = useState([]);
     const { laptop_id } = useParams();
-    const [userId, setUserId] = useState(sessionStorage.getItem("idUser"))
+    const [userId, setUserId] = useState(sessionStorage.getItem("idUser"));
 
-    let image
+
+    let image;
     const precio = parseInt(laptop.precio);
 
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
@@ -23,9 +24,7 @@ export const ProductInfoLaptop = ({ }) => {
         const urlBackend = process.env.BACKEND_URL
         try {
             const response = await fetch(urlBackend + "laptop/" + laptop_id);
-
             const data = await response.json();
-
             setLaptop(data);
         } catch (error) {
             console.error("Error getting ID TVs from API");
@@ -33,18 +32,15 @@ export const ProductInfoLaptop = ({ }) => {
     };
 
     const imageValidation = (number) => {
-
         const color = (laptop.colores?.[number].toLowerCase())?.replace(/ /g, "_")
-
         image = laptop.imagen?.[color]
     }
+    
 
-    imageValidation(activeColor)
+    imageValidation(activeColor);
 
     useEffect(() => {
-
         getLaptopById()
-
     }, []);
 
     return (
@@ -106,25 +102,19 @@ export const ProductInfoLaptop = ({ }) => {
                                 <div id="collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
                                         <div className="row ms-2">
-                                            {laptop.colores?.map((color, index) => {
-
+                                            {laptop.colores?.map((color, index) => {                                                
                                                 let litImage = ""
                                                 const getProductPhoto = () => {
                                                     const color = (laptop.colores?.[index].toLowerCase())?.replace(/ /g, "_")
-
                                                     litImage = laptop.imagen?.[color]
                                                 }
-
-                                                getProductPhoto()
-
+                                                getProductPhoto();
                                                 return (
-                                                    <div onClick={() => imageValidation(index)} className="col-md-4 d-flex flex-column align-items-center">
+                                                    <div onClick={() =>{ imageValidation(index), setActiveColor(index)}} className="col-md-4 d-flex flex-column align-items-center">
                                                         <h6 className="title-color ms-4 texto">{color}</h6>
                                                         <ProductColors src={litImage[0]} />
                                                     </div>
-
                                                 )
-
                                             })}
                                         </div>
                                     </div>
