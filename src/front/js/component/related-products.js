@@ -3,6 +3,7 @@ import { ProductCardSmall } from "./productCardSmall";
 import { Context } from "../store/appContext";
 
 export const RelatedProducts = ({ productType }) => {
+    
     const { store } = useContext(Context);
 
     const products = store[productType]
@@ -23,7 +24,7 @@ export const RelatedProducts = ({ productType }) => {
                                     <div className="d-flex justify-content-center">
                                         {products.map((product, index) => (
                                             <div className="col-md-2 p-2" key={index}>
-                                                <ProductCardSmall product={product} />
+                                                <ProductCardSmall product={product} productType={productType}/>
                                             </div>
                                         ))}
                                     </div>

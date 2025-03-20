@@ -15,9 +15,6 @@ export const Cart = () => {
         actions.getCart(userId)
       
     }, [])
-    
-
- 
 
     return (
         <>
