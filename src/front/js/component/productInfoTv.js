@@ -3,12 +3,12 @@ import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import { postProduct } from "../apiservices/callToApi";
 
-export const ProductInfoTv = ({}) => {
+export const ProductInfoTv = () => {
 
     const [tv, setTv] = useState([]);
     const [userId, setUserId] = useState(sessionStorage.getItem("idUser"))
 
-    const { tv_id } = useParams();    
+    const { tv_id } = useParams();
 
     const precio = parseInt(tv.precio);
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
@@ -29,6 +29,9 @@ export const ProductInfoTv = ({}) => {
         }
     };
 
+    const imagenTv1 = tv?.imagen?.[0]
+    const imagenTv2 = tv?.imagen?.[1]
+
     useEffect(() => {
 
         getTvById()
@@ -42,12 +45,12 @@ export const ProductInfoTv = ({}) => {
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <div className="d-flex justify-content-center mb-5">
-                                <img className="col-md-12" src="https://www.bhphotovideo.com/images/images2500x2500/samsung_qn65qn90cafxza_neo_qled_qn90c_65_1742740.jpg" alt="Slide 1" />
+                                <img className="col-md-12" src={imagenTv1} alt="Slide 1" />
                             </div>
                         </div>
                         <div className="carousel-item">
                             <div className="d-flex justify-content-center mb-5">
-                                <img className="col-md-12" src="https://cdn.cs.1worldsync.com/61/68/6168b570-740a-4a17-80e2-c7bf496f49c6.jpg" alt="Slide 2" />
+                                <img className="col-md-12" src={imagenTv2} alt="Slide 2" />
                             </div>
                         </div>
                     </div>

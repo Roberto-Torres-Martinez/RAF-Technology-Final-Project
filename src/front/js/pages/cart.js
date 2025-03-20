@@ -16,9 +16,6 @@ export const Cart = () => {
         actions.getCart(userId)
         createCart(userId)
     }, [])
-    
-
- 
 
     return (
         <>
