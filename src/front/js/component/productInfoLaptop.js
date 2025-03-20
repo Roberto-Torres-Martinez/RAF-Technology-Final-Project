@@ -47,12 +47,12 @@ export const ProductInfoLaptop = () => {
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <div className="d-flex justify-content-center mb-5">
-                                <img className="col-md-12" src={image?.[0]} alt="Slide 1" />
+                                <img className="col-md-12" src={image?.[0]} alt="Cargando Fotografía..." />
                             </div>
                         </div>
                         <div className="carousel-item">
                             <div className="d-flex justify-content-center mb-5">
-                                <img className="col-md-12" src={image?.[1]} alt="Slide 2" />
+                                <img className="col-md-12" src={image?.[1]} alt="Cargando Fotografía..." />
                             </div>
                         </div>
                     </div>

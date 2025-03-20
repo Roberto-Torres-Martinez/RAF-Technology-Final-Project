@@ -9,9 +9,10 @@ export const Welcome = () => {
                 <div className="carousel-item active " data-bs-interval="4000" >
                     <div className="d-block w-100" >
                         <div className="welcome text-white mb-0 pb-0">
-                            <p className="titulo d-flex justify-content-center display-1" style={{ color: "rgb(102, 252, 241)" }}>Bienvenidos</p>
+                            {/* <p className="titulo d-flex justify-content-center display-1" style={{ color: "rgb(102, 252, 241)" }}>Bienvenidos</p>
                             <p className=" sub-titulo d-flex justify-content-center fs-4" style={{ color: "#5ce3d9" }}>Queridos internautas</p>
-                            <p className=" texto d-flex justify-content-center px-5 fs-3">Tecnologia  en demanda, en la puerta de tu casa, tu mejor version tecnologica te espera.</p>
+                            <p className=" texto d-flex justify-content-center px-5 fs-3">Tecnologia  en demanda, en la puerta de tu casa, tu mejor version tecnologica te espera.</p> */}
+                            <img src="https://i.postimg.cc/8Cx1Z7KK/imagotipo-naranja-2.pnghttps://i.postimg.cc/8Cx1Z7KK/imagotipo-naranja-2.png"/>
                         </div>
                         <div className="d-flex justify-content-center w-100 pb-0 pt-0 mt-0 mb-5">
                             <div className=" rounded border border-info-subtle border-4">
