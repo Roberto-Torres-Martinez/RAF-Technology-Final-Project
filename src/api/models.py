@@ -43,7 +43,7 @@ class Pedido(db.Model):
 
     pedido_id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
-    direccion_de_envio = db.Column(db.String(150), unique=False, nullable=False)
+    direccion_de_envio = db.Column(db.String(150), unique=False, nullable=True)
     smartphone_id = db.Column(db.Integer, db.ForeignKey('smartphones.smartphone_id'))
     tv_id = db.Column(db.Integer, db.ForeignKey('tv.tv_id'))
     laptop_id = db.Column(db.Integer, db.ForeignKey('laptops.laptop_id'))

@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 
 export const OrderResume = () => {
+    
 
     const navigate = useNavigate()
 
     const { store } = useContext(Context)
     let subtotal = 0;
     let totalPrecioEur = ""
-    let cantidad = 0
+    let cantidadTotal = 0
 
     const paymentView = () => {
     navigate("/pasarela-pago", {state: {paymentAmount: subtotal}})
@@ -33,7 +34,7 @@ export const OrderResume = () => {
                                     </thead>
                                     <tbody>
                                         {store.cart.map((item) => {
-                                            cantidad += 1
+                                            cantidadTotal += 1
                                             subtotal += Number((item.precio).replace(/ €/g, "")) * Number(item.cantidad)
                                             totalPrecioEur = new Intl.NumberFormat("de-DE", {
                                                 style: "currency",
@@ -61,7 +62,7 @@ export const OrderResume = () => {
                             </div>
                             <div className="sub-total-container">
                                 <div className="p-2 sub-total-text">
-                                    <h4>Subtotal({cantidad} productos) :</h4><br />
+                                    <h4>Subtotal({cantidadTotal} productos) :</h4><br />
                                     <span>
                                         <p className="d-flex justify-content-end pe-3 sub-total-resume">{totalPrecioEur}</p>
                                     </span>

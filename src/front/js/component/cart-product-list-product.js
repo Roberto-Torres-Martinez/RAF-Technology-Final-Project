@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { deleteProduct } from "../apiservices/callToApi";
+import { updateQuantityCartProduct } from "../apiservices/callToApi";
 
 export const ListProduct = ({name, description, quantity, image, tipo, user_id, product_id}) => {
-
-const [cantidad, setCantidad] = useState(1)
-
-const aumentarCantidad = () =>{
-    setCantidad(prevCantidad => prevCantidad + 1)
-}
-
-const decrementarCantidad = ()=>{
-    if(cantidad > 1){
-        setCantidad(prevCantidad => prevCantidad - 1)
+    
+    const [cantidad, setCantidad] = useState(quantity)
+    
+    
+    const aumentarCantidad = () =>{
+        setCantidad(prevCantidad => prevCantidad + 1)
     }
-}
+    
+    const decrementarCantidad = ()=>{
+        if(cantidad > 1){
+            setCantidad(prevCantidad => prevCantidad - 1)
+        }
+    }
+    
+    console.log(user_id, tipo, product_id, cantidad)
+    useEffect(()=>{
+        updateQuantityCartProduct(user_id, tipo, product_id, cantidad)
+}, [cantidad])
+
 
 return(
     <>

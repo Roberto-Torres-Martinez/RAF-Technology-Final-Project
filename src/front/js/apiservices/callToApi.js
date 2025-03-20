@@ -1,7 +1,4 @@
-import React from "react";
 import Swal from "sweetalert2";
-import { useContext } from "react";
-import { Context } from "../store/appContext";
 
 const urlBackend = process.env.BACKEND_URL;
 
@@ -63,7 +60,8 @@ export const login = async (user, responseApi, navigate) =>{
             confirmButtonText:`<i class="fa fa-thumbs-up"></i> Great!`})
                 .then((response)=>{
                     if(response.isConfirmed){
-                        window.location.reload();
+                         createCart(data.user.user_id)
+                         window.location.reload()
                     };
                 });
     };
@@ -152,7 +150,23 @@ export const deleteProduct = async (user_id, product_type, cart_product_id)=>{
 };
 
 export const createCart = async(user_id)=>{
-    const response = await fetch(urlBackend + "cart/" + user_id, {method: "POST"})
+    const response = await fetch(urlBackend + "cart/" + user_id, {method: "POST",
+        headers: {"Content-Type": "application/json"}
+    })
    
+};
+
+export const updateQuantityCartProduct = async(user_id, product_type, product_id, quantity)=>{
+    const response = await fetch(urlBackend + "cart/" + user_id + "/product/" + product_type + "/" + product_id , {
+        method: "PUT",
+        body: JSON.stringify({
+            "quantity": quantity
+        }),
+        headers : {
+            "Content-Type": "application/json"
+        }
+    })
+    // console.log(urlBackend + "cart/" + user_id + "/product/" + product_type + "/" + product_id)
+    // console.log(quantity)
 }
 
