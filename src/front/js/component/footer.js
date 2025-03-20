@@ -1,47 +1,51 @@
 import React from "react";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
 
-const {store} = useContext(Context)
+	const { store } = useContext(Context)
 
-return (	
-	<>
-		<div className="container-fluid" style={store.negative_colors ? {backgroundColor: "rgb(234, 248, 252)"} : {backgroundColor: "rgb(56, 148, 163)"} }>
-			<div className={`container ${store.negative_colors ? "negative-background border-top border-black": "positive-background"}`} >
-				<div className="row pb-5 pt-3">
-					<div className="col-3">
-						<h5><i className="fa-solid fa-user-astronaut "></i></h5>
-						<ul className="ps-0">
-							<li className="ms-5 my-3"><i className="fa-brands fa-instagram"></i></li>
-						</ul>
-					</div>
-					<div className="col-3">
-						<h5>Contacta con nosotros</h5>
-						<ul className="ps-0">
-							<li className="mt-3 mb-2"><i className="fa-solid fa-phone"></i> +34 665 885 885</li>
-							<li className="mt-1 mb-3"><i className="fa-regular fa-envelope"></i> raf@org.com</li>
-						</ul>
-					</div>
-					<div className="col-3">
-						<h5>Guía de compra</h5>
-						<ul className="ps-0">
-							<li className=" mt-3 mb-1">Crear usuario</li>
-							<li className="my-2">Pago</li>
-							<li className="mt-1 mb-3">Envío</li>
-						</ul>
-					</div>
-					<div className="col-3">
-						<h5>Pagar con</h5>
-						<ul className="ps-0">
-							<li className="mt-3 mb-2"><i className="fa-brands fa-cc-visa"></i></li>
-							<li className="mt-1 mb-3"><i className="fa-brands fa-cc-mastercard"></i></li>
-							<li className="mt-1 mb-3"><i class="fa-brands fa-cc-paypal"></i></li>
-						</ul>
+	return (
+		<>
+			<div className="container-fluid" style={store.negative_colors ? { backgroundColor: "rgb(234, 248, 252)" } : { backgroundColor: "rgb(56, 148, 163)" }}>
+				<div className={`container ${store.negative_colors ? "negative-background border-top border-black" : "positive-background"}`} >
+					<div className="row pb-5 pt-3">
+						<div className="col-3 d-flex flex-column">
+							<h5><img className="mt-2" src="https://i.postimg.cc/50vfTfDx/isotipo.png" style={{height: "50px"}} /></h5>
+							<ul className="ps-0">
+								<li className="my-3 insta-icon text-white"><i className="fa-brands fa-instagram" style={{fontSize: "35px"}}></i></li>
+							</ul>
+						</div>
+						<div className="col-3">
+							<h5 className="sub-titulo mt-1 text-white">Contacta con nosotros</h5>
+							<ul className="ps-0">
+								<li className="mt-3 mb-2 sub-titulo text-white ms-1"><i className="fa-solid fa-phone"></i> +34 665 885 885</li>
+								<li className="mt-3 mb-3 sub-titulo text-white ms-1"><i className="fa-regular fa-envelope"></i> raf@org.com</li>
+							</ul>
+						</div>
+						<div className="col-3">
+							<h5 className="sub-titulo mt-1 text-white">Guía de compra</h5>
+							<ul className="ps-0">
+								<Link to={'/signup'}>
+									<li className=" mt-3 mb-1 text-black sub-titulo footer-create-user text-white" style={{marginLeft: "1px"}}>Crear usuario</li>
+								</Link>
+								<li className="my-2 text-black sub-titulo text-white" style={{marginLeft: "1px"}}>Pago</li>
+								<li className="mt-1 mb-3 text-black sub-titulo text-white" style={{marginLeft: "1px"}}>Envío</li>
+							</ul>
+						</div>
+						<div className="col-3">
+							<h5 className="sub-titulo mt-1 text-white">Pagar con</h5>
+							<ul className="ps-0">
+								<li className="mt-3"><i className="fa-brands fa-cc-visa text-white" style={{fontSize: "25px", marginLeft: "1px"}}></i></li>
+								<li className="mt-2"><i className="fa-brands fa-cc-mastercard text-white" style={{fontSize: "25px", marginLeft: "1px"}}></i></li>
+								<li className="mt-2"><i class="fa-brands fa-cc-paypal text-white" style={{fontSize: "25px", marginLeft: "1px"}}></i></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</>
-)};
+		</>
+	)
+};

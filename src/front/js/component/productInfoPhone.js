@@ -4,16 +4,18 @@ import { ProductColors } from "../component/product-colors";
 import { useParams } from "react-router-dom";
 import { postProduct } from "../apiservices/callToApi";
 
-export const ProductInfoPhone = ({}) => {
+export const ProductInfoPhone = ({ }) => {
 
     const [activeColor, setActiveColor] = useState(0)
     const [phone, setPhone] = useState([]);
     const { smartphone_id } = useParams();
     const [userId, setUserId] = useState(sessionStorage.getItem("idUser"));
+    const [buttonText, setButtonText] = useState("Añadir al carrito");
+    const [buttonClass, setButtonClass] = useState("btn-add-cart texto");
 
     let image;
     const precio = parseInt(phone.precio);
-    
+
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
         style: "currency",
         currency: "EUR",
@@ -41,6 +43,19 @@ export const ProductInfoPhone = ({}) => {
         getPhoneById();
     }, []);
 
+    const handleAddToCart = async () => {
+
+        await postProduct(phone.smartphone_id, userId, "smartphone");
+
+        setButtonText("✓ Producto añadido!");
+        setButtonClass("btn-add-cart texto added");
+
+        setTimeout(() => {
+            setButtonText("Añadir al carrito");
+            setButtonClass("btn-add-cart texto");
+        }, 1500);
+    };
+
     return (
         <div className="container-fluid">
             <div className="container">
@@ -49,12 +64,12 @@ export const ProductInfoPhone = ({}) => {
                         <div className="carousel-inner">
                             <div className="carousel-item active">
                                 <div className="d-flex justify-content-center mb-5">
-                                    <img className="col-md-12" src={image?.[0]} alt="Slide 1" />
+                                    <img className="col-md-12" src={image?.[0]} alt="Cargando Fotografía..." />
                                 </div>
                             </div>
                             <div className="carousel-item">
                                 <div className="d-flex justify-content-center mb-5">
-                                    <img className="col-md-12" src={image?.[1]} alt="Slide 2" />
+                                    <img className="col-md-12" src={image?.[1]} alt="Cargando Fotografía..." />
                                 </div>
                             </div>
                         </div>
@@ -75,8 +90,11 @@ export const ProductInfoPhone = ({}) => {
                                 <small className="text-black">{totalPrecioEur}</small>
                             </p>
                             <p className="card-text">
-                                <button className="btn-add-cart texto" onClick={()=>postProduct(phone.smartphone_id,userId,"smartphone")}>
+                                {/* <button className="btn-add-cart texto" onClick={()=>postProduct(phone.smartphone_id,userId,"smartphone")}>
                                     <i className="fa-solid fa-cart-plus mb-1"></i> Añadir al carrito
+                                </button> */}
+                                <button className={buttonClass} onClick={handleAddToCart}>
+                                    <i className="fa-solid fa-cart-plus mb-1"></i> {buttonText}
                                 </button>
                             </p>
                             <div className="accordion" id="accordionExample">
@@ -109,7 +127,7 @@ export const ProductInfoPhone = ({}) => {
                                                     }
                                                     getProductPhoto()
                                                     return (
-                                                        <div  onClick={()=>{imageValidation(index), setActiveColor(index)}} className="col-md-4 d-flex flex-column align-items-center">
+                                                        <div onClick={() => { imageValidation(index), setActiveColor(index) }} className="col-md-4 d-flex flex-column align-items-center">
                                                             <h6 className="title-color ms-4 texto">{color}</h6>
                                                             <ProductColors src={litImage[0]} />
                                                         </div>

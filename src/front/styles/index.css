@@ -133,7 +133,7 @@ ul {
     border-radius: 1em;
 }
 
-.dropdown-content-search{
+.dropdown-content-search {
     max-height: 15em;
     max-width: 13.5penem;
     cursor: pointer;
@@ -144,31 +144,34 @@ ul {
     font-size: 0.9em;
 }
 
-.input-search, .input-search:focus{
+.input-search,
+.input-search:focus {
     border: 0;
     border-radius: 0.5em;
     outline: 0;
 }
 
-.input-search-focus, .input-search-focus:focus{
+.input-search-focus,
+.input-search-focus:focus {
     border: 0;
     outline: 0;
-    border-radius:0.5em 0.5em 0 0;
+    border-radius: 0.5em 0.5em 0 0;
 }
 
 
 
-a{
+a {
     text-decoration: none;
 }
 
-hr{
+hr {
     border: 2px solid white;
     border-radius: 3px;
     color: rgb(219, 215, 215);
 }
 
-.dropdown-content a, .dropdown-content-search a  {
+.dropdown-content a,
+.dropdown-content-search a {
     padding: 5px 0;
     display: block;
     color: white;
@@ -178,11 +181,11 @@ hr{
     display: block;
 }
 
-.nav-link{
+.nav-link {
     padding-top: 1em;
 }
 
-.dropdown:hover .dropdown-content{
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
@@ -516,7 +519,7 @@ hr{
     mix-blend-mode: normal; */
 }
 
-.card-title-home{
+.card-title-home {
     height: 3.5em;
 }
 
@@ -673,16 +676,16 @@ hr{
     height: 10em;
     position: relative;
     margin: auto;
-  }
-  
-  .upload-image  img{
+}
+
+.upload-image img {
     border-radius: 50%;
     height: 100%;
     width: 100%;
     object-fit: cover;
-  }
-  
-  .upload-image  .round{
+}
+
+.upload-image .round {
     position: absolute;
     right: 0;
     top: 0.7em;
@@ -692,62 +695,63 @@ hr{
     height: 2em;
     border-radius: 50%;
     overflow: hidden;
-  }
-  
-  .upload-image  .round input[type = "file"]{
+}
+
+.upload-image .round input[type="file"] {
     position: absolute;
     transform: scale(2);
     opacity: 0;
-  }
-  
-  input[type=file]::-webkit-file-upload-button{
-      cursor: pointer;
-  }
+}
 
-  .photo-navbar-user{
+input[type=file]::-webkit-file-upload-button {
+    cursor: pointer;
+}
+
+.photo-navbar-user {
     width: 3em;
     height: 3em;
     border-radius: 50%;
     margin-top: 0.7em;
-  }
+}
 
-  .container-photo{
+.container-photo {
     display: flex;
     justify-content: space-between;
     gap: 1em;
     margin-bottom: 1em;
     width: 10em;
-  }
+}
 
-  .container-photo p{
+.container-photo p {
     margin-top: 1.5em;
-  }
+}
 
-  .container-form-payment{
+.container-form-payment {
     margin: 3rem auto;
     background-color: rgb(241, 239, 246);
     border-radius: 1rem;
-  }
+}
 
-  .container-form-payment p{
+.container-form-payment p {
     text-align: center;
     display: flex;
     justify-content: center;
-  }
+}
 
-  .container-form-payment p:first-child{
+.container-form-payment p:first-child {
     color: black;
-  }
-  .container-form-payment p:last-child{
-    color: red;
-  }
+}
 
-  .container-button-payment{
+.container-form-payment p:last-child {
+    color: red;
+}
+
+.container-button-payment {
     display: flex;
     justify-content: center;
-  }
+}
 
-  .container-button-payment button{
+.container-button-payment button {
     background-color: rgb(215, 44, 32);
     width: 10em;
     height: 3em;
@@ -758,46 +762,47 @@ hr{
     color: #fafafa;
     font-weight: bold;
     font-size: 1em;
-  }
+}
 
-  .StripeElement{
-   width: 90%;
-   padding-top: 2rem;
-   margin: 0 auto;
-  }
+.StripeElement {
+    width: 90%;
+    padding-top: 2rem;
+    margin: 0 auto;
+}
 
-  .container-message{
+.container-message {
     min-height: 40rem;
     background-color: #fafafa;
     margin: 1rem auto;
     border-radius: 2rem;
     box-shadow: 0px 0px 5px 5px white;
-  }
-  .container-message h1{
+}
+
+.container-message h1 {
     text-align: center;
     display: flex;
     justify-content: center;
-  }
+}
 
-  .container-img-payment{
-   height: 35rem;
-   width: 35rem;
-   margin: 0 auto;
-  }
+.container-img-payment {
+    height: 35rem;
+    width: 35rem;
+    margin: 0 auto;
+}
 
-  .container-img-payment img{
+.container-img-payment img {
     height: 100%;
     width: 100%;
-  }
+}
 
-  .container-button-confirm{
+.container-button-confirm {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin: 0.5rem 0;
-  }
+}
 
-  .container-button-confirm button{
+.container-button-confirm button {
     background-color: rgb(215, 44, 32);
     width: 10em;
     height: 3em;
@@ -808,5 +813,23 @@ hr{
     color: #fafafa;
     font-weight: bold;
     font-size: 1em;
-  }
+}
 
+.footer-create-user {
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-create-user:hover {
+    font-size: 18px;
+    transform: scale(1.1);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cart-icon-navbar {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cart-icon-navbar:hover {
+    transform: scale(1.1) translateY(-2px);
+}
