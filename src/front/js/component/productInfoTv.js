@@ -6,6 +6,7 @@ import { postProduct } from "../apiservices/callToApi";
 export const ProductInfoTv = () => {
 
     const [tv, setTv] = useState([]);
+    const [userId, setUserId] = useState(sessionStorage.getItem("idUser"))
 
     const { tv_id } = useParams();
 
@@ -70,7 +71,7 @@ export const ProductInfoTv = () => {
                             <small className="text-black">{totalPrecioEur}</small>
                         </p>
                         <p className="card-text">
-                            <button className="btn-add-cart texto" onClick={() => postProduct(tv.tv_id, 1, "tv")}>
+                            <button className="btn-add-cart texto" onClick={()=>postProduct(tv.tv_id,userId,"tv")}>
                                 <i className="fa-solid fa-cart-plus mb-1"></i> Añadir al carrito
                             </button>
                         </p>

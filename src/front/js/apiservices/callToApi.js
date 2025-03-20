@@ -104,9 +104,6 @@ export const updateUser = async (updateInfo, imageUrl) => {
         }) 
     });
     const data = await response.json()
-    if(data.msg){
-        window.location.reload();
-    };
 };
 
 export const sendImage = async (file) => {
@@ -151,6 +148,11 @@ export const deleteProduct = async (user_id, product_type, cart_product_id)=>{
         console.log(urlBackend + "cart/" + user_id + "/product/" + product_type + "/" + cart_product_id)
         return{"msg": "Error al eliminar el producto"}
     }
+   
+};
+
+export const createCart = async(user_id)=>{
+    const response = await fetch(urlBackend + "cart/" + user_id, {method: "POST"})
    
 }
 

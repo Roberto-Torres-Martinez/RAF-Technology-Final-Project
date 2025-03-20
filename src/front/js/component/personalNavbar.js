@@ -16,7 +16,8 @@ export const PersonalNavbar = ({setImageUrl, infoUsers}) => {
         let dataUser = infoUsers || infoUser;
         const data = await sendImage(file);
         setImageUrl(data);
-        updateUser(dataUser, data);
+        await updateUser(dataUser, data);
+        actions.userIndividual();
         setFile('');
     };    
 

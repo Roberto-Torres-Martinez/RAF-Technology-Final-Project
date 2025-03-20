@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../store/appContext';
 import { ProductList } from '../component/cart-product-list';
 import { OrderResume } from '../component/cart-order-resume';
+import { createCart } from '../apiservices/callToApi';
 
 
 export const Cart = () => {
@@ -13,7 +14,7 @@ export const Cart = () => {
         actions.setNegativeColors()
         actions.setNavbarVisibility()
         actions.getCart(userId)
-      
+        createCart(userId)
     }, [])
 
     return (
