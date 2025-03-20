@@ -9,7 +9,24 @@ export const ProductCardSmall = ({ product }) => {
     }else if(product.tipo === 'tv'){
         imagen = product.imagen[0]
     }
-        
+
+    let IndividualProduct = "";
+    const validacionProduct = (producto) => {
+        if (producto == "laptops") {
+            IndividualProduct = `/laptop-info/${product.laptop_id}`
+        };
+        if (producto == "phones") {
+            IndividualProduct = `/smartphone-info/${product.smartphone_id}`
+        };
+        if (producto == "tvs") {
+            IndividualProduct = `/tv-info/${product.tv_id}`
+        };
+    };
+
+    validacionLista(productType);
+    validacionProduct(productType);
+
+
     return (
         <div className="container content-small-card">
             <div className="col-md-12">

@@ -75,6 +75,7 @@
 	"dependencies": {
 		"@stripe/react-stripe-js": "^3.4.0",
 		"@stripe/stripe-js": "^6.0.0",
+		"cloudinary": "^2.6.0",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-dom": "^16.8.4",
