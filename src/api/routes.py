@@ -144,10 +144,11 @@ def add_cart(user_id):
 
     if exist:
         return jsonify({"msg": "Tu carrito ya existe"}), 400
-    new_cart_added = Pedido(user_id=user_id)
-    db.session.add(new_cart_added)
-    db.session.commit()
-    return jsonify({"msg": "Carrito creado"}), 200
+    elif not exist:
+        new_cart_added = Pedido(user_id=user_id)
+        db.session.add(new_cart_added)
+        db.session.commit()
+        return jsonify({"msg": "Carrito creado"}), 200
 
 #ENDPOINT GET INFORMACION CARRITO
 
@@ -236,8 +237,8 @@ def remove_product_from_cart(user_id, product_type, cart_product_id):
 
 #ENDPOINT MODIFICAR PRODUCTOS DEL CARRITO
 
-@api.route('/cart/<int:user_id>/product/<string:product_type>/<int:product_id>', methods=['PUT'])
-def modify_products_from_cart(user_id, product_type, product_id):
+@api.route('/cart/<int:user_id>/product/<string:product_type>/<int:product_id>/<string:operation>', methods=['PUT'])
+def modify_products_from_cart(user_id, product_type, product_id, operation):
 
     cart = Pedido.query.filter_by(user_id=user_id).first()
 
@@ -256,9 +257,14 @@ def modify_products_from_cart(user_id, product_type, product_id):
     if product:
         new_quantity = request.json.get('quantity')
         if new_quantity > 0:
-            product.quantity = new_quantity
-            db.session.commit()
-            return jsonify({"msg": "Producto actualizado"}), 200
+            if operation == "increase":
+                product.quantity = int(new_quantity) + 1
+                db.session.commit()
+                return jsonify({"msg": "Producto aumentado en 1"}), 200
+            elif operation == "decrease":
+                product.quantity = int(new_quantity) - 1
+                db.session.commit()                                                         
+                return jsonify({"msg": "Producto aumentado en 1"}), 200
         else:
             return jsonify({"msg": "Cantidad inválida"}), 400
 

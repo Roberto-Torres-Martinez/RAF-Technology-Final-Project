@@ -9,6 +9,7 @@ export const ProductInfoPhone = ({}) => {
     const [activeColor, setActiveColor] = useState(0)
     const [phone, setPhone] = useState([]);
     const { smartphone_id } = useParams();
+    const [userId, setUserId] = useState(sessionStorage.getItem("idUser"))
 
     let image
     const precio = parseInt(phone.precio);
@@ -80,7 +81,7 @@ export const ProductInfoPhone = ({}) => {
                                 <small className="text-black">{totalPrecioEur}</small>
                             </p>
                             <p className="card-text">
-                                <button className="btn-add-cart texto" onClick={()=>postProduct(phone.smartphone_id,1,"smartphone")}>
+                                <button className="btn-add-cart texto" onClick={()=>postProduct(phone.smartphone_id,userId,"smartphone")}>
                                     <i className="fa-solid fa-cart-plus mb-1"></i> Añadir al carrito
                                 </button>
                             </p>

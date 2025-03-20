@@ -149,5 +149,10 @@ export const deleteProduct = async (user_id, product_type, cart_product_id)=>{
         return{"msg": "Error al eliminar el producto"}
     }
    
+};
+
+export const createCart = async(user_id)=>{
+    const response = await fetch(urlBackend + "cart/" + user_id, {method: "POST"})
+   
 }
 
