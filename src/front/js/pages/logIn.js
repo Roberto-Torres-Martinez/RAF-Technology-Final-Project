@@ -6,12 +6,11 @@ import { Context } from "../store/appContext";
 
 
 export const LogIn = () => {
-
     const [user, setUser] = useState();
     const [responseApi, setResponseApi] = useState({});
     const navigate = useNavigate();
-    const { actions } = useContext(Context)
-    
+    const { actions } = useContext(Context);
+
 
     const handleChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
@@ -20,13 +19,13 @@ export const LogIn = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         login(user, setResponseApi, navigate);
-       
+
     };
 
     useEffect(() => {
-        actions.setPositiveColors()
-        actions.setNoneNavbarVisibility()
-    }, [])
+        actions.setPositiveColors();
+        actions.setNoneNavbarVisibility();
+    }, []);
 
     return (
         <>

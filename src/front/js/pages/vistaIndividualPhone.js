@@ -12,11 +12,8 @@ export const VistaIndividualPhone = () => {
     }, [])
 
     useEffect(() => {
-
         document.body.style.backgroundColor = "rgb(234, 248, 252)";
-
         return () => {
-
             document.body.style.backgroundColor = "";
         };
     }, []);

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export const FormPayment = ({amount}) => {
+export const FormPayment = ({ amount }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [loading, setLoading] = useState(false);
@@ -18,7 +18,6 @@ export const FormPayment = ({amount}) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
         if (!stripe || !elements) return;
 
         setLoading(true);
@@ -39,13 +38,10 @@ export const FormPayment = ({amount}) => {
         } else if (paymentIntent.status === 'succeeded') {
             setMessage("Pago confirmado!!!");
             navigate('/message-payment');
-        }
-        else {
+        } else {
             setMessage("Estado Inesperado")
         }
     };
-
-
 
     return (
         <>

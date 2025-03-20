@@ -17,20 +17,20 @@ export const PersonalZone = () => {
             navigate('/');
         };
     };
-    
-    useEffect(() => {
-        checkout();
-    });    
 
     useEffect(() => {
-        actions.setPositiveColors()
-        actions.setNavbarVisibility()
-    }, [])
+        checkout();
+    });
+
+    useEffect(() => {
+        actions.setPositiveColors();
+        actions.setNavbarVisibility();
+    }, []);
 
     return (
         <div className="container-fluid dark-background text-white ">
-            <PersonalNavbar setImageUrl={setImageUrl} infoUsers={infoUsers}/>
-            <PersonalInfo imageUrl={imageUrl} setInfoUsers={setInfoUsers}/>
+            <PersonalNavbar setImageUrl={setImageUrl} infoUsers={infoUsers} />
+            <PersonalInfo imageUrl={imageUrl} setInfoUsers={setInfoUsers} />
         </div>
     )
 }

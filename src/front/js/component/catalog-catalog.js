@@ -6,21 +6,15 @@ export const CatalogCatalog = ({ productList }) => {
 
     const { store } = useContext(Context)
     let titulo = ""
-
     const products = store[productList]
 
-    
     if (productList == "phones") {
         titulo = "de Móviles"
-    }
-    else if (productList == "tvs") {
-        titulo = "de TVs"
-    }
-    else if (productList == "laptops") {
-        titulo = "de Portátiles"
-    }
-
-
+    } else if (productList == "tvs") {
+        titulo = "de TVs";
+    } else if (productList == "laptops") {
+        titulo = "de Portátiles";
+    };
 
     return (
         <>
@@ -29,7 +23,6 @@ export const CatalogCatalog = ({ productList }) => {
                 <div className="catalog-section-catalog-phones">
                     <div className="row">
                         {
-
                             products.map((product, index) => {
                                 return (
                                     <div className="col-4">

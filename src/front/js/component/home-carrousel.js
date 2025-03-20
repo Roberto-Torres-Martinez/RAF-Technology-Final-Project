@@ -25,7 +25,6 @@ export const Welcome = () => {
                 <div className="carousel-item" data-bs-interval="4000">
                     <Link to="/laptop-info/15">
                         <div className="carousel-image">
-
                             <img src="https://i.ibb.co/twzbS1dT/Tendencia-Pixelbook.jpg" className="d-block mx-auto object-fit-scale" alt="..." />
                         </div>
                     </Link>

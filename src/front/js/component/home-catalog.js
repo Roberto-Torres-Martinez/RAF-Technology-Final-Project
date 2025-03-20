@@ -10,13 +10,13 @@ export const HomeCatalog = () => {
     const [laptops, setLaptops] = useState([]);
     const [random, setRandom] = useState(null);
 
-    
-    useEffect(()=>{
-        const interval = setInterval(()=>
-        setRandom(Math.floor(Math.random() * 15 ) + 1), 10000)
 
-        return ()=> clearInterval(interval);
-    },[])
+    useEffect(() => {
+        const interval = setInterval(() =>
+            setRandom(Math.floor(Math.random() * 15) + 1), 10000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     const idProduct = [
         Math.max(1, random),
@@ -25,10 +25,9 @@ export const HomeCatalog = () => {
     ];
 
     let uniqueArray = [...new Set(idProduct)]
-    if(uniqueArray.length < 3){
-        uniqueArray.push(random +2)
-    }
-
+    if (uniqueArray.length < 3) {
+        uniqueArray.push(random + 2);
+    };
 
     const fetchProducts = async (product, idProduct, setProduct) => {
         try {

@@ -221,10 +221,8 @@ def remove_product_from_cart(user_id, product_type, cart_product_id):
 
     if product_type == 'smartphone':
         product = CartSmartphones.query.filter_by(cart_id=cart.pedido_id, cart_product_id=cart_product_id).first()
-
     elif product_type == 'tv':
         product = CartTvs.query.filter_by(cart_id=cart.pedido_id, cart_product_id=cart_product_id).first()
-
     elif product_type == 'laptop':
         product = CartLaptops.query.filter_by(cart_id=cart.pedido_id, cart_product_id=cart_product_id).first()
 

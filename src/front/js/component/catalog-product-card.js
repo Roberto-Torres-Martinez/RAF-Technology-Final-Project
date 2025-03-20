@@ -9,7 +9,6 @@ export const CatalogProductCard = ({ product, productName }) => {
         currency: "EUR",
     }).format(precio);
 
-
     let tvOn = null;
     let images = "";
 
@@ -20,7 +19,7 @@ export const CatalogProductCard = ({ product, productName }) => {
             tvOn = false;
         }
         else {
-            images = product.imagen
+            images = product.imagen;
             tvOn = true;
         }
     };
@@ -34,7 +33,7 @@ export const CatalogProductCard = ({ product, productName }) => {
             IndividualProduct = `/smartphone-info/${product.smartphone_id}`
         };
         if (producto == "tvs") {
-            IndividualProduct = `/tv-info/${product.tv_id}`            
+            IndividualProduct = `/tv-info/${product.tv_id}`
         };
     };
 

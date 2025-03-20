@@ -2,22 +2,20 @@ import React from 'react';
 
 export const OnFireItem = ({ item, itemName }) => {
 
-  let image = ""
+  let image = "";
   const validacionLista = () => {
     if (itemName == "phones" || itemName == "laptops") {
       const color = (item.colores?.[0].toLowerCase())?.replace(/ /g, "_");
-      image = item.imagen?.[color]
-    }
-    else {
-      image = item.imagen
+      image = item.imagen?.[color];
+    } else {
+      image = item.imagen;
     }
   }
 
-  validacionLista()
+  validacionLista();
 
   return (<>
     <div className="card position-relative text-bg-dark">
-
       <div className="ratio ratio-16x9">
         <img src={image?.[0]} className="card-img" alt="..." />
       </div>

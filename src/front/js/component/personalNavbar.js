@@ -1,12 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Context } from '../store/appContext';
-import {sendImage, updateUser} from '../apiservices/callToApi'
+import { sendImage, updateUser } from '../apiservices/callToApi'
 
-export const PersonalNavbar = ({setImageUrl, infoUsers}) => {
+export const PersonalNavbar = ({ setImageUrl, infoUsers }) => {
     const { store, actions } = useContext(Context);
     const infoUser = store.infoUser;
     const [file, setFile] = useState("");
-    
 
     const changeUploadImage = async (e) => {
         setFile(e.target.files[0]);
@@ -19,7 +18,7 @@ export const PersonalNavbar = ({setImageUrl, infoUsers}) => {
         await updateUser(dataUser, data);
         actions.userIndividual();
         setFile('');
-    };    
+    };
 
     return (
         <>
@@ -29,8 +28,8 @@ export const PersonalNavbar = ({setImageUrl, infoUsers}) => {
                         <div className="upload-image ">
                             <img className="photo-personal-zone" src={infoUser.image ? infoUser.image : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'} />
                             <div className='round'>
-                                <input type='file' accept='image/*' onChange={changeUploadImage}/>
-                                <i className="p-2 icon-pen fa-solid fa-pen"></i>                       
+                                <input type='file' accept='image/*' onChange={changeUploadImage} />
+                                <i className="p-2 icon-pen fa-solid fa-pen"></i>
                             </div>
                         </div>
                     </div>
@@ -45,9 +44,8 @@ export const PersonalNavbar = ({setImageUrl, infoUsers}) => {
                         } type="button" className="btn edit-button"><i className="fa-solid fa-pen-to-square"></i> Editar información</button>
                     </div>
                     {file &&
-                        
                         <button className='btn edit-button' onClick={handleClickImage}>Confirmar foto <i class="fa-solid fa-circle-check"></i></button>
-                    } 
+                    }
                 </div>
             </div>
         </>
