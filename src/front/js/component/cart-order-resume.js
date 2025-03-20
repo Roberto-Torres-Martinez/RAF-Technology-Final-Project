@@ -3,7 +3,6 @@ import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 
 export const OrderResume = () => {
-    
 
     const navigate = useNavigate()
 
@@ -13,7 +12,7 @@ export const OrderResume = () => {
     let cantidadTotal = 0
 
     const paymentView = () => {
-    navigate("/pasarela-pago", {state: {paymentAmount: subtotal}})
+        navigate("/pasarela-pago", { state: { paymentAmount: subtotal } })
     }
 
     return (
@@ -40,10 +39,8 @@ export const OrderResume = () => {
                                                 style: "currency",
                                                 currency: "EUR",
                                             }).format(subtotal)
-
                                             return (
                                                 <>
-
                                                     <tr>
                                                         <td>{item.modelo}</td>
                                                         <td>{item.cantidad}</td>
@@ -55,8 +52,6 @@ export const OrderResume = () => {
                                                 </>
                                             )
                                         })}
-
-
                                     </tbody>
                                 </table>
                             </div>
@@ -69,9 +64,7 @@ export const OrderResume = () => {
                                 </div>
                             </div>
                             <div className="d-flex justify-content-center mt-0 pt-5">
-                            
-                                      <button onClick={paymentView} className="btn btn-danger rounded-5 resume-button">Continuar con mi pedido</button>
-                               
+                                <button onClick={paymentView} className="btn btn-danger rounded-5 resume-button">Continuar con mi pedido</button>
                             </div>
                         </div>
                     </div>

@@ -5,7 +5,7 @@ import { postProduct } from "../apiservices/callToApi";
 export const ProductInfoTv = () => {
 
     const [tv, setTv] = useState([]);
-    const { tv_id } = useParams();    
+    const { tv_id } = useParams();
 
     const precio = parseInt(tv.precio);
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
@@ -14,7 +14,7 @@ export const ProductInfoTv = () => {
     }).format(precio);
 
     const getTvById = async () => {
-        const urlBackend = process.env.BACKEND_URL
+        const urlBackend = process.env.BACKEND_URL;
         try {
             const response = await fetch(urlBackend + "tv/" + tv_id);
             const data = await response.json();
@@ -24,12 +24,12 @@ export const ProductInfoTv = () => {
         }
     };
 
-    const imagenTv1 = tv?.imagen?.[0]
-    const imagenTv2 = tv?.imagen?.[1]
+    const imagenTv1 = tv?.imagen?.[0];
+    const imagenTv2 = tv?.imagen?.[1];
 
     useEffect(() => {
         getTvById();
-    }, []);
+    }, [tv_id]);
 
     return (
         <div className="container">
@@ -64,7 +64,7 @@ export const ProductInfoTv = () => {
                             <small className="text-black">{totalPrecioEur}</small>
                         </p>
                         <p className="card-text">
-                            <button className="btn-add-cart texto" onClick={()=>postProduct(tv.tv_id,userId,"tv")}>
+                            <button className="btn-add-cart texto" onClick={() => postProduct(tv.tv_id, userId, "tv")}>
                                 <i className="fa-solid fa-cart-plus mb-1"></i> Añadir al carrito
                             </button>
                         </p>

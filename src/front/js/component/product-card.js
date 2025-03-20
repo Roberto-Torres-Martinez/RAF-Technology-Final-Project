@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 export const ProductCard = ({ product, name }) => {
 
     let images = "";
     const validacionLista = (producto) => {
         if (producto == "Laptops" || producto == "Moviles") {
-            const color = (product.colores[0].toLowerCase()).replace(/ /g, "_")
-            images = product.imagen[color]
+            const color = (product.colores[0].toLowerCase()).replace(/ /g, "_");
+            images = product.imagen[color];
         }
         else {
             images = product.imagen
@@ -19,11 +18,9 @@ export const ProductCard = ({ product, name }) => {
     const validacionProduct = (producto) => {
         if (producto == "Laptops") {
             IndividualProduct = `/laptop-info/${product.laptop_id}`
-        };
-        if (producto == "Moviles") {
+        } else if (producto == "Moviles") {
             IndividualProduct = `/smartphone-info/${product.smartphone_id}`
-        };
-        if (producto == "TVs") {
+        } else if (producto == "TVs") {
             IndividualProduct = `/tv-info/${product.tv_id}`
         };
     };
@@ -32,7 +29,7 @@ export const ProductCard = ({ product, name }) => {
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
         style: "currency",
         currency: "EUR",
-      }).format(precio)
+    }).format(precio);
 
     validacionLista(name);
     validacionProduct(name);

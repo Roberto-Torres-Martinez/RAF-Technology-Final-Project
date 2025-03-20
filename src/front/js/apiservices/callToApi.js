@@ -129,8 +129,7 @@ export const postProduct = async (product_id, user_id, product_type) => {
             return{"msg": "Producto agregado al carrito"}
         }
     } catch (error) {
-        console.error("Error")
-        
+        console.error("Error")  
     }
 };
 
@@ -140,13 +139,11 @@ export const deleteProduct = async (user_id, product_type, cart_product_id)=>{
     if(response.ok){
         window.location.reload()
         return {"msg": "Producto eliminado del carrito"}
-        
     }}
     catch(error){
         console.log(urlBackend + "cart/" + user_id + "/product/" + product_type + "/" + cart_product_id)
         return{"msg": "Error al eliminar el producto"}
-    }
-   
+    }; 
 };
 
 export const createCart = async(user_id)=>{

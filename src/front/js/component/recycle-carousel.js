@@ -14,17 +14,14 @@ export const Welcome = () => {
                                 <a href="#inicio" className="carrousel-button texto m-2 fs-3 text-white">Avanzar</a>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div className="slide-image">
                     <div className="carousel-item">
                         <div className="carousel-image">
-
                             <img src="https://i.ibb.co/twzbS1dT/Tendencia-Pixelbook.jpg" className="d-block mx-auto object-fit-scale" alt="..." />
                         </div>
                     </div>
-
                     <div className="carousel-item">
                         <div className="carousel-image">
                             <img src="https://i.ibb.co/nHxxJn6/Novedad-iphone.jpg" className="d-block mx-auto object-fit-scale" alt="..." />

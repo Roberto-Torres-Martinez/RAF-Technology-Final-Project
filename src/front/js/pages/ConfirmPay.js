@@ -6,7 +6,7 @@ export const MessagePayment = () => {
         <main className="container-message container">
             <h1>Gracias por tu compra!!!!</h1>
             <section className="container-img-payment">
-                <img src="https://agenciapromarketing.com/wp-content/uploads/2020/03/BANNER-PAGO-EXITOSO-1.png"/>
+                <img src="https://agenciapromarketing.com/wp-content/uploads/2020/03/BANNER-PAGO-EXITOSO-1.png" />
             </section>
             <section className="container-button-confirm">
                 <Link to={"/"}>

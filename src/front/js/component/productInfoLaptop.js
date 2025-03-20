@@ -1,16 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Context } from "../store/appContext";
 import { ProductColors } from "../component/product-colors";
 import { useParams } from "react-router-dom";
 import { postProduct } from "../apiservices/callToApi";
 
-export const ProductInfoLaptop = ({ }) => {
+export const ProductInfoLaptop = () => {
 
-    const [activeColor, setActiveColor] = useState(0)
+    const [activeColor, setActiveColor] = useState(0);
     const [laptop, setLaptop] = useState([]);
     const { laptop_id } = useParams();
     const [userId, setUserId] = useState(sessionStorage.getItem("idUser"));
-
 
     let image;
     const precio = parseInt(laptop.precio);
@@ -32,16 +30,15 @@ export const ProductInfoLaptop = ({ }) => {
     };
 
     const imageValidation = (number) => {
-        const color = (laptop.colores?.[number].toLowerCase())?.replace(/ /g, "_")
-        image = laptop.imagen?.[color]
-    }
-    
+        const color = (laptop.colores?.[number].toLowerCase())?.replace(/ /g, "_");
+        image = laptop.imagen?.[color];
+    };
 
     imageValidation(activeColor);
 
     useEffect(() => {
-        getLaptopById()
-    }, []);
+        getLaptopById();
+    }, [laptop_id]);
 
     return (
         <div className="container">

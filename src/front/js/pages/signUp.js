@@ -9,7 +9,7 @@ export const SignUp = () => {
     const [userList, setUserList] = useState([]);
     const [userExist, setUserExist] = useState(false);
     const navigate = useNavigate();    
-    const {actions } = useContext(Context)
+    const {actions } = useContext(Context);
     
     const handleChange = (e) =>{
         setNewUser({...newUser, [e.target.name]: e.target.value});
@@ -45,7 +45,7 @@ export const SignUp = () => {
                     }else{
                         setUserExist(false);
                     };
-                }
+                };
             };
         };   
     },[newUser]);
@@ -53,22 +53,19 @@ export const SignUp = () => {
     const usersApi = async () => {
         const users = await getUsers();
         users.forEach(user => {
-            setUserList(prevList => [...prevList, user.username, user.email ])
+            setUserList(prevList => [...prevList, user.username, user.email ]);
         });
     };    
 
     useEffect(()=>{
         usersApi();
-        actions.setPositiveColors()
-        actions.setNoneNavbarVisibility()
+        actions.setPositiveColors();
+        actions.setNoneNavbarVisibility();
     }, []);
-
         
     return (
         <>
-
             <div className="container-fluid d-flex justify-content-center align-items-center " style={{backgroundColor: "rgb(47, 65, 79)"}}>
-
                 <div className="row md-col-12 form-signup">
                 <div className="d-flex justify-content-center mt-5">
                     <Link to="/">
@@ -77,9 +74,7 @@ export const SignUp = () => {
                         </div>
                     <h1 className="text-white titulo text-center title-signup">Crear Cuenta</h1>
                     <form className="border border-light rounded-3" onSubmit={e => handleSubmit(e)}>
-                        {userExist && <p style={{color: 'red'}}>Ya existe una cuenta asociado a este email o usuario </p>} 
-                        
-                        
+                        {userExist && <p style={{color: 'red'}}>Ya existe una cuenta asociado a este email o usuario </p>}                                                
                         <div className="texto">
                             <label htmlFor="username" className="form-label text-white mt-2">Nombre de Usuario</label>
                             <input type="text" className="form-control" onChange={e => handleChange(e)} name="username" autoComplete="username" required placeholder="Nombre de Usuario" />

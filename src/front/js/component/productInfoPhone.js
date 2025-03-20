@@ -39,7 +39,7 @@ export const ProductInfoPhone = ({}) => {
 
     useEffect(() => {
         getPhoneById();
-    }, []);
+    }, [smartphone_id]);
 
     return (
         <div className="container-fluid">

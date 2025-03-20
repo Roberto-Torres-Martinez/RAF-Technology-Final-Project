@@ -7,18 +7,15 @@ export const ProductSection = ({ name, products }) => {
     let catalogProduct = "";
     const validacionProduct = (producto) => {
         if (producto == "Laptops") {
-            catalogProduct = "/laptops-catalog"
-        };
-        if (producto == "Moviles") {
-            catalogProduct = "/phones-catalog"
-        };
-        if (producto == "TVs") {
-            catalogProduct = "/tvs-catalog"
+            catalogProduct = "/laptops-catalog";
+        } else if (producto == "Moviles") {
+            catalogProduct = "/phones-catalog";
+        } else if (producto == "TVs") {
+            catalogProduct = "/tvs-catalog";
         };
     };
 
     validacionProduct(name);
-
 
     return (
         <>

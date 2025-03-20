@@ -10,7 +10,7 @@ export const Navbar = () => {
 	const [search, setSearch] = useState("");
 
 	const navigate = useNavigate();
-	const infoUser = store.infoUser
+	const infoUser = store.infoUser;
 
 	let products = [];
 	const phones = store.phones;
@@ -36,8 +36,7 @@ export const Navbar = () => {
 		}else if(product.tv_id){
 			route = `/tv-info/${product.tv_id}`
 		};
-		navigate("/", { replace: true });
-		setTimeout(() => navigate(route), 0);
+		navigate(route);
 		setSearch("");
 	};
 
@@ -54,7 +53,7 @@ export const Navbar = () => {
 		if(isVerified){
 			actions.userIndividual();
 		};
-	},[isVerified])
+	},[isVerified]);
 
 
 	const logOut = () => {

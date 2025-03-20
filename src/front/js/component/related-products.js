@@ -6,12 +6,12 @@ export const RelatedProducts = ({ productType }) => {
     
     const { store } = useContext(Context);
 
-    const products = store[productType]
+    const products = store[productType];
 
     const relatedCarruselProducts = [];
     for (let i = 0; i < products.length; i += 5) {
         relatedCarruselProducts.push(products.slice(i, i + 5));
-    }
+    };
 
     return (
         <div className="container-fluid">
@@ -39,7 +39,6 @@ export const RelatedProducts = ({ productType }) => {
                             <span className="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
                             <span className="visually-hidden">Next</span>
                         </button>
-
                     </div>
                 </div>
             </div>
