@@ -12,7 +12,6 @@ export const ProductCardSmall = ({ product }) => {
         imagen = product.imagen[0]
     }
 
-
     const sendToIndividualProduct = () => {
         let route;
         if (product.tipo == "laptop") {

@@ -9,9 +9,9 @@ export const ProductInfoPhone = ({}) => {
     const [activeColor, setActiveColor] = useState(0)
     const [phone, setPhone] = useState([]);
     const { smartphone_id } = useParams();
-    const [userId, setUserId] = useState(sessionStorage.getItem("idUser"))
+    const [userId, setUserId] = useState(sessionStorage.getItem("idUser"));
 
-    let image
+    let image;
     const precio = parseInt(phone.precio);
     
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
@@ -23,9 +23,7 @@ export const ProductInfoPhone = ({}) => {
         const urlBackend = process.env.BACKEND_URL
         try {
             const response = await fetch(urlBackend + "phone/" + smartphone_id);
-
             const data = await response.json();
-
             setPhone(data);
         } catch (error) {
             console.error("Error getting ID phones from API");
@@ -33,18 +31,14 @@ export const ProductInfoPhone = ({}) => {
     };
 
     const imageValidation = (number) => {
+        const color = (phone.colores?.[number].toLowerCase())?.replace(/ /g, "_");
+        image = phone.imagen?.[color];
+    };
 
-        const color = (phone.colores?.[number].toLowerCase())?.replace(/ /g, "_")
-
-        image = phone.imagen?.[color]
-    }
-
-    imageValidation(activeColor)
+    imageValidation(activeColor);
 
     useEffect(() => {
-
-        getPhoneById()
-
+        getPhoneById();
     }, []);
 
     return (
@@ -108,24 +102,18 @@ export const ProductInfoPhone = ({}) => {
                                         <div className="accordion-body">
                                             <div className="row ms-2">
                                                 {phone.colores?.map((color, index) => {
-
                                                     let litImage = ""
                                                     const getProductPhoto = () => {
                                                         const color = (phone.colores?.[index].toLowerCase())?.replace(/ /g, "_")
-
                                                         litImage = phone.imagen?.[color]
                                                     }
-                                                    
                                                     getProductPhoto()
-                                                    
                                                     return (
-                                                        <div  onClick={()=>imageValidation(index)} className="col-md-4 d-flex flex-column align-items-center">
+                                                        <div  onClick={()=>{imageValidation(index), setActiveColor(index)}} className="col-md-4 d-flex flex-column align-items-center">
                                                             <h6 className="title-color ms-4 texto">{color}</h6>
                                                             <ProductColors src={litImage[0]} />
                                                         </div>
-
                                                     )
-
                                                 })}
                                             </div>
                                         </div>
