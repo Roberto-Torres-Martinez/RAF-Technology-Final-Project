@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../apiservices/callToApi";
 import { Context } from "../store/appContext";
+import { privateUser } from "../apiservices/callToApi";
 
 
 
@@ -10,6 +11,7 @@ export const LogIn = () => {
     const [responseApi, setResponseApi] = useState({});
     const navigate = useNavigate();
     const { actions } = useContext(Context);
+    const [isVerified, setIsVerified] = useState(null)
 
 
     const handleChange = (e) => {
@@ -19,7 +21,6 @@ export const LogIn = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         login(user, setResponseApi, navigate);
-
     };
 
     useEffect(() => {

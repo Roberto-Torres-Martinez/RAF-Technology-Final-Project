@@ -1,7 +1,5 @@
 import Swal from "sweetalert2";
-
 const urlBackend = process.env.BACKEND_URL;
-
 
 export const createUser = async (newUser, navigate) =>{
     try {
@@ -60,8 +58,7 @@ export const login = async (user, responseApi, navigate) =>{
             confirmButtonText:`<i class="fa fa-thumbs-up"></i> Great!`})
                 .then((response)=>{
                     if(response.isConfirmed){
-                         createCart(data.user.user_id)
-                         window.location.reload()
+                         createCart(data.user.user_id);
                     };
                 });
     };
