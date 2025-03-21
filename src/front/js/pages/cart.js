@@ -25,6 +25,7 @@ export const Cart = () => {
                     <div className="col-lg-4 col-sm-12">
                         <OrderResume />
                     </div>
+                    
                 </div>
             </div>
         </>

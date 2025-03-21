@@ -83,9 +83,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getCart: async (user_id) => {
+				
 				try {
 					const urlBackend = process.env.BACKEND_URL;
+
 					const response = await fetch(urlBackend + 'cart/' + user_id)
+					
 					const data = await response.json()
 					const cart = data[0]
 					const smartphones = cart["cart_smartphones"]
@@ -98,21 +101,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const done_cart = []
 					full_cart.forEach((cart_list) => {
 						cart_list.forEach((item) => {
-							if (item.tipo == "laptop" || item.tipo == "smartphone") {
-								color = (item.colores[0].toLowerCase()).replace(/ /g, "_")
-								done_cart.push({ modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: item.imagen[color][0], tipo: item.tipo, product_id: item.cart_product_id })
-							}
+							if(item.tipo =="laptop" || item.tipo == "smartphone"){
+							color = (item.colores[0].toLowerCase()).replace(/ /g, "_")
+							done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: item.imagen[color][0], tipo : item.tipo, product_id: item.cart_product_id})
+
+						}
 							else {
-								done_cart.push({ modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: item.imagen[0], tipo: item.tipo, product_id: item.cart_product_id })
-							}
-						})
+								done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: item.imagen[0], tipo: item.tipo, product_id: item.cart_product_id})}
+								
+							})
 					})
 
 					setStore({ cart: done_cart })
+					
 				} catch (error) {
+
 
 				}
 			}
+
+
+
 		}
 	};
 };
