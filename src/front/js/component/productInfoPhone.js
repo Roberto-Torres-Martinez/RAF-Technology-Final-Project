@@ -4,7 +4,7 @@ import { ProductColors } from "../component/product-colors";
 import { useParams } from "react-router-dom";
 import { postProduct } from "../apiservices/callToApi";
 
-export const ProductInfoPhone = ({ }) => {
+export const ProductInfoPhone = () => {
 
     const [activeColor, setActiveColor] = useState(0)
     const [phone, setPhone] = useState([]);
@@ -120,12 +120,12 @@ export const ProductInfoPhone = ({ }) => {
                                         <div className="accordion-body">
                                             <div className="row ms-2">
                                                 {phone.colores?.map((color, index) => {
-                                                    let litImage = ""
+                                                    let litImage = "";
                                                     const getProductPhoto = () => {
-                                                        const color = (phone.colores?.[index].toLowerCase())?.replace(/ /g, "_")
-                                                        litImage = phone.imagen?.[color]
+                                                        const color = (phone.colores?.[index].toLowerCase())?.replace(/ /g, "_");
+                                                        litImage = phone.imagen?.[color];
                                                     }
-                                                    getProductPhoto()
+                                                    getProductPhoto();
                                                     return (
                                                         <div onClick={() => { imageValidation(index), setActiveColor(index) }} className="col-md-4 d-flex flex-column align-items-center">
                                                             <h6 className="title-color ms-4 texto">{color}</h6>

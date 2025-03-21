@@ -47,7 +47,7 @@ export const Navbar = () => {
 
 	useEffect(() => {
 		checkout();
-	}, []);
+	});
 
 	useEffect(()=>{
 		if(isVerified){
