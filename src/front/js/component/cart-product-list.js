@@ -3,9 +3,8 @@ import { ListProduct } from './cart-product-list-product';
 import { Context } from '../store/appContext';
 
 export const ProductList = ({ user_id }) => {
-    const { store } = useContext(Context)
-    const [edit, setEdit] = useState(false);
-    
+    const { store, actions } = useContext(Context)
+    const [edit, setEdit] = useState(false)
 
     return (
         <>
@@ -47,7 +46,7 @@ export const ProductList = ({ user_id }) => {
                             }}>Cancelar</button>
                             <button onClick={()=>{
                                 setEdit(false)
-                                window.location.reload()
+                                actions.getCart(user_id)
                             }}>Guardar cambios</button>
                         </span>
                     </div>}
