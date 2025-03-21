@@ -58,16 +58,16 @@ export const ProductInfoLaptop = () => {
     return (
         <div className="container">
             <div className="row col-md-12">
-                <div id="phoneCarousel" className="carousel slide col-md-6 card-individual-laptop-image" data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <div className="d-flex justify-content-center mb-5">
-                                <img className="col-md-12" src={image?.[0]} alt="Cargando Fotografía..." />
+                <div id="phoneCarousel" className="carousel slide col-md-6 container-individual-card laptop-container" data-bs-ride="carousel">
+                    <div className="carousel-inner w-100 h-100">
+                        <div className="carousel-item active w-100 h-100">
+                            <div className="container-img-individual">
+                                <img src={image?.[0]} alt="Cargando Fotografía..." />
                             </div>
                         </div>
-                        <div className="carousel-item">
-                            <div className="d-flex justify-content-center mb-5">
-                                <img className="col-md-12" src={image?.[1]} alt="Cargando Fotografía..." />
+                        <div className="carousel-item w-100 h-100">
+                            <div className="container-img-individual">
+                                <img src={image?.[1]} alt="Cargando Fotografía..." />
                             </div>
                         </div>
                     </div>
@@ -115,23 +115,21 @@ export const ProductInfoLaptop = () => {
                                     </button>
                                 </h2>
                                 <div id="collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                    <div className="accordion-body">
-                                        <div className="row ms-2">
-                                            {laptop.colores?.map((color, index) => {
-                                                let litImage = ""
-                                                const getProductPhoto = () => {
-                                                    const color = (laptop.colores?.[index].toLowerCase())?.replace(/ /g, "_")
-                                                    litImage = laptop.imagen?.[color]
-                                                }
-                                                getProductPhoto();
-                                                return (
-                                                    <div onClick={() => { imageValidation(index), setActiveColor(index) }} className="col-md-4 d-flex flex-column align-items-center">
-                                                        <h6 className="title-color ms-4 texto">{color}</h6>
-                                                        <ProductColors src={litImage[0]} />
-                                                    </div>
-                                                )
-                                            })}
-                                        </div>
+                                    <div className="accordion-body container-color-selection">
+                                        {laptop.colores?.map((color, index) => {
+                                            let litImage = ""
+                                            const getProductPhoto = () => {
+                                                const color = (laptop.colores?.[index].toLowerCase())?.replace(/ /g, "_")
+                                                litImage = laptop.imagen?.[color]
+                                            }
+                                            getProductPhoto();
+                                            return (
+                                                <div onClick={() => { imageValidation(index), setActiveColor(index) }} className={`continer-img-selection ${activeColor === index ? "active-border" : ""} `}>
+                                                    <h6 className="title-color texto">{color}</h6>
+                                                    <ProductColors src={litImage[0]} />
+                                                </div>
+                                            )
+                                        })}
                                     </div>
                                 </div>
                             </div>

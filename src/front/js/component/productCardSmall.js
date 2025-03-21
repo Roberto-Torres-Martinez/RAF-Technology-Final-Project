@@ -23,6 +23,12 @@ export const ProductCardSmall = ({ product }) => {
         navigate(route);
     };
 
+    const precio = parseInt(product.precio.replace('€', ""));
+    const totalPrecioEur = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+    }).format(precio);
+
     return (
         <div className="content-small-card" onClick={sendToIndividualProduct} style={{backgroundColor: "rgb(255, 255, 255)" }}>
             <div className='container-img-small'>
@@ -32,8 +38,8 @@ export const ProductCardSmall = ({ product }) => {
                 <div className='title-card-small'>
                     <h7 className="titulo">{product.modelo}</h7>
                 </div>
-                <p className='titulo'>{product.precio}</p>
-                <span className='texto'>{product.tipo == "laptop" || product.tipo == "tv" ? 'Marca: ' + product.marca : product.procesador }</span>
+                <p className='titulo'>{totalPrecioEur}</p>
+                <span className='texto'>{product.tipo == "laptop" || product.tipo == "tv" ?  'Marca: ' + product.marca : product.procesador }</span>
             </div>
         </div>
     );
