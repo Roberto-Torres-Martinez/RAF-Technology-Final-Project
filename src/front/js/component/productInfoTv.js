@@ -6,6 +6,9 @@ export const ProductInfoTv = () => {
 
     const [tv, setTv] = useState([]);
     const { tv_id } = useParams();
+    const [userId, setUserId] = useState(sessionStorage.getItem("idUser"));
+    const [buttonText, setButtonText] = useState("Añadir al carrito");
+    const [buttonClass, setButtonClass] = useState("btn-add-cart texto");
 
     const precio = parseInt(tv.precio);
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
@@ -30,6 +33,19 @@ export const ProductInfoTv = () => {
     useEffect(() => {
         getTvById();
     }, [tv_id]);
+
+    const handleAddToCart = async () => {
+
+        await postProduct(tv.tv_id, userId, "tv");
+
+        setButtonText("✓ Producto añadido!");
+        setButtonClass("btn-add-cart texto added");
+
+        setTimeout(() => {
+            setButtonText("Añadir al carrito");
+            setButtonClass("btn-add-cart texto");
+        }, 1500);
+    };
 
     return (
         <div className="container">
@@ -64,8 +80,11 @@ export const ProductInfoTv = () => {
                             <small className="text-black">{totalPrecioEur}</small>
                         </p>
                         <p className="card-text">
-                            <button className="btn-add-cart texto" onClick={() => postProduct(tv.tv_id, userId, "tv")}>
+                            {/* <button className="btn-add-cart texto" onClick={() => postProduct(tv.tv_id, userId, "tv")}>
                                 <i className="fa-solid fa-cart-plus mb-1"></i> Añadir al carrito
+                            </button> */}
+                            <button className={buttonClass} onClick={handleAddToCart}>
+                                <i className="fa-solid fa-cart-plus mb-1"></i> {buttonText}
                             </button>
                         </p>
                         <div className="accordion" id="accordionExample">
