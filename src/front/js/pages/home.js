@@ -3,11 +3,9 @@ import React, { useEffect, useContext } from "react";
 import { Welcome } from '../component/home-carrousel'
 import { Onfire } from '../component/onfire'
 import { HomeCatalog } from "../component/home-catalog";
-import { NovedadesMail } from "../component/novedadesMail";
 import { Context } from "../store/appContext";
 
 export const Home = () => {
-
 	const { actions } = useContext(Context);
 
 	useEffect(() => {

@@ -439,15 +439,36 @@ hr {
 .content-small-card {
     border-radius: 10px;
     transition: transform 0.2s ease-in-out;
+    height: 21rem;
 }
 
+.container-img-small{
+    height: 10rem;
+    width: 10rem;
+}
+
+.container-img-small img {
+    height: 100%;
+    width: 100%;
+    padding: 1rem 1rem 0;
+}
+
+.title-card-small{
+    height: 3rem;
+    margin: 0.5rem 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.description-info{
+    text-align: center;
+}
 
 .content-small-card:hover {
     transform: scale(1.11);
 }
 
 .image-welcome-phones {
-
     width: 100%;
     height: 75%;
 }
