@@ -180,9 +180,9 @@ def add_product_to_cart(user_id, product_type, product_id):
 
     cart = Pedido.query.filter_by(user_id=user_id).first()
 
-    existing_smartphone = CartSmartphones.query.filter_by(cart_id=cart.pedido_id, smartphone_id=product_id).first()
-    existing_tv = CartTvs.query.filter_by(cart_id=cart.pedido_id, tv_id=product_id).first()
-    existing_laptop = CartLaptops.query.filter_by(cart_id=cart.pedido_id, laptop_id=product_id).first()
+    existing_smartphone = CartSmartphones.query.filter_by(pedido_id=cart.pedido_id, smartphone_id=product_id).first()
+    existing_tv = CartTvs.query.filter_by(pedido_id=cart.pedido_id, tv_id=product_id).first()
+    existing_laptop = CartLaptops.query.filter_by(pedido_id=cart.pedido_id, laptop_id=product_id).first()
 
     if product_type == 'smartphone':
         if existing_smartphone:
@@ -190,7 +190,7 @@ def add_product_to_cart(user_id, product_type, product_id):
             db.session.commit()
             return jsonify({"msg": "Producto agregado al carrito"}), 200
         else:
-            add_product = CartSmartphones(cart_id=cart.pedido_id, smartphone_id=product_id)
+            add_product = CartSmartphones(pedido_id=cart.pedido_id, smartphone_id=product_id)
 
     elif product_type == 'tv':
         if existing_tv:
@@ -198,14 +198,14 @@ def add_product_to_cart(user_id, product_type, product_id):
             db.session.commit()
             return jsonify({"msg": "Producto agregado al carrito"}), 200
         else:
-            add_product = CartTvs(cart_id=cart.pedido_id, tv_id=product_id)
+            add_product = CartTvs(pedido_id=cart.pedido_id, tv_id=product_id)
     elif product_type == 'laptop':
         if existing_laptop:
             existing_laptop.quantity+=1
             db.session.commit()
             return jsonify({"msg": "Producto agregado al carrito"}), 200
         else:
-            add_product = CartLaptops(cart_id=cart.pedido_id, laptop_id=product_id)
+            add_product = CartLaptops(pedido_id=cart.pedido_id, laptop_id=product_id)
 
     db.session.add(add_product)
     db.session.commit()
@@ -220,11 +220,11 @@ def remove_product_from_cart(user_id, product_type, cart_product_id):
     cart = Pedido.query.filter_by(user_id=user_id).first()
 
     if product_type == 'smartphone':
-        product = CartSmartphones.query.filter_by(cart_id=cart.pedido_id, cart_product_id=cart_product_id).first()
+        product = CartSmartphones.query.filter_by(pedido_id=cart.pedido_id, cart_product_id=cart_product_id).first()
     elif product_type == 'tv':
-        product = CartTvs.query.filter_by(cart_id=cart.pedido_id, cart_product_id=cart_product_id).first()
+        product = CartTvs.query.filter_by(pedido_id=cart.pedido_id, cart_product_id=cart_product_id).first()
     elif product_type == 'laptop':
-        product = CartLaptops.query.filter_by(cart_id=cart.pedido_id, cart_product_id=cart_product_id).first()
+        product = CartLaptops.query.filter_by(pedido_id=cart.pedido_id, cart_product_id=cart_product_id).first()
 
     if product:
         db.session.delete(product)
@@ -241,13 +241,13 @@ def modify_products_from_cart(user_id, product_type, product_id):
     cart = Pedido.query.filter_by(user_id=user_id).first()
 
     if product_type == 'smartphone':
-        product = CartSmartphones.query.filter_by(cart_id=cart.pedido_id, cart_product_id=product_id).first()
+        product = CartSmartphones.query.filter_by(pedido_id=cart.pedido_id, cart_product_id=product_id).first()
 
     elif product_type == 'tv':
-        product = CartTvs.query.filter_by(cart_id=cart.pedido_id, cart_product_id=product_id).first()
+        product = CartTvs.query.filter_by(pedido_id=cart.pedido_id, cart_product_id=product_id).first()
 
     elif product_type == 'laptop':
-        product = CartLaptops.query.filter_by(cart_id=cart.pedido_id, cart_product_id=product_id).first()
+        product = CartLaptops.query.filter_by(pedido_id=cart.pedido_id, cart_product_id=product_id).first()
 
     else:
         return jsonify({"msg": "Producto no encontrado"}), 400

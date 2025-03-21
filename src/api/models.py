@@ -76,7 +76,7 @@ class CartSmartphones(db.Model):
     __tablename__ = 'cart_smartphones'
 
     cart_product_id = db.Column(db.Integer, primary_key=True)
-    cart_id = db.Column(db.Integer, db.ForeignKey('pedido.pedido_id'))
+    pedido_id = db.Column(db.Integer, db.ForeignKey('pedido.pedido_id'))
     smartphone_id = db.Column(db.Integer, db.ForeignKey('smartphones.smartphone_id'))
     smartphone = db.relationship('Smartphones', backref= 'cart_smartphones')
     quantity = db.Column(db.Integer, nullable=False, default=1)
@@ -98,8 +98,8 @@ class CartTvs(db.Model):
 
     __tablename__ = 'cart_tvs'
 
-    cart_tv_id = db.Column(db.Integer, primary_key=True)
-    cart_id = db.Column(db.Integer, db.ForeignKey('pedido.pedido_id'))
+    cart_product_id = db.Column(db.Integer, primary_key=True, nullable=False)
+    pedido_id = db.Column(db.Integer, db.ForeignKey('pedido.pedido_id'), nullable=False)
     tv_id = db.Column(db.Integer, db.ForeignKey('tv.tv_id'))
     tvs = db.relationship('TVs', backref= 'cart_tvs')
     quantity = db.Column(db.Integer, nullable=False, default=1)
@@ -123,7 +123,7 @@ class CartLaptops(db.Model):
     __tablename__ = 'cart_laptops'
 
     cart_product_id = db.Column(db.Integer, primary_key=True)
-    cart_id = db.Column(db.Integer, db.ForeignKey('pedido.pedido_id'))
+    pedido_id = db.Column(db.Integer, db.ForeignKey('pedido.pedido_id'))
     laptop_id = db.Column(db.Integer, db.ForeignKey('laptops.laptop_id'))
     laptop = db.relationship('Laptops', backref= 'cart_laptops')
     quantity = db.Column(db.Integer, nullable=False, default=1)

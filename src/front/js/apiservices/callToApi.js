@@ -1,5 +1,7 @@
 import Swal from "sweetalert2";
+
 const urlBackend = process.env.BACKEND_URL;
+
 
 export const createUser = async (newUser, navigate) =>{
     try {
@@ -58,7 +60,8 @@ export const login = async (user, responseApi, navigate) =>{
             confirmButtonText:`<i class="fa fa-thumbs-up"></i> Great!`})
                 .then((response)=>{
                     if(response.isConfirmed){
-                         createCart(data.user.user_id);
+                         createCart(data.user.user_id)
+                         window.location.reload()
                     };
                 });
     };
@@ -128,6 +131,7 @@ export const postProduct = async (product_id, user_id, product_type) => {
     } catch (error) {
         console.error("Error")  
     }
+
 };
 
 export const deleteProduct = async (user_id, product_type, cart_product_id)=>{
@@ -157,8 +161,7 @@ export const updateQuantityCartProduct = async(user_id, product_type, product_id
             "Content-Type": "application/json"
         }
     })
-    // console.log(urlBackend + "cart/" + user_id + "/product/" + product_type + "/" + product_id)
-    // console.log(quantity)
+
 };
 
 export const deleteCart = async(user_id) =>{
