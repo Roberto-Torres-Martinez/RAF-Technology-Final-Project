@@ -133,10 +133,7 @@ export const postProduct = async (product_id, user_id, product_type) => {
 export const deleteProduct = async (user_id, product_type, cart_product_id)=>{
     try{
     const response = await fetch(urlBackend + "cart/" + user_id + "/product/" + product_type + "/" + cart_product_id , {method: "DELETE" } )
-    if(response.ok){
-        window.location.reload()
-        return {"msg": "Producto eliminado del carrito"}
-    }}
+    }
     catch(error){
         console.log(urlBackend + "cart/" + user_id + "/product/" + product_type + "/" + cart_product_id)
         return{"msg": "Error al eliminar el producto"}
@@ -162,5 +159,12 @@ export const updateQuantityCartProduct = async(user_id, product_type, product_id
     })
     // console.log(urlBackend + "cart/" + user_id + "/product/" + product_type + "/" + product_id)
     // console.log(quantity)
+};
+
+export const deleteCart = async(user_id) =>{
+    const response = await fetch(urlBackend + "cart/" + user_id, {method: "DELETE",
+        headers: {"Content-Type": "application/json"}
+    })
+    console.log("Carrito eliminado")
 }
 

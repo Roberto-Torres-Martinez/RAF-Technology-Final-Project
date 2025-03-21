@@ -11,6 +11,7 @@ const stripePromise = loadStripe('pk_test_51QxWTcF1M5ixil84DV7yx8UcwpGMJXggd0XSj
 export const PasarelaPago = () => {
   const location = useLocation()
   const paymentAmount = location.state.paymentAmount
+  const user_id = sessionStorage.getItem('idUser')
   const [clientSecret, setClientSecret] = useState(null);
 
   const paymentIntent = async () => {
@@ -79,7 +80,7 @@ export const PasarelaPago = () => {
       {stripePromise && clientSecret ? (
         <Elements stripe={stripePromise} options={{ clientSecret, appearance }}>
           <div className="pasarela-payment">
-            <FormPayment amount={paymentAmount} />
+            <FormPayment user_id={user_id} amount={paymentAmount} />
           </div>
         </Elements>
       ) : (

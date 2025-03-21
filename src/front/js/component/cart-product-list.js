@@ -16,18 +16,6 @@ export const ProductList = ({ user_id }) => {
                         <h1>Carrito</h1>
                         <span><p>Lista de productos en tu carrito personal</p></span>
                         </div>
-                        <div className="d-flex align-items-end">
-                        <span>
-                            <button onClick={()=>{
-                                if(edit){
-                                    setEdit(false)
-                                }
-                                else if(!edit){
-                                    setEdit(true)
-                                }
-                            }}>Editar carrito</button>
-                        </span>
-                        </div>
                         </div>
                         {store.cart.map((item) => {
                             return (
