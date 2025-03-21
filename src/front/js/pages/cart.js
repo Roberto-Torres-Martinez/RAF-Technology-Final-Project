@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../store/appContext';
 import { ProductList } from '../component/cart-product-list';
 import { OrderResume } from '../component/cart-order-resume';
-
+import { deleteCart, createCart } from '../apiservices/callToApi';
 
 
 export const Cart = () => {

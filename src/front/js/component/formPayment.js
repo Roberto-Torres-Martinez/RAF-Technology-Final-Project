@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
 import { PaymentElement } from "@stripe/react-stripe-js";
 import { useNavigate } from "react-router-dom";
+import { deleteCart, createCart } from "../apiservices/callToApi";
 
 
-
-export const FormPayment = ({ amount }) => {
+export const FormPayment = ({ user_id, amount }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [loading, setLoading] = useState(false);
@@ -38,6 +38,9 @@ export const FormPayment = ({ amount }) => {
         } else if (paymentIntent.status === 'succeeded') {
             setMessage("Pago confirmado!!!");
             navigate('/message-payment');
+            deleteCart(user_id)
+            createCart(user_id)
+
         } else {
             setMessage("Estado Inesperado")
         }

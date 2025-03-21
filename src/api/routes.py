@@ -281,7 +281,8 @@ def load_phone ():
             colores = phone['colores'],
             descripcion = phone['descripcion'],
             imagen = phone['imagen'],
-            tipo = phone['tipo']
+            tipo = phone['tipo'],
+            active_color = phone['active_color']
         )
         db.session.add(new_phone)
     db.session.commit()
@@ -324,7 +325,8 @@ def load_tvs():
             conectividad = tv['conectividad'],
             medidas = tv['medidas'],
             imagen = tv['imagen'],
-            tipo = tv['tipo']
+            tipo = tv['tipo'],
+            active_color = tv['active_color']
         )
         db.session.add(new_tv)
     db.session.commit()
@@ -372,7 +374,8 @@ def load_laptops():
             funcion_especial = laptop['funcion_especial'],
             descripcion_tarjeta_grafica = laptop['descripcion_tarjeta_grafica'],
             imagen = laptop['imagen'],
-            tipo = laptop['tipo']
+            tipo = laptop['tipo'],
+            active_color = laptop['active_color']
         )
         db.session.add(new_laptop)
     db.session.commit()

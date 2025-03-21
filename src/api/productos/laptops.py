@@ -29,7 +29,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6, Bluetooth 5.3",
         "funcion_especial": "Chip de Apple M2 Pro para un rendimiento excepcional",
         "descripcion_tarjeta_grafica": "Tarjeta gráfica integrada Apple GPU con hasta 19 núcleos",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "512 GB",
@@ -61,7 +62,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6E, Bluetooth 5.2",
         "funcion_especial": "Pantalla OLED para una experiencia visual excepcional",
         "descripcion_tarjeta_grafica": "NVIDIA GeForce RTX 4050 para gráficos de alto rendimiento",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "1 TB",
@@ -93,7 +95,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6, Bluetooth 5.0",
         "funcion_especial": "Diseño convertible 2 en 1",
         "descripcion_tarjeta_grafica": "Intel Iris Xe Graphics integrada",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "1 TB",
@@ -120,7 +123,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6E, Bluetooth 5.2",
         "funcion_especial": "Teclado de alta calidad con retroiluminación",
         "descripcion_tarjeta_grafica": "Intel Iris Xe Graphics integrada",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "1 TB",
@@ -152,7 +156,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6, Bluetooth 5.2",
         "funcion_especial": "Pantalla de alta tasa de refresco y rendimiento en juegos",
         "descripcion_tarjeta_grafica": "NVIDIA GeForce RTX 4060",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "1 TB",
@@ -184,7 +189,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6, Bluetooth 5.1",
         "funcion_especial": "Pantalla táctil con gran precisión y brillo",
         "descripcion_tarjeta_grafica": "Intel Iris Xe Graphics integrada",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "512 GB",
@@ -211,7 +217,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6, Bluetooth 5.2",
         "funcion_especial": "Rendimiento gráfico para juegos AAA",
         "descripcion_tarjeta_grafica": "NVIDIA GeForce RTX 4060",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "512 GB",
@@ -238,7 +245,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6E, Bluetooth 5.3",
         "funcion_especial": "Pantalla OLED con colores vibrantes",
         "descripcion_tarjeta_grafica": "NVIDIA GeForce RTX 4080",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "1 TB",
@@ -265,7 +273,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6E, Bluetooth 5.2",
         "funcion_especial": "Pantalla 360 Hz, ideal para esports",
         "descripcion_tarjeta_grafica": "NVIDIA GeForce RTX 4080",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "1 TB",
@@ -292,7 +301,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6E, Bluetooth 5.2",
         "funcion_especial": "Pantalla OLED perfecta para edición de video y diseño gráfico",
         "descripcion_tarjeta_grafica": "NVIDIA GeForce RTX 4070",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "2 TB",
@@ -324,7 +334,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6E, Bluetooth 5.3",
         "funcion_especial": "Pantalla AMOLED con colores vivos y excelentes ángulos de visión",
         "descripcion_tarjeta_grafica": "NVIDIA GeForce RTX 4070",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "1 TB",
@@ -351,7 +362,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6, Bluetooth 5.1",
         "funcion_especial": "Cuerpo metálico y pantalla de alta resolución",
         "descripcion_tarjeta_grafica": "Intel Iris Xe Graphics integrada",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "1 TB",
@@ -378,7 +390,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6E, Bluetooth 5.2",
         "funcion_especial": "Máximo rendimiento para juegos AAA",
         "descripcion_tarjeta_grafica": "NVIDIA GeForce RTX 4080",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "512 GB",
@@ -405,7 +418,8 @@ laptops = [
         "tecnologia": "Wi-Fi 6, Bluetooth 5.1",
         "funcion_especial": "Pantalla táctil con gran resolución y diseño flexible",
         "descripcion_tarjeta_grafica": "Intel Iris Xe Graphics integrada",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     },
     {
         "almacenamiento": "256 GB",
@@ -437,6 +451,7 @@ laptops = [
         "tecnologia": "Wi-Fi 5, Bluetooth 4.2",
         "funcion_especial": "Ligero y con una batería de larga duración",
         "descripcion_tarjeta_grafica": "Intel UHD Graphics 615",
-        "tipo": "laptop"
+        "tipo": "laptop",
+        "active_color": "0"
     }
 ]
