@@ -14,11 +14,11 @@ export const ProductCardSmall = ({ product }) => {
     const sendToIndividualProduct = () => {
         let route;
         if (product.tipo == "laptop") {
-            route = `/laptop-info/${product.laptop_id}`
+            route = `/laptop-info/${product.laptop_id}`;
         } else if (product.tipo == "smartphone") {
-            route = `/smartphone-info/${product.smartphone_id}`
+            route = `/smartphone-info/${product.smartphone_id}`;
         } else if (product.tipo == "tv") {
-            route = `/tv-info/${product.tv_id}`
+            route = `/tv-info/${product.tv_id}`;
         };
         navigate(route);
     };

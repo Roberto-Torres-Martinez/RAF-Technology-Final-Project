@@ -15,8 +15,8 @@ export const RelatedProducts = ({ productType }) => {
 
     return (
         <div className="container-fluid">
-            <div className="container my-5">
-                <div className="section container mx-3 pt-5 px-5 pb-1 mt-4 mx-auto">
+            <div className="container">
+                <div className="section container">
                     <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-inner">
                             {relatedCarruselProducts.map((products, index) => (

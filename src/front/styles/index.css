@@ -91,10 +91,6 @@ ul {
     padding-bottom: 5em;
 }
 
-.section {
-    border-color: rgb(102, 252, 241)
-}
-
 .product-section-button {
     font-size: 1rem;
     color: #fafafa;
@@ -440,6 +436,7 @@ hr {
     border-radius: 10px;
     transition: transform 0.2s ease-in-out;
     height: 21rem;
+    margin-bottom: 3rem ;
 }
 
 .container-img-small{
