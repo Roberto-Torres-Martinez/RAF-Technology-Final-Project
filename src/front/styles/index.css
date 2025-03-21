@@ -301,17 +301,24 @@ hr {
 }
 
 .img-small-vista-individual {
-    margin-top: 40px;
-    width: 50px;
-    height: 50px;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 0.5rem;
 }
 
-.img-small-vista-individual {
-    border-radius: 8%;
+.container-color-selection{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.img-small-vista-individual:hover {
-    transform: scale(1.25);
+.continer-img-selection{
+    width: 8rem;
+    text-align: center;
+}
+
+.continer-img-selection h6{
+    margin-top: 0.5rem;
 }
 
 .birth-personal {
@@ -433,15 +440,17 @@ hr {
 }
 
 .content-small-card {
-    border-radius: 10px;
+    border-radius: 0.5rem;
     transition: transform 0.2s ease-in-out;
     height: 21rem;
-    margin-bottom: 3rem ;
+    margin-bottom: 1rem ;
+    border: 2px solid rgb(119, 188, 199);
 }
 
 .container-img-small{
     height: 10rem;
     width: 10rem;
+    margin: 0 auto;
 }
 
 .container-img-small img {
@@ -453,12 +462,23 @@ hr {
 .title-card-small{
     height: 3rem;
     margin: 0.5rem 0 0 0;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+}
+
+.title-card-small h7{
+    background-color: rgba(48, 66, 80, 0.8);
+    color: white;
+    border-radius: 1rem;
+    padding: 0 1rem;
 }
 
 .description-info{
     text-align: center;
+}
+
+.description-info p {
+    text-align: end;
+    padding-right: 2rem;
 }
 
 .content-small-card:hover {
@@ -470,16 +490,38 @@ hr {
     height: 75%;
 }
 
-.card-individual-tv-image img {
-    width: 510px;
-    height: 500px;
-    margin-top: 130px;
-    object-fit: cover;
-    border-radius: 8%;
+.container-individual-card {
+    width: 32rem;
+    height: 32rem;
+    margin-top: 12.4rem;
+    background-color: white;
     transition: transform 0.3s ease-in-out;
+    border-radius: 1.5rem;
 }
 
-.card-individual-tv-image img:hover {
+.laptop-container{
+    margin-top: 18rem;
+}
+
+.phone-container{
+    margin-top: 9rem;
+}
+
+.container-img-individual{
+    height: 30rem;
+    width: 30rem;
+    margin: 2rem auto 0;
+}
+
+.container-img-individual img{
+    width: 28rem;
+    height: 28rem;
+    margin-left: 1rem;
+}
+
+
+
+.container-img-individual img:hover {
     transform: scale(1.05);
 }
 
@@ -542,7 +584,7 @@ hr {
 }
 
 .container_card .card_product span {
-    background-color: hsla(206, 25%, 25%, 0.8);
+    background-color: rgba(48, 66, 80, 0.8);
     color: white;
     padding: 0.1em 0.3em;
     font-size: 1.5em;
@@ -620,16 +662,14 @@ hr {
     margin-bottom: 10px;
 }
 
-.img-small-vista-individual {
-    margin-top: 0;
-    width: 50px;
-    height: 50px;
-    border-radius: 8%;
+.active-border{
+    border: .3rem solid rgb(56, 148, 163);
+    border-radius: 1em;
 }
 
-.img-small-vista-individual:hover {
-    transform: scale(1.25);
-    transition: transform 0.5s ease;
+.img-small-vista-individual {
+    margin-top: 0;
+    border-radius: 8%;
 }
 
 .description-cart-product {

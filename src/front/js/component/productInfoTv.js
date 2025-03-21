@@ -50,25 +50,25 @@ export const ProductInfoTv = () => {
     return (
         <div className="container">
             <div className="row col-md-12">
-                <div id="phoneCarousel" className="carousel slide col-md-6 card-individual-tv-image" data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <div className="d-flex justify-content-center mb-5">
-                                <img className="col-md-12" src={imagenTv1} alt="Cargando Fotografía..." />
+                <div id="phoneCarousel" className="carousel slide col-md-6 container-individual-card" data-bs-ride="carousel">
+                    <div className="carousel-inner w-100 h-100">
+                        <div className="carousel-item active w-100 h-100">
+                            <div className="container-img-individual">
+                                <img src={imagenTv1} alt="Cargando Fotografía..." />
                             </div>
                         </div>
-                        <div className="carousel-item">
-                            <div className="d-flex justify-content-center mb-5">
-                                <img className="col-md-12" src={imagenTv2} alt="Cargando Fotografía..." />
+                        <div className="carousel-item w-100 h-100">
+                            <div className="container-img-individual">
+                                <img src={imagenTv2} alt="Cargando Fotografía..." />
                             </div>
                         </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#phoneCarousel" data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                        <span className="carousel-control-prev-icon bg-dark rounded-circle me-5" aria-hidden="true"></span>
                         <span className="visually-hidden">Previous</span>
                     </button>
                     <button className="carousel-control-next" type="button" data-bs-target="#phoneCarousel" data-bs-slide="next">
-                        <span className="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                        <span className="carousel-control-next-icon bg-dark rounded-circle ms-5" aria-hidden="true"></span>
                         <span className="visually-hidden">Next</span>
                     </button>
                 </div>

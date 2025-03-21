@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const CatalogProductCard = ({ product, productName }) => {
-
     const precio = parseInt(product.precio.replace('€', ""));
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
         style: "currency",
