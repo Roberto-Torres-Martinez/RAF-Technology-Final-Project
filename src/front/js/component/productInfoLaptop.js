@@ -9,6 +9,8 @@ export const ProductInfoLaptop = () => {
     const [laptop, setLaptop] = useState([]);
     const { laptop_id } = useParams();
     const [userId, setUserId] = useState(sessionStorage.getItem("idUser"));
+    const [buttonText, setButtonText] = useState("Añadir al carrito");
+    const [buttonClass, setButtonClass] = useState("btn-add-cart texto");
 
     let image;
     const precio = parseInt(laptop.precio);
@@ -39,6 +41,19 @@ export const ProductInfoLaptop = () => {
     useEffect(() => {
         getLaptopById();
     }, [laptop_id]);
+
+    const handleAddToCart = async () => {
+
+        await postProduct(laptop.laptop_id, userId, "laptop");
+
+        setButtonText("✓ Producto añadido!");
+        setButtonClass("btn-add-cart texto added");
+
+        setTimeout(() => {
+            setButtonText("Añadir al carrito");
+            setButtonClass("btn-add-cart texto");
+        }, 1500);
+    };
 
     return (
         <div className="container">
@@ -73,8 +88,11 @@ export const ProductInfoLaptop = () => {
                             <small className="text-black">{totalPrecioEur}</small>
                         </p>
                         <p className="card-text">
-                            <button className="btn-add-cart texto" onClick={()=>postProduct(laptop.laptop_id,userId,"laptop")}>
+                            {/* <button className="btn-add-cart texto" onClick={() => postProduct(laptop.laptop_id, userId, "laptop")}>
                                 <i className="fa-solid fa-cart-plus mb-1"></i> Añadir al carrito
+                            </button> */}
+                            <button className={buttonClass} onClick={handleAddToCart}>
+                                <i className="fa-solid fa-cart-plus mb-1"></i> {buttonText}
                             </button>
                         </p>
                         <div className="accordion" id="accordionExample">
@@ -99,7 +117,7 @@ export const ProductInfoLaptop = () => {
                                 <div id="collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
                                         <div className="row ms-2">
-                                            {laptop.colores?.map((color, index) => {                                                
+                                            {laptop.colores?.map((color, index) => {
                                                 let litImage = ""
                                                 const getProductPhoto = () => {
                                                     const color = (laptop.colores?.[index].toLowerCase())?.replace(/ /g, "_")
@@ -107,7 +125,7 @@ export const ProductInfoLaptop = () => {
                                                 }
                                                 getProductPhoto();
                                                 return (
-                                                    <div onClick={() =>{ imageValidation(index), setActiveColor(index)}} className="col-md-4 d-flex flex-column align-items-center">
+                                                    <div onClick={() => { imageValidation(index), setActiveColor(index) }} className="col-md-4 d-flex flex-column align-items-center">
                                                         <h6 className="title-color ms-4 texto">{color}</h6>
                                                         <ProductColors src={litImage[0]} />
                                                     </div>

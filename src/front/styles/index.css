@@ -833,3 +833,12 @@ input[type=file]::-webkit-file-upload-button {
 .cart-icon-navbar:hover {
     transform: scale(1.1) translateY(-2px);
 }
+
+.logo-navbar {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.logo-navbar:hover {
+    transform: scale(1.1) translateY(-2px);
+}
