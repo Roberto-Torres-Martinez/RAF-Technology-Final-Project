@@ -51,17 +51,13 @@ export const Onfire = ({ type1, id1, type2, id2 }) => {
 
 
     return (<>
-        <div id="inicio" className="row d-flex justify-content-around py-3 px-0 mx-auto ">
-            <div className="col-md-6">
-                <Link to={`/smartphone-info/${id1}`}>
-                    <OnFireItem item={fireItem1} itemName={type1} />
-                </Link>
-            </div>
-            <div className="col-md-6">
-                <Link to={`/tv-info/${id2}`}>
-                    <OnFireItem item={fireItem2} itemName={type2} />
-                </Link>
-            </div>
+        <div id="inicio" className="container-card-tendencia">
+            <Link to={`/tv-info/${id1}`}>
+                <OnFireItem item={fireItem1} itemName={type1} />
+            </Link>
+            <Link to={`/laptop-info/${id2}`}>
+                <OnFireItem item={fireItem2} itemName={type2} />
+            </Link>
         </div>
     </>)
 }
