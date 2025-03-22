@@ -45,7 +45,7 @@ export const ProductInfoPhone = () => {
     const handleAddToCart = async () => {
         await postProduct(phone.smartphone_id, userId, "smartphone");
         setButtonText("✓ Producto añadido!");
-        setButtonClass("btn-add-cart texto added");
+        setButtonClass("btn-add-cart texto added shake");
 
         setTimeout(() => {
             setButtonText("Añadir al carrito");
