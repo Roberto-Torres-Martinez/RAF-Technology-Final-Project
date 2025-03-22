@@ -119,9 +119,9 @@ export const sendImage = async (file) => {
     }
 };
 
-export const postProduct = async (product_id, user_id, product_type) => {
+export const postProduct = async (product_id, user_id, product_type, active_color) => {
     try {
-        const response = await fetch(urlBackend + 'cart/' + user_id + "/product/" + product_type + "/" + product_id, {
+        const response = await fetch(urlBackend + 'cart/' + user_id + "/product/" + product_type + "/" + product_id + "/" + active_color, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'}
         })

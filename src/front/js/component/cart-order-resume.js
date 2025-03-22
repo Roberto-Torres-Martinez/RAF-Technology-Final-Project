@@ -33,7 +33,7 @@ export const OrderResume = () => {
                                     </thead>
                                     <tbody>
                                         {store.cart.map((item) => {
-                                            cantidadTotal += 1
+                                            cantidadTotal += item.cantidad
                                             subtotal += Number((item.precio).replace(/ €/g, "")) * Number(item.cantidad)
                                             totalPrecioEur = new Intl.NumberFormat("de-DE", {
                                                 style: "currency",
@@ -57,7 +57,15 @@ export const OrderResume = () => {
                             </div>
                             <div className="sub-total-container">
                                 <div className="p-2 sub-total-text">
-                                    <h4>Subtotal({cantidadTotal} productos) :</h4><br />
+                                    {cantidadTotal > 1? 
+                                    <>
+                                    <h4>Subtotal( {cantidadTotal} productos ) </h4><br />
+                                    </>
+                                    : 
+                                    <>
+                                    <h4>Subtotal( {cantidadTotal} producto ) </h4><br /> 
+                                    </>
+                                }
                                     <span>
                                         <p className="d-flex justify-content-end pe-3 sub-total-resume">{totalPrecioEur}</p>
                                     </span>
