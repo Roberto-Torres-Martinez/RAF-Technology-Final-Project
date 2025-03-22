@@ -9,7 +9,7 @@ export const Footer = () => {
 
 	return (
 		<>
-			<div className="container-fluid" style={store.negative_colors ? { backgroundColor: "rgb(47, 65, 79)" } : { backgroundColor: "rgb(56, 148, 163)" }}>
+			<div className="container-fluid" id="footer" style={store.negative_colors ? { backgroundColor: "rgb(47, 65, 79)" } : { backgroundColor: "rgb(56, 148, 163)" }}>
 				<div className={`container ${store.negative_colors ? "negative-background" : "positive-background"}`} >
 					<div className="row pb-5 pt-3" style={store.negative_colors ? { backgroundColor: "rgb(47, 65, 79)" } : { backgroundColor: "rgb(56, 148, 163)" }}>
 						<div className="col-3 d-flex flex-column">

@@ -10,7 +10,6 @@ export const HomeCatalog = () => {
     const [laptops, setLaptops] = useState([]);
     const [random, setRandom] = useState(null);
 
-
     useEffect(() => {
         const interval = setInterval(() =>
             setRandom(Math.floor(Math.random() * 15) + 1), 10000);

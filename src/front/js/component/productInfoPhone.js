@@ -209,7 +209,7 @@ export const ProductInfoPhone = () => {
                     </div>
                 </div>
             </div>
-            <h1 className="text-center text-black texto related-products">Productos relacionados (Smartphones)</h1>
+            <h1 className="text-center text-black texto related-products ">Productos relacionados (Smartphones)</h1>
         </div>
     );
 };

@@ -39,7 +39,7 @@ export const ProductInfoTv = () => {
         await postProduct(tv.tv_id, userId, "tv");
 
         setButtonText("✓ Producto añadido!");
-        setButtonClass("btn-add-cart texto added");
+        setButtonClass("btn-add-cart texto added shake");
 
         setTimeout(() => {
             setButtonText("Añadir al carrito");
@@ -83,7 +83,7 @@ export const ProductInfoTv = () => {
                             {/* <button className="btn-add-cart texto" onClick={() => postProduct(tv.tv_id, userId, "tv")}>
                                 <i className="fa-solid fa-cart-plus mb-1"></i> Añadir al carrito
                             </button> */}
-                            <button className={buttonClass} onClick={handleAddToCart}>
+                            <button className={`${buttonClass}`} onClick={handleAddToCart}>
                                 <i className="fa-solid fa-cart-plus mb-1"></i> {buttonText}
                             </button>
                         </p>
@@ -212,7 +212,7 @@ export const ProductInfoTv = () => {
                     </div>
                 </div>
             </div>
-            <h1 className="text-center text-black texto related-products">Productos relacionados (TVs)</h1>
+            <h1 className="text-center text-black texto related-products ">Productos relacionados (TVs)</h1>
         </div>
     );
 };
