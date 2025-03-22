@@ -44,7 +44,7 @@ export const ProductInfoLaptop = () => {
 
     const handleAddToCart = async () => {
 
-        await postProduct(laptop.laptop_id, userId, "laptop");
+        await postProduct(laptop.laptop_id, userId, "laptop", activeColor);
 
         setButtonText("✓ Producto añadido!");
         setButtonClass("btn-add-cart texto added shake");

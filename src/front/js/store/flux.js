@@ -102,8 +102,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					full_cart.forEach((cart_list) => {
 						cart_list.forEach((item) => {
 							if(item.tipo =="laptop" || item.tipo == "smartphone"){
-							color = (item.colores[0].toLowerCase()).replace(/ /g, "_")
-							done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: item.imagen[color][0], tipo : item.tipo, product_id: item.cart_product_id})
+							color = (item.colores[item.active_color].toLowerCase()).replace(/ /g, "_")
+							done_cart.push({modelo: item.modelo, descripcion: item.descripcion, precio: item.precio, cantidad: item.quantity, image: item.imagen[color][0] , color: (item.colores[item.active_color]).toUpperCase(), tipo : item.tipo, product_id: item.cart_product_id})
+							
 
 						}
 							else {

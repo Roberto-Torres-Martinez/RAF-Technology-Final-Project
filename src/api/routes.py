@@ -175,14 +175,14 @@ def delete_cart(user_id):
 
 #ENDPOINT AGREGAR PRODUCTOS AL CARRITO
 
-@api.route('/cart/<int:user_id>/product/<string:product_type>/<int:product_id>', methods=['POST'])
-def add_product_to_cart(user_id, product_type, product_id):
+@api.route('/cart/<int:user_id>/product/<string:product_type>/<int:product_id>/<int:active_color>', methods=['POST'])
+def add_product_to_cart(user_id, product_type, product_id, active_color):
 
     cart = Pedido.query.filter_by(user_id=user_id).first()
 
-    existing_smartphone = CartSmartphones.query.filter_by(pedido_id=cart.pedido_id, smartphone_id=product_id).first()
+    existing_smartphone = CartSmartphones.query.filter_by(pedido_id=cart.pedido_id, smartphone_id=product_id, active_color=active_color).first()
     existing_tv = CartTvs.query.filter_by(pedido_id=cart.pedido_id, tv_id=product_id).first()
-    existing_laptop = CartLaptops.query.filter_by(pedido_id=cart.pedido_id, laptop_id=product_id).first()
+    existing_laptop = CartLaptops.query.filter_by(pedido_id=cart.pedido_id, laptop_id=product_id, active_color=active_color).first()
 
     if product_type == 'smartphone':
         if existing_smartphone:
@@ -190,7 +190,7 @@ def add_product_to_cart(user_id, product_type, product_id):
             db.session.commit()
             return jsonify({"msg": "Producto agregado al carrito"}), 200
         else:
-            add_product = CartSmartphones(pedido_id=cart.pedido_id, smartphone_id=product_id)
+            add_product = CartSmartphones(pedido_id=cart.pedido_id, smartphone_id=product_id, active_color=active_color)
 
     elif product_type == 'tv':
         if existing_tv:
@@ -205,7 +205,7 @@ def add_product_to_cart(user_id, product_type, product_id):
             db.session.commit()
             return jsonify({"msg": "Producto agregado al carrito"}), 200
         else:
-            add_product = CartLaptops(pedido_id=cart.pedido_id, laptop_id=product_id)
+            add_product = CartLaptops(pedido_id=cart.pedido_id, laptop_id=product_id, active_color=active_color)
 
     db.session.add(add_product)
     db.session.commit()

@@ -36,7 +36,7 @@ export const ProductInfoTv = () => {
 
     const handleAddToCart = async () => {
 
-        await postProduct(tv.tv_id, userId, "tv");
+        await postProduct(tv.tv_id, userId, "tv", 0);
 
         setButtonText("✓ Producto añadido!");
         setButtonClass("btn-add-cart texto added shake");
