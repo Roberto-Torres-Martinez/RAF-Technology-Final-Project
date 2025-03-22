@@ -107,10 +107,10 @@ export const Navbar = () => {
 								<li className="nav-item">
 									<a href="#footer" className="nav-link" style={{ color: "white" }} >Contacto</a>
 								</li>
-								<li className="nav-item dropdown">
+								<li className="nav-item dropdown" >
 									<a className="nav-link dropbtn" style={{ color: "white" }} ><i className="fa-solid fa-user"></i></a>
 									{!isVerified ?
-										<div className="dropdown-content">
+										<div className={`dropdown-content ${store.negative_colors ? "negative-login" : "positive-login"}`}>
 											<br/>
 											<Link to={'/login'}><span>Iniciar Sesion</span></Link>
 											<hr/>

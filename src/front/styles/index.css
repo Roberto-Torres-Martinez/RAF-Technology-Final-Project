@@ -80,6 +80,14 @@ ul {
     font-size: 1.3em;
 }
 
+.positive-login {
+    background-color: rgb(119, 188, 199);
+}
+
+.negative-login {
+    background-color: rgb(70, 95, 114);
+}
+
 .card,
 .dark-background {
     background-color: rgb(47, 65, 79);
@@ -122,7 +130,6 @@ ul {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 8;
-    background-color: rgb(119, 188, 199);
     color: white;
     padding: 0 0.8em;
     border-radius: 1em;
@@ -663,8 +670,9 @@ hr {
 }
 
 .active-border{
-    border: .3rem solid rgb(56, 148, 163);
+    border: .15rem solid rgb(56, 148, 163);
     border-radius: 1em;
+    background-color: rgba(233, 252, 253, 0.664);
 }
 
 .img-small-vista-individual {
