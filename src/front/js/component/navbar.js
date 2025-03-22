@@ -105,7 +105,7 @@ export const Navbar = () => {
 									</Link>
 								</li>
 								<li className="nav-item">
-									<p className="nav-link" style={{ color: "white" }} >Contacto</p>
+									<a href="#footer" className="nav-link" style={{ color: "white" }} >Contacto</a>
 								</li>
 								<li className="nav-item dropdown">
 									<a className="nav-link dropbtn" style={{ color: "white" }} ><i className="fa-solid fa-user"></i></a>

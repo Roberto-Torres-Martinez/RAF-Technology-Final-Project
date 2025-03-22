@@ -30,7 +30,7 @@ export const ProductCardSmall = ({ product }) => {
     }).format(precio);
 
     return (
-        <div className="content-small-card" onClick={sendToIndividualProduct} style={{backgroundColor: "rgb(255, 255, 255)" }}>
+        <div className="content-small-card mt-3 mb-5" onClick={sendToIndividualProduct} style={{backgroundColor: "rgb(255, 255, 255)" }}>
             <div className='container-img-small'>
                 <img src={imagen} className="card-img-top" style={{ height: '150px' }} />
             </div>
