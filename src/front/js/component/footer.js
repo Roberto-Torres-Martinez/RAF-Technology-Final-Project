@@ -9,9 +9,9 @@ export const Footer = () => {
 
 	return (
 		<>
-			<div className="container-fluid" style={store.negative_colors ? { backgroundColor: "rgb(234, 248, 252)" } : { backgroundColor: "rgb(56, 148, 163)" }}>
-				<div className={`container ${store.negative_colors ? "negative-background border-top border-black" : "positive-background"}`} >
-					<div className="row pb-5 pt-3">
+			<div className="container-fluid" style={store.negative_colors ? { backgroundColor: "rgb(47, 65, 79)" } : { backgroundColor: "rgb(56, 148, 163)" }}>
+				<div className={`container ${store.negative_colors ? "negative-background" : "positive-background"}`} >
+					<div className="row pb-5 pt-3" style={store.negative_colors ? { backgroundColor: "rgb(47, 65, 79)" } : { backgroundColor: "rgb(56, 148, 163)" }}>
 						<div className="col-3 d-flex flex-column">
 							<h5><img className="mt-2" src="https://i.postimg.cc/50vfTfDx/isotipo.png" style={{height: "50px"}} /></h5>
 							<ul className="ps-0">

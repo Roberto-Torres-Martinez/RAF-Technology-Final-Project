@@ -30,11 +30,11 @@ export const LogIn = () => {
 
     return (
         <>
-            <div className="container-fluid d-flex justify-content-center align-items-center" style={{ backgroundColor: "rgb(47, 65, 79)" }}>
+            <div className="container-fluid d-flex justify-content-center align-items-center mb-5" style={{ backgroundColor: "rgb(47, 65, 79)" }}>
                 <div className="row md-col-12">
                     <div className="d-flex justify-content-center mt-5">
                         <Link to="/">
-                            <i className="fa-solid fa-user-astronaut fs-2 text-white "></i>
+                            <img src="https://i.postimg.cc/ryxpY9LS/imagotipo-naranja.png" style={{ height: "50px" }} />
                         </Link>
                     </div>
                     <h1 className="text-white titulo mt-3 text-center title-login">Iniciar sesion</h1>
