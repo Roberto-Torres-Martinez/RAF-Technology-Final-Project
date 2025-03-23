@@ -971,3 +971,18 @@ input[type=file]::-webkit-file-upload-button {
     transform: translate3d(10px, 0, 0);
     }
 }  
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.fa-eye, .fa-eye-slash {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 22px;
+}
