@@ -2,17 +2,13 @@ import React, { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../apiservices/callToApi";
 import { Context } from "../store/appContext";
-import { privateUser } from "../apiservices/callToApi";
-
-
 
 export const LogIn = () => {
-    const [user, setUser] = useState();
+    const [user, setUser] = useState({});
     const [responseApi, setResponseApi] = useState({});
     const navigate = useNavigate();
     const { actions } = useContext(Context);
-    const [isVerified, setIsVerified] = useState(null)
-
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     const handleChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
@@ -21,6 +17,10 @@ export const LogIn = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         login(user, setResponseApi, navigate);
+    };
+
+    const handlePasswordVisibility = () => {
+        setIsPasswordVisible(!isPasswordVisible);
     };
 
     useEffect(() => {
@@ -37,16 +37,19 @@ export const LogIn = () => {
                             <img src="https://i.postimg.cc/ryxpY9LS/imagotipo-naranja.png" style={{ height: "50px" }} />
                         </Link>
                     </div>
-                    <h1 className="text-white titulo mt-3 text-center title-login">Iniciar sesion</h1>
-                    <form className="border border-light rounded-3 mb-5" onSubmit={e => handleSubmit(e)}>
+                    <h1 className="text-white titulo mt-3 text-center title-login">Iniciar sesión</h1>
+                    <form className="border border-light rounded-3 mb-5" onSubmit={handleSubmit}>
                         {responseApi.msg && <h6 style={{ color: 'red' }}>{responseApi.msg}</h6>}
                         <div className="texto">
                             <label htmlFor="email" className="form-label text-white mt-4">Email</label>
-                            <input type="text" className="form-control" name={"email"} onChange={e => handleChange(e)} autoComplete="email" aria-describedby="emailHelp" placeholder="example@gmail.com" />
+                            <input type="text" className="form-control" name="email" onChange={handleChange} autoComplete="email" placeholder="example@gmail.com" />
                         </div>
                         <div className="texto">
                             <label htmlFor="password" className="form-label text-white mt-4">Contraseña</label>
-                            <input type="password" className="form-control" name="password" onChange={e => handleChange(e)} autoComplete="current-password" placeholder="example123" />
+                            <div className="password-container">
+                                <input type={isPasswordVisible ? "text" : "password"} className="form-control" name="password" onChange={handleChange}  placeholder="example123" />
+                                <i className={`fa-solid ${isPasswordVisible ? "fa-eye-slash" : "fa-eye"}`} onClick={handlePasswordVisibility}></i>
+                            </div>
                         </div>
                         <div style={{ marginTop: '20px' }}>
                             <span className="text-white mt-4 texto">¿No tienes una cuenta?</span> <span><Link to={'/signup'}><span style={{ color: 'rgb(102, 252, 241)' }}>Crear Usuario</span></Link></span>
@@ -56,5 +59,5 @@ export const LogIn = () => {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
