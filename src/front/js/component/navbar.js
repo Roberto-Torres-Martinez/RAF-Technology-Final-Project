@@ -118,7 +118,7 @@ export const Navbar = () => {
 											<br/>
 											</div>
 										:
-										<div className="dropdown-content">
+										<div className={`dropdown-content ${store.negative_colors ? "negative-login" : "positive-login"}`}>
 											<div className="container-photo">
 												<img className="photo-navbar-user" src={infoUser.image}/>
 												<p>Hola, {infoUser.username}</p>
