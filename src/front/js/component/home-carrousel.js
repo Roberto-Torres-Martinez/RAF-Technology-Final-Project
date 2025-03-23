@@ -6,13 +6,17 @@ export const Welcome = () => {
     return (<>
         <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner mt-4">
-                <div className="carousel-item active mb-5 mt-1" data-bs-interval="4000" >
-                    <div className="welcome mt-2">
+                <div className="carousel-item active mb-3 " data-bs-interval="4000" >
+                    <div className="welcome mt-3">
                         <img src="https://i.postimg.cc/8Cx1Z7KK/imagotipo-naranja-2.pnghttps://i.postimg.cc/8Cx1Z7KK/imagotipo-naranja-2.png" />
                     </div>
-                    <div className="d-flex justify-content-center mt-4">
+                    <div className="d-flex justify-content-center">
                         <div className=" rounded border border-info-subtle border-4">
-                            <a href="#inicio" className="carrousel-button texto fs-3 text-white">Avanzar</a>
+                            <a href="#inicio" className="carrousel-button text-white">
+                                <span className="flecha primero"></span>
+                                <span className="flecha"></span>
+                                <span className="flecha ultima"></span>
+                            </a>
                         </div>
                     </div>
                 </div>
