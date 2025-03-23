@@ -986,3 +986,21 @@ input[type=file]::-webkit-file-upload-button {
     cursor: pointer;
     font-size: 22px;
 }
+
+.flecha{
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-top: solid 0.5rem;
+    border-right: solid 0.5rem;
+    transform: rotate(135deg);
+    margin: 0 4.8rem;
+}
+
+.flecha.ultima{
+    margin-bottom: 0.9rem;
+}
+
+.flecha.primero{
+    margin-top: 0.5rem;
+}
