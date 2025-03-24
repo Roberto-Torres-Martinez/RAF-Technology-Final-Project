@@ -21,19 +21,17 @@ export const CatalogCatalog = ({ productList }) => {
             <div className="container ">
                 <h1 className="d-flex justify-content-center text-white">Catálogo {titulo}</h1>
                 <div className="catalog-section-catalog-phones">
-                    <div className="row">
+                    <div className="row row-cols-1 row-cols-md-3 g-4">
                         {
-                            products.map((product, index) => {
-                                return (
-                                    <div className="col-4">
-                                        <div className="p-3">
-                                            <CatalogProductCard
-                                                key={index}
-                                                product={product}
-                                                productName={productList} />
-                                        </div>
-                                    </div>)
-                            })
+                            products.map((product, index) => (
+                                <div className="col d-flex justify-content-center" key={index}>
+                                    <div className="p-3">
+                                        <CatalogProductCard
+                                            product={product}
+                                            productName={productList} />
+                                    </div>
+                                </div>
+                            ))
                         }
                     </div>
                 </div>
