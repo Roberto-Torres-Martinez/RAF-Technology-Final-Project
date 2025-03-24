@@ -67,7 +67,7 @@ export const Navbar = () => {
 			<nav className={`navbar navbar-expand-lg  ${store.negative_colors ? "negative-navbar" : "positive-navbar"}`} style={store.navbar_visibility ? { display: "block" } : { display: "none" }}>
 				<div className="container">
 					<Link to={'/'}>
-						<p className="navbar-brand logo-navbar" ><img src="https://i.postimg.cc/ryxpY9LS/imagotipo-naranja.png" style={{height: "50px"}} /></p>
+						<img className="navbar-brand logo-navbar" src="https://i.postimg.cc/ryxpY9LS/imagotipo-naranja.png" style={{height: "5rem"}} />
 					</Link>
 					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>

@@ -11,30 +11,29 @@ export const Welcome = () => {
                         <img src="https://i.postimg.cc/8Cx1Z7KK/imagotipo-naranja-2.pnghttps://i.postimg.cc/8Cx1Z7KK/imagotipo-naranja-2.png" />
                     </div>
                     <div className="d-flex justify-content-center">
-                        <div className=" rounded border border-info-subtle border-4">
+                        <div className=" rounded">
                             <a href="#inicio" className="carrousel-button text-white">
                                 <span className="flecha primero"></span>
-                                <span className="flecha"></span>
-                                <span className="flecha ultima"></span>
+                                
                             </a>
                         </div>
                     </div>
                 </div>
-                <div className="carousel-item" data-bs-interval="4000">
+                <div className="carousel-item mb-4" data-bs-interval="4000">
                     <Link to="/laptop-info/15">
                         <div className="carousel-image">
                             <img src="https://i.ibb.co/twzbS1dT/Tendencia-Pixelbook.jpg" className="d-block mx-auto" alt="..." />
                         </div>
                     </Link>
                 </div>
-                <div className="carousel-item" data-bs-interval="4000">
+                <div className="carousel-item mb-4" data-bs-interval="4000">
                     <Link to="/smartphone-info/2">
                         <div className="carousel-image">
                             <img src="https://i.ibb.co/nHxxJn6/Novedad-iphone.jpg" className="d-block mx-auto" alt="..." />
                         </div>
                     </Link>
                 </div>
-                <div className="carousel-item">
+                <div className="carousel-item mb-4">
                     <Link to="/smartphone-info/1">
                         <div className="carousel-image">
                             <img src="https://i.ibb.co/5h2BB0Cy/Oferta-samsung.jpg" className="d-block mx-auto" />
