@@ -24,9 +24,10 @@ export const CatalogCatalog = ({ productList }) => {
                     <div className="row row-cols-1 row-cols-md-3 g-4">
                         {
                             products.map((product, index) => (
-                                <div className="col d-flex justify-content-center" key={index}>
+                                <div className="col d-flex justify-content-center">
                                     <div className="p-3">
                                         <CatalogProductCard
+                                            key={index}
                                             product={product}
                                             productName={productList} />
                                     </div>
