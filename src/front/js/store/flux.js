@@ -97,6 +97,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const full_cart = []
 					let color = ""
 					full_cart.push(smartphones, laptops, tvs)
+					console.log(cart);
+					
 
 					const done_cart = []
 					full_cart.forEach((cart_list) => {
@@ -114,6 +116,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 
 					setStore({ cart: done_cart })
+					console.log(getStore().cart)
 					
 				} catch (error) {
 
