@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ProductSection } from './product-section';
-import { array } from 'prop-types';
+
 
 const urlBackend = process.env.BACKEND_URL;
 
@@ -12,7 +12,8 @@ export const HomeCatalog = () => {
 
     useEffect(() => {
         const interval = setInterval(() =>
-            setRandom(Math.floor(Math.random() * 15) + 1), 10000);
+            setRandom(Math.floor(Math.random() * 15) + 1)
+            , 10000);
 
         return () => clearInterval(interval);
     }, []);
