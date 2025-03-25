@@ -68,7 +68,6 @@ ul {
 
 .form-signup {
     margin-bottom: 50px;
-
 }
 
 .positive-navbar {
@@ -306,18 +305,18 @@ hr {
     margin-bottom: 0.5rem;
 }
 
-.container-color-selection {
+.container-color-selection{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.continer-img-selection {
+.continer-img-selection{
     width: 8rem;
     text-align: center;
 }
 
-.continer-img-selection h6 {
+.continer-img-selection h6{
     margin-top: 0.5rem;
 }
 
@@ -448,11 +447,11 @@ footer {
     border-radius: 0.5rem;
     transition: transform 0.2s ease-in-out;
     height: 21rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem ;
     border: 2px solid rgb(119, 188, 199);
 }
 
-.container-img-small {
+.container-img-small{
     height: 10rem;
     width: 10rem;
     margin: 0 auto;
@@ -464,20 +463,20 @@ footer {
     padding: 1rem 1rem 0;
 }
 
-.title-card-small {
+.title-card-small{
     height: 3rem;
     margin: 0.5rem 0 0 0;
     text-align: center;
 }
 
-.title-card-small h7 {
+.title-card-small h7{
     background-color: rgba(48, 66, 80, 0.8);
     color: white;
     border-radius: 1rem;
     padding: 0 1rem;
 }
 
-.description-info {
+.description-info{
     text-align: center;
 }
 
@@ -505,21 +504,21 @@ footer {
     margin-bottom: 3rem;
 }
 
-.laptop-container {
+.laptop-container{
     margin-top: 18rem;
 }
 
-.phone-container {
+.phone-container{
     margin-top: 9rem;
 }
 
-.container-img-individual {
+.container-img-individual{
     height: 30rem;
     width: 30rem;
     margin: 2rem auto 0;
 }
 
-.container-img-individual img {
+.container-img-individual img{
     width: 28rem;
     height: 28rem;
     margin-left: 1rem;
@@ -530,12 +529,6 @@ footer {
 }
 
 .card-individual-laptop-image img {
-    /* width: 800px;
-    height: 600px;
-    margin-top: 110px;
-    object-fit: cover;
-    border-radius: 8%;
-    transition: transform 0.3s ease-in-out; */
     width: 510px;
     height: 500px;
     margin-top: 200px;
@@ -570,17 +563,12 @@ footer {
     transition: all 0.25s;
     background-color: white;
     border: 0.1em solid rgb(102, 252, 241);
-    /* color: white ; */
-    /* mix-blend-mode: multiply; */
-    /* background-color: black; */
 }
 
 .container_card .card_product:hover {
     transform: translateY(-15px);
     transform: scale(1.1);
     transition-duration: 0.5s;
-    /* color: black;
-    mix-blend-mode: normal; */
 }
 
 .card-title-home {
@@ -666,7 +654,7 @@ footer {
     margin-bottom: 10px;
 }
 
-.active-border {
+.active-border{
     border: .15rem solid rgb(56, 148, 163);
     border-radius: 1em;
     background-color: rgba(233, 252, 253, 0.664);
@@ -679,7 +667,6 @@ footer {
 
 .description-cart-product {
     font-size: 0.8em;
-
 }
 
 .order-resume {
@@ -903,26 +890,25 @@ input[type=file]::-webkit-file-upload-button {
     transform: scale(1.1) translateY(-2px);
 }
 
-.container-card-tendencia {
+.container-card-tendencia{
     height: 35rem;
     margin-top: 4rem;
     display: flex;
     justify-content: space-around;
-    position: relative;
+    position: relative; 
 }
-
-.container-image-tendencia {
+.container-image-tendencia{
     width: 26rem;
     height: 26rem;
     margin: 0 auto;
 }
 
-.container-image-tendencia img {
+.container-image-tendencia img{
     width: 100%;
     height: 100%;
 }
 
-.content-tendencia {
+.content-tendencia{
     width: 32rem;
     height: 32rem;
     position: relative;
@@ -936,59 +922,35 @@ input[type=file]::-webkit-file-upload-button {
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-}
-
-@-webkit-keyframes shake {
-
-    0%,
-    100% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
     }
-
-    10%,
-    30%,
-    50%,
-    70%,
-    90% {
-        -webkit-transform: translate3d(-10px, 0, 0);
-        transform: translate3d(-10px, 0, 0);
+    @-webkit-keyframes shake {
+    0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     }
-
-    20%,
-    40%,
-    60%,
-    80% {
-        -webkit-transform: translate3d(10px, 0, 0);
-        transform: translate3d(10px, 0, 0);
+    10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
     }
-}
-
-@keyframes shake {
-
-    0%,
-    100% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
+    20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
     }
-
-    10%,
-    30%,
-    50%,
-    70%,
-    90% {
-        -webkit-transform: translate3d(-10px, 0, 0);
-        transform: translate3d(-10px, 0, 0);
     }
-
-    20%,
-    40%,
-    60%,
-    80% {
-        -webkit-transform: translate3d(10px, 0, 0);
-        transform: translate3d(10px, 0, 0);
+    @keyframes shake {
+    0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     }
-}
+    10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+    }
+    20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+    }
+}  
 
 .password-container {
     position: relative;
@@ -996,8 +958,7 @@ input[type=file]::-webkit-file-upload-button {
     align-items: center;
 }
 
-.fa-eye,
-.fa-eye-slash {
+.fa-eye, .fa-eye-slash {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -1006,34 +967,20 @@ input[type=file]::-webkit-file-upload-button {
     font-size: 22px;
 }
 
-.flecha {
+.flecha{
     display: block;
-    width: 4rem;
-    height: 4rem;
-    border-bottom: solid 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-top: solid 0.5rem;
     border-right: solid 0.5rem;
-    margin: 1.95rem;
-    padding-bottom: .2rem;
-    animation: move 1.1s infinite ease-in-out;
-    border-radius: 0.2rem;
-    -webkit-box-shadow: 4px 4px 4px -1px rgba(250, 250, 250, 1);
-    -moz-box-shadow: 4px 4px 4px -1px rgba(250, 250, 250, 1);
-    box-shadow: 4px 4px 4px -1px rgba(250, 250, 250, 1);
+    transform: rotate(135deg);
+    margin: 0 4.8rem;
 }
 
-@keyframes move {
-    0% {
-        transform: translateY(0) rotate(45deg);
-        /* Flecha en su posición original */
-    }
+.flecha.ultima{
+    margin-bottom: 0.9rem;
+}
 
-    50% {
-        transform: translateY(1.5rem) rotate(45deg);
-        /* Flecha se mueve hacia abajo */
-    }
-
-    100% {
-        transform: translateY(0) rotate(45deg);
-        /* Flecha vuelve a su posición */
-    }
+.flecha.primero{
+    margin-top: 0.5rem;
 }
