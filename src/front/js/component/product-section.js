@@ -26,7 +26,7 @@ export const ProductSection = ({ name, products }) => {
                         {products.map((product, index) => {
                             return (
                                 <div className="col-md-3" key={index}>
-                                    <ProductCard name={name} product={product} />
+                                    <ProductCard name={name} product={product}/>
                                 </div>
                             )
                         })};
