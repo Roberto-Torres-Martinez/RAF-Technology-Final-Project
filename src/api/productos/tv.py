@@ -64,7 +64,7 @@ tvs = [
         "fabricante": "Samsung Electronics",
         "imagen": [
             "https://cdn.idealo.com/folder/Product/202451/3/202451345/s11_produktbild_gross/samsung-tq75q80catxxc.jpg",
-            "https://cdn.idealo.com/folder/Product/202451/3/202451345/s11_produktbild_max_1/samsung-tq75q80catxxc.jpg"
+            "https://thumb.pccomponentes.com/w-530-530/articles/1067/10675443/2606-samsung-tq75q80catxxc-75-qled-ultrahd-4k-quantum-hdr-comprar.jpg"
         ],
         "marca": "Samsung",
         "medidas": "1230 x 720 x 30 mm",
@@ -83,7 +83,7 @@ tvs = [
         "fabricante": "TCL Electronics",
         "imagen": [
             "https://www.tcl.com/usca/content/dam/tcl/products/home-theater/6-series/6-series-qled.png",
-            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_144569538?x=536&y=402&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=536&ey=402&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=536&cdy=402"
+            "https://www.tcl.com/usca/content/dam/tcl/product/home-theater/6-series/super-bowl-screen-fill/R635-NFL-rightangle.png"
         ],
         "marca": "TCL",
         "medidas": "1230 x 710 x 25 mm",
@@ -196,7 +196,7 @@ tvs = [
         "descripcion": "Gran calidad de imagen con el procesador XR y un excelente sonido.",
         "fabricante": "Sony Corporation",
         "imagen": [
-            "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_91251489?x=536&y=402&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=536&ey=402&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=536&cdy=402",
+            "https://media.ldlc.com/r1600/ld/products/00/05/94/73/LD0005947300.jpg",
             "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_88351334?x=536&y=402&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=536&ey=402&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=536&cdy=402"
         ],
         "marca": "Sony",
@@ -235,7 +235,7 @@ tvs = [
         "fabricante": "Panasonic",
         "imagen": [
             "https://unilet.net/wp-content/uploads/2022/01/unilet_panasoncic_jz1000b_1.jpg",
-            "https://www.avforums.com/image.php?imageparameters=editorial/products/b0d48-LZ1000-front-with-USP.jpg"
+            "https://unilet.net/wp-content/uploads/2022/01/unilet_panasoncic_jz1000b_5.jpg"
         ],
         "marca": "Panasonic",
         "medidas": "1455 x 845 x 35 mm",
