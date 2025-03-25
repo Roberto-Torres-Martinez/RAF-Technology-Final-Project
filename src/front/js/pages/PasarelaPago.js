@@ -3,12 +3,15 @@ import { FormPayment } from "../component/formPayment";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../store/appContext";
 
 
 const urlBackend = process.env.BACKEND_URL;
 const stripePromise = loadStripe('pk_test_51QxWTcF1M5ixil84DV7yx8UcwpGMJXggd0XSjMwT493HuieKbKIf3nWo94YaWDYrl4A781CqNpXw5vww4Q3p3IBv00oAd5cnVd')
 
 export const PasarelaPago = () => {
+  const { actions } = useContext(Context);
   const location = useLocation()
   const paymentAmount = location.state.paymentAmount
   const user_id = sessionStorage.getItem('idUser')
@@ -33,6 +36,17 @@ export const PasarelaPago = () => {
 
   useEffect(() => {
     paymentIntent();
+  }, []);
+
+  useEffect(() => {
+    actions.setNegativeColors();
+  }, []);
+
+  useEffect(() => {
+    document.body.style.backgroundColor = "rgb(234, 248, 252)";
+    return () => {
+      document.body.style.backgroundColor = "";
+    };
   }, []);
 
   const appearance = {
@@ -84,7 +98,7 @@ export const PasarelaPago = () => {
           </div>
         </Elements>
       ) : (
-        <p style={{ color: 'white', fontSize: '5rem' }}>Cargando pago......</p>
+        <p style={{ color: 'black', fontSize: '5rem' }}>Cargando pago......</p>
       )}
     </>
   );
