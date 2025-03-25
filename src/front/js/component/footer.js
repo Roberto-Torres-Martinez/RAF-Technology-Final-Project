@@ -13,9 +13,9 @@ export const Footer = () => {
 				<div className={`container ${store.negative_colors ? "negative-background" : "positive-background"}`} >
 					<div className="row pb-5 pt-3 justify-content-center" style={store.negative_colors ? { backgroundColor: "rgb(47, 65, 79)" } : { backgroundColor: "rgb(56, 148, 163)" }}>
 						<div className="col-3 text-center">
-							<h5><img className="mt-2" src="https://i.postimg.cc/50vfTfDx/isotipo.png" style={{height: "50px"}} /></h5>
+							<h5><img className="mt-2 ms-1" src="https://i.postimg.cc/50vfTfDx/isotipo.png" style={{height: "50px"}} /></h5>
 							<ul className="ps-0">
-								<li className="my-3 insta-icon text-white"><i className="fa-brands fa-instagram" style={{fontSize: "35px"}}></i></li>
+								<li className="mt-3 insta-icon text-white"><i className="fa-brands fa-instagram" style={{fontSize: "35px"}}></i></li>
 							</ul>
 						</div>
 						<div className="col-3 text-center">
