@@ -121,11 +121,12 @@ export const sendImage = async (file) => {
     }
 };
 
-export const postProduct = async (product_id, user_id, product_type, active_color) => {
+export const postProduct = async (user_id, data) => {
     try {
-        const response = await fetch(urlBackend + 'cart/' + user_id + "/product/" + product_type + "/" + product_id + "/" + active_color, {
+        const response = await fetch(urlBackend + "add-item/" + user_id, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
         })
         if (response.ok) {
             return { "msg": "Producto agregado al carrito" }
@@ -136,9 +137,19 @@ export const postProduct = async (product_id, user_id, product_type, active_colo
 
 };
 
-export const deleteProduct = async (user_id, product_type, cart_product_id) => {
+
+
+export const deleteProduct = async (user_id, modelo, color) => {
     try {
-        const response = await fetch(urlBackend + "cart/" + user_id + "/product/" + product_type + "/" + cart_product_id, { method: "DELETE" })
+        const response = await fetch(urlBackend + "cart/" + user_id + "/delete-item", { method: "DELETE",
+            body: JSON.stringify({
+                "modelo": modelo,
+                "color": color
+            }),
+            headers: {
+                "Content-Type" : "application/json"
+            }
+         })
     }
     catch (error) {
         console.log(urlBackend + "cart/" + user_id + "/product/" + product_type + "/" + cart_product_id)
@@ -154,11 +165,13 @@ export const createCart = async (user_id) => {
 
 };
 
-export const updateQuantityCartProduct = async (user_id, product_type, product_id, quantity) => {
-    const response = await fetch(urlBackend + "cart/" + user_id + "/product/" + product_type + "/" + product_id, {
+export const updateQuantityCartProduct = async (user_id, modelo, color, cantidad) => {
+    const response = await fetch(urlBackend + "cart/" + user_id + "/edit-item", {
         method: "PUT",
         body: JSON.stringify({
-            "quantity": quantity
+            "modelo": modelo,
+            "color": color,      
+            "cantidad": cantidad
         }),
         headers: {
             "Content-Type": "application/json"

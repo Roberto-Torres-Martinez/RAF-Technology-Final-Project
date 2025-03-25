@@ -13,6 +13,7 @@ export const ProductInfoPhone = () => {
     const [buttonClass, setButtonClass] = useState("btn-add-cart texto");
 
     let image;
+    let color;
     const precio = parseInt(phone.precio);
 
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
@@ -32,7 +33,7 @@ export const ProductInfoPhone = () => {
     };
 
     const imageValidation = (number) => {
-        const color = (phone.colores?.[number].toLowerCase())?.replace(/ /g, "_");
+        color = (phone.colores?.[number].toLowerCase())?.replace(/ /g, "_");
         image = phone.imagen?.[color];
     };
 
@@ -43,7 +44,7 @@ export const ProductInfoPhone = () => {
     }, [smartphone_id]);
 
     const handleAddToCart = async () => {
-        await postProduct(phone.smartphone_id, userId, "smartphone", activeColor);
+       await postProduct(userId,{"modelo": phone.modelo, "descripcion": phone.descripcion, "cantidad" : 1, "precio": phone.precio, "imagen": image?.[0], "color": (color.replace(/_/g, " ")).toUpperCase()});
         setButtonText("✓ Producto añadido!");
         setButtonClass("btn-add-cart texto added shake");
 

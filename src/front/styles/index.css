@@ -1012,3 +1012,7 @@ input[type=file]::-webkit-file-upload-button {
 .flecha.primero{
     margin-top: 0.5rem;
 }
+
+.empty-cart-image{
+    width: 20em;
+}
