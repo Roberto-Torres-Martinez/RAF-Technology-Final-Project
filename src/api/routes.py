@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Smartphones, TVs, Laptops, Pedido, CartSmartphones, CartTvs, CartLaptops
+from api.models import db, User, Smartphones, TVs, Laptops, Pedido
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 import json
@@ -13,6 +13,7 @@ from api.productos.laptops import laptops
 import cloudinary
 import cloudinary.uploader
 import stripe
+from sqlalchemy.orm.attributes import flag_modified
 
 
 
@@ -21,6 +22,39 @@ stripe.api_key = "sk_test_51QxWTcF1M5ixil84JujDUVjcNbDMjk8CpG3Akk0Bq1rlK7Ur5mVJk
 
 # Allow CORS requests to this API
 CORS(api)
+
+
+
+@api.route('/add-item/<int:id_user>', methods=['POST'])
+def add_items_pedido (id_user):
+    data = request.get_json()
+    pedido = Pedido.query.filter_by(user_id=id_user).first()
+
+    # Buscar si el modelo ya existe en la lista de items
+    for item in pedido.items:
+        if item["modelo"] == data["modelo"] and item["color"] == data["color"]:
+            item["cantidad"] += 1
+            break
+    else:
+        # Si no existe, agregamos el nuevo modelo con cantidad 1
+        pedido.items.append({
+            "modelo": data["modelo"],
+            "precio": data["precio"],
+            "descripcion": data["descripcion"],
+            "color": data["color"],
+            "imagen": data["imagen"], 
+            "cantidad": 1})
+
+    # 🔥 Marcar el campo JSON como modificado para que SQLAlchemy lo detecte
+    flag_modified(pedido, "items")
+
+    # Guardar los cambios en la base de datos
+    db.session.commit()
+
+    return jsonify({'msg': "agregado", "pedido": pedido.items}), 200
+
+
+
 
 #ENDPOINT PASARELA DE PAGO STRIPE
 @api.route('/payment', methods=['POST'])
