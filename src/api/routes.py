@@ -25,37 +25,6 @@ CORS(api)
 
 
 
-@api.route('/add-item/<int:id_user>', methods=['POST'])
-def add_items_pedido (id_user):
-    data = request.get_json()
-    pedido = Pedido.query.filter_by(user_id=id_user).first()
-
-    # Buscar si el modelo ya existe en la lista de items
-    for item in pedido.items:
-        if item["modelo"] == data["modelo"] and item["color"] == data["color"]:
-            item["cantidad"] += 1
-            break
-    else:
-        # Si no existe, agregamos el nuevo modelo con cantidad 1
-        pedido.items.append({
-            "modelo": data["modelo"],
-            "precio": data["precio"],
-            "descripcion": data["descripcion"],
-            "color": data["color"],
-            "imagen": data["imagen"], 
-            "cantidad": 1})
-
-    # 🔥 Marcar el campo JSON como modificado para que SQLAlchemy lo detecte
-    flag_modified(pedido, "items")
-
-    # Guardar los cambios en la base de datos
-    db.session.commit()
-
-    return jsonify({'msg': "agregado", "pedido": pedido.items}), 200
-
-
-
-
 #ENDPOINT PASARELA DE PAGO STRIPE
 @api.route('/payment', methods=['POST'])
 def create_payment():
@@ -167,9 +136,7 @@ def get_user_individual(id_user):
     return jsonify(user.serialize()), 201
 
 
-#ENDPOINTS CARRITO
-
-#ENDPOINT POST CREAR CARRITO
+#ENDPOINT CREAR CARRITO
 
 @api.route('/cart/<int:user_id>', methods=['POST'])
 def add_cart(user_id):
@@ -207,95 +174,66 @@ def delete_cart(user_id):
         return jsonify({"msg": "Carrito eliminado"}), 200
     return jsonify({"msg": "Carrito no encontrado"})
 
-#ENDPOINT AGREGAR PRODUCTOS AL CARRITO
+#ENDPOINT AGREGAR PRODUCTO AL CARRITO
 
-@api.route('/cart/<int:user_id>/product/<string:product_type>/<int:product_id>/<int:active_color>', methods=['POST'])
-def add_product_to_cart(user_id, product_type, product_id, active_color):
+@api.route('/add-item/<int:id_user>', methods=['POST'])
+def add_items_pedido (id_user):
+    data = request.get_json()
+    pedido = Pedido.query.filter_by(user_id=id_user).first()
 
-    cart = Pedido.query.filter_by(user_id=user_id).first()
+    # Buscar si el modelo ya existe en la lista de items
+    for item in pedido.items:
+        if item["modelo"] == data["modelo"] and item["color"] == data["color"]:
+            item["cantidad"] += 1
+            break
+    else:
+    
+        pedido.items.append({
+            "modelo": data["modelo"],
+            "precio": data["precio"],
+            "descripcion": data["descripcion"],
+            "color": data["color"],
+            "imagen": data["imagen"], 
+            "cantidad": 1})
 
-    existing_smartphone = CartSmartphones.query.filter_by(pedido_id=cart.pedido_id, smartphone_id=product_id, active_color=active_color).first()
-    existing_tv = CartTvs.query.filter_by(pedido_id=cart.pedido_id, tv_id=product_id).first()
-    existing_laptop = CartLaptops.query.filter_by(pedido_id=cart.pedido_id, laptop_id=product_id, active_color=active_color).first()
+   
+    flag_modified(pedido, "items")
 
-    if product_type == 'smartphone':
-        if existing_smartphone:
-            existing_smartphone.quantity+=1
-            db.session.commit()
-            return jsonify({"msg": "Producto agregado al carrito"}), 200
-        else:
-            add_product = CartSmartphones(pedido_id=cart.pedido_id, smartphone_id=product_id, active_color=active_color)
 
-    elif product_type == 'tv':
-        if existing_tv:
-            existing_tv.quantity+=1
-            db.session.commit()
-            return jsonify({"msg": "Producto agregado al carrito"}), 200
-        else:
-            add_product = CartTvs(pedido_id=cart.pedido_id, tv_id=product_id)
-    elif product_type == 'laptop':
-        if existing_laptop:
-            existing_laptop.quantity+=1
-            db.session.commit()
-            return jsonify({"msg": "Producto agregado al carrito"}), 200
-        else:
-            add_product = CartLaptops(pedido_id=cart.pedido_id, laptop_id=product_id, active_color=active_color)
-
-    db.session.add(add_product)
     db.session.commit()
 
-    return jsonify({"msg": "Producto agregado al carrito"}), 200
+    return jsonify({'msg': "agregado", "pedido": pedido.items}), 200
+
+#ENDPOINT MODIFICAR CANTIDAD PRODUCTO
+@api.route('/cart/<int:user_id>/edit-item', methods=['PUT'])
+def edit_items_pedido(user_id):
+    data = request.get_json()
+    pedido = Pedido.query.filter_by(user_id=user_id).first()
+
+    if pedido:
+        for item in pedido.items:
+            if item['modelo'] == data['modelo'] and item['color'] == data['color']:
+                item['cantidad'] = data['cantidad']
+        flag_modified(pedido, "items")
+        db.session.commit()
+        return jsonify({"msg": "Producto actualizado"})
+        
 
 #ENDPOINT ELIMINAR PRODUCTOS DEL CARRITO
 
-@api.route('/cart/<int:user_id>/product/<string:product_type>/<int:cart_product_id>', methods=['DELETE'])
-def remove_product_from_cart(user_id, product_type, cart_product_id):
+@api.route('cart/<int:user_id>/delete-item', methods=['DELETE'])
+def delete_item_pedido(user_id):
+    data = request.get_json()
+    pedido = Pedido.query.filter_by(user_id=user_id).first()
 
-    cart = Pedido.query.filter_by(user_id=user_id).first()
-
-    if product_type == 'smartphone':
-        product = CartSmartphones.query.filter_by(pedido_id=cart.pedido_id, cart_product_id=cart_product_id).first()
-    elif product_type == 'tv':
-        product = CartTvs.query.filter_by(pedido_id=cart.pedido_id, cart_product_id=cart_product_id).first()
-    elif product_type == 'laptop':
-        product = CartLaptops.query.filter_by(pedido_id=cart.pedido_id, cart_product_id=cart_product_id).first()
-
-    if product:
-        db.session.delete(product)
+    if pedido:
+        for item in pedido.items:
+            if item['modelo'] == data['modelo'] and item['color'] == data['color']:
+                pedido.items.remove(item)
+        flag_modified(pedido, "items")
         db.session.commit()
-        return jsonify({"msg": "Producto eliminado del carrito"}), 200
+        return jsonify({"msg": "Producto eliminado"})
 
-    return jsonify({"msg": "Producto no encontrado en el carrito"}), 400
-
-#ENDPOINT MODIFICAR PRODUCTOS DEL CARRITO
-
-@api.route('/cart/<int:user_id>/product/<string:product_type>/<int:product_id>', methods=['PUT'])
-def modify_products_from_cart(user_id, product_type, product_id):
-
-    cart = Pedido.query.filter_by(user_id=user_id).first()
-
-    if product_type == 'smartphone':
-        product = CartSmartphones.query.filter_by(pedido_id=cart.pedido_id, cart_product_id=product_id).first()
-
-    elif product_type == 'tv':
-        product = CartTvs.query.filter_by(pedido_id=cart.pedido_id, cart_product_id=product_id).first()
-
-    elif product_type == 'laptop':
-        product = CartLaptops.query.filter_by(pedido_id=cart.pedido_id, cart_product_id=product_id).first()
-
-    else:
-        return jsonify({"msg": "Producto no encontrado"}), 400
-
-    if product:
-        new_quantity = request.json.get('quantity')
-        if new_quantity > 0:
-                product.quantity = new_quantity
-                db.session.commit()
-                return jsonify({"msg": "Cantidad actualizada"}), 200
-        else:
-            return jsonify({"msg": "Cantidad inválida"}), 400
-
-    return jsonify({"msg": "Producto no encontrado"})
 
 #ENDPOINTS PHONES    
 

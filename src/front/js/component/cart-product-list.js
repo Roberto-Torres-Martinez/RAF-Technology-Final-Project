@@ -4,7 +4,8 @@ import { Context } from '../store/appContext';
 
 export const ProductList = ({ user_id }) => {
     const { store, actions } = useContext(Context)
-    const [edit, setEdit] = useState(false)
+
+
 
     return (
         <>
@@ -21,23 +22,13 @@ export const ProductList = ({ user_id }) => {
                             return (
                                 <>
                                     <div className="p-2">
-                                        <ListProduct edit={edit} name={item.modelo} description={item.descripcion} quantity={item.cantidad} image={item.image}  color={item.color}tipo={item.tipo} user_id={user_id} product_id={item.product_id} />
+                                        <ListProduct  name={item.modelo} description={item.descripcion} quantity={item.cantidad} image={item.imagen}  color={item.color}  user_id={user_id}  />
                                     </div>
                                 </>
                             )
                         })}
                     </div>
-                   { edit && <div div className="d-flex justify-content-end">
-                        <span>
-                            <button onClick={()=>{
-                                setEdit(false)
-                            }}>Cancelar</button>
-                            <button onClick={()=>{
-                                setEdit(false)
-                                actions.getCart(user_id)
-                            }}>Guardar cambios</button>
-                        </span>
-                    </div>}
+                   
                 </div>
             </div>
         </>

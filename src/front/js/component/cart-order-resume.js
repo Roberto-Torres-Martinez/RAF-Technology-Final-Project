@@ -15,6 +15,7 @@ export const OrderResume = () => {
         navigate("/pasarela-pago", { state: { paymentAmount: subtotal } })
     }
 
+
     return (
         <>
             <div className="container-fluid order-resume">

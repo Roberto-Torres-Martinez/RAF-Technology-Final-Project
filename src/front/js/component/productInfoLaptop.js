@@ -11,8 +11,10 @@ export const ProductInfoLaptop = () => {
     const [userId, setUserId] = useState(sessionStorage.getItem("idUser"));
     const [buttonText, setButtonText] = useState("Añadir al carrito");
     const [buttonClass, setButtonClass] = useState("btn-add-cart texto");
+    const [infoToPost, setInfoToPost]  = useState({})
 
     let image;
+    let color;
     const precio = parseInt(laptop.precio);
 
     const totalPrecioEur = new Intl.NumberFormat("de-DE", {
@@ -32,7 +34,7 @@ export const ProductInfoLaptop = () => {
     };
 
     const imageValidation = (number) => {
-        const color = (laptop.colores?.[number].toLowerCase())?.replace(/ /g, "_");
+        color = (laptop.colores?.[number].toLowerCase())?.replace(/ /g, "_");
         image = laptop.imagen?.[color];
     };
 
@@ -44,7 +46,7 @@ export const ProductInfoLaptop = () => {
 
     const handleAddToCart = async () => {
 
-        await postProduct(laptop.laptop_id, userId, "laptop", activeColor);
+        await postProduct(userId,{"modelo": laptop.modelo, "descripcion": laptop.descripcion, "cantidad" : 1, "precio": laptop.precio, "imagen": image?.[0], "color": (color.replace(/_/g, " ")).toUpperCase()});
 
         setButtonText("✓ Producto añadido!");
         setButtonClass("btn-add-cart texto added shake");
@@ -55,6 +57,8 @@ export const ProductInfoLaptop = () => {
         }, 1500);
     };
 
+
+    
     return (
         <div className="container">
             <div className="row col-md-12">
