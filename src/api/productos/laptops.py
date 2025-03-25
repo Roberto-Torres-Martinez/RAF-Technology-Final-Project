@@ -14,7 +14,7 @@ laptops = [
                 "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D1920/https://d2e6ccujb3mkqf.cloudfront.net/036549e6-7731-4e9f-adca-abf791e762e5-5_a33f5621-6eba-43b1-a95c-67cffd13b2d0.jpg"
             ],
             "plata": [
-                "https://m.media-amazon.com/images/I/61iTKltKZAL._AC_SL1500_.jpg",
+                "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D640/https://d2e6ccujb3mkqf.cloudfront.net/f2996644-4aae-4312-8d31-b627ee67fc14-2_ec2d9eba-503d-40b2-aa0d-5c0aee04d220.jpg",
                 "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D1920/https://d2e6ccujb3mkqf.cloudfront.net/036549e6-7731-4e9f-adca-abf791e762e5-5_a33f5621-6eba-43b1-a95c-67cffd13b2d0.jpg"
             ]
         },
@@ -108,8 +108,8 @@ laptops = [
         "descripcion": "Líder en portátiles profesionales, ligero y de alto rendimiento.",
         "imagen": {
             "negro": [
-                "https://m.media-amazon.com/images/I/6164nvqOzSL.jpg",
-                "https://webobjects2.cdw.com/is/image/CDW/7416211?wid=784&hei=477&resMode=bilin&fit=fit,1"
+                "https://thumb.pccomponentes.com/w-530-530/articles/1085/10853181/2442-lenovo-thinkpad-e16-gen-2-intel-core-ultra-7-155h-32gb-1tb-ssd-16-comprar.jpg",
+                "https://thumb.pccomponentes.com/w-530-530/articles/1085/10853181/5444-lenovo-thinkpad-e16-gen-2-intel-core-ultra-7-155h-32gb-1tb-ssd-16-caracteristicas.jpg"
             ]
         },
         "marca": "Lenovo",
@@ -404,7 +404,7 @@ laptops = [
         "imagen": {
             "plata": [
                 "https://www.lotespc.es/wp-content/uploads/2024/01/MICROSOFT-SURFACE-PRO-4-.jpg",
-                "https://m.media-amazon.com/images/I/71SttbWEaSL._AC_UF894,1000_QL80_.jpg"
+                "https://cdn.shopify.com/s/files/1/0680/4219/5247/files/image_9b0a6ff4-d184-49d1-aa3d-b4ead43589c9.png?v=1712603761&width=550&height=550&pad_color=ffffff"
             ]
         },
         "marca": "Microsoft",
@@ -433,11 +433,11 @@ laptops = [
         "imagen": {
             "just_black": [
                 "https://i.ebayimg.com/images/g/K-YAAOSwlwZjm0~3/s-l1200.jpg",
-                "https://chromeunboxed.com/wp-content/uploads/2020/11/Not-Pink-Pixelbook-Go-Goodbye-Feature-scaled.jpg"
+                "https://i.ebayimg.com/images/g/UFcAAOSwQlZeODIh/s-l1600.webp"
             ],
             "not_pink": [
                 "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/go_top.PNG",
-                "https://chromeunboxed.com/wp-content/uploads/2020/11/Not-Pink-Pixelbook-Go-Goodbye-Feature-scaled.jpg"
+                "https://img.tuttoandroid.net/wp-content/uploads/2019/10/Google-Pixelbook-Go-tastiera-635x392.jpg"
             ]
         },
         "marca": "Google",
@@ -452,6 +452,5 @@ laptops = [
         "funcion_especial": "Ligero y con una batería de larga duración",
         "descripcion_tarjeta_grafica": "Intel UHD Graphics 615",
         "tipo": "laptop"
-        
     }
 ]

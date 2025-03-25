@@ -98,7 +98,7 @@ phones = [
         "bateria": "4500 mAh, carga rápida de 66W",
         "camara": "50 MP",
         "colores": [
-            "Dorado",
+            "Beige",
             "Negro",
             "Azul"
         ],
@@ -106,15 +106,15 @@ phones = [
         "descripcion": "Un smartphone elegante con una potente cámara y carga rápida.",
         "imagen": {
             "azul": [
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxaMraeUXfvnMlXkvApS9y5lFrQKmBHo232A&s",
+                "https://img4.dhresource.com/webp/m/0x0/f3/albu/km/s/18/b00a7897-1c23-4dbd-ba3b-67f8eeff9193.jpg",
                 "https://m.media-amazon.com/images/I/617fdVoR+gL.jpg"
             ],
-            "dorado": [
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXNLFuNbXYW4AWsBFRZo-wfuWdANYponMy9w&s",
+            "beige": [
+                "https://cdn.idealo.com/folder/Product/202749/9/202749936/s11_produktbild_max/huawei-p60-pro-256gb-rococo-pearl.jpg",
                 "https://m.media-amazon.com/images/I/617fdVoR+gL.jpg"
             ],
             "negro": [
-                "https://m.media-amazon.com/images/I/71PTElZL3HL.jpg",
+                "https://cdn.idealo.com/folder/Product/202749/9/202749935/s11_produktbild_max/huawei-p60-pro-256gb-black.jpg",
                 "https://m.media-amazon.com/images/I/617fdVoR+gL.jpg"
             ]
         },
@@ -133,22 +133,22 @@ phones = [
         "colores": [
             "Blanco",
             "Negro",
-            "Rojo"
+            "Gris Titanio"
         ],
         "conectividad": "5G, Wi-Fi 7, Bluetooth 5.3",
         "descripcion": "Un teléfono potente con carga ultrarrápida y una cámara impresionante.",
         "imagen": {
             "blanco": [
                 "https://m.media-amazon.com/images/I/51yCY4G3OkL._AC_UF894,1000_QL80_.jpg",
-                "https://i.blogs.es/3685a5/4853/650_1200.png"
+                "https://media1.allzone.es/3598456-large_default/xiaomi-14t-pro-5g-dual-sim-12gb-ram-512gb-gris.jpg"
             ],
             "negro": [
                 "https://m.media-amazon.com/images/I/51N4Aww3+SL.jpg",
-                "https://i.blogs.es/3685a5/4853/650_1200.png"
+                "https://media1.allzone.es/3598456-large_default/xiaomi-14t-pro-5g-dual-sim-12gb-ram-512gb-gris.jpg"
             ],
-            "rojo": [
-                "https://xiaomiui.net/wp-content/uploads/2025/01/Xiaomi-launches-Redmi-Note-14-Pro-in-%E2%80%98Good-Luck-Red-color-in-China.png",
-                "https://i.blogs.es/3685a5/4853/650_1200.png"
+            "gris_titanio": [
+                "https://thumb.pccomponentes.com/w-530-530/articles/1087/10872500/1747-xiaomi-14t-pro-12gb-256gb-gris-titanio-libre-foto.jpg",
+                "https://media1.allzone.es/3598456-large_default/xiaomi-14t-pro-5g-dual-sim-12gb-ram-512gb-gris.jpg"
             ]
         },
         "memoria_ram": "12 GB",
@@ -173,15 +173,15 @@ phones = [
         "imagen": {
             "negro": [
                 "https://m.media-amazon.com/images/I/71o8VehMHXL.jpg",
-                "https://innovainformatica.com/images-amigables/caracteristicas/id20/oneplus-12-5g-16-512gb-verde-smartphone-5011105295-4.webp"
+                "https://s.alicdn.com/@sc04/kf/H2d6848955f9f4d3688ca799e91da94c1b.png_720x720q50.png"
             ],
             "plata": [
-                "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_144348817?x=536&y=402&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=536&ey=402&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=536&cdy=402",
-                "https://innovainformatica.com/images-amigables/caracteristicas/id20/oneplus-12-5g-16-512gb-verde-smartphone-5011105295-4.webp"
+                "https://storage.googleapis.com/catalog-pictures-carrefour-es/catalog/pictures/hd_510x_/6932169340281_1.jpg",
+                "https://s.alicdn.com/@sc04/kf/H2d6848955f9f4d3688ca799e91da94c1b.png_720x720q50.png"
             ],
             "verde": [
-                "https://m.media-amazon.com/images/I/81ctxG+oqrL._AC_UF894,1000_QL80_.jpg",
-                "https://innovainformatica.com/images-amigables/caracteristicas/id20/oneplus-12-5g-16-512gb-verde-smartphone-5011105295-4.webp"
+                "https://ae-pic-a1.aliexpress-media.com/kf/S5e4ec5b5b6464682a2660f61a237e7c72.png_960x960.png_.webp",
+                "https://s.alicdn.com/@sc04/kf/H2d6848955f9f4d3688ca799e91da94c1b.png_720x720q50.png"
             ]
         },
         "memoria_ram": "12 GB, 16 GB",
@@ -227,22 +227,22 @@ phones = [
         "colores": [
             "Negro",
             "Verde",
-            "Plata"
+            "Marron"
         ],
         "conectividad": "5G, Wi-Fi 7, Bluetooth 5.3",
         "descripcion": "El buque insignia de Oppo con carga extremadamente rápida y una cámara robusta.",
         "imagen": {
             "negro": [
-                "https://m.media-amazon.com/images/I/51r5efng2kL.jpg",
-                "https://www.notebookcheck.org/fileadmin/Notebooks/News/_nc3/findx6seriesrenders.png"
+                "https://i.ebayimg.com/images/g/jQ8AAOSwh~BkG8du/s-l1600.webp",
+                "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/24522914/13.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400"
             ],
-            "plata": [
-                "https://m.media-amazon.com/images/I/61qFD-0uxQL.jpg",
-                "https://www.notebookcheck.org/fileadmin/Notebooks/News/_nc3/findx6seriesrenders.png"
+            "marron": [
+                "https://i.ebayimg.com/images/g/S~EAAOSwCxZkG9Om/s-l1600.webp",
+                "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/24522914/13.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400"
             ],
             "verde": [
                 "https://storage.googleapis.com/catalog-pictures-carrefour-es/catalog/pictures/hd_510x_/7427285919026_1.jpg",
-                "https://www.notebookcheck.org/fileadmin/Notebooks/News/_nc3/findx6seriesrenders.png"
+                "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/24522914/13.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400"
             ]
         },
         "memoria_ram": "12 GB, 16 GB",
@@ -326,7 +326,7 @@ phones = [
                 "https://www.worten.es/i/e12f1a12b18cec30b6d624e9244dc5fe814ada11"
             ],
             "negro": [
-                "https://www.neobyte.es/99752-medium_default/asus-zenfone-10-8gb-256gb-negro-medianoche-smartphone-59-5g.jpg",
+                "https://static.fnac-static.com/multimedia/Images/ES/MC/e3/e8/90/9496803/1540-1/tsp20250205131116/Asus-Zenfone-10-5G-8GB-256GB-5-92-Negro.jpg#d832b95b-be9d-4a7c-a54a-bd9c138acfc1",
                 "https://www.worten.es/i/e12f1a12b18cec30b6d624e9244dc5fe814ada11"
             ],
             "rojo": [
@@ -354,12 +354,12 @@ phones = [
         "descripcion": "Un teléfono elegante con enfoque en fotografía y carga rápida.",
         "imagen": {
             "negro": [
-                "https://canarias.worten.es/i/192ae3401a432f92c8534e45d37f3fb9f7434afc",
-                "https://www.lavanguardia.com/andro4all/hero/2022/11/Vivo-X90-Pro-Plus.jpg?width=1200&aspect_ratio=16:9"
+                "https://d2e6ccujb3mkqf.cloudfront.net/341ce9bb-b44e-49e1-82a3-cb578fb22428-1_c8bed3c2-691c-44a7-b3f5-f3218cb46e90.jpg",
+                "https://i.blogs.es/18d976/fhg23acxoaijtel/840_560.jpeg"
             ],
             "rojo": [
                 "https://img.myipadbox.com/upload/store/product_l/SYA002254203B.jpg",
-                "https://www.lavanguardia.com/andro4all/hero/2022/11/Vivo-X90-Pro-Plus.jpg?width=1200&aspect_ratio=16:9"
+                "https://i.blogs.es/18d976/fhg23acxoaijtel/840_560.jpeg"
             ]
         },
         "memoria_ram": "12 GB, 16 GB",
@@ -383,11 +383,11 @@ phones = [
         "imagen": {
             "blanco": [
                 "https://img.pccomponentes.com/articles/1081/10819282/1716-nothing-phone-2a-5g-8-128gb-blanco-libre.jpg",
-                "https://cdn.mos.cms.futurecdn.net/Ja75ayrr6ntwmXFfUTjkji-1200-80.jpg"
+                "https://static.fnac-static.com/multimedia/Images/ES/NR/b1/d5/81/8508849/1520-6.jpg"
             ],
             "negro": [
-                "https://ultimainformatica.com/1803437-medium_default/nothing-phone-2-17-cm-67-sim-doble-5g-usb-tipo-c-12-gb-512-gb-4700-mah-gris.jpg",
-                "https://cdn.mos.cms.futurecdn.net/Ja75ayrr6ntwmXFfUTjkji-1200-80.jpg"
+                "https://thumb.pccomponentes.com/w-530-530/articles/1081/10819283/1132-nothing-phone-2a-5g-12-256gb-negro-libre.jpg",
+                "https://static.fnac-static.com/multimedia/Images/ES/NR/ae/d5/81/8508846/1520-6.jpg"
             ]
         },
         "memoria_ram": "8 GB, 12 GB",
