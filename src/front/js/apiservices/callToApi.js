@@ -95,7 +95,6 @@ export const privateUser = async () => {
 
 export const updateUser = async (updateInfo, imageUrl) => {
     const idUser = sessionStorage.getItem('idUser')
-    console.log(imageUrl);
     const response = await fetch(`${urlBackend}update-user/${idUser}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
