@@ -93,10 +93,7 @@ export const ProductInfoLaptop = () => {
                             <small className="text-black">{totalPrecioEur}</small>
                         </p>
                         <p className="card-text">
-                            <button className={buttonClass} onClick={()=>{
-                                handleAddToCart
-                                
-                            }}>
+                            <button className={buttonClass} onClick={handleAddToCart}>
                                 <i className="fa-solid fa-cart-plus mb-1"></i> {buttonText}
                             </button>
                         </p>
