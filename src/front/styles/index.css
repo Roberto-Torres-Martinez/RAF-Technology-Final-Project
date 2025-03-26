@@ -567,6 +567,9 @@ footer {
     transition: all 0.25s;
     background-color: white;
     border: 0.1em solid rgb(102, 252, 241);
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .container_card .card_product:hover {
@@ -588,9 +591,14 @@ footer {
 }
 
 .container_card .card_product h3 {
-    padding: 1em 1em;
     text-align: end;
+    padding: 1em;
+    margin-bottom: 0;
+    opacity: 1; 
+    transition: opacity 0.5s ease-in-out; 
+    position: relative;
 }
+
 
 .container_img {
     height: 15em;
@@ -608,8 +616,9 @@ footer {
 .container_card .card_description {
     text-align: start;
     height: 3.5em;
-    margin: 1.5em 1em 1em;
+    margin: 1.5em 1em 2em;
 }
+
 
 .btn_card_product {
     background-color: rgb(215, 44, 32);
@@ -622,6 +631,21 @@ footer {
     color: #fafafa;
     font-weight: bold;
     font-size: 1em;
+    opacity: 0;
+    position: absolute;
+    bottom: 0.5em; 
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+.container_card .card_product:hover h3 {
+    opacity: 0; 
+}
+
+.container_card .card_product:hover .btn_card_product {
+    opacity: 1;
 }
 
 .negative-background {
@@ -942,8 +966,8 @@ input[type=file]::-webkit-file-upload-button {
 }
 
 .content-tendencia{
-    width: 32rem;
-    height: 32rem;
+    width: 37rem;
+    height: 30rem;
     position: relative;
     background-color: white;
 }
