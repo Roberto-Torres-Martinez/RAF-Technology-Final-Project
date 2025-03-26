@@ -12,9 +12,8 @@ export const Welcome = () => {
                     </div>
                     <div className="d-flex justify-content-center">
                         <div className=" rounded">
-                            <a href="#inicio" className="carrousel-button text-white">
-                                <span className="flecha primero"></span>
-                                
+                            <a href="#inicio" className="carrousel-button contenedor-flecha text-white">
+                                <span className="flecha primero"></span> 
                             </a>
                         </div>
                     </div>
