@@ -919,11 +919,12 @@ input[type=file]::-webkit-file-upload-button {
 }
 
 .container-card-tendencia{
-    height: 35rem;
+    height: 25rem;
     margin-top: 4rem;
     display: flex;
     justify-content: space-around;
-    position: relative; 
+    position: relative;
+    margin-bottom: 2rem;
 }
 .container-image-tendencia{
     width: 26rem;
