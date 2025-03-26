@@ -50,7 +50,7 @@ export const HomeCatalog = () => {
 
     return (
         <>
-            <div className="container-fluid py-5">
+            <div className="container-card-home">
                 <ProductSection name="Moviles" products={phones} />
                 <ProductSection name="TVs" products={tvs} />
                 <ProductSection name="Laptops" products={laptops} />
