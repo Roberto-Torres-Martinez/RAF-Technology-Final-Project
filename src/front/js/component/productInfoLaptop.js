@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { ProductColors } from "../component/product-colors";
 import { useParams } from "react-router-dom";
 import { postProduct } from "../apiservices/callToApi";
+import { Context } from "../store/appContext";
 
 export const ProductInfoLaptop = () => {
 
@@ -92,10 +93,10 @@ export const ProductInfoLaptop = () => {
                             <small className="text-black">{totalPrecioEur}</small>
                         </p>
                         <p className="card-text">
-                            {/* <button className="btn-add-cart texto" onClick={() => postProduct(laptop.laptop_id, userId, "laptop")}>
-                                <i className="fa-solid fa-cart-plus mb-1"></i> Añadir al carrito
-                            </button> */}
-                            <button className={buttonClass} onClick={handleAddToCart}>
+                            <button className={buttonClass} onClick={()=>{
+                                handleAddToCart
+                                
+                            }}>
                                 <i className="fa-solid fa-cart-plus mb-1"></i> {buttonText}
                             </button>
                         </p>

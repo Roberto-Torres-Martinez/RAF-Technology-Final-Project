@@ -48,13 +48,13 @@ export const ListProduct = ({ name, description, quantity, image, color, user_id
                     </div>
                     <div className="col-lg-2 col-sm-12">
                         <div className="d-flex justify-content-around">{cantidad > 1 ?
-                            <button onClick={decrementarCantidad} className="btn btn-primary rounded-circle me-2"><i class="fa-solid fa-minus"></i></button> :
+                            <button onClick={decrementarCantidad} className="btn primar-color text-white rounded-circle me-2"><i class="fa-solid fa-minus"></i></button> :
                             <button 
                                 onClick={()=> console.log(name, color)}
                                 className="btn btn-danger rounded-circle me-2" data-bs-toggle="modal" data-bs-target={`#exampleModal${name.replace(/ /g,"_")}${color.replace(/ /g,"_")}`} ><i class="fa-solid fa-trash"></i></button>
                         }
                             <p><b>{cantidad}</b></p>
-                            <button className="btn btn-primary rounded-circle ms-2" onClick={aumentarCantidad} ><i class="fa-solid fa-plus"></i></button>
+                            <button className="btn primar-color text-white rounded-circle ms-2" onClick={aumentarCantidad} ><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
                 </div>
