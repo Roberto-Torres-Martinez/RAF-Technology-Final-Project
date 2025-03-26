@@ -1,6 +1,7 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
+import os
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Smartphones, TVs, Laptops, Pedido
 from api.utils import generate_sitemap, APIException
@@ -18,7 +19,7 @@ from sqlalchemy.orm.attributes import flag_modified
 
 
 api = Blueprint('api', __name__)
-stripe.api_key = "sk_test_51QxWTcF1M5ixil84JujDUVjcNbDMjk8CpG3Akk0Bq1rlK7Ur5mVJkxZGUOJN78FO40hzxIiHJFMbfD4FKVhMrXJq00Q45N3TjR"
+stripe.api_key = os.getenv("SK_STRIPE")
 
 # Allow CORS requests to this API
 CORS(api)
