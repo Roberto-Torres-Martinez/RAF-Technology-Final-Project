@@ -8,7 +8,8 @@ import { Context } from "../store/appContext";
 
 
 const urlBackend = process.env.BACKEND_URL;
-const stripePromise = loadStripe('pk_test_51QxWTcF1M5ixil84DV7yx8UcwpGMJXggd0XSjMwT493HuieKbKIf3nWo94YaWDYrl4A781CqNpXw5vww4Q3p3IBv00oAd5cnVd')
+const pkStripe = process.env.PK_STRIPE;
+const stripePromise = loadStripe(pkStripe)
 
 export const PasarelaPago = () => {
   const { actions } = useContext(Context);
