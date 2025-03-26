@@ -36,6 +36,13 @@ export const getUsers = async () => {
     return data;
 };
 
+export const createCart = async (user_id) => {
+    const response = await fetch(urlBackend + "cart/" + user_id, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" }
+    })
+    console.log("Carrito creado")}
+
 export const login = async (user, responseApi, navigate) => {
     const response = await fetch(urlBackend + 'login', {
         method: 'POST',
@@ -157,13 +164,7 @@ export const deleteProduct = async (user_id, modelo, color) => {
     };
 };
 
-export const createCart = async (user_id) => {
-    const response = await fetch(urlBackend + "cart/" + user_id, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" }
-    })
 
-};
 
 export const updateQuantityCartProduct = async (user_id, modelo, color, cantidad) => {
     const response = await fetch(urlBackend + "cart/" + user_id + "/edit-item", {
