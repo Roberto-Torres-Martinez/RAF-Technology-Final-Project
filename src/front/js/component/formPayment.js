@@ -37,9 +37,9 @@ export const FormPayment = ({ user_id, amount }) => {
             setMessage(error.message)
         } else if (paymentIntent.status === 'succeeded') {
             setMessage("Pago confirmado!!!");
+            await deleteCart(user_id)
+            await createCart(user_id)
             navigate('/message-payment');
-            deleteCart(user_id)
-            createCart(user_id)
 
         } else {
             setMessage("Estado Inesperado")
