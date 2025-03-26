@@ -79,7 +79,11 @@ dist/*
 database.database
 database.db
 diagram.png
+<<<<<<< Updated upstream
 __pycache__/
 migrations
 .env
 
+=======
+__pycache__/
+>>>>>>> Stashed changes
