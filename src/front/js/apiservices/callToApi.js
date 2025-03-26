@@ -40,8 +40,7 @@ export const createCart = async (user_id) => {
     const response = await fetch(urlBackend + "cart/" + user_id, {
         method: "POST",
         headers: { "Content-Type": "application/json" }
-    })
-    console.log("Carrito creado")}
+    })}
 
 export const login = async (user, responseApi, navigate) => {
     const response = await fetch(urlBackend + 'login', {
@@ -186,6 +185,5 @@ export const deleteCart = async (user_id) => {
         method: "DELETE",
         headers: { "Content-Type": "application/json" }
     })
-    console.log("Carrito eliminado")
 }
 
