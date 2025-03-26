@@ -1047,3 +1047,7 @@ input[type=file]::-webkit-file-upload-button {
 .container-card-home{
     margin-top: 12em;
 }
+
+.empty-cart-image {
+    width: 25em;
+}
