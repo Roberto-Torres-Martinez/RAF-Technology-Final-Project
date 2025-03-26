@@ -1016,3 +1016,13 @@ input[type=file]::-webkit-file-upload-button {
 .empty-cart-image{
     width: 20em;
 }
+
+
+.primar-color {
+    background-color: #7bc3ce
+}
+
+.primar-color:hover {
+    background-color: #6bafba
+
+}
