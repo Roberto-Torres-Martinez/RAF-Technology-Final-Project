@@ -39,10 +39,10 @@ module.exports = {
     extensions: ['*', '.js']
   },
   plugins: [
-    // new HtmlWebpackPlugin({
-    //     favicon: 'isotipo.png',
-    //     template: 'template.html'
-    // }),
+    new HtmlWebpackPlugin({
+        favicon: '4geeks.ico',
+        template: 'template.html'
+    }),
     new Dotenv({ safe: true, systemvars: true })
   ]
 };
