@@ -70,6 +70,7 @@ export const ListProduct = ({ name, description, quantity, image, color, user_id
                                     onClick={async () => {
                                         await deleteProduct(user_id, name, color)
                                         actions.getCart(user_id)
+                                        window.location.reload()
                                     }} aria-label="Close" data-bs-dismiss="modal">Eliminar</button>
                             </div>
                         </div>
