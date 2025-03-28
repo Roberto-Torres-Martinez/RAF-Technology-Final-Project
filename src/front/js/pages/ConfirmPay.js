@@ -20,8 +20,9 @@ export const MessagePayment = () => {
     return (
         <main className="container-message container">
             <h1 className="titulo">Gracias por tu compra!!!!</h1>
+            <h4 className="titulo">Nuestro equipo se pondrá en contacto contigo próximamente para coordinar el envío.</h4>
             <section className="container-img-payment">
-                <img src="https://agenciapromarketing.com/wp-content/uploads/2020/03/BANNER-PAGO-EXITOSO-1.png" />
+                <img src="https://img.freepik.com/foto-gratis/closeup-senorita-utiliza-telefono-movil-pedidos-productos-compras-linea-pagar-facturas-tarjeta-credito-interior-sala-estar-casa_7861-3274.jpg?t=st=1743156423~exp=1743160023~hmac=dd817bbc473e160f1c47aebbe9d7f4ff1ffc5f9dcce43b572196f775b055be1e&w=1380" />
             </section>
             <section className="container-button-confirm">
                 <Link to={"/"}>
@@ -35,9 +36,6 @@ export const MessagePayment = () => {
                 </Link>
                 <Link to={"/tvs-catalog"}>
                     <button className="sub-titulo">Ver Televisores</button>
-                </Link>
-                <Link to={"/cart"}>
-                    <button className="sub-titulo">Carrito de compras</button>
                 </Link>
             </section>
         </main>
