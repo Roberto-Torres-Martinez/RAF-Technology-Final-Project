@@ -15,7 +15,8 @@ export const EmptyCart = () => {
                 </div>
                 <div>
                     <div className="px-4">
-                        <span> <p>Añade productos para poder verlos en tu carrito personal.</p></span>
+                        <span> <p>Aquí se muestra tu lista de productos mientras hayas ingresado a tu cuenta. <br/>
+                            En caso de no haber ingresado puedes ingresar en el siguiente link: <Link to="/login"><a>Ingresar</a></Link>,<br/> o registrarte en caso de no haberlo hecho: <Link to="/signup"><a>Registrarse</a>.</Link></p></span>
                     </div>
                 </div>
 
