@@ -39,7 +39,7 @@ export const LogIn = () => {
                     </div>
                     <h1 className="text-white titulo mt-3 text-center title-login">Iniciar sesión</h1>
                     <form className="border border-light rounded-3 mb-5" onSubmit={handleSubmit}>
-                        {responseApi.msg && <h6 style={{ color: 'red' }}>{responseApi.msg}</h6>}
+                        {responseApi.msg && <h4 style={{ color: 'red', backgroundColor:"white" }}>{responseApi.msg}</h4>}
                         <div className="texto">
                             <label htmlFor="email" className="form-label text-white mt-4">Email</label>
                             <input type="text" className="form-control" name="email" onChange={handleChange} autoComplete="email" placeholder="example@gmail.com" />
