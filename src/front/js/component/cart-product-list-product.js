@@ -59,10 +59,10 @@ export const ListProduct = ({ name, description, quantity, image, color, user_id
                     </div>
                 </div>
                 <div class="modal fade" id={`exampleModal${name.replace(/ /g,"_")}${color.replace(/ /g,"_")}`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">¿Estás seguro de eliminar este producto de tu carrito?</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">¿Estás seguro de eliminar este producto de tu carrito? ({name} {color != "no" && color})</h1>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
