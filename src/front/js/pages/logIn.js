@@ -39,9 +39,17 @@ export const LogIn = () => {
                     </div>
                     <h1 className="text-white titulo mt-3 text-center title-login">Iniciar sesión</h1>
                     <form className="border border-light rounded-3 mb-5" onSubmit={handleSubmit}>
-                        {responseApi.msg && <h4 style={{ color: 'red', backgroundColor:"white" }}>{responseApi.msg}</h4>}
+                        
+                        <div className={`${responseApi.msg ? "opacity-100": "opacity-0"} mt-3 mb-0 d-flex justify-content-center rounded my-0`}>
+                            <h5 className="py-0 bg-white text-danger rounded p-2">
+                        <i class="fa-solid fa-triangle-exclamation"></i>  Contraseña o Email incorrecto
+                        </h5>
+                        </div>
+                       
+
+                    
                         <div className="texto">
-                            <label htmlFor="email" className="form-label text-white mt-4">Email</label>
+                            <label htmlFor="email" className="form-label text-white">Email</label>
                             <input type="text" className="form-control" name="email" onChange={handleChange} autoComplete="email" placeholder="example@gmail.com" />
                         </div>
                         <div className="texto">

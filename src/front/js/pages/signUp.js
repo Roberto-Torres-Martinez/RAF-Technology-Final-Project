@@ -84,9 +84,16 @@ export const SignUp = () => {
                     </div>
                     <h1 className="text-white titulo text-center title-signup">Crear Cuenta</h1>
                     <form className="border border-light rounded-3" onSubmit={handleSubmit}>
-                        {userExist && <p style={{ color: 'red' }}>Ya existe una cuenta asociada a este email o usuario </p>}
                         <div className="texto">
+                        
+                                 <div className={`${userExist ? "opacity-100" : "opacity-0"} d-flex justify-content-start text-danger mt-2`}>
+                             <span className="bg-white p-1 rounded"><i class="fa-solid fa-triangle-exclamation"></i> Ya existe una cuenta asociada a este <b>email</b> o <b>usuario</b></span></div>
+                            <div className="d-flex">
+                               
+                            
                             <label htmlFor="username" className="form-label text-white mt-2">Nombre de Usuario</label>
+                        
+</div>
                             <input type="text" className="form-control" onChange={handleChange} name="username" autoComplete="username" required placeholder="Nombre de Usuario" />
                         </div>
                         <div className="texto">
@@ -106,7 +113,13 @@ export const SignUp = () => {
                                 <input type={isConfirmPasswordVisible ? "text" : "password"} className="form-control" onChange={handleChange} name="confirmPassword" placeholder="Example123"/>
                                 <i className={`fa-solid ${isConfirmPasswordVisible ? "fa-eye-slash" : "fa-eye"}`} onClick={handleConfirmPasswordVisibility}></i>
                             </div>
-                            {!password && <p style={{ color: 'red' }}>Las contraseñas no coinciden</p>}
+                            {/* {!password &&  */}
+                             <div className={`${!password ? "opacity-100": "opacity-0"}  d-flex justify-content-start rounded my-0`}>                       <h5 className="py-0 mt-3 bg-white text-danger rounded p-2">
+                             <i class="fa-solid fa-triangle-exclamation"></i>
+                             Las contraseñas no coinciden
+                             </h5>
+                             </div>
+                                {/* } */}
                         </div>
                         <div className="toLogin" style={{ margin: '2em' }}>
                             <span className="text-white mt-4 texto">¿Ya estás registrado?</span>
