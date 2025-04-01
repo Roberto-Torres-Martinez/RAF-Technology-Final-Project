@@ -74,9 +74,10 @@ export const Navbar = () => {
 					</button>
 					<div className="d-flex align-items-center">
 						<form className="dropdown-search" role="search">
+							
 							<input className={`p-1 me-2 ${search.length != 0 ? 'input-search-focus' : 'input-search'}`} value={search} onChange={(e) => searcher(e)} type="search" placeholder="Buscar" aria-label="Search"></input>
 							{search.length != 0 &&
-								<div className="dropdown-content-search" style={{display: 'block'}}>
+								<div className="dropdown-content-search d-block w-100" >
 									{
 										results.map((product, index)=>{											
 											return(
