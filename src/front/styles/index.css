@@ -293,6 +293,25 @@ hr {
     max-width: 250px;
 }
 
+.btn-add-cart-added {
+    background: linear-gradient(135deg, #17911d, #69e659);
+    box-shadow: 2px 2px #fafafa;
+    border: 2px solid #fafafa;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    max-width: 250px;
+}
+
 .btn-add-cart:hover {
     transform: scale(1.05);
     background: linear-gradient(135deg, #CC4638, #FF8552);

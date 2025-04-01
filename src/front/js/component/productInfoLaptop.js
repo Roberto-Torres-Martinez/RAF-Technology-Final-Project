@@ -13,6 +13,7 @@ export const ProductInfoLaptop = () => {
     const [buttonText, setButtonText] = useState("Añadir al carrito");
     const [buttonClass, setButtonClass] = useState("btn-add-cart texto");
     const [infoToPost, setInfoToPost]  = useState({})
+    const [productoAñadido, setProductoAñadido] = useState(false)
 
     let image;
     let color;
@@ -50,12 +51,13 @@ export const ProductInfoLaptop = () => {
         await postProduct(userId,{"modelo": laptop.modelo, "descripcion": laptop.descripcion, "cantidad" : 1, "precio": laptop.precio, "imagen": image?.[0], "color": (color.replace(/_/g, " ")).toUpperCase()});
 
         setButtonText("✓ Producto añadido!");
-        setButtonClass("btn-add-cart texto added shake");
-
+        setButtonClass("btn-add-cart-added texto");
+        
         setTimeout(() => {
             setButtonText("Añadir al carrito");
             setButtonClass("btn-add-cart texto");
-        }, 1500);
+          
+        }, 1000);
     };
 
 

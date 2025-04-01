@@ -74,7 +74,7 @@ export const Navbar = () => {
 					</button>
 					<div className="d-flex align-items-center">
 						<form className="dropdown-search" role="search">
-							
+							<ul>
 							<input className={`p-1 me-2 ${search.length != 0 ? 'input-search-focus' : 'input-search'}`} value={search} onChange={(e) => searcher(e)} type="search" placeholder="Buscar" aria-label="Search"></input>
 							{search.length != 0 &&
 								<div className="dropdown-content-search d-block w-100" >
@@ -87,6 +87,7 @@ export const Navbar = () => {
 									}
 								</div>
 							}
+							</ul>
 						</form>
 						<div className="collapse navbar-collapse d-flex align-items-center" id="navbarSupportedContent">
 							<ul className="navbar-nav me-auto mb-lg-0">
