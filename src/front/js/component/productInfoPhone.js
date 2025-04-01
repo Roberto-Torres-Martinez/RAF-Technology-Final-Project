@@ -45,13 +45,14 @@ export const ProductInfoPhone = () => {
 
     const handleAddToCart = async () => {
        await postProduct(userId,{"modelo": phone.modelo, "descripcion": phone.descripcion, "cantidad" : 1, "precio": phone.precio, "imagen": image?.[0], "color": (color.replace(/_/g, " ")).toUpperCase()});
-        setButtonText("✓ Producto añadido!");
-        setButtonClass("btn-add-cart texto added shake");
-
-        setTimeout(() => {
-            setButtonText("Añadir al carrito");
-            setButtonClass("btn-add-cart texto");
-        }, 1500);
+       setButtonText("✓ Producto añadido!");
+       setButtonClass("btn-add-cart-added texto");
+       
+       setTimeout(() => {
+           setButtonText("Añadir al carrito");
+           setButtonClass("btn-add-cart texto");
+         
+       }, 1000);
     };
 
     return (

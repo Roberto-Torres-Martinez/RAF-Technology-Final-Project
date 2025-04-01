@@ -4,10 +4,14 @@ import { Welcome } from '../component/home-carrousel'
 import { Onfire } from '../component/onfire'
 import { HomeCatalog } from "../component/home-catalog";
 import { Context } from "../store/appContext";
+import { privateUser } from "../apiservices/callToApi";
+
 
 export const Home = () => {
 	const { actions } = useContext(Context);
-
+	const checkOut = async() => {
+		const verified = await privateUser()
+	}
 	useEffect(() => {
 		actions.setPositiveColors();
 		actions.setNavbarVisibility();
@@ -20,6 +24,7 @@ export const Home = () => {
 				<Onfire type1="tvs" id1="8" type2="laptops" id2="2" />
 				<HomeCatalog />
 			</div>
+			
 		</div>
 	);
 };
