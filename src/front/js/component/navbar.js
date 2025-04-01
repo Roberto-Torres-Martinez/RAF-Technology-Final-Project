@@ -73,6 +73,7 @@ export const Navbar = () => {
 						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div className="d-flex align-items-center">
+						
 						<form className="dropdown-search" role="search">
 							<ul>
 							<input className={`p-1 me-2 ${search.length != 0 ? 'input-search-focus' : 'input-search'}`} value={search} onChange={(e) => searcher(e)} type="search" placeholder="Buscar" aria-label="Search"></input>
