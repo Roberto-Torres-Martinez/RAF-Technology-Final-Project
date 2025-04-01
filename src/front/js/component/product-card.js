@@ -50,7 +50,7 @@ export const ProductCard = ({ product, name }) => {
                 </div>
                 <h3>{totalPrecioEur}</h3>
                 <Link to={IndividualProduct}>
-                    <button className='btn_card_product'>comprar</button>
+                    <button className='btn_card_product'>Comprar</button>
                 </Link>
             </div>
         </div>

@@ -47,7 +47,9 @@ export const CatalogProductCard = ({ product, productName }) => {
                         <img src={images[0]} />
                     </Link>
                 </div>
+                <div className="card-title-home">
                 <span>{product.modelo}</span>
+                </div>
                 <ul className='card_description'>
                     {!tvOn ?
                         <>
@@ -65,7 +67,7 @@ export const CatalogProductCard = ({ product, productName }) => {
                 </ul>
                 <h3>{totalPrecioEur}</h3>
                 <Link to={IndividualProduct}>
-                    <button className='btn_card_product'>comprar</button>
+                    <button className='btn_card_product'>Comprar</button>
                 </Link>
             </div>
         </div>
